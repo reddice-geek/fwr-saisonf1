@@ -1,0 +1,93 @@
+{
+  "saison": "S1 FWR 2026",
+  "logo_transparent": "assets/logo/s1-fwr-logo-transparent.png",
+  "gp_realises": [
+    {
+      "pays": "Australie",
+      "flag": "🇦🇺",
+      "drapeau_file": "australia.png",
+      "gp": "Melbourne",
+      "date": "R1",
+      "status": "Terminé",
+      "meilleur_tour": "1:21.309"
+    },
+    {
+      "pays": "Japon",
+      "flag": "🇯🇵",
+      "drapeau_file": "japan.png",
+      "gp": "Suzuka",
+      "date": "R3 - 24 Août 2026",
+      "status": "Terminé",
+      "meilleur_tour": "1:33.067"
+    },
+    {
+      "pays": "USA",
+      "flag": "🇺🇸",
+      "drapeau_file": "usa.png",
+      "gp": "Miami",
+      "date": "R6 - 03 Sept 2026",
+      "status": "Terminé",
+      "meilleur_tour": "1:30.300"
+    },
+    {
+      "pays": "Monaco",
+      "flag": "🇲🇨",
+      "drapeau_file": "monaco.png",
+      "gp": "Monaco",
+      "date": "R8 - 10 Sept 2026",
+      "status": "Terminé",
+      "meilleur_tour": "1:12.865"
+    },
+    {
+      "pays": "Espagne",
+      "flag": "🇪🇸",
+      "drapeau_file": "spain.png",
+      "gp": "Barcelone",
+      "date": "R9 - 14 Sept 2026",
+      "status": "Terminé",
+      "meilleur_tour": "1:15.304"
+    }
+  ],
+  "gp_a_venir": [
+    {
+      "pays": "Bahreïn",
+      "flag": "🇧🇭",
+      "gp": "Bahreïn",
+      "date": "25 Août 2026",
+      "distance": "35%",
+      "status": "À venir"
+    },
+    {
+      "pays": "Arabie Saoudite",
+      "flag": "🇸🇦",
+      "gp": "Jeddah",
+      "date": "01 Sept 2026",
+      "distance": "35%",
+      "status": "À venir"
+    },
+    {
+      "pays": "Canada",
+      "flag": "🇨🇦",
+      "gp": "Montréal",
+      "date": "06 Sept 2026",
+      "distance": "35%",
+      "status": "À venir"
+    },
+    {
+      "pays": "Italie",
+      "flag": "🇮🇹",
+      "gp": "Imola",
+      "date": "06 Sept 2026",
+      "distance": "35%",
+      "status": "À venir"
+    },
+    {
+      "pays": "Chine",
+      "flag": "🇨🇳",
+      "gp": "Shanghai",
+      "date": "À définir",
+      "distance": "50%",
+      "status": "À venir"
+    }
+  ]
+}
