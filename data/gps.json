@@ -1,93 +1,69 @@
 {
-  "saison": "S1 FWR 2026",
+  "saison": "S1 FWR 2026 - 100% FWR",
   "logo_transparent": "assets/logo/s1-fwr-logo-transparent.png",
-  "gp_realises": [
+  "calendrier": [
     {
-      "pays": "Australie",
-      "flag": "🇦🇺",
-      "drapeau_file": "australia.png",
+      "date": "21 Août 2026",
       "gp": "Melbourne",
-      "date": "R1",
+      "flag": "🇦🇺",
       "status": "Terminé",
-      "meilleur_tour": "1:21.309"
+      "affiche": "assets/posters/melbourne-21-aout.png"
     },
     {
-      "pays": "Japon",
-      "flag": "🇯🇵",
-      "drapeau_file": "japan.png",
-      "gp": "Suzuka",
-      "date": "R3 - 24 Août 2026",
-      "status": "Terminé",
-      "meilleur_tour": "1:33.067"
-    },
-    {
-      "pays": "USA",
-      "flag": "🇺🇸",
-      "drapeau_file": "usa.png",
-      "gp": "Miami",
-      "date": "R6 - 03 Sept 2026",
-      "status": "Terminé",
-      "meilleur_tour": "1:30.300"
-    },
-    {
-      "pays": "Monaco",
-      "flag": "🇲🇨",
-      "drapeau_file": "monaco.png",
-      "gp": "Monaco",
-      "date": "R8 - 10 Sept 2026",
-      "status": "Terminé",
-      "meilleur_tour": "1:12.865"
-    },
-    {
-      "pays": "Espagne",
-      "flag": "🇪🇸",
-      "drapeau_file": "spain.png",
-      "gp": "Barcelone",
-      "date": "R9 - 14 Sept 2026",
-      "status": "Terminé",
-      "meilleur_tour": "1:15.304"
-    }
-  ],
-  "gp_a_venir": [
-    {
-      "pays": "Bahreïn",
-      "flag": "🇧🇭",
-      "gp": "Bahreïn",
-      "date": "25 Août 2026",
-      "distance": "35%",
-      "status": "À venir"
-    },
-    {
-      "pays": "Arabie Saoudite",
-      "flag": "🇸🇦",
-      "gp": "Jeddah",
-      "date": "01 Sept 2026",
-      "distance": "35%",
-      "status": "À venir"
-    },
-    {
-      "pays": "Canada",
-      "flag": "🇨🇦",
-      "gp": "Montréal",
-      "date": "06 Sept 2026",
-      "distance": "35%",
-      "status": "À venir"
-    },
-    {
-      "pays": "Italie",
-      "flag": "🇮🇹",
-      "gp": "Imola",
-      "date": "06 Sept 2026",
-      "distance": "35%",
-      "status": "À venir"
-    },
-    {
-      "pays": "Chine",
-      "flag": "🇨🇳",
+      "date": "22 Août 2026",
       "gp": "Shanghai",
-      "date": "À définir",
-      "distance": "50%",
-      "status": "À venir"
+      "flag": "🇨🇳",
+      "status": "Terminé",
+      "affiche": "assets/posters/shanghai-22-aout.png"
+    },
+    {
+      "date": "24 Août 2026",
+      "gp": "Suzuka",
+      "flag": "🇯🇵",
+      "status": "Terminé",
+      "affiche": "assets/posters/suzuka-24-aout.png"
+    },
+    {
+      "date": "25 Août 2026",
+      "gp": "Bahrain",
+      "flag": "🇧🇭",
+      "status": "Terminé",
+      "affiche": "assets/posters/bahrain-25-aout.png"
+    },
+    {
+      "date": "01 Sept 2026",
+      "gp": "Jeddah",
+      "flag": "🇸🇦",
+      "status": "En attente résultats",
+      "affiche": "assets/posters/jeddah-01-sept.png"
+    },
+    {
+      "date": "03 Sept 2026",
+      "gp": "Miami",
+      "flag": "🇺🇸",
+      "status": "Terminé",
+      "affiche": "assets/posters/miami-03-sept.png"
+    },
+    {
+      "date": "06 Sept 2026",
+      "gp": "Imola",
+      "flag": "🇮🇹",
+      "status": "Terminé",
+      "affiche": "assets/posters/imola-06-sept.png"
+    },
+    {
+      "date": "10 Sept 2026",
+      "gp": "Monaco",
+      "flag": "🇲🇨",
+      "status": "Terminé",
+      "affiche": "assets/posters/monaco-10-sept.png"
+    },
+    {
+      "date": "14 Sept 2026",
+      "gp": "Barcelone",
+      "flag": "🇪🇸",
+      "status": "Terminé",
+      "affiche": "assets/posters/barcelone-14-sept.png"
     }
   ]
 }

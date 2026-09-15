@@ -1,201 +1,407 @@
 {
-  "saison": "S1 FWR 2026 - EN COURS",
-  "champion_provisoire": "Skyyy 143 pts - 6 victoires",
+  "saison": "S1 FWR 2026 - 100% FWR - 0% IA",
+  "derniere_maj": "14 Sept 2026 - Barcelone",
   "logo": "assets/logo/s1-fwr-logo-transparent.png",
-  "derniere_maj": "Espagne 14 Sept 2026",
-  "classement_general": [
+  "champion": "Skyyy - 125 pts - 5 victoires",
+  "classement_general_100_fwr": [
     {
       "pos": 1,
       "pilote": "Skyyy",
       "ecurie": "Alpine",
-      "pts": 143,
-      "victoires": 6,
-      "podiums": 7
+      "pts": 125,
+      "victoires": 5,
+      "podiums": 5,
+      "meilleur_tour": "1:12.865 Monaco RECORD"
     },
     {
       "pos": 2,
       "pilote": "Goret_25",
       "ecurie": "Red Bull",
-      "pts": 130,
+      "pts": 118,
       "victoires": 1,
-      "podiums": 6
+      "podiums": 7,
+      "meilleur_tour": "1:14.953 Monaco"
     },
     {
       "pos": 3,
       "pilote": "upsilon7",
-      "ecurie": "Ferrari",
-      "pts": 122,
+      "ecurie": "Ferrari HP",
+      "pts": 97,
       "victoires": 0,
-      "podiums": 5
+      "podiums": 6,
+      "meilleur_tour": "1:17.220 Barcelone"
     },
     {
       "pos": 4,
       "pilote": "Taatsu7TV",
-      "ecurie": "Ferrari",
-      "pts": 108,
-      "victoires": 1,
-      "podiums": 6
+      "ecurie": "Ferrari HP",
+      "pts": 83,
+      "victoires": 0,
+      "podiums": 5,
+      "meilleur_tour": "1:17.625 Barcelone"
     },
     {
       "pos": 5,
       "pilote": "Jesui_tou",
       "ecurie": "Alpine",
       "pts": 68,
-      "victoires": 4,
-      "podiums": 5
+      "victoires": 2,
+      "podiums": 3,
+      "meilleur_tour": "1:21.309 Melbourne"
     },
     {
       "pos": 6,
       "pilote": "cobra_kai_cx",
-      "ecurie": "Aston Martin",
-      "pts": 30
+      "ecurie": "Aston Martin / McLaren",
+      "pts": 30,
+      "victoires": 0,
+      "podiums": 1,
+      "meilleur_tour": "1:20.564 Imola"
     },
     {
       "pos": 7,
-      "pilote": "TheJoker / JoKeR-_SkyZo",
+      "pilote": "JoKeR-_-SkyZo",
       "ecurie": "Mercedes",
-      "pts": 25
+      "pts": 25,
+      "victoires": 0,
+      "podiums": 2,
+      "meilleur_tour": "1:16.050 Monaco"
     },
     {
       "pos": 8,
       "pilote": "JotagrosFR",
       "ecurie": "Red Bull",
-      "pts": 18
+      "pts": 18,
+      "victoires": 0,
+      "podiums": 1,
+      "meilleur_tour": "1:15.304 Barcelone MEILLEUR TOUR"
     },
     {
       "pos": 9,
-      "pilote": "Mobilou69",
+      "pilote": "mobilou69",
       "ecurie": "Red Bull",
-      "pts": 16
+      "pts": 16,
+      "victoires": 0,
+      "podiums": 0,
+      "meilleur_tour": "1:35.145 Bahrain"
     },
     {
       "pos": 10,
-      "pilote": "Sombre7675TTV",
+      "pilote": "sombre7675TTV",
       "ecurie": "Haas",
-      "pts": 6
+      "pts": 6,
+      "victoires": 0,
+      "podiums": 0,
+      "meilleur_tour": "1:26.164 Melbourne"
     },
     {
       "pos": 11,
-      "pilote": "Crimson_death",
+      "pilote": "Crimson_Death596",
       "ecurie": "Mercedes",
-      "pts": 0
+      "pts": 0,
+      "victoires": 0,
+      "podiums": 0
     }
   ],
-  "gp_reels": [
+  "gp_disputes": [
     {
-      "id": "AUS_R1",
-      "pays": "Australie",
-      "flag": "🇦🇺",
-      "circuit": "Albert Park Melbourne",
-      "date": "R1",
+      "date": "21 Août 2026",
+      "gp": "Melbourne",
+      "circuit": "Albert Park",
+      "heure": "19H00",
+      "distance": "50%",
+      "affiche": "assets/posters/melbourne-21-aout.png",
       "vainqueur": "Jesui_tou",
-      "temps_course": "28:14.241",
+      "temps": "28:14.241",
       "meilleur_tour": "1:21.309 Jesui_tou",
-      "podium": [
-        "Jesui_tou",
-        "cobra_kai_cx",
-        "upsilon7"
-      ],
-      "grille": "P1 Jesui",
-      "pts": {
-        "Jesui_tou": 25,
-        "cobra_kai_cx": 18,
-        "upsilon7": 15,
-        "Goret_25": 12,
-        "Sombre7675TTV": 6
-      }
+      "resultats_fwr": [
+        {
+          "pos": 1,
+          "pilote": "Jesui_tou",
+          "pts": 25
+        },
+        {
+          "pos": 2,
+          "pilote": "cobra_kai_cx",
+          "pts": 18
+        },
+        {
+          "pos": 3,
+          "pilote": "upsilon7",
+          "pts": 15
+        },
+        {
+          "pos": 4,
+          "pilote": "Goret_25",
+          "pts": 12
+        },
+        {
+          "pos": 5,
+          "pilote": "sombre7675TTV",
+          "pts": 6
+        }
+      ]
     },
     {
-      "id": "JPN_R3",
-      "pays": "Japon",
-      "flag": "🇯🇵",
-      "circuit": "Suzuka",
-      "date": "R3 - 24 Août 2026",
+      "date": "22 Août 2026",
+      "gp": "Shanghai",
+      "circuit": "Shanghai International",
+      "heure": "20H00",
+      "distance": "50%",
+      "affiche": "assets/posters/shanghai-22-aout.png",
+      "vainqueur": "Skyyy",
+      "temps": "33:58.631",
+      "meilleur_tour": "1:37.682 Skyyy",
+      "resultats_fwr": [
+        {
+          "pos": 1,
+          "pilote": "Skyyy",
+          "pts": 25
+        },
+        {
+          "pos": 2,
+          "pilote": "Goret_25",
+          "pts": 18
+        },
+        {
+          "pos": 3,
+          "pilote": "upsilon7",
+          "pts": 15
+        },
+        {
+          "pos": 4,
+          "pilote": "Taatsu7TV",
+          "pts": 12
+        }
+      ]
+    },
+    {
+      "date": "24 Août 2026",
+      "gp": "Suzuka",
+      "circuit": "Suzuka International",
+      "heure": "19H00",
+      "distance": "50%",
+      "affiche": "assets/posters/suzuka-24-aout.png",
       "vainqueur": "Jesui_tou",
-      "temps_course": "30:36.255",
-      "meilleur_tour": "~1:33.067 Jesui_tou",
-      "podium": [
-        "Jesui_tou",
-        "upsilon7",
-        "Taatsu7TV"
-      ],
-      "pts": {
-        "Jesui_tou": 25,
-        "upsilon7": 18,
-        "Taatsu7TV": 15,
-        "mobilou69": 4
-      }
+      "temps": "30:36.255",
+      "meilleur_tour": "1:33.567 Jesui_tou",
+      "resultats_fwr": [
+        {
+          "pos": 1,
+          "pilote": "Jesui_tou",
+          "pts": 25
+        },
+        {
+          "pos": 2,
+          "pilote": "upsilon7",
+          "pts": 18
+        },
+        {
+          "pos": 3,
+          "pilote": "Taatsu7TV",
+          "pts": 15
+        },
+        {
+          "pos": 4,
+          "pilote": "mobilou69",
+          "pts": 4
+        }
+      ]
     },
     {
-      "id": "MIA_R6",
-      "pays": "USA",
-      "flag": "🇺🇸",
+      "date": "25 Août 2026",
+      "gp": "Bahrain",
+      "circuit": "Bahrain International",
+      "heure": "19H00",
+      "distance": "35%",
+      "affiche": "assets/posters/bahrain-25-aout.png",
+      "vainqueur": "Goret_25",
+      "temps": "32:15.411",
+      "meilleur_tour": "1:33.902 Taatsu7TV",
+      "resultats_fwr": [
+        {
+          "pos": 1,
+          "pilote": "Goret_25",
+          "pts": 25
+        },
+        {
+          "pos": 2,
+          "pilote": "Jesui_tou",
+          "pts": 18
+        },
+        {
+          "pos": 3,
+          "pilote": "Taatsu7TV",
+          "pts": 15
+        },
+        {
+          "pos": 4,
+          "pilote": "mobilou69",
+          "pts": 12
+        },
+        {
+          "pos": 5,
+          "pilote": "upsilon7",
+          "pts": 10
+        }
+      ]
+    },
+    {
+      "date": "01 Sept 2026",
+      "gp": "Jeddah",
+      "circuit": "Jeddah Corniche",
+      "heure": "19H00",
+      "distance": "35%",
+      "affiche": "assets/posters/jeddah-01-sept.png",
+      "vainqueur": "À venir",
+      "temps": "En attente",
+      "meilleur_tour": "En attente",
+      "resultats_fwr": []
+    },
+    {
+      "date": "03 Sept 2026",
+      "gp": "Miami",
       "circuit": "Miami International",
-      "date": "R6 - 03 Sept 2026",
+      "heure": "21H00",
+      "distance": "35%",
+      "affiche": "assets/posters/miami-03-sept.png",
       "vainqueur": "Skyyy",
-      "temps_course": "31:36.318",
+      "temps": "31:36.318",
       "meilleur_tour": "1:30.300 Skyyy",
-      "podium": [
-        "Skyyy",
-        "Taatsu7TV",
-        "Goret_25"
-      ],
-      "grille": "P1 Taatsu, P2 Skyyy, P8->P3 Goret",
-      "pts": {
-        "Skyyy": 25,
-        "Taatsu7TV": 18,
-        "Goret_25": 15,
-        "upsilon7": 12
-      }
+      "resultats_fwr": [
+        {
+          "pos": 1,
+          "pilote": "Skyyy",
+          "pts": 25
+        },
+        {
+          "pos": 2,
+          "pilote": "Taatsu7TV",
+          "pts": 18
+        },
+        {
+          "pos": 3,
+          "pilote": "Goret_25",
+          "pts": 15
+        },
+        {
+          "pos": 4,
+          "pilote": "upsilon7",
+          "pts": 12
+        }
+      ]
     },
     {
-      "id": "MON_R8",
-      "pays": "Monaco",
-      "flag": "🇲🇨",
+      "date": "06 Sept 2026",
+      "gp": "Imola",
+      "circuit": "Imola Enzo e Dino Ferrari",
+      "heure": "19H00",
+      "distance": "35%",
+      "affiche": "assets/posters/imola-06-sept.png",
+      "vainqueur": "Skyyy",
+      "temps": "-",
+      "meilleur_tour": "1:19.181 Skyyy",
+      "resultats_fwr": [
+        {
+          "pos": 1,
+          "pilote": "Skyyy",
+          "pts": 25
+        },
+        {
+          "pos": 2,
+          "pilote": "Goret_25",
+          "pts": 18
+        },
+        {
+          "pos": 3,
+          "pilote": "Taatsu7TV",
+          "pts": 15
+        },
+        {
+          "pos": 4,
+          "pilote": "cobra_kai_cx",
+          "pts": 12
+        }
+      ]
+    },
+    {
+      "date": "10 Sept 2026",
+      "gp": "Monaco",
       "circuit": "Circuit de Monaco",
-      "date": "R8 - 10 Sept 2026",
+      "heure": "19H00",
+      "distance": "35%",
+      "affiche": "assets/posters/monaco-10-sept.png",
       "vainqueur": "Skyyy",
-      "temps_course": "34:51.962",
+      "temps": "34:51.962",
       "meilleur_tour": "1:12.865 Skyyy RECORD",
-      "podium": [
-        "Skyyy",
-        "Goret_25",
-        "JoKeR-_SkyZo"
-      ],
-      "grille": "P1 Skyyy POLE",
-      "pts": {
-        "Skyyy": 25,
-        "Goret_25": 18,
-        "JoKeR-_SkyZo": 15,
-        "upsilon7": 12
-      }
+      "resultats_fwr": [
+        {
+          "pos": 1,
+          "pilote": "Skyyy",
+          "pts": 25
+        },
+        {
+          "pos": 2,
+          "pilote": "Goret_25",
+          "pts": 18
+        },
+        {
+          "pos": 3,
+          "pilote": "JoKeR-_-SkyZo",
+          "pts": 15
+        },
+        {
+          "pos": 4,
+          "pilote": "upsilon7",
+          "pts": 12
+        }
+      ]
     },
     {
-      "id": "ESP_R9",
-      "pays": "Espagne",
-      "flag": "🇪🇸",
+      "date": "14 Sept 2026",
+      "gp": "Barcelone",
       "circuit": "Barcelona-Catalunya",
-      "date": "R9 Finale - 14 Sept 2026",
+      "heure": "19H00",
+      "distance": "35%",
+      "affiche": "assets/posters/barcelone-14-sept.png",
       "vainqueur": "Skyyy",
-      "temps_course": "30:00.485",
+      "temps": "30:00.485",
       "meilleur_tour": "1:15.304 JotagrosFR",
-      "podium": [
-        "Skyyy",
-        "JotagrosFR",
-        "upsilon7"
-      ],
-      "grille": "P1 Skyyy POLE, P2 Jotagros",
-      "pts": {
-        "Skyyy": 25,
-        "JotagrosFR": 18,
-        "upsilon7": 15,
-        "Goret_25": 12,
-        "JoKeR-_SkyZo": 10,
-        "Taatsu7TV": 8
-      }
+      "resultats_fwr": [
+        {
+          "pos": 1,
+          "pilote": "Skyyy",
+          "pts": 25
+        },
+        {
+          "pos": 2,
+          "pilote": "JotagrosFR",
+          "pts": 18
+        },
+        {
+          "pos": 3,
+          "pilote": "upsilon7",
+          "pts": 15
+        },
+        {
+          "pos": 4,
+          "pilote": "Goret_25",
+          "pts": 12
+        },
+        {
+          "pos": 5,
+          "pilote": "JoKeR-_-SkyZo",
+          "pts": 10
+        },
+        {
+          "pos": 6,
+          "pilote": "Taatsu7TV",
+          "pts": 8
+        }
+      ]
     }
   ],
-  "meilleurs_temps_absolu": [
+  "meilleurs_temps_absolu_100_fwr": [
     {
       "temps": "1:12.865",
       "pilote": "Skyyy",
@@ -205,22 +411,43 @@
     {
       "temps": "1:15.304",
       "pilote": "JotagrosFR",
-      "gp": "Espagne"
+      "gp": "Barcelone",
+      "record_meilleur_tour": true
     },
     {
       "temps": "1:15.991",
       "pilote": "Skyyy",
-      "gp": "Espagne"
+      "gp": "Barcelone"
+    },
+    {
+      "temps": "1:19.181",
+      "pilote": "Skyyy",
+      "gp": "Imola"
     },
     {
       "temps": "1:21.309",
       "pilote": "Jesui_tou",
-      "gp": "Australie"
+      "gp": "Melbourne"
     },
     {
       "temps": "1:30.300",
       "pilote": "Skyyy",
       "gp": "Miami"
+    },
+    {
+      "temps": "1:33.567",
+      "pilote": "Jesui_tou",
+      "gp": "Suzuka"
+    },
+    {
+      "temps": "1:33.902",
+      "pilote": "Taatsu7TV",
+      "gp": "Bahrain"
+    },
+    {
+      "temps": "1:37.682",
+      "pilote": "Skyyy",
+      "gp": "Shanghai"
     }
   ]
 }

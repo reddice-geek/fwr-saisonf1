@@ -1,73 +1,87 @@
-# FWR S1 - Championnat F1 25 Team FWR
+# FWR S1 - Championnat F1 25 Team FWR - V13 100% FWR
 
 ![S1 FWR Logo Transparent](assets/logo/s1-fwr-logo-transparent.png)
 
-Site officiel de classement du tournoi F1 25 Team FWR - Saison 1 2026 - EN COURS
+Site officiel - SAISON 1 FWR 2026 - 100% FWR - 0% IA
+Dernière mise à jour: Barcelone 14 Sept 2026
 
-## 🏁 Classement actuel (après Espagne 14 Sept)
-- **1. Skyyy - Alpine - 143 pts - 6 victoires - RECORD 1:12.865 Monaco**
-- **2. Goret_25 - Red Bull - 130 pts**
-- **3. upsilon7 - Ferrari - 122 pts**
+## 🏁 Classement final 100% FWR (après 9 GP - 8 résultats)
 
-Saison toujours en cours - 5 GP réels disputés.
+1. Skyyy - Alpine - 125 pts - 5 victoires (Shanghai, Miami, Imola, Monaco, Barcelone) - RECORD 1:12.865 Monaco
+2. Goret_25 - Red Bull - 118 pts - 1 victoire Bahrain
+3. upsilon7 - Ferrari - 97 pts
+4. Taatsu7TV - Ferrari - 83 pts
+5. Jesui_tou - Alpine - 68 pts - 2 victoires Melbourne, Suzuka
+6. cobra_kai_cx - 30 pts
+7. JoKeR-_-SkyZo - 25 pts
+8. JotagrosFR - 18 pts - Meilleur tour Barcelone 1:15.304
+9. mobilou69 - 16 pts
+10. sombre7675TTV - 6 pts
 
-## 📂 Contenu du ZIP
+## 📅 Calendrier complet S1
+
+- 21 Août - Melbourne 19H00 50% - Jesui 25 - 28:14.241 1:21.309
+- 22 Août - Shanghai 20H00 50% - Skyyy 25 - 33:58.631 1:37.682
+- 24 Août - Suzuka 19H00 50% - Jesui 25 - 30:36.255 1:33.567
+- 25 Août - Bahrain 19H00 35% - Goret 25 - 32:15.411 1:33.902 Taatsu
+- 01 Sept - Jeddah 19H00 35% - En attente résultats
+- 03 Sept - Miami 21H00 35% - Skyyy 25 - 31:36.318 1:30.300
+- 06 Sept - Imola 19H00 35% - Skyyy 25 - 1:19.181
+- 10 Sept - Monaco 19H00 35% - Skyyy 25 - 34:51.962 1:12.865 RECORD
+- 14 Sept - Barcelone 19H00 35% - Skyyy 25 - 30:00.485 1:15.304 Jotagros
+
+## 📂 Arborescence GitHub
 
 ```
-fwr-s1-github-final/
-├── index.html                 # SITE COMPLET - Mets à la racine pour GitHub Pages (React + Tailwind inline)
+fwr-s1-v13-final/
+├── index.html - SITE V13 COMPLET - 100% FWR - 0% IA - Mettre à la racine pour GitHub Pages
 ├── assets/
 │   ├── logo/
-│   │   ├── s1-fwr-logo-transparent.png  # LOGO PNG TRANSPARENT - S1 FWR + 5 drapeaux (Australie, Japon, USA, Monaco, Espagne)
-│   │   ├── s1-fwr-logo.webp             # Version webp fond noir
-│   │   └── s1-fwr-logo.png              # Version png fond noir
-│   ├── posters/               # Toutes les affiches GP Team FWR + captures résultats réels (Australie, Japon, Miami, Monaco, Espagne)
-│   └── flags/                 # (optionnel)
+│   │   ├── s1-fwr-logo-transparent.png - LOGO PNG TRANSPARENT - S1 + 9 drapeaux
+│   │   ├── s1-fwr-logo.webp
+│   │   └── s1-fwr-logo.png
+│   ├── posters/ - 9 affiches officielles Team FWR
+│   │   ├── melbourne-21-aout.png
+│   │   ├── shanghai-22-aout.png
+│   │   ├── suzuka-24-aout.png
+│   │   ├── bahrain-25-aout.png
+│   │   ├── jeddah-01-sept.png
+│   │   ├── miami-03-sept.png
+│   │   ├── imola-06-sept.png
+│   │   ├── monaco-10-sept.png
+│   │   └── barcelone-14-sept.png
 ├── data/
-│   ├── standings.json         # Classement général + médailles + meilleurs temps réels
-│   └── gps.json               # GP réalisés + à venir avec drapeaux
-├── css/style.css              # Styles additionnels
-├── js/app.js                  # Chargement JSON
+│   ├── standings.json - Classement 100% FWR + meilleurs temps
+│   └── gps.json - Calendrier 9 GP
+├── vercel.json - Config Vercel pour fwr-racing-league
+├── css/style.css
+├── js/app.js
 ├── README.md
 └── .gitignore
 ```
 
-## 🚀 Déployer sur GitHub en 2 min
+## 🚀 Update GitHub
 
-1. Crée un repo vide: `fwr-s1-championnat` sur github.com (ne coche pas README)
-2. Décompresse ce ZIP, ouvre un terminal dans le dossier:
+Dans ton dossier local fwr-s1-v13-final:
+
 ```bash
 git init
 git add .
-git commit -m "S1 FWR - Saison en cours 5 GP + logo transparent"
+git commit -m "V13 S1 Final 100% FWR - 9 GP - Barcelone 14 Sept - Skyyy 125 pts champion"
 git branch -M main
-git remote add origin https://github.com/TON_PSEUDO/fwr-s1-championnat.git
-git push -u origin main
+git remote add origin https://github.com/TON_USER/fwr-racing-league.git
+git push -u origin main --force
 ```
-3. Sur GitHub: Settings > Pages > Source: Deploy from branch > main / root > Save
-4. Site live: https://TON_PSEUDO.github.io/fwr-s1-championnat/
 
-Le fichier `index.html` est déjà tout-en-un, pas besoin de build.
+GitHub Pages: Settings > Pages > Deploy from branch main / root
+Vercel: Project Name = fwr-racing-league (minuscules) - Import depuis GitHub - Framework Other - Output ./
 
-## 🎨 Logo
+## ✅ Changements V13
 
-`assets/logo/s1-fwr-logo-transparent.png` est en PNG transparent 1024x1024:
-- S1 blanc bold + FWR rouge #E10600
-- 5 drapeaux ronds en bas: Australie 🇦🇺, Japon 🇯🇵, USA 🇺🇸, Monaco 🇲🇨, Espagne 🇪🇸
-- Utilise-le en header, favicon, bannière Discord, overlay vidéo
+- 100% FWR - 0% IA: Suppression de tous les pilotes IA (Norris, Russell, Alonso, Tsunoda, Albon, etc.)
+- Plus de zone capture d'écran drag & drop
+- Affiches GP officielles uniquement
+- Meilleurs temps 100% FWR: 1:12.865 Skyyy Monaco RECORD
+- Logo transparent avec 9 drapeaux
 
-## ✏️ Modifier les prochains GP
-
-Ouvre `index.html` sur ton site live, active "Mode Édition ON" (en haut à droite):
-- + Nouveau GP pour ajouter Canada, Imola, Bahreïn...
-- Modifier pour changer points, temps (ex: 1:21.309 Australie)
-- Tout est sauvé en localStorage + bouton Exporter JSON
-
-Les temps réels intégrés:
-- Australie: 28:14.241 / 1:21.309 Jesui_tou
-- Japon: 30:36.255 / 1:33.067 Jesui_tou
-- Miami: 31:36.318 / 1:30.300 Skyyy
-- Monaco: 34:51.962 / 1:12.865 Skyyy RECORD
-- Espagne: 30:00.485 / 1:15.304 JotagrosFR (meilleur tour) - Vainqueur Skyyy
-
-Team FWR - Feel the Rush. Win Together. #FWR #S1
+Team FWR - Feel the Rush. Win Together. #FWR
