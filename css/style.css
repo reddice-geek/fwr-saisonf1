@@ -1,3 +1,50 @@
-/* FWR V13 100% FWR */
-.logo-s1{filter:drop-shadow(0 0 20px rgba(225,6,0,0.5));}
-.badge-fwr{background:#10B981; color:white;}
+/* FWR V20.1 FINAL - V8 ADN - Clean F1 */
+:root{
+  --bg:#050507;
+  --bg2:#0F0F14;
+  --bg3:#111117;
+  --border:#1F1F2A;
+  --red:#E10600;
+  --text:#FFFFFF;
+  --muted:#8B8B8B;
+  --gold:#FFD700;
+  --gold2:#FFA500;
+}
+*{box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);margin:0}
+.titillium{font-family:'Titillium Web',sans-serif}
+.nav-top{position:sticky;top:0;z-index:70;height:40px;background:#0F0F14;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:center;gap:24px;padding:0 16px}
+.nav-top button{background:none;border:none;color:var(--muted);font-size:13px;letter-spacing:0.05em;cursor:pointer;padding:0 0 8px 0;border-bottom:2px solid transparent;transition:all .2s}
+.nav-top button:hover{color:var(--text)}
+.nav-top button.active{color:var(--text);border-bottom-color:var(--red);font-weight:600}
+.bandeau-rouge{position:sticky;top:40px;z-index:60;height:56px;background:var(--red);display:flex;align-items:center;justify-content:center;gap:16px;padding:0 16px;font-weight:600;font-size:15px}
+.bandeau-rouge a{color:white;text-decoration:underline}
+.bandeau-rouge a:hover{background:white;color:var(--red);padding:2px 8px;border-radius:4px;text-decoration:none}
+.bandeau-rouge .btn-live{background:white;color:var(--red);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:700;text-decoration:none}
+.bandeau-rouge .btn-live:hover{transform:scale(1.05)}
+.dot-pulse{width:8px;height:8px;background:white;border-radius:50%;animation:pulse 1.5s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.7)}70%{box-shadow:0 0 0 10px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+.header-logo{position:sticky;top:96px;z-index:50;height:130px;background:rgba(5,5,7,.8);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:transform .2s}
+.header-logo:hover{transform:scale(1.02)}
+.logo-s1{filter:drop-shadow(0 0 24px rgba(225,6,0,.6));font-family:'Titillium Web',sans-serif;font-weight:700;font-size:48px;letter-spacing:-0.02em}
+.logo-s1 span.fwr{color:var(--red)}
+.logo-sub{color:var(--muted);font-size:13px;letter-spacing:0.2em;margin-top:4px}
+.badge-leader{background:linear-gradient(90deg,var(--gold),var(--gold2));color:black;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:800;letter-spacing:0.05em;display:inline-flex;align-items:center;gap:4px;animation:leaderPulse 2s infinite;box-shadow:0 0 12px rgba(255,215,0,.6);position:relative}
+@keyframes leaderPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.table-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead{background:var(--bg3);color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:0.08em}
+th{padding:12px 16px;text-align:left}
+td{padding:12px 16px;border-top:1px solid var(--border)}
+tbody tr:hover{background:#1A1A24}
+tr.border-accent{border-left:4px solid}
+.pill{padding:4px 12px;border-radius:999px;font-size:12px;border:1px solid #2A2A35;background:transparent;color:var(--muted);cursor:pointer;transition:all .2s}
+.pill.active{background:white;color:black;border-color:white;font-weight:600}
+.pill:hover{border-color:white;color:white}
+.chart-box{background:#0A0A0F;border:1px solid var(--border);border-radius:12px;padding:16px}
+.poster-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px;transition:border-color .2s,transform .2s;cursor:pointer}
+.poster-card:hover{border-color:rgba(225,6,0,.5);transform:translateY(-2px)}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(8px);z-index:80;display:flex;align-items:center;justify-content:center;padding:24px}
+.modal-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;max-width:900px;width:100%;max-height:90vh;overflow:auto;padding:24px}
+.hidden{display:none}
+.badge-fwr{display:none !important}
