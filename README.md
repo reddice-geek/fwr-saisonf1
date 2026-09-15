@@ -1,11 +1,11 @@
-# FWR S1 - Championnat F1 25 Team FWR - V13 100% FWR
+# FWR S1 - Championnat F1 25 Team FWR - V14 - SANS CAPTURES 100% FWR - 0 CAPTURES - 0% IA
 
 ![S1 FWR Logo Transparent](assets/logo/s1-fwr-logo-transparent.png)
 
-Site officiel - SAISON 1 FWR 2026 - 100% FWR - 0% IA
+Site officiel - SAISON 1 FWR 2026 - 100% FWR - 0 CAPTURES - 0% IA - 0% IA
 Dernière mise à jour: Barcelone 14 Sept 2026
 
-## 🏁 Classement final 100% FWR (après 9 GP - 8 résultats)
+## 🏁 Classement final 100% FWR - 0 CAPTURES - 0% IA (après 9 GP - 8 résultats)
 
 1. Skyyy - Alpine - 125 pts - 5 victoires (Shanghai, Miami, Imola, Monaco, Barcelone) - RECORD 1:12.865 Monaco
 2. Goret_25 - Red Bull - 118 pts - 1 victoire Bahrain
@@ -34,7 +34,7 @@ Dernière mise à jour: Barcelone 14 Sept 2026
 
 ```
 fwr-s1-v13-final/
-├── index.html - SITE V13 COMPLET - 100% FWR - 0% IA - Mettre à la racine pour GitHub Pages
+├── index.html - SITE V14 - SANS CAPTURES COMPLET - 100% FWR - 0 CAPTURES - 0% IA - 0% IA - Mettre à la racine pour GitHub Pages
 ├── assets/
 │   ├── logo/
 │   │   ├── s1-fwr-logo-transparent.png - LOGO PNG TRANSPARENT - S1 + 9 drapeaux
@@ -51,7 +51,7 @@ fwr-s1-v13-final/
 │   │   ├── monaco-10-sept.png
 │   │   └── barcelone-14-sept.png
 ├── data/
-│   ├── standings.json - Classement 100% FWR + meilleurs temps
+│   ├── standings.json - Classement 100% FWR - 0 CAPTURES - 0% IA + meilleurs temps
 │   └── gps.json - Calendrier 9 GP
 ├── vercel.json - Config Vercel pour fwr-racing-league
 ├── css/style.css
@@ -67,7 +67,7 @@ Dans ton dossier local fwr-s1-v13-final:
 ```bash
 git init
 git add .
-git commit -m "V13 S1 Final 100% FWR - 9 GP - Barcelone 14 Sept - Skyyy 125 pts champion"
+git commit -m "V14 - SANS CAPTURES S1 Final 100% FWR - 0 CAPTURES - 0% IA - 9 GP - Barcelone 14 Sept - Skyyy 125 pts champion"
 git branch -M main
 git remote add origin https://github.com/TON_USER/fwr-racing-league.git
 git push -u origin main --force
@@ -76,12 +76,18 @@ git push -u origin main --force
 GitHub Pages: Settings > Pages > Deploy from branch main / root
 Vercel: Project Name = fwr-racing-league (minuscules) - Import depuis GitHub - Framework Other - Output ./
 
-## ✅ Changements V13
+## ✅ Changements V14 - SANS CAPTURES
 
-- 100% FWR - 0% IA: Suppression de tous les pilotes IA (Norris, Russell, Alonso, Tsunoda, Albon, etc.)
+- 100% FWR - 0 CAPTURES - 0% IA - 0% IA: Suppression de tous les pilotes IA (Norris, Russell, Alonso, Tsunoda, Albon, etc.)
 - Plus de zone capture d'écran drag & drop
 - Affiches GP officielles uniquement
-- Meilleurs temps 100% FWR: 1:12.865 Skyyy Monaco RECORD
+- Meilleurs temps 100% FWR - 0 CAPTURES - 0% IA: 1:12.865 Skyyy Monaco RECORD
 - Logo transparent avec 9 drapeaux
 
 Team FWR - Feel the Rush. Win Together. #FWR
+
+
+## V14 - Sans captures
+- Suppression de toutes les captures d'écran résultats (elles ont servi à extraire les données mais ne sont pas utiles sur le site)
+- Gardé uniquement: 9 affiches officielles Team FWR + logo transparent + données JSON 100% FWR
+- Site 100% FWR - 0% IA - 0 capture
