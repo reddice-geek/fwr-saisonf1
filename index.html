@@ -223,7 +223,7 @@ function loadAdminData(){
     if(ls){
       adminData = JSON.parse(ls);
     } else {
-      adminData = EMBEDDED_STANDINGS;
+      adminData = structuredClone(EMBEDDED_STANDINGS);
     }
     renderAdminGPList();
     renderAdminPilotes();
@@ -343,6 +343,54 @@ function addResultToGP(){
   renderAll();
 }
 
+function persistAdmin(){
+  localStorage.setItem('fwr_admin_standings', JSON.stringify(adminData));
+  standings = adminData.classement_general;
+  selectedDrivers = standings.map(p=>p.pilote);
+  i18n = adminData.i18n || i18n;
+  renderAll(); loadAdminData();
+}
+function editGP(name){
+  const gp = adminData.gp_disputes.find(g=>g.gp===name);
+  if(!gp) return;
+  const circuit=prompt('Circuit de '+name, gp.circuit);
+  if(circuit===null) return;
+  const date=prompt('Date du GP', gp.date);
+  if(date===null) return;
+  const heure=prompt('Heure du GP', gp.heure);
+  if(heure===null) return;
+  const vainqueur=prompt('Vainqueur', gp.vainqueur || '-');
+  if(vainqueur===null) return;
+  gp.circuit=circuit.trim(); gp.date=date.trim(); gp.heure=heure.trim(); gp.vainqueur=vainqueur.trim();
+  const calendar=EMBEDDED_GPS.calendrier.find(g=>g.gp===name);
+  if(calendar) Object.assign(calendar,{circuit:gp.circuit,date:gp.date,heure:gp.heure,vainqueur:gp.vainqueur});
+  persistAdmin();
+  alert('GP modifié. Télécharge les JSON dans Export pour publier les modifications sur GitHub.');
+}
+function editPilote(name){
+  const p=adminData.classement_general.find(x=>x.pilote===name);
+  if(!p) return;
+  const pts=prompt('Points de '+name, p.pts);
+  if(pts===null) return;
+  if(!/^\d+$/.test(pts.trim())) return alert('Saisis un nombre de points valide.');
+  const ecurie=prompt('Écurie',p.ecurie);
+  if(ecurie===null) return;
+  p.pts=Number(pts); p.ecurie=ecurie.trim();
+  adminData.classement_general.sort((a,b)=>b.pts-a.pts).forEach((x,i)=>x.pos=i+1);
+  persistAdmin();
+}
+function deleteGP(name){
+  if(!confirm('Supprimer le GP '+name+' ?')) return;
+  adminData.gp_disputes=adminData.gp_disputes.filter(g=>g.gp!==name);
+  EMBEDDED_GPS.calendrier=EMBEDDED_GPS.calendrier.filter(g=>g.gp!==name);
+  gps=EMBEDDED_GPS.calendrier; persistAdmin();
+}
+function deletePilote(name){
+  if(!confirm('Supprimer le pilote '+name+' ?')) return;
+  adminData.classement_general=adminData.classement_general.filter(p=>p.pilote!==name);
+  adminData.classement_general.forEach((p,i)=>p.pos=i+1);
+  persistAdmin();
+}
 function editJeddahR5(){
   const gp = adminData.gp_disputes.find(g=>g.gp==='Jeddah');
   if(gp){
@@ -404,8 +452,22 @@ function saveAffiche(){
     alert('Sélectionne GP et image');
     return;
   }
-  localStorage.setItem('fwr_poster_'+gpName, base64);
-  alert(`Affiche ${gpName} sauvegardée`);
+  const file=document.getElementById('admin-affiche-file').files[0];
+  if(!file || !file.type.startsWith('image/')) return alert('Choisis une image PNG ou JPG.');
+  const extension=file.type==='image/png'?'png':file.type==='image/jpeg'?'jpg':null;
+  if(!extension) return alert('Utilise une image PNG ou JPG.');
+  const filename=gpName.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-')+'-affiche.'+extension;
+  const path='assets/posters/'+filename;
+  const gp=adminData.gp_disputes.find(g=>g.gp===gpName);
+  const calendar=EMBEDDED_GPS.calendrier.find(g=>g.gp===gpName);
+  if(gp) gp.affiche=path;
+  if(calendar) calendar.affiche=path;
+  const existing=gps.find(g=>g.gp===gpName);
+  if(existing) existing.affiche=base64;
+  try { localStorage.setItem('fwr_poster_'+gpName, base64); } catch(e) { console.warn('Stockage local plein : utiliser les fichiers exportés',e); }
+  persistAdmin();
+  const link=document.createElement('a'); link.href=base64; link.download=filename; link.click();
+  alert('Affiche prête : le fichier image est téléchargé. Ajoute-le dans assets/posters/ sur GitHub, puis remplace data/gps.json et data/standings.json par les fichiers de l’onglet Export.');
   renderAdminAffiches();
   renderGPs();
 }
