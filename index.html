@@ -86,5 +86,435 @@
 </footer>
 
 <script src="js/app.js"></script>
+
+<!-- Admin Panel Discret -->
+<button id="admin-toggle" style="position:fixed;bottom:16px;left:16px;z-index:99;background:#0F0F14;border:1px solid #1F1F2A;color:#8B8B8B;padding:8px 12px;border-radius:8px;font-size:12px;cursor:pointer;opacity:0.3;transition:all 0.2s" onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity='0.3'" onclick="openAdmin()">⚙️ Admin</button>
+
+<div id="admin-panel" style="display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,0.9);backdrop-filter:blur(12px);padding:20px;overflow:auto">
+  <div style="max-width:1000px;margin:0 auto;background:#0F0F14;border:1px solid #1F1F2A;border-radius:20px;padding:24px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+      <h2 style="font-family:'Titillium Web';font-weight:700;font-size:24px;color:white">Panel Admin - FWR S1</h2>
+      <button onclick="closeAdmin()" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:6px 14px;border-radius:8px;cursor:pointer">Fermer ✕</button>
+    </div>
+    
+    <div style="display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap">
+      <button id="admin-tab-courses" class="admin-tab active" onclick="showAdminTab('courses')" style="background:#E10600;color:white;padding:8px 16px;border-radius:8px;border:none;cursor:pointer;font-weight:600">Courses</button>
+      <button id="admin-tab-pilotes" class="admin-tab" onclick="showAdminTab('pilotes')" style="background:#1F1F2A;color:#8B8B8B;padding:8px 16px;border-radius:8px;border:1px solid #2A2A35;cursor:pointer">Pilotes</button>
+      <button id="admin-tab-affiches" class="admin-tab" onclick="showAdminTab('affiches')" style="background:#1F1F2A;color:#8B8B8B;padding:8px 16px;border-radius:8px;border:1px solid #2A2A35;cursor:pointer">Affiches</button>
+      <button id="admin-tab-export" class="admin-tab" onclick="showAdminTab('export')" style="background:#1F1F2A;color:#8B8B8B;padding:8px 16px;border-radius:8px;border:1px solid #2A2A35;cursor:pointer">Export</button>
+    </div>
+
+    <div id="admin-view-courses">
+      <h3 style="color:white;font-weight:700;margin-bottom:12px">Gérer les courses - Ajouter/Modifier</h3>
+      <div style="margin-bottom:16px;display:flex;gap:8px;flex-wrap:wrap">
+        <button onclick="addNewGP()" style="background:#10B981;color:white;padding:8px 16px;border-radius:8px;border:none;cursor:pointer">+ Nouvelle Course</button>
+        <button onclick="editJeddahR5()" style="background:#00D2BE;color:black;padding:8px 16px;border-radius:8px;border:none;cursor:pointer">Editer Jeddah R5 (points seulement)</button>
+      </div>
+      <div id="admin-gp-list" style="display:flex;flex-direction:column;gap:12px"></div>
+      
+      <div style="margin-top:24px;background:#0A0A0F;border:1px solid #1F1F2A;border-radius:12px;padding:16px">
+        <h4 style="color:white;font-weight:600;margin-bottom:8px">Ajouter résultat pilote à une course</h4>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px">
+          <select id="admin-gp-select" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px"></select>
+          <input id="admin-pilote" placeholder="Pilote (ex: Crimson_Death)" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
+          <input id="admin-ecurie" placeholder="Ecurie (ex: Mercedes)" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
+          <input id="admin-grille" placeholder="Grille (ex: 19 ou -)" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
+          <input id="admin-arrets" placeholder="Arrêts (ex: 1)" type="number" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
+          <input id="admin-mt" placeholder="Meilleur tour (ex: 1:38:090 ou -)" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
+          <input id="admin-temps" placeholder="Temps/Ecart (ex: +1 tour ou -)" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
+          <input id="admin-pts" placeholder="Points (ex: 0)" type="number" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
+        </div>
+        <button onclick="addResultToGP()" style="margin-top:12px;background:#E10600;color:white;padding:8px 16px;border-radius:8px;border:none;cursor:pointer">+ Ajouter résultat à la course</button>
+        <div style="margin-top:8px;font-size:11px;color:#8B8B8B">Pour R5 Jeddah: laisse grille/mt/temps à "-" si tu as que les points</div>
+      </div>
+    </div>
+
+    <div id="admin-view-pilotes" style="display:none">
+      <h3 style="color:white;font-weight:700;margin-bottom:12px">Classement Général - Couleurs écuries</h3>
+      <div style="font-size:11px;color:#8B8B8B;margin-bottom:12px">Alpine #0090FF • Red Bull #0600EF • Ferrari HP #DC0000 • Aston Martin #006F62 • Mercedes #00D2BE • Haas #FFFFFF • mercedes-AMG Petronas #00D2BE</div>
+      <div id="admin-pilotes-list" style="display:flex;flex-direction:column;gap:8px"></div>
+      <div style="margin-top:16px;display:flex;gap:8px">
+        <input id="admin-new-pilote-name" placeholder="Nouveau pilote" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
+        <select id="admin-new-pilote-ecurie" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
+          <option value="Alpine">Alpine #0090FF</option>
+          <option value="Red Bull">Red Bull #0600EF</option>
+          <option value="Ferrari HP">Ferrari HP #DC0000</option>
+          <option value="Aston Martin">Aston Martin #006F62</option>
+          <option value="Mercedes">Mercedes #00D2BE</option>
+          <option value="mercedes-AMG Petronas">mercedes-AMG Petronas #00D2BE</option>
+          <option value="Haas">Haas #FFFFFF</option>
+        </select>
+        <button onclick="addNewPilote()" style="background:#10B981;color:white;padding:8px 16px;border-radius:8px;border:none;cursor:pointer">+ Ajouter pilote</button>
+      </div>
+    </div>
+
+    <div id="admin-view-affiches" style="display:none">
+      <h3 style="color:white;font-weight:700;margin-bottom:12px">Affiches GP - Ajouter image poster</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div>
+          <div style="margin-bottom:12px">
+            <label style="color:#8B8B8B;font-size:12px">Sélectionner GP:</label>
+            <select id="admin-affiche-gp" style="width:100%;background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px;margin-top:4px"></select>
+          </div>
+          <div style="margin-bottom:12px">
+            <label style="color:#8B8B8B;font-size:12px">Uploader image poster (PNG/JPG):</label>
+            <input type="file" id="admin-affiche-file" accept="image/*" style="width:100%;background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px;margin-top:4px" onchange="previewAffiche(event)">
+          </div>
+          <div id="admin-affiche-preview" style="margin-top:12px;min-height:100px;background:#0A0A0F;border:1px dashed #2A2A35;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#8B8B8B">Preview image ici</div>
+          <button onclick="saveAffiche()" style="margin-top:12px;width:100%;background:#E10600;color:white;padding:10px;border-radius:8px;border:none;cursor:pointer;font-weight:600">Sauvegarder affiche</button>
+        </div>
+        <div>
+          <div style="color:#8B8B8B;font-size:12px;margin-bottom:8px">Affiches actuelles:</div>
+          <div id="admin-affiches-list" style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;max-height:400px;overflow:auto"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="admin-view-export" style="display:none">
+      <h3 style="color:white;font-weight:700;margin-bottom:12px">Export - Sauvegarder données</h3>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <button onclick="downloadStandings()" style="background:#E10600;color:white;padding:12px;border-radius:8px;border:none;cursor:pointer;font-weight:600">⬇️ Télécharger standings.json (avec Crimson_Death + Jeddah R5)</button>
+        <button onclick="downloadGPS()" style="background:#0090FF;color:white;padding:12px;border-radius:8px;border:none;cursor:pointer;font-weight:600">⬇️ Télécharger gps.json</button>
+        <button onclick="saveToLocalStorage()" style="background:#10B981;color:white;padding:12px;border-radius:8px;border:none;cursor:pointer;font-weight:600">💾 Sauvegarder dans navigateur (localStorage)</button>
+        <button onclick="loadFromLocalStorage()" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:12px;border-radius:8px;cursor:pointer">📂 Charger depuis navigateur</button>
+        <button onclick="resetData()" style="background:#EF4444;color:white;padding:12px;border-radius:8px;border:none;cursor:pointer">🔄 Réinitialiser données officielles</button>
+        <div style="margin-top:16px">
+          <label style="color:#8B8B8B;font-size:12px">JSON brut standings.json (copier-coller):</label>
+          <textarea id="admin-json-raw" style="width:100%;height:200px;background:#0A0A0F;border:1px solid #1F1F2A;color:#CCCCCC;padding:12px;border-radius:8px;margin-top:4px;font-family:monospace;font-size:10px"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:24px;padding:12px;background:#0A0A0F;border:1px solid #1F1F2A;border-radius:8px;font-size:11px;color:#8B8B8B">
+      <b style="color:white">R5 Jeddah - Points seulement:</b> Pour ajouter une course avec seulement les points (pas de temps), laisse grille/mt/temps à "-". Ex: Taatsu7TV 25pts, Skyyy 18pts, upsilon7 15pts, Gosset_25 12pts<br>
+      <b style="color:white">Crimson_Death Suzuka:</b> Déjà ajouté - mercedes-AMG Petronas Grille 19 Arrêt 1 MT 1:38:090 Temps +1 tour 0pts<br>
+      <b style="color:white">Couleurs écuries:</b> Alpine #0090FF, Red Bull #0600EF, Ferrari HP #DC0000, Aston Martin #006F62, Mercedes #00D2BE, Haas #FFFFFF
+    </div>
+  </div>
+</div>
+
+<script>
+// Admin Panel JS
+let adminData = null;
+function openAdmin(){
+  document.getElementById('admin-panel').style.display='block';
+  loadAdminData();
+}
+function closeAdmin(){
+  document.getElementById('admin-panel').style.display='none';
+}
+function showAdminTab(tab){
+  document.querySelectorAll('[id^="admin-view-"]').forEach(el=>el.style.display='none');
+  document.getElementById('admin-view-'+tab).style.display='block';
+  document.querySelectorAll('.admin-tab').forEach(btn=>{
+    btn.style.background='#1F1F2A';
+    btn.style.color='#8B8B8B';
+    btn.style.border='1px solid #2A2A35';
+  });
+  const activeBtn = document.getElementById('admin-tab-'+tab);
+  activeBtn.style.background='#E10600';
+  activeBtn.style.color='white';
+  activeBtn.style.border='none';
+}
+
+function loadAdminData(){
+  try{
+    const ls = localStorage.getItem('fwr_admin_standings');
+    if(ls){
+      adminData = JSON.parse(ls);
+    } else {
+      adminData = EMBEDDED_STANDINGS;
+    }
+    renderAdminGPList();
+    renderAdminPilotes();
+    renderAdminAffiches();
+    document.getElementById('admin-json-raw').value = JSON.stringify(adminData, null, 2);
+    
+    // Populate GP selects
+    const gpSelect = document.getElementById('admin-gp-select');
+    const afficheGpSelect = document.getElementById('admin-affiche-gp');
+    gpSelect.innerHTML = '';
+    afficheGpSelect.innerHTML = '';
+    adminData.gp_disputes.forEach(gp=>{
+      const opt1 = document.createElement('option');
+      opt1.value = gp.gp;
+      opt1.textContent = gp.gp + ' - ' + gp.circuit;
+      gpSelect.appendChild(opt1);
+      const opt2 = document.createElement('option');
+      opt2.value = gp.gp;
+      opt2.textContent = gp.gp + ' - ' + gp.circuit;
+      afficheGpSelect.appendChild(opt2);
+    });
+  }catch(e){
+    console.error(e);
+    adminData = EMBEDDED_STANDINGS;
+  }
+}
+
+function renderAdminGPList(){
+  const list = document.getElementById('admin-gp-list');
+  if(!list || !adminData) return;
+  list.innerHTML = adminData.gp_disputes.map(gp=>{
+    const results = gp.resultats_fwr.map(r=>`${r.pos}. ${r.pilote} (${r.ecurie}) ${r.pts}pts`).join('<br>');
+    return `<div style="background:#0A0A0F;border:1px solid #1F1F2A;border-radius:8px;padding:12px">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <b style="color:white">${gp.gp} - ${gp.circuit}</b> <span style="color:#8B8B8B;font-size:11px">${gp.date} ${gp.heure}</span><br>
+          <span style="font-size:11px;color:#CCCCCC">Vainqueur: ${gp.vainqueur} ${gp.temps} - ${gp.meilleur_tour}</span><br>
+          <div style="font-size:10px;color:#8B8B8B;margin-top:4px">${results}</div>
+        </div>
+        <div style="display:flex;gap:4px">
+          <button onclick="editGP('${gp.gp}')" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:4px 8px;border-radius:4px;cursor:pointer;font-size:11px">Editer</button>
+          <button onclick="deleteGP('${gp.gp}')" style="background:#EF4444;color:white;padding:4px 8px;border-radius:4px;border:none;cursor:pointer;font-size:11px">Suppr</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderAdminPilotes(){
+  const list = document.getElementById('admin-pilotes-list');
+  if(!list || !adminData) return;
+  list.innerHTML = adminData.classement_general.map(p=>{
+    return `<div style="display:flex;justify-content:space-between;align-items:center;background:#0A0A0F;border:1px solid #1F1F2A;border-radius:6px;padding:8px">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="color:white;font-weight:600">${p.pos}. ${p.pilote}</span>
+        <span style="background:${p.color}20;color:${p.color};border:1px solid ${p.color}40;padding:2px 6px;border-radius:999px;font-size:9px">${p.ecurie}</span>
+        <span style="color:#8B8B8B;font-size:11px">${p.pts}pts</span>
+      </div>
+      <div style="display:flex;gap:4px">
+        <button onclick="editPilote('${p.pilote}')" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:4px 8px;border-radius:4px;cursor:pointer;font-size:11px">Editer</button>
+        <button onclick="deletePilote('${p.pilote}')" style="background:#EF4444;color:white;padding:4px 8px;border-radius:4px;border:none;cursor:pointer;font-size:11px">Suppr</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderAdminAffiches(){
+  const list = document.getElementById('admin-affiches-list');
+  if(!list) return;
+  const gps = EMBEDDED_GPS.calendrier || [];
+  list.innerHTML = gps.map(gp=>{
+    const lsKey = 'fwr_poster_'+gp.gp;
+    const customPoster = localStorage.getItem(lsKey);
+    const imgSrc = customPoster || gp.affiche;
+    return `<div style="background:#0A0A0F;border:1px solid #1F1F2A;border-radius:8px;padding:8px;text-align:center">
+      <div style="font-size:10px;color:white;margin-bottom:4px">${gp.gp}</div>
+      ${imgSrc?`<img src="${imgSrc}" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px" onerror="this.style.display='none'">`:'<div style="height:80px;background:#1F1F2A;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#8B8B8B;font-size:10px">Pas d\'affiche</div>'}
+      <div style="font-size:8px;color:#8B8B8B;margin-top:4px">${customPoster?'Custom':'Officiel'}</div>
+    </div>`;
+  }).join('');
+}
+
+function addResultToGP(){
+  const gpName = document.getElementById('admin-gp-select').value;
+  const pilote = document.getElementById('admin-pilote').value;
+  const ecurie = document.getElementById('admin-ecurie').value;
+  const grille = document.getElementById('admin-grille').value || '-';
+  const arrets = parseInt(document.getElementById('admin-arrets').value) || 1;
+  const mt = document.getElementById('admin-mt').value || '-';
+  const temps = document.getElementById('admin-temps').value || '-';
+  const pts = parseInt(document.getElementById('admin-pts').value) || 0;
+  
+  if(!gpName || !pilote){
+    alert('Remplis au moins GP et pilote');
+    return;
+  }
+  
+  const gp = adminData.gp_disputes.find(g=>g.gp===gpName);
+  if(!gp) return;
+  
+  const newPos = gp.resultats_fwr.length + 1;
+  gp.resultats_fwr.push({
+    pos: newPos,
+    pilote: pilote,
+    ecurie: ecurie,
+    grille: grille,
+    arrets: arrets,
+    mt: mt,
+    temps: temps,
+    pts: pts
+  });
+  
+  // Save
+  localStorage.setItem('fwr_admin_standings', JSON.stringify(adminData));
+  alert(`Ajouté ${pilote} à ${gpName} - ${pts}pts`);
+  loadAdminData();
+  renderAll();
+}
+
+function editJeddahR5(){
+  const gp = adminData.gp_disputes.find(g=>g.gp==='Jeddah');
+  if(gp){
+    gp.vainqueur = 'Taatsu7TV';
+    gp.temps = 'En attente';
+    gp.meilleur_tour = 'En attente';
+    gp.resultats_fwr = [
+      {pos:1,pilote:'Taatsu7TV',ecurie:'Ferrari HP',grille:'-',arrets:1,mt:'-',temps:'-',pts:25},
+      {pos:2,pilote:'Skyyy',ecurie:'Alpine',grille:'-',arrets:1,mt:'-',temps:'-',pts:18},
+      {pos:3,pilote:'upsilon7',ecurie:'Ferrari HP',grille:'-',arrets:1,mt:'-',temps:'-',pts:15},
+      {pos:4,pilote:'Gosset_25',ecurie:'Red Bull',grille:'-',arrets:1,mt:'-',temps:'-',pts:12}
+    ];
+    localStorage.setItem('fwr_admin_standings', JSON.stringify(adminData));
+    alert('Jeddah R5 mis à jour avec points seulement: Taatsu 25, Skyyy 18, upsilon7 15, Gosset 12');
+    loadAdminData();
+    renderAll();
+  }
+}
+
+function addNewGP(){
+  const name = prompt('Nom du GP (ex: Jeddah):');
+  if(!name) return;
+  const circuit = prompt('Circuit (ex: Jeddah Corniche):') || name;
+  const date = prompt('Date (ex: 01 Sept 2026):') || new Date().toLocaleDateString();
+  
+  adminData.gp_disputes.push({
+    date: date,
+    gp: name,
+    circuit: circuit,
+    heure: '19H00',
+    distance: '35%',
+    affiche: 'assets/posters/'+name.toLowerCase()+'-01-sept.png',
+    vainqueur: 'À venir',
+    temps: 'En attente',
+    meilleur_tour: 'En attente',
+    resultats_fwr: []
+  });
+  
+  localStorage.setItem('fwr_admin_standings', JSON.stringify(adminData));
+  loadAdminData();
+  renderAll();
+}
+
+function previewAffiche(event){
+  const file = event.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e){
+    document.getElementById('admin-affiche-preview').innerHTML = `<img src="${e.target.result}" style="max-width:100%;max-height:200px;border-radius:8px">`;
+    document.getElementById('admin-affiche-preview').dataset.base64 = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+function saveAffiche(){
+  const gpName = document.getElementById('admin-affiche-gp').value;
+  const base64 = document.getElementById('admin-affiche-preview').dataset.base64;
+  if(!gpName || !base64){
+    alert('Sélectionne GP et image');
+    return;
+  }
+  localStorage.setItem('fwr_poster_'+gpName, base64);
+  alert(`Affiche ${gpName} sauvegardée`);
+  renderAdminAffiches();
+  renderGPs();
+}
+
+function downloadStandings(){
+  const dataStr = JSON.stringify(adminData, null, 2);
+  const blob = new Blob([dataStr], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'standings.json';
+  a.click();
+}
+
+function downloadGPS(){
+  const gpsData = EMBEDDED_GPS;
+  const dataStr = JSON.stringify(gpsData, null, 2);
+  const blob = new Blob([dataStr], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'gps.json';
+  a.click();
+}
+
+function saveToLocalStorage(){
+  localStorage.setItem('fwr_admin_standings', JSON.stringify(adminData));
+  alert('Sauvegardé dans navigateur');
+}
+
+function loadFromLocalStorage(){
+  const ls = localStorage.getItem('fwr_admin_standings');
+  if(ls){
+    adminData = JSON.parse(ls);
+    alert('Chargé depuis navigateur');
+    loadAdminData();
+    renderAll();
+  } else {
+    alert('Pas de données dans navigateur');
+  }
+}
+
+function resetData(){
+  if(confirm('Réinitialiser données officielles? Supprime les modifs admin.')){
+    localStorage.removeItem('fwr_admin_standings');
+    // Remove posters
+    Object.keys(localStorage).forEach(key=>{
+      if(key.startsWith('fwr_poster_')){
+        localStorage.removeItem(key);
+      }
+    });
+    location.reload();
+  }
+}
+
+function addNewPilote(){
+  const name = document.getElementById('admin-new-pilote-name').value;
+  const ecurie = document.getElementById('admin-new-pilote-ecurie').value;
+  if(!name) return;
+  
+  const colorMap = {
+    'Alpine': '#0090FF',
+    'Red Bull': '#0600EF',
+    'Ferrari HP': '#DC0000',
+    'Aston Martin': '#006F62',
+    'Mercedes': '#00D2BE',
+    'mercedes-AMG Petronas': '#00D2BE',
+    'Haas': '#FFFFFF'
+  };
+  
+  adminData.classement_general.push({
+    pos: adminData.classement_general.length + 1,
+    pilote: name,
+    ecurie: ecurie,
+    color: colorMap[ecurie] || '#E10600',
+    pts: 0,
+    victoires: 0,
+    podiums: 0,
+    meilleur_tour: '-',
+    forme: '→',
+    label: {fr:'',en:'',be:''},
+    formeColor: '#8B8B8B',
+    trend: [0,0,0,0,0,0,0,0,0]
+  });
+  
+  localStorage.setItem('fwr_admin_standings', JSON.stringify(adminData));
+  loadAdminData();
+  renderAll();
+}
+
+// Init admin - check ?admin=1 or 5 clicks on logo
+let logoClicks = 0;
+document.addEventListener('DOMContentLoaded', ()=>{
+  const logoRow = document.querySelector('.logo-row');
+  if(logoRow){
+    logoRow.addEventListener('click', ()=>{
+      logoClicks++;
+      if(logoClicks>=5){
+        openAdmin();
+        logoClicks=0;
+      }
+    });
+  }
+  // Check URL param
+  if(new URLSearchParams(window.location.search).get('admin')==='1'){
+    setTimeout(openAdmin, 500);
+  }
+});
+</script>
+
 </body>
 </html>
