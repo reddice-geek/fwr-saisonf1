@@ -1,14 +1,4 @@
 {
-  "saison": "S1 FWR 2026",
-  "saison_label": {
-    "fr": "Saison S1 2026",
-    "en": "Season S1 2026",
-    "be": "Saison S1 2026 une fois"
-  },
-  "derniere_maj": "14 Sept 2026 - Barcelone - Scores corrigés image GP1-GP9",
-  "logo": "assets/logo/s1-fwr-logo-transparent.png",
-  "twitch": "https://twitch.tv/upsilon7",
-  "champion": "Skyyy - 143 pts - 5 victoires - Scores corrigés GP1-GP9",
   "classement_general": [
     {
       "pos": 1,
@@ -323,7 +313,7 @@
     {
       "date": "21 Août 2026",
       "gp": "Melbourne",
-      "circuit": "Albert Park",
+      "circuit": "Albert Park Circuit",
       "heure": "19H00",
       "distance": "50%",
       "affiche": "assets/posters/melbourne-21-aout.png",
@@ -386,7 +376,7 @@
     {
       "date": "22 Août 2026",
       "gp": "Shanghai",
-      "circuit": "Shanghai International",
+      "circuit": "Shanghai International Circuit",
       "heure": "20H00",
       "distance": "50%",
       "affiche": "assets/posters/shanghai-22-aout.png",
@@ -439,7 +429,7 @@
     {
       "date": "24 Août 2026",
       "gp": "Suzuka",
-      "circuit": "Suzuka International",
+      "circuit": "Suzuka International Raçing Course",
       "heure": "19H00",
       "distance": "50%",
       "affiche": "assets/posters/suzuka-24-aout.png",
@@ -502,7 +492,7 @@
     {
       "date": "25 Août 2026",
       "gp": "Bahrain",
-      "circuit": "Bahrain International",
+      "circuit": "Bahrain International Circuit",
       "heure": "19H00",
       "distance": "35%",
       "affiche": "assets/posters/bahrain-25-aout.png",
@@ -565,7 +555,7 @@
     {
       "date": "01 Sept 2026",
       "gp": "Jeddah",
-      "circuit": "Jeddah Corniche",
+      "circuit": "Jeddah Corniche Circuit",
       "heure": "19H00",
       "distance": "35%",
       "affiche": "assets/posters/jeddah-01-sept.png",
@@ -618,7 +608,7 @@
     {
       "date": "03 Sept 2026",
       "gp": "Miami",
-      "circuit": "Miami International",
+      "circuit": "Miami International Autodrome",
       "heure": "21H00",
       "distance": "35%",
       "affiche": "assets/posters/miami-03-sept.png",
@@ -671,7 +661,7 @@
     {
       "date": "06 Sept 2026",
       "gp": "Imola",
-      "circuit": "Imola Enzo e Dino Ferrari",
+      "circuit": "Autodromo Internazionale Enzo E Dino Ferrari",
       "heure": "19H00",
       "distance": "35%",
       "affiche": "assets/posters/imola-06-sept.png",
@@ -856,6 +846,18 @@
           "pts": 8
         }
       ]
+    },
+    {
+      "date": "17 sept 2026",
+      "gp": "Canada",
+      "circuit": "Gilles Villeneuve",
+      "heure": "19H00",
+      "distance": "35%",
+      "affiche": "assets/posters/canada-01-sept.png",
+      "vainqueur": "À venir",
+      "temps": "En attente",
+      "meilleur_tour": "En attente",
+      "resultats_fwr": []
     }
   ],
   "i18n": {
@@ -926,6 +928,16 @@
       "maj": "MAJ 14 Sept • 9 GP • septante? Non 9 une fois - Wanze!"
     }
   },
+  "saison": "S1 FWR 2026",
+  "saison_label": {
+    "fr": "Saison S1 2026",
+    "en": "Season S1 2026",
+    "be": "Saison S1 2026 une fois"
+  },
+  "derniere_maj": "14 Sept 2026 - Barcelone - Scores corrigés image GP1-GP9",
+  "logo": "assets/logo/s1-fwr-logo-transparent.png",
+  "twitch": "https://twitch.tv/upsilon7",
+  "champion": "Skyyy - 143 pts - 5 victoires - Scores corrigés GP1-GP9",
   "ecuries_config": {
     "Scuderia Ferrari HP": {
       "color": "#DC0000",
