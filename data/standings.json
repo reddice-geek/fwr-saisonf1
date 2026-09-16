@@ -1,5 +1,10 @@
 {
   "saison": "S1 FWR 2026",
+  "saison_label": {
+    "fr": "Saison S1 2026",
+    "en": "Season S1 2026",
+    "be": "Saison S1 2026 une fois"
+  },
   "derniere_maj": "14 Sept 2026 - Barcelone",
   "logo": "assets/logo/s1-fwr-logo-transparent.png",
   "twitch": "https://twitch.tv/upsilon7",
@@ -15,7 +20,11 @@
       "podiums": 5,
       "meilleur_tour": "1:12.865 Monaco RECORD",
       "forme": "↑↑↑",
-      "label": "EN FEU",
+      "label": {
+        "fr": "EN FEU",
+        "en": "ON FIRE",
+        "be": "EN FEU UNE FOIS"
+      },
       "formeColor": "#10B981",
       "trend": [
         0,
@@ -39,7 +48,11 @@
       "podiums": 7,
       "meilleur_tour": "1:14.953 Monaco",
       "forme": "→",
-      "label": "STABLE",
+      "label": {
+        "fr": "STABLE",
+        "en": "STABLE",
+        "be": "STABLE UNE FOIS"
+      },
       "formeColor": "#8B8B8B",
       "trend": [
         12,
@@ -63,7 +76,11 @@
       "podiums": 6,
       "meilleur_tour": "1:17.220 Barcelone",
       "forme": "→",
-      "label": "RÉGULIER",
+      "label": {
+        "fr": "RÉGULIER",
+        "en": "CONSISTENT",
+        "be": "RÉGULIER UNE FOIS"
+      },
       "formeColor": "#10B981",
       "trend": [
         15,
@@ -87,7 +104,11 @@
       "podiums": 5,
       "meilleur_tour": "1:17.625 Barcelone",
       "forme": "↑",
-      "label": "EN FORME",
+      "label": {
+        "fr": "EN FORME",
+        "en": "IN FORM",
+        "be": "EN FORME UNE FOIS"
+      },
       "formeColor": "#10B981",
       "trend": [
         0,
@@ -111,7 +132,11 @@
       "podiums": 3,
       "meilleur_tour": "1:21.309 Melbourne",
       "forme": "↓↓",
-      "label": "EN BAISSE",
+      "label": {
+        "fr": "EN BAISSE",
+        "en": "DROPPING",
+        "be": "EN BAISSE UNE FOIS"
+      },
       "formeColor": "#EF4444",
       "trend": [
         25,
@@ -135,7 +160,11 @@
       "podiums": 1,
       "meilleur_tour": "1:20.564 Imola",
       "forme": "↑",
-      "label": "",
+      "label": {
+        "fr": "",
+        "en": "",
+        "be": ""
+      },
       "formeColor": "#10B981",
       "trend": [
         18,
@@ -159,7 +188,11 @@
       "podiums": 2,
       "meilleur_tour": "1:16.050 Monaco",
       "forme": "↑↑",
-      "label": "",
+      "label": {
+        "fr": "",
+        "en": "",
+        "be": ""
+      },
       "formeColor": "#10B981",
       "trend": [
         0,
@@ -183,7 +216,11 @@
       "podiums": 1,
       "meilleur_tour": "1:15.304 Barcelone MEILLEUR TOUR",
       "forme": "↑↑",
-      "label": "",
+      "label": {
+        "fr": "",
+        "en": "",
+        "be": ""
+      },
       "formeColor": "#10B981",
       "trend": [
         0,
@@ -207,7 +244,11 @@
       "podiums": 0,
       "meilleur_tour": "1:35.145 Bahrain",
       "forme": "→",
-      "label": "",
+      "label": {
+        "fr": "",
+        "en": "",
+        "be": ""
+      },
       "formeColor": "#8B8B8B",
       "trend": [
         0,
@@ -231,7 +272,11 @@
       "podiums": 0,
       "meilleur_tour": "1:26.164 Melbourne",
       "forme": "→",
-      "label": "",
+      "label": {
+        "fr": "",
+        "en": "",
+        "be": ""
+      },
       "formeColor": "#8B8B8B",
       "trend": [
         6,
@@ -724,53 +769,72 @@
       ]
     }
   ],
-  "meilleurs_temps_absolu": [
-    {
-      "temps": "1:12.865",
-      "pilote": "Skyyy",
-      "gp": "Monaco",
-      "record": true
+  "i18n": {
+    "fr": {
+      "classement": "Classement Général",
+      "tableaux": "Tableaux GP",
+      "stats": "Stats & Courbes",
+      "affiches": "Affiches GP",
+      "pts": "PTS",
+      "v": "V",
+      "forme": "FORME",
+      "grille": "GRILLE",
+      "arrets": "ARRÊTS",
+      "meilleur_tour": "MEILLEUR TOUR",
+      "temps_ecart": "TEMPS / ÉCART",
+      "pos": "POS",
+      "pilote": "PILOTE",
+      "ecurie": "ÉCURIE",
+      "live": "LIVE F1 25 TEAM FWR → twitch.tv/upsilon7",
+      "regarder": "REGARDER LE LIVE",
+      "cote": "Cote parieur",
+      "favori": "favori",
+      "ecart": "+7 pts",
+      "maj": "MAJ 14 Sept • 9 GP"
     },
-    {
-      "temps": "1:15.304",
-      "pilote": "JotagrosFR",
-      "gp": "Barcelone",
-      "record_meilleur_tour": true
+    "en": {
+      "classement": "General Standings",
+      "tableaux": "Race Results",
+      "stats": "Stats & Evolution",
+      "affiches": "GP Posters",
+      "pts": "PTS",
+      "v": "W",
+      "forme": "FORM",
+      "grille": "GRID",
+      "arrets": "STOPS",
+      "meilleur_tour": "FASTEST LAP",
+      "temps_ecart": "TIME / GAP",
+      "pos": "POS",
+      "pilote": "DRIVER",
+      "ecurie": "TEAM",
+      "live": "LIVE F1 25 TEAM FWR → twitch.tv/upsilon7",
+      "regarder": "WATCH LIVE",
+      "cote": "Bet odds",
+      "favori": "favorite",
+      "ecart": "+7 pts gap",
+      "maj": "Updated Sept 14 • 9 GP"
     },
-    {
-      "temps": "1:15.991",
-      "pilote": "Skyyy",
-      "gp": "Barcelone"
-    },
-    {
-      "temps": "1:19.181",
-      "pilote": "Skyyy",
-      "gp": "Imola"
-    },
-    {
-      "temps": "1:21.309",
-      "pilote": "Jesui_tou",
-      "gp": "Melbourne"
-    },
-    {
-      "temps": "1:30.300",
-      "pilote": "Skyyy",
-      "gp": "Miami"
-    },
-    {
-      "temps": "1:33.567",
-      "pilote": "Jesui_tou",
-      "gp": "Suzuka"
-    },
-    {
-      "temps": "1:33.902",
-      "pilote": "Taatsu7TV",
-      "gp": "Bahrain"
-    },
-    {
-      "temps": "1:37.682",
-      "pilote": "Skyyy",
-      "gp": "Shanghai"
+    "be": {
+      "classement": "Classement Général une fois",
+      "tableaux": "Tableaux GP une fois",
+      "stats": "Stats & Courbes une fois",
+      "affiches": "Affiches GP une fois",
+      "pts": "PTS une fois",
+      "v": "V une fois",
+      "forme": "FORME une fois",
+      "grille": "GRILLE une fois",
+      "arrets": "ARRÊTS une fois",
+      "meilleur_tour": "MEILLEUR TOUR une fois",
+      "temps_ecart": "TEMPS / ÉCART une fois",
+      "pos": "POS une fois",
+      "pilote": "PILOTE une fois",
+      "ecurie": "ÉCURIE une fois",
+      "live": "LIVE F1 25 TEAM FWR → twitch.tv/upsilon7 une fois - Ça va ou quoi?",
+      "regarder": "REGARDER LE LIVE UNE FOIS",
+      "cote": "Cote parieur une fois",
+      "favori": "favori une fois - c'est du lourd!",
+      "ecart": "+7 points septante-huit? Non +7 une fois",
+      "maj": "MAJ 14 Sept • 9 GP • septante? Non 9 une fois - Wanze!"
     }
-  ]
+  }
 }

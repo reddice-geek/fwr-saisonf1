@@ -1,50 +1,64 @@
-/* FWR V20.1 FINAL - V8 ADN - Clean F1 */
-:root{
-  --bg:#050507;
-  --bg2:#0F0F14;
-  --bg3:#111117;
-  --border:#1F1F2A;
-  --red:#E10600;
-  --text:#FFFFFF;
-  --muted:#8B8B8B;
-  --gold:#FFD700;
-  --gold2:#FFA500;
-}
+
+/* FWR V21 ULTIMATE - V8 ADN + Dynamisme + FR EN BE + Moderne F1 */
+:root{--bg:#050507;--bg2:#0F0F14;--bg3:#111117;--border:#1F1F2A;--red:#E10600;--text:#FFF;--muted:#8B8B8B;--gold:#FFD700;--gold2:#FFA500}
 *{box-sizing:border-box}
-body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);margin:0}
+body{margin:0;font-family:Inter,system-ui;background:var(--bg);color:var(--text);overflow-x:hidden}
 .titillium{font-family:'Titillium Web',sans-serif}
-.nav-top{position:sticky;top:0;z-index:70;height:40px;background:#0F0F14;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:center;gap:24px;padding:0 16px}
-.nav-top button{background:none;border:none;color:var(--muted);font-size:13px;letter-spacing:0.05em;cursor:pointer;padding:0 0 8px 0;border-bottom:2px solid transparent;transition:all .2s}
-.nav-top button:hover{color:var(--text)}
-.nav-top button.active{color:var(--text);border-bottom-color:var(--red);font-weight:600}
-.bandeau-rouge{position:sticky;top:40px;z-index:60;height:56px;background:var(--red);display:flex;align-items:center;justify-content:center;gap:16px;padding:0 16px;font-weight:600;font-size:15px}
-.bandeau-rouge a{color:white;text-decoration:underline}
-.bandeau-rouge a:hover{background:white;color:var(--red);padding:2px 8px;border-radius:4px;text-decoration:none}
-.bandeau-rouge .btn-live{background:white;color:var(--red);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:700;text-decoration:none}
-.bandeau-rouge .btn-live:hover{transform:scale(1.05)}
+/* Fond dynamique animé */
+.bg-animated{position:fixed;inset:0;z-index:-1;overflow:hidden;background:radial-gradient(ellipse at 20% 20%,rgba(225,6,0,.15),transparent 50%),radial-gradient(ellipse at 80% 80%,rgba(0,144,255,.1),transparent 50%),var(--bg)}
+.grid-carbone{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:40px 40px;animation:gridMove 20s linear infinite}
+@keyframes gridMove{0%{transform:translate(0,0)}100%{transform:translate(40px,40px)}}
+.speed-lines{position:absolute;inset:0;overflow:hidden}
+.speed-line{position:absolute;height:2px;background:linear-gradient(90deg,transparent,rgba(225,6,0,.6),transparent);animation:speedMove 3s linear infinite}
+@keyframes speedMove{0%{transform:translateX(-100%);left:0}100%{transform:translateX(100vw);left:0}}
+.particles{position:absolute;inset:0}
+.particle{position:absolute;width:4px;height:4px;background:var(--red);border-radius:50%;opacity:.6;animation:float 6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) translateX(0)}50%{transform:translateY(-20px) translateX(10px)}}
+/* Bandeau rouge épais Twitch - tout cliquable */
+.bandeau-rouge{position:sticky;top:0;z-index:70;height:56px;background:linear-gradient(90deg,#E10600,#FF1A1A,#E10600);background-size:200% 100%;animation:redShift 4s linear infinite;display:flex;align-items:center;justify-content:center;gap:16px;padding:0 16px;font-weight:700;font-size:15px;cursor:pointer;box-shadow:0 4px 20px rgba(225,6,0,.4)}
+@keyframes redShift{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+.bandeau-rouge a{color:white;text-decoration:none}
+.bandeau-rouge .btn-live{background:white;color:var(--red);padding:6px 16px;border-radius:999px;font-size:13px;font-weight:800;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.3);transition:transform .2s}
+.bandeau-rouge .btn-live:hover{transform:scale(1.08)}
 .dot-pulse{width:8px;height:8px;background:white;border-radius:50%;animation:pulse 1.5s infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.7)}70%{box-shadow:0 0 0 10px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
-.header-logo{position:sticky;top:96px;z-index:50;height:130px;background:rgba(5,5,7,.8);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:transform .2s}
-.header-logo:hover{transform:scale(1.02)}
-.logo-s1{filter:drop-shadow(0 0 24px rgba(225,6,0,.6));font-family:'Titillium Web',sans-serif;font-weight:700;font-size:48px;letter-spacing:-0.02em}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.7)}70%{box-shadow:0 0 0 12px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+/* Header logos + Nav unique */
+.header-ultimate{position:sticky;top:56px;z-index:60;background:rgba(5,5,7,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:16px 0}
+.logo-row{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap}
+.logo-s1{filter:drop-shadow(0 0 24px rgba(225,6,0,.6));font-family:'Titillium Web';font-weight:700;font-size:56px;letter-spacing:-0.02em;animation:glow 3s ease-in-out infinite}
+@keyframes glow{0%,100%{filter:drop-shadow(0 0 24px rgba(225,6,0,.6))}50%{filter:drop-shadow(0 0 36px rgba(225,6,0,.9))}}
 .logo-s1 span.fwr{color:var(--red)}
-.logo-sub{color:var(--muted);font-size:13px;letter-spacing:0.2em;margin-top:4px}
-.badge-leader{background:linear-gradient(90deg,var(--gold),var(--gold2));color:black;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:800;letter-spacing:0.05em;display:inline-flex;align-items:center;gap:4px;animation:leaderPulse 2s infinite;box-shadow:0 0 12px rgba(255,215,0,.6);position:relative}
-@keyframes leaderPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
-.table-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.logo-saison{border-left:1px solid var(--border);padding-left:32px}
+.logo-saison .s1{font-family:'Titillium Web';font-weight:700;font-size:28px;color:white}
+.logo-saison .year{font-size:13px;color:var(--muted);letter-spacing:0.2em}
+.nav-unique{display:flex;justify-content:center;gap:8px;margin-top:20px;flex-wrap:wrap}
+.nav-unique button{background:var(--bg2);border:1px solid var(--border);color:var(--muted);padding:8px 18px;border-radius:999px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;letter-spacing:0.02em}
+.nav-unique button:hover{border-color:var(--red);color:white;transform:translateY(-1px);box-shadow:0 4px 12px rgba(225,6,0,.2)}
+.nav-unique button.active{background:var(--red);border-color:var(--red);color:white;box-shadow:0 4px 16px rgba(225,6,0,.4)}
+.lang-switch{position:absolute;top:16px;right:16px;display:flex;gap:6px}
+.lang-switch button{background:var(--bg2);border:1px solid var(--border);color:var(--muted);padding:4px 10px;border-radius:6px;font-size:12px;cursor:pointer}
+.lang-switch button.active{background:white;color:black;font-weight:700}
+.badge-leader{background:linear-gradient(90deg,var(--gold),var(--gold2));color:black;padding:3px 10px;border-radius:999px;font-size:10px;font-weight:900;letter-spacing:0.05em;display:inline-flex;align-items:center;gap:4px;animation:leaderPulse 2s infinite,shineMove 3s infinite;box-shadow:0 0 16px rgba(255,215,0,.7);position:relative;overflow:hidden}
+.badge-leader::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.8),transparent);animation:shine 2.5s infinite}
+@keyframes leaderPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+@keyframes shine{0%{left:-100%}100%{left:100%}}
+.table-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.4);animation:fadeIn 0.6s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 table{width:100%;border-collapse:collapse;font-size:13px}
 thead{background:var(--bg3);color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:0.08em}
-th{padding:12px 16px;text-align:left}
-td{padding:12px 16px;border-top:1px solid var(--border)}
-tbody tr:hover{background:#1A1A24}
-tr.border-accent{border-left:4px solid}
-.pill{padding:4px 12px;border-radius:999px;font-size:12px;border:1px solid #2A2A35;background:transparent;color:var(--muted);cursor:pointer;transition:all .2s}
-.pill.active{background:white;color:black;border-color:white;font-weight:600}
-.pill:hover{border-color:white;color:white}
-.chart-box{background:#0A0A0F;border:1px solid var(--border);border-radius:12px;padding:16px}
-.poster-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px;transition:border-color .2s,transform .2s;cursor:pointer}
-.poster-card:hover{border-color:rgba(225,6,0,.5);transform:translateY(-2px)}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(8px);z-index:80;display:flex;align-items:center;justify-content:center;padding:24px}
-.modal-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;max-width:900px;width:100%;max-height:90vh;overflow:auto;padding:24px}
+th{padding:14px 16px;text-align:left}
+td{padding:14px 16px;border-top:1px solid var(--border)}
+tbody tr{transition:all .2s}
+tbody tr:hover{background:#1A1A24;transform:translateX(2px);box-shadow:inset 4px 0 0 var(--red)}
+.pill{padding:6px 14px;border-radius:999px;font-size:12px;border:1px solid #2A2A35;background:var(--bg2);color:var(--muted);cursor:pointer;transition:all .2s}
+.pill.active{background:white;color:black;border-color:white;font-weight:700;transform:scale(1.05)}
+.pill:hover{border-color:var(--red);color:white}
+.chart-box{background:#0A0A0F;border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:0 8px 32px rgba(0,0,0,.3)}
+.poster-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:18px;transition:all .3s;cursor:pointer;position:relative;overflow:hidden}
+.poster-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--red),transparent);transform:translateX(-100%);transition:transform .6s}
+.poster-card:hover::before{transform:translateX(100%)}
+.poster-card:hover{border-color:rgba(225,6,0,.6);transform:translateY(-4px) scale(1.02);box-shadow:0 12px 40px rgba(225,6,0,.2)}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(12px);z-index:80;display:flex;align-items:center;justify-content:center;padding:24px;animation:fadeIn .3s}
+.modal-box{background:var(--bg2);border:1px solid var(--border);border-radius:20px;max-width:900px;width:100%;max-height:90vh;overflow:auto;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
 .hidden{display:none}
 .badge-fwr{display:none !important}

@@ -3,78 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FWR S1 2026 - Classement Général - Gosset_25 Fix - V20.1 FINAL</title>
+<title>FWR S1 2026 - V21 ULTIMATE - FR EN BE - Gosset_25 Fix</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<nav class="nav-top">
-  <button id="tab-classement" class="active" onclick="showTab('classement')">Classement Général</button>
-  <button id="tab-evolution" onclick="showTab('evolution')">Évolution & Comparaison</button>
-  <button id="tab-calendrier" onclick="showTab('calendrier')">Calendrier 9 GP & Affiches</button>
-</nav>
-<div class="bandeau-rouge">
-  <div style="display:flex;align-items:center;gap:8px"><span class="dot-pulse"></span><span>🔴 LIVE F1 25 TEAM FWR → Suivez les courses sur</span><a href="https://twitch.tv/upsilon7" target="_blank">twitch.tv/upsilon7</a></div>
-  <a href="https://twitch.tv/upsilon7" target="_blank" class="btn-live">REGARDER LE LIVE</a>
+<div class="bg-animated">
+  <div class="grid-carbone"></div>
+  <div class="speed-lines"></div>
+  <div class="particles"></div>
 </div>
-<header class="header-logo" onclick="showTab('classement'); window.scrollTo({top:0,behavior:'smooth'})">
-  <div class="logo-s1"><span style="color:white">S1</span> <span class="fwr">FWR</span></div>
-  <div class="logo-sub">S1 • 2026 • Team FWR • twitch.tv/upsilon7</div>
-</header>
-<div style="max-width:1200px;margin:0 auto;padding:32px 16px">
-  <div style="display:flex;gap:24px;border-bottom:1px solid #1F1F2A;margin-bottom:32px;font-size:13px">
-    <button id="tab2-classement" class="active" onclick="showTab('classement')" style="padding-bottom:12px;border-bottom:2px solid #E10600;background:none;border-top:none;border-left:none;border-right:none;color:white;font-weight:600;cursor:pointer">Classement Général</button>
-    <button id="tab2-evolution" onclick="showTab('evolution')" style="padding-bottom:12px;border-bottom:2px solid transparent;background:none;border-top:none;border-left:none;border-right:none;color:#8B8B8B;cursor:pointer">Évolution & Comparaison</button>
-    <button id="tab2-calendrier" onclick="showTab('calendrier')" style="padding-bottom:12px;border-bottom:2px solid transparent;background:none;border-top:none;border-left:none;border-right:none;color:#8B8B8B;cursor:pointer">Calendrier 9 GP & Affiches</button>
+
+<!-- Bandeau rouge épais Twitch - tout cliquable - unique -->
+<div class="bandeau-rouge" onclick="window.open('https://twitch.tv/upsilon7','_blank')">
+  <div style="display:flex;align-items:center;gap:8px"><span class="dot-pulse"></span><span data-i18n="live">LIVE F1 25 TEAM FWR → twitch.tv/upsilon7</span></div>
+  <a href="https://twitch.tv/upsilon7" target="_blank" class="btn-live" data-i18n="regarder">REGARDER LE LIVE</a>
+</div>
+
+<!-- Header logos + Nav unique (seul endroit navigation) -->
+<header class="header-ultimate">
+  <div class="lang-switch">
+    <button data-lang="fr" class="active" onclick="switchLang('fr')">FR 🇫🇷</button>
+    <button data-lang="en" onclick="switchLang('en')">EN 🇬🇧</button>
+    <button data-lang="be" onclick="switchLang('be')">BE 🇧🇪</button>
   </div>
-  <div id="view-classement">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px">
-      <h1 class="titillium" style="font-size:32px;font-weight:700">Classement Général</h1>
-      <div style="font-size:12px;color:#8B8B8B">MAJ 14 Sept • 9 GP • Gosset_25 fix • V20.1 FINAL</div>
+  <div class="logo-row" onclick="showTab('classement'); window.scrollTo({top:0,behavior:'smooth'})" style="cursor:pointer">
+    <div class="logo-s1"><span style="color:white">S1</span> <span class="fwr">FWR</span></div>
+    <div class="logo-saison">
+      <div class="s1">FWR RACING LEAGUE</div>
+      <div class="year">S1 • F1 2026 • Team FWR • twitch.tv/upsilon7</div>
     </div>
-    <div class="table-wrap"><table><thead><tr><th>POS</th><th>PILOTE</th><th>ÉCURIE</th><th style="text-align:center">PTS</th><th style="text-align:center">V</th><th>FORME</th></tr></thead><tbody id="tbody-classement"></tbody></table></div>
+  </div>
+  <!-- Nav unique - seul endroit sur tout le site -->
+  <nav class="nav-unique">
+    <button id="nav-classement" class="active" onclick="showTab('classement')" data-i18n="classement">Classement Général</button>
+    <button id="nav-tableaux" onclick="showTab('tableaux')" data-i18n="tableaux">Tableaux GP</button>
+    <button id="nav-evolution" onclick="showTab('evolution')" data-i18n="stats">Stats & Courbes</button>
+    <button id="nav-affiches" onclick="showTab('affiches')" data-i18n="affiches">Affiches GP</button>
+  </nav>
+</header>
+
+<div style="max-width:1240px;margin:0 auto;padding:32px 16px;position:relative;z-index:1">
+  <!-- Classement Général -->
+  <div id="view-classement">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:12px">
+      <h1 class="titillium" style="font-size:32px;font-weight:700" data-i18n="classement">Classement Général</h1>
+      <div style="font-size:12px;color:#8B8B8B" data-i18n="maj">MAJ 14 Sept • 9 GP • Gosset_25 fix • V21 ULTIMATE</div>
+    </div>
+    <div class="table-wrap"><table><thead><tr><th data-i18n="pos">POS</th><th data-i18n="pilote">PILOTE</th><th data-i18n="ecurie">ÉCURIE</th><th style="text-align:center" data-i18n="pts">PTS</th><th style="text-align:center" data-i18n="v">V</th><th data-i18n="forme">FORME</th></tr></thead><tbody id="tbody-classement"></tbody></table></div>
     <div style="margin-top:40px">
       <h2 class="titillium" style="font-size:20px;font-weight:700;margin-bottom:16px">Évolution – Top 5</h2>
       <div class="chart-box"><canvas id="chart-mini" height="120"></canvas></div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin-top:16px;font-size:12px">
-        <div class="poster-card"><span style="color:#10B981;font-weight:700">↑↑↑ EN FEU</span> <b>Skyyy</b> – 5 victoires + badge 👑 LEADER animé or</div>
-        <div class="poster-card"><span style="color:#EF4444;font-weight:700">↓↓ EN BAISSE</span> <b>Jesui_tou</b> – 0 pt sur 5 derniers GP</div>
-        <div class="poster-card"><span style="color:#8B8B8B;font-weight:700">→ STABLE</span> <b>Gosset_25</b> – 2e place solide 118 pts (ex Goret_25 blague)</div>
-      </div>
-    </div>
-    <div style="margin-top:40px">
-      <h2 class="titillium" style="font-size:20px;font-weight:700;margin-bottom:16px">Détail des courses – Chronos complets – Tableaux détaillés</h2>
-      <div id="chronos-list" style="display:flex;flex-direction:column;gap:24px"></div>
     </div>
   </div>
+
+  <!-- Tableaux par GP -->
+  <div id="view-tableaux" class="hidden">
+    <h1 class="titillium" style="font-size:32px;font-weight:700;margin-bottom:24px" data-i18n="tableaux">Tableaux par Grand Prix</h1>
+    <div id="chronos-list" style="display:flex;flex-direction:column;gap:24px"></div>
+  </div>
+
+  <!-- Stats & Courbes -->
   <div id="view-evolution" class="hidden">
     <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;margin-bottom:24px;gap:16px">
-      <h1 class="titillium" style="font-size:32px;font-weight:700">Courbes d'évolution – Tous pilotes activés</h1>
-      <div style="display:flex;gap:8px;font-size:12px;align-items:center"><span style="color:#8B8B8B">Comparer:</span><div id="pills" style="display:flex;flex-wrap:wrap;gap:8px"></div></div>
+      <h1 class="titillium" style="font-size:32px;font-weight:700" data-i18n="stats">Stats & Courbes d'évolution</h1>
+      <div style="display:flex;gap:8px;font-size:12px;align-items:center"><span style="color:#8B8B8B">Pilotes:</span><div id="pills" style="display:flex;flex-wrap:wrap;gap:8px"></div></div>
     </div>
-    <div class="chart-box"><canvas id="chart-main" height="340"></canvas></div>
-    <div style="margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;font-size:12px">
-      <div class="poster-card"><div style="color:#8B8B8B">Cote parieur</div><div style="margin-top:4px"><b>Skyyy</b> <span style="color:#10B981">1.25</span> favori + LEADER</div></div>
-      <div class="poster-card"><div style="color:#8B8B8B">Cote parieur</div><div style="margin-top:4px"><b>Gosset_25</b> <span style="color:#FBBF24">4.00</span> (ex Goret)</div></div>
-      <div class="poster-card"><div style="color:#8B8B8B">Cote parieur</div><div style="margin-top:4px"><b>upsilon7</b> <span style="color:#FBBF24">6.50</span></div></div>
-      <div class="poster-card"><div style="color:#8B8B8B">Écart</div><div style="margin-top:4px"><b>Skyyy vs Gosset_25</b> +7 pts</div></div>
+    <div class="chart-box"><canvas id="chart-main" height="380"></canvas></div>
+    <div style="margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;font-size:12px">
+      <div class="poster-card"><div style="color:#8B8B8B" data-i18n="cote">Cote parieur</div><div style="margin-top:4px"><b>Skyyy</b> <span style="color:#10B981">1.25</span> <span data-i18n="favori">favori</span> + LEADER</div></div>
+      <div class="poster-card"><div style="color:#8B8B8B" data-i18n="cote">Cote parieur</div><div style="margin-top:4px"><b>Gosset_25</b> <span style="color:#FBBF24">4.00</span> (ex Goret)</div></div>
+      <div class="poster-card"><div style="color:#8B8B8B" data-i18n="cote">Cote parieur</div><div style="margin-top:4px"><b>upsilon7</b> <span style="color:#FBBF24">6.50</span></div></div>
+      <div class="poster-card"><div style="color:#8B8B8B">Écart</div><div style="margin-top:4px"><b>Skyyy vs Gosset_25</b> <span data-i18n="ecart">+7 pts</span></div></div>
     </div>
-    <div style="margin-top:16px;font-size:11px;color:#8B8B8B">Tous les pilotes activés par défaut pour parieurs – Clique sur les pills pour désactiver – Idéal pour parier sur le vainqueur S1</div>
   </div>
-  <div id="view-calendrier" class="hidden">
-    <h1 class="titillium" style="font-size:32px;font-weight:700;margin-bottom:24px">Calendrier S1 – 9 GP – Affiches officielles Team FWR</h1>
-    <div id="grid-gp" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px"></div>
+
+  <!-- Affiches GP -->
+  <div id="view-affiches" class="hidden">
+    <h1 class="titillium" style="font-size:32px;font-weight:700;margin-bottom:24px" data-i18n="affiches">Affiches GP - Saison S1</h1>
+    <div id="grid-gp" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px"></div>
   </div>
 </div>
+
 <div id="modal" class="modal" style="display:none" onclick="if(event.target===this) closeModal()">
   <div class="modal-box">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px"><h3 class="titillium" style="font-weight:700">Détail course</h3><button onclick="closeModal()" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:4px 12px;border-radius:8px;cursor:pointer">Fermer</button></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px"><h3 class="titillium" style="font-weight:700">Détail course</h3><button onclick="closeModal()" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:6px 14px;border-radius:8px;cursor:pointer">Fermer</button></div>
     <div id="modal-content"></div>
   </div>
 </div>
-<footer style="margin-top:64px;border-top:1px solid #1F1F2A;padding:24px;text-align:center;color:#8B8B8B;font-size:12px">Team FWR • S1 2026 • twitch.tv/upsilon7 • V20.1 FINAL Gosset_25 Fix • V8 ADN Clean • Logo transparent cliquable • Badge leader animé • Tous pilotes courbes • Affiches + tableaux détaillés</footer>
+
+<footer style="margin-top:80px;border-top:1px solid #1F1F2A;padding:28px;text-align:center;color:#8B8B8B;font-size:12px;position:relative;z-index:1">
+  Team FWR • S1 2026 • <a href="https://twitch.tv/upsilon7" target="_blank" style="color:#E10600">twitch.tv/upsilon7</a> • V21 ULTIMATE FR/EN/BE • V8 ADN Clean • Logo ligue + saison • Nav unique • Bandeau rouge Twitch cliquable • Badge leader animé • Dynamisme magnifique • Gosset_25 Fix
+</footer>
+
 <script src="js/app.js"></script>
 </body>
 </html>

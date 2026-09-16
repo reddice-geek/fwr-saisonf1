@@ -1,5 +1,10 @@
 {
   "saison": "S1 FWR 2026",
+  "saison_label": {
+    "fr": "Saison S1 2026",
+    "en": "Season S1 2026",
+    "be": "Saison S1 2026 une fois"
+  },
   "twitch": "https://twitch.tv/upsilon7",
   "logo_transparent": "assets/logo/s1-fwr-logo-transparent.png",
   "calendrier": [
