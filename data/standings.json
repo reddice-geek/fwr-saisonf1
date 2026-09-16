@@ -5,17 +5,17 @@
     "en": "Season S1 2026",
     "be": "Saison S1 2026 une fois"
   },
-  "derniere_maj": "14 Sept 2026 - Barcelone",
+  "derniere_maj": "14 Sept 2026 - Barcelone - Scores corrigés image GP1-GP9",
   "logo": "assets/logo/s1-fwr-logo-transparent.png",
   "twitch": "https://twitch.tv/upsilon7",
-  "champion": "Skyyy - 125 pts - 5 victoires",
+  "champion": "Skyyy - 143 pts - 5 victoires - Scores corrigés GP1-GP9",
   "classement_general": [
     {
       "pos": 1,
       "pilote": "Skyyy",
       "ecurie": "Alpine",
       "color": "#0090FF",
-      "pts": 125,
+      "pts": 143,
       "victoires": 5,
       "podiums": 5,
       "meilleur_tour": "1:12.865 Monaco RECORD",
@@ -31,11 +31,11 @@
         25,
         25,
         25,
-        25,
-        50,
-        75,
-        100,
-        125
+        43,
+        68,
+        93,
+        118,
+        143
       ]
     },
     {
@@ -43,7 +43,7 @@
       "pilote": "Gosset_25",
       "ecurie": "Red Bull",
       "color": "#0600EF",
-      "pts": 118,
+      "pts": 130,
       "victoires": 1,
       "podiums": 7,
       "meilleur_tour": "1:14.953 Monaco",
@@ -59,19 +59,19 @@
         30,
         30,
         55,
-        55,
-        70,
-        88,
-        106,
-        118
+        67,
+        82,
+        100,
+        118,
+        130
       ]
     },
     {
       "pos": 3,
       "pilote": "upsilon7",
-      "ecurie": "Ferrari HP",
+      "ecurie": "Scuderia Ferrari HP",
       "color": "#DC0000",
-      "pts": 97,
+      "pts": 122,
       "victoires": 0,
       "podiums": 6,
       "meilleur_tour": "1:17.220 Barcelone",
@@ -87,20 +87,20 @@
         30,
         48,
         58,
-        58,
-        70,
-        82,
-        94,
-        97
+        73,
+        85,
+        95,
+        107,
+        122
       ]
     },
     {
       "pos": 4,
       "pilote": "Taatsu7TV",
-      "ecurie": "Ferrari HP",
+      "ecurie": "Scuderia Ferrari HP",
       "color": "#DC0000",
-      "pts": 83,
-      "victoires": 0,
+      "pts": 108,
+      "victoires": 1,
       "podiums": 5,
       "meilleur_tour": "1:17.625 Barcelone",
       "forme": "↑",
@@ -115,11 +115,11 @@
         12,
         27,
         42,
-        42,
-        60,
-        75,
-        75,
-        83
+        67,
+        85,
+        100,
+        100,
+        108
       ]
     },
     {
@@ -181,7 +181,7 @@
     {
       "pos": 7,
       "pilote": "JoKeR-_-SkyZo",
-      "ecurie": "Mercedes",
+      "ecurie": "Mercedes-AMG Petronas",
       "color": "#00D2BE",
       "pts": 25,
       "victoires": 0,
@@ -266,7 +266,7 @@
       "pos": 10,
       "pilote": "sombre7675TTV",
       "ecurie": "Haas",
-      "color": "#FFFFFF",
+      "color": "#9E9E9E",
       "pts": 6,
       "victoires": 0,
       "podiums": 0,
@@ -293,7 +293,7 @@
     {
       "pos": 11,
       "pilote": "Crimson_Death",
-      "ecurie": "mercedes-AMG Petronas",
+      "ecurie": "Mercedes-AMG Petronas",
       "color": "#00D2BE",
       "pts": 0,
       "victoires": 0,
@@ -354,7 +354,7 @@
         {
           "pos": 3,
           "pilote": "upsilon7",
-          "ecurie": "Ferrari",
+          "ecurie": "Scuderia Ferrari HP",
           "grille": "P8",
           "arrets": 1,
           "mt": "1:23.767",
@@ -417,7 +417,7 @@
         {
           "pos": 3,
           "pilote": "upsilon7",
-          "ecurie": "Ferrari",
+          "ecurie": "Scuderia Ferrari HP",
           "grille": "P3",
           "arrets": 1,
           "mt": "1:39.679",
@@ -427,7 +427,7 @@
         {
           "pos": 4,
           "pilote": "Taatsu7TV",
-          "ecurie": "Ferrari",
+          "ecurie": "Scuderia Ferrari HP",
           "grille": "P4",
           "arrets": 1,
           "mt": "1:41.106",
@@ -460,7 +460,7 @@
         {
           "pos": 2,
           "pilote": "upsilon7",
-          "ecurie": "Ferrari",
+          "ecurie": "Scuderia Ferrari HP",
           "grille": "P1 POLE",
           "arrets": 1,
           "mt": "1:34.516",
@@ -470,7 +470,7 @@
         {
           "pos": 3,
           "pilote": "Taatsu7TV",
-          "ecurie": "Ferrari",
+          "ecurie": "Scuderia Ferrari HP",
           "grille": "P3",
           "arrets": 1,
           "mt": "1:34.418",
@@ -490,7 +490,7 @@
         {
           "pos": 5,
           "pilote": "Crimson_Death",
-          "ecurie": "mercedes-AMG Petronas",
+          "ecurie": "Mercedes-AMG Petronas",
           "grille": "19",
           "arrets": 1,
           "mt": "1:38:090",
@@ -533,7 +533,7 @@
         {
           "pos": 3,
           "pilote": "Taatsu7TV",
-          "ecurie": "Ferrari",
+          "ecurie": "Scuderia Ferrari HP",
           "grille": "P2",
           "arrets": 1,
           "mt": "1:33.902",
@@ -553,7 +553,7 @@
         {
           "pos": 5,
           "pilote": "upsilon7",
-          "ecurie": "Ferrari",
+          "ecurie": "Scuderia Ferrari HP",
           "grille": "P3",
           "arrets": 1,
           "mt": "1:35.218",
@@ -576,7 +576,7 @@
         {
           "pos": 1,
           "pilote": "Taatsu7TV",
-          "ecurie": "Ferrari HP",
+          "ecurie": "Scuderia Ferrari HP",
           "grille": "-",
           "arrets": 1,
           "mt": "-",
@@ -596,7 +596,7 @@
         {
           "pos": 3,
           "pilote": "upsilon7",
-          "ecurie": "Ferrari HP",
+          "ecurie": "Scuderia Ferrari HP",
           "grille": "-",
           "arrets": 1,
           "mt": "-",
@@ -639,7 +639,7 @@
         {
           "pos": 2,
           "pilote": "Taatsu7TV",
-          "ecurie": "Ferrari",
+          "ecurie": "Scuderia Ferrari HP",
           "grille": "P1 POLE",
           "arrets": 1,
           "mt": "1:32.790",
@@ -659,7 +659,7 @@
         {
           "pos": 4,
           "pilote": "upsilon7",
-          "ecurie": "Ferrari",
+          "ecurie": "Scuderia Ferrari HP",
           "grille": "P3",
           "arrets": 1,
           "mt": "1:33.175",
@@ -702,7 +702,7 @@
         {
           "pos": 3,
           "pilote": "Taatsu7TV",
-          "ecurie": "Ferrari",
+          "ecurie": "Scuderia Ferrari HP",
           "grille": "P2",
           "arrets": 1,
           "mt": "1:20.017",
@@ -718,6 +718,16 @@
           "mt": "1:20.564",
           "temps": "+3s",
           "pts": 12
+        },
+        {
+          "pos": 5,
+          "pilote": "upsilon7",
+          "ecurie": "Scuderia Ferrari HP",
+          "grille": "P5",
+          "arrets": 1,
+          "mt": "1:21.000",
+          "temps": "+5s",
+          "pts": 10
         }
       ]
     },
@@ -755,7 +765,7 @@
         {
           "pos": 3,
           "pilote": "JoKeR-_-SkyZo",
-          "ecurie": "Mercedes",
+          "ecurie": "Mercedes-AMG Petronas",
           "grille": "P3",
           "arrets": 2,
           "mt": "1:16.050",
@@ -765,7 +775,7 @@
         {
           "pos": 4,
           "pilote": "upsilon7",
-          "ecurie": "Ferrari",
+          "ecurie": "Scuderia Ferrari HP",
           "grille": "P4",
           "arrets": 2,
           "mt": "1:17.327",
@@ -808,7 +818,7 @@
         {
           "pos": 3,
           "pilote": "upsilon7",
-          "ecurie": "Ferrari",
+          "ecurie": "Scuderia Ferrari HP",
           "grille": "P3",
           "arrets": 1,
           "mt": "1:17.220",
@@ -828,7 +838,7 @@
         {
           "pos": 5,
           "pilote": "JoKeR-_-SkyZo",
-          "ecurie": "Mercedes",
+          "ecurie": "Mercedes-AMG Petronas",
           "grille": "P5",
           "arrets": 1,
           "mt": "1:18.229",
@@ -838,7 +848,7 @@
         {
           "pos": 6,
           "pilote": "Taatsu7TV",
-          "ecurie": "Ferrari",
+          "ecurie": "Scuderia Ferrari HP",
           "grille": "P4",
           "arrets": 1,
           "mt": "1:17.625",
@@ -914,6 +924,48 @@
       "favori": "favori une fois - c'est du lourd!",
       "ecart": "+7 points septante-huit? Non +7 une fois",
       "maj": "MAJ 14 Sept • 9 GP • septante? Non 9 une fois - Wanze!"
+    }
+  },
+  "ecuries_config": {
+    "Scuderia Ferrari HP": {
+      "color": "#DC0000",
+      "label": "rouge"
+    },
+    "Aston Martin": {
+      "color": "#006F62",
+      "label": "vert foncé"
+    },
+    "Alpine": {
+      "color": "#0090FF",
+      "label": "bleu claire"
+    },
+    "Red Bull": {
+      "color": "#0600EF",
+      "label": "bleu foncé"
+    },
+    "Williams": {
+      "color": "#A8D5BA",
+      "label": "vert délavé"
+    },
+    "McLaren": {
+      "color": "#FF8700",
+      "label": "orange"
+    },
+    "KICK Sauber": {
+      "color": "#00E676",
+      "label": "vert neon"
+    },
+    "Mercedes-AMG Petronas": {
+      "color": "#00D2BE",
+      "label": "bleu délavé"
+    },
+    "Haas": {
+      "color": "#9E9E9E",
+      "label": "gris"
+    },
+    "Visa Cash App Racing Bulls": {
+      "color": "#6692FF",
+      "label": "bleu délavé"
     }
   }
 }
