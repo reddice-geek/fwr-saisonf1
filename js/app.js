@@ -66,7 +66,7 @@ function renderChronos(){
 function renderGPs(){
   const grid = document.getElementById('grid-gp');
   if(!grid) return;
-  grid.innerHTML = gps.map(r=>`<div class="poster-card" onclick="openModal('${r.gp}')"><div style="font-size:11px;color:#8B8B8B">${r.date} • ${r.heure}</div><div class="titillium" style="font-weight:700;font-size:18px;margin-top:4px">${r.flag||''} ${r.gp}</div><div style="font-size:11px;color:#8B8B8B;margin-top:4px">${r.circuit||''}</div><div style="font-size:12px;color:#CCCCCC;margin-top:12px">${r.vainqueur||'En attente'}</div><div style="margin-top:8px;font-size:10px;color:#8B8B8B">${r.affiche||''}</div></div>`).join('');
+  grid.innerHTML = gps.map(r=>`<div class="poster-card" onclick="openModal('${r.gp}')">${r.affiche?`<img src="${r.affiche}" alt="Affiche GP ${r.gp}" loading="lazy" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:12px;display:block;margin-bottom:14px" onerror="this.style.display='none'">`:''}<div style="font-size:11px;color:#8B8B8B">${r.date} • ${r.heure}</div><div class="titillium" style="font-weight:700;font-size:18px;margin-top:4px">${r.flag||''} ${r.gp}</div><div style="font-size:11px;color:#8B8B8B;margin-top:4px">${r.circuit||''}</div><div style="font-size:12px;color:#CCCCCC;margin-top:12px">${r.vainqueur||'En attente'}</div></div>`).join('');
 }
 function renderPills(){
   const pills = document.getElementById('pills');
