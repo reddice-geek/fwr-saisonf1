@@ -82,17 +82,47 @@ function toggleDriver(name){
 }
 function updateCharts(){
   const labels = ['Mel','Sha','Suz','Bah','Jed','Mia','Imo','Mon','Bar'];
-  const datasets = standings.filter(s=>selectedDrivers.includes(s.pilote)).map(s=>({label:s.pilote,data:s.trend||[0,[STRIPPED]
-  const datasetsMini = standings.slice(0,5).map(s=>({label:s.pilote,data:s.trend||[0,[STRIPPED]
+  const fallbackTrend = [0,0,0,0,0,0,0,0,0];
+  const makeDataset = (s) => ({
+    label: s.pilote,
+    data: Array.isArray(s.trend) ? s.trend : fallbackTrend,
+    borderColor: s.color || '#E10600',
+    backgroundColor: s.color || '#E10600',
+    tension: 0.28,
+    borderWidth: 2,
+    pointRadius: 3,
+    pointHoverRadius: 5,
+    fill: false
+  });
+  const datasets = standings.filter(s=>selectedDrivers.includes(s.pilote)).map(makeDataset);
+  const datasetsMini = standings.slice(0,5).map(makeDataset);
   const ctxMain = document.getElementById('chart-main');
   const ctxMini = document.getElementById('chart-mini');
-  if(chartMain) chartMain.destroy();
-  if(chartMini) chartMini.destroy();
+
+  if(chartMain){ chartMain.destroy(); chartMain = null; }
+  if(chartMini){ chartMini.destroy(); chartMini = null; }
+
+  // Le site reste fonctionnel même si Chart.js ne se charge pas (ex. hors ligne).
+  if(typeof Chart === 'undefined') return;
+
+  const commonOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: { mode: 'index', intersect: false },
+    plugins: {
+      legend: { labels: { color: '#CCCCCC', boxWidth: 12 } }
+    },
+    scales: {
+      x: { ticks: { color: '#8B8B8B' }, grid: { color: 'rgba(255,255,255,.05)' } },
+      y: { beginAtZero: true, ticks: { color: '#8B8B8B' }, grid: { color: 'rgba(255,255,255,.06)' } }
+    }
+  };
+
   if(ctxMain){
-    chartMain = new Chart(ctxMain,{type:'line',data:{labels,[STRIPPED]
+    chartMain = new Chart(ctxMain,{type:'line',data:{labels:labels,datasets:datasets},options:commonOptions});
   }
   if(ctxMini){
-    chartMini = new Chart(ctxMini,{type:'line',data:{labels,[STRIPPED]
+    chartMini = new Chart(ctxMini,{type:'line',data:{labels:labels,datasets:datasetsMini},options:{...commonOptions,plugins:{legend:{display:false}}}});
   }
 }
 function showTab(name){
