@@ -447,29 +447,33 @@ function previewAffiche(event){
 
 function saveAffiche(){
   const gpName = document.getElementById('admin-affiche-gp').value;
-  const base64 = document.getElementById('admin-affiche-preview').dataset.base64;
-  if(!gpName || !base64){
-    alert('Sélectionne GP et image');
+  const preview = document.getElementById('admin-affiche-preview');
+  const base64 = preview.dataset.base64;
+  const file = document.getElementById('admin-affiche-file').files[0];
+
+  if (!gpName || !base64 || !file) {
+    alert('Sélectionne un GP et une image.');
     return;
   }
-  const file=document.getElementById('admin-affiche-file').files[0];
-  if(!file || !file.type.startsWith('image/')) return alert('Choisis une image PNG ou JPG.');
-  const extension=file.type==='image/png'?'png':file.type==='image/jpeg'?'jpg':null;
-  if(!extension) return alert('Utilise une image PNG ou JPG.');
-  const filename=gpName.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-')+'-affiche.'+extension;
-  const path='assets/posters/'+filename;
-  const gp=adminData.gp_disputes.find(g=>g.gp===gpName);
-  const calendar=EMBEDDED_GPS.calendrier.find(g=>g.gp===gpName);
-  if(gp) gp.affiche=path;
-  if(calendar) calendar.affiche=path;
-  const existing=gps.find(g=>g.gp===gpName);
-  if(existing) existing.affiche=base64;
-  try { localStorage.setItem('fwr_poster_'+gpName, base64); } catch(e) { console.warn('Stockage local plein : utiliser les fichiers exportés',e); }
-  persistAdmin();
-  const link=document.createElement('a'); link.href=base64; link.download=filename; link.click();
-  alert('Affiche prête : le fichier image est téléchargé. Ajoute-le dans assets/posters/ sur GitHub, puis remplace data/gps.json et data/standings.json par les fichiers de l’onglet Export.');
+  if (!['image/png', 'image/jpeg', 'image/webp'].includes(file.type)) {
+    alert('Choisis une image PNG, JPG ou WebP.');
+    return;
+  }
+
+  // Sauvegarde locale : ne prétend pas que le fichier existe sur GitHub.
+  try {
+    localStorage.setItem('fwr_poster_' + gpName, base64);
+  } catch (error) {
+    console.error('Impossible de sauvegarder l’affiche :', error);
+    alert('Impossible de sauvegarder cette image dans le navigateur (stockage plein ou désactivé). Essaie une image plus petite.');
+    return;
+  }
+
+  // L’affiche locale est utilisée immédiatement par renderGPs().
+  // On conserve le chemin officiel tant que l’image n’est pas publiée sur GitHub.
   renderAdminAffiches();
   renderGPs();
+  alert('Affiche enregistrée sur cet appareil et affichée sur le site. Pour la rendre visible à tous, publie l’image dans assets/posters/ et mets à jour les JSON sur GitHub.');
 }
 
 function downloadStandings(){
