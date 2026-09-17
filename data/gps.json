@@ -51,7 +51,7 @@
       "circuit": "Jeddah Corniche Circuit",
       "heure": "19H00",
       "distance": "35%",
-      "status": "En attente résultats",
+      "status": "Terminé",
       "vainqueur": "Taatsu7TV",
       "affiche": "assets/posters/jeddah-01-sept.png"
     },
@@ -85,7 +85,7 @@
       "heure": "19H00",
       "distance": "35%",
       "status": "Terminé",
-      "vainqueur": "Skyyy 34:51.962 1:12.865 RECORD",
+      "vainqueur": "Skyyy",
       "affiche": "assets/posters/monaco-10-sept.png"
     },
     {
