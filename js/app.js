@@ -562,6 +562,16 @@ function renderGPs() {
     grid.appendChild(card);
 
   });
+  // Affiches indépendantes ajoutées depuis le panneau administrateur (stockage local).
+  let independent=[];
+  try { independent=JSON.parse(localStorage.getItem('fwr_independent_posters')||'[]'); } catch(e){console.warn(e);}
+  if(Array.isArray(independent)) independent.forEach(p=>{
+    if(!p||typeof p.name!=='string'||typeof p.image!=='string')return;
+    const card=document.createElement('div');card.className='poster-card';
+    const img=document.createElement('img');img.src=p.image;img.alt='Affiche '+p.name;img.loading='lazy';img.style.cssText='width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:12px;display:block;margin-bottom:14px';card.appendChild(img);
+    const title=document.createElement('div');title.textContent=p.name;title.style.cssText='font-weight:700;color:white';card.appendChild(title);grid.appendChild(card);
+  });
+
 }
 
 // -----------------------------------------
