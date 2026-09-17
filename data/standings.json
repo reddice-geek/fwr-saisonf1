@@ -5,7 +5,7 @@
       "pilote": "Skyyy",
       "ecurie": "Alpine",
       "color": "#0090FF",
-      "pts": 143,
+      "pts": 168,
       "victoires": 5,
       "podiums": 5,
       "meilleur_tour": "1:12.865 Monaco RECORD",
@@ -33,7 +33,7 @@
       "pilote": "Gosset_25",
       "ecurie": "Red Bull",
       "color": "#0600EF",
-      "pts": 130,
+      "pts": 142,
       "victoires": 1,
       "podiums": 7,
       "meilleur_tour": "1:14.953 Monaco",
@@ -58,6 +58,34 @@
     },
     {
       "pos": 3,
+      "pilote": "Taatsu7TV",
+      "ecurie": "Scuderia Ferrari HP",
+      "color": "#DC0000",
+      "pts": 123,
+      "victoires": 1,
+      "podiums": 5,
+      "meilleur_tour": "1:17.625 Barcelone",
+      "forme": "↑",
+      "label": {
+        "fr": "EN FORME",
+        "en": "IN FORM",
+        "be": "EN FORME UNE FOIS"
+      },
+      "formeColor": "#10B981",
+      "trend": [
+        0,
+        12,
+        27,
+        42,
+        67,
+        85,
+        100,
+        100,
+        108
+      ]
+    },
+    {
+      "pos": 4,
       "pilote": "upsilon7",
       "ecurie": "Scuderia Ferrari HP",
       "color": "#DC0000",
@@ -82,34 +110,6 @@
         95,
         107,
         122
-      ]
-    },
-    {
-      "pos": 4,
-      "pilote": "Taatsu7TV",
-      "ecurie": "Scuderia Ferrari HP",
-      "color": "#DC0000",
-      "pts": 108,
-      "victoires": 1,
-      "podiums": 5,
-      "meilleur_tour": "1:17.625 Barcelone",
-      "forme": "↑",
-      "label": {
-        "fr": "EN FORME",
-        "en": "IN FORM",
-        "be": "EN FORME UNE FOIS"
-      },
-      "formeColor": "#10B981",
-      "trend": [
-        0,
-        12,
-        27,
-        42,
-        67,
-        85,
-        100,
-        100,
-        108
       ]
     },
     {
@@ -145,7 +145,7 @@
       "pilote": "cobra_kai_cx",
       "ecurie": "Aston Martin",
       "color": "#006F62",
-      "pts": 30,
+      "pts": 36,
       "victoires": 0,
       "podiums": 1,
       "meilleur_tour": "1:20.564 Imola",
@@ -173,7 +173,7 @@
       "pilote": "JoKeR-_-SkyZo",
       "ecurie": "Mercedes-AMG Petronas",
       "color": "#00D2BE",
-      "pts": 25,
+      "pts": 35,
       "victoires": 0,
       "podiums": 2,
       "meilleur_tour": "1:16.050 Monaco",
@@ -226,6 +226,34 @@
     },
     {
       "pos": 9,
+      "pilote": "Pepit0mis",
+      "ecurie": "Alpine",
+      "color": "#0090FF",
+      "pts": 18,
+      "victoires": 0,
+      "podiums": 0,
+      "meilleur_tour": "-",
+      "forme": "→",
+      "label": {
+        "fr": "",
+        "en": "",
+        "be": ""
+      },
+      "formeColor": "#8B8B8B",
+      "trend": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "pos": 10,
       "pilote": "mobilou69",
       "ecurie": "Red Bull",
       "color": "#0600EF",
@@ -253,7 +281,7 @@
       ]
     },
     {
-      "pos": 10,
+      "pos": 11,
       "pilote": "sombre7675TTV",
       "ecurie": "Haas",
       "color": "#9E9E9E",
@@ -281,7 +309,7 @@
       ]
     },
     {
-      "pos": 11,
+      "pos": 12,
       "pilote": "Crimson_Death",
       "ecurie": "Mercedes-AMG Petronas",
       "color": "#00D2BE",
@@ -854,10 +882,81 @@
       "heure": "19H00",
       "distance": "35%",
       "affiche": "assets/posters/Canada 17 sept 2026.png",
-      "vainqueur": "À venir",
-      "temps": "En attente",
+      "vainqueur": "Skyyy",
+      "temps": "1:13.139",
       "meilleur_tour": "En attente",
-      "resultats_fwr": []
+      "resultats_fwr": [
+        {
+          "pos": 1,
+          "pilote": "Skyyy",
+          "ecurie": "Alpine",
+          "grille": "1",
+          "arrets": 1,
+          "mt": "1:13.139",
+          "temps": "x1 +3sec",
+          "pts": 25
+        },
+        {
+          "pos": 2,
+          "pilote": "Pepit0mis",
+          "ecurie": "Alpine",
+          "grille": "2",
+          "arrets": 1,
+          "mt": "1:13.484",
+          "temps": "x6 +18sec",
+          "pts": 18
+        },
+        {
+          "pos": 3,
+          "pilote": "Taatsu7TV",
+          "ecurie": "Scuderia Ferrari HP",
+          "grille": "4",
+          "arrets": 1,
+          "mt": "1:15.369",
+          "temps": "X1 +3sec",
+          "pts": 15
+        },
+        {
+          "pos": 4,
+          "pilote": "Gosset_25",
+          "ecurie": "Red Bull",
+          "grille": "5",
+          "arrets": 1,
+          "mt": "1:15.310",
+          "temps": "x2 +6sec",
+          "pts": 12
+        },
+        {
+          "pos": 5,
+          "pilote": "JoKeR-_-SkyZo",
+          "ecurie": "Mercedes-AMG Petronas",
+          "grille": "8",
+          "arrets": 1,
+          "mt": "1:15.062",
+          "temps": "x3 +9sec",
+          "pts": 10
+        },
+        {
+          "pos": 6,
+          "pilote": "upsilon7",
+          "ecurie": "Scuderia Ferrari HP",
+          "grille": "3",
+          "arrets": 1,
+          "mt": "1:15.645",
+          "temps": "x1 +3sec",
+          "pts": 8
+        },
+        {
+          "pos": 7,
+          "pilote": "cobra_kai_cx",
+          "ecurie": "McLaren",
+          "grille": "7",
+          "arrets": 1,
+          "mt": "1:16.454",
+          "temps": "x2 +6sec",
+          "pts": 6
+        }
+      ]
     }
   ],
   "i18n": {
