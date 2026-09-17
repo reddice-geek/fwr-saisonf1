@@ -150,6 +150,15 @@
 
     <div id="admin-view-affiches" style="display:none">
       <h3 style="color:white;font-weight:700;margin-bottom:12px">Affiches GP - Ajouter image poster</h3>
+      <button type="button" onclick="toggleNewPosterForm()" style="margin-bottom:12px;background:#10B981;color:white;padding:10px 16px;border:0;border-radius:8px;cursor:pointer;font-weight:700">+ Ajouter une affiche</button>
+      <div id="admin-new-poster-form" style="display:none;background:#0A0A0F;border:1px solid #2A2A35;padding:14px;border-radius:8px;margin-bottom:16px">
+        <label for="admin-new-poster-name" style="display:block;color:white;margin-bottom:6px">Nom de la nouvelle affiche</label>
+        <input id="admin-new-poster-name" type="text" maxlength="80" placeholder="Ex. Événement spécial" style="box-sizing:border-box;width:100%;padding:10px;background:#1F1F2A;color:white;border:1px solid #2A2A35;border-radius:6px;margin-bottom:12px">
+        <label for="admin-new-poster-file" style="display:block;color:white;margin-bottom:6px">Image (PNG, JPG ou WebP)</label>
+        <input id="admin-new-poster-file" type="file" accept="image/png,image/jpeg,image/webp" style="box-sizing:border-box;width:100%;padding:10px;background:#1F1F2A;color:white;border:1px solid #2A2A35;border-radius:6px;margin-bottom:12px">
+        <button type="button" onclick="addIndependentPoster()" style="background:#E10600;color:white;padding:10px 16px;border:0;border-radius:8px;cursor:pointer;font-weight:700">Enregistrer la nouvelle affiche</button>
+        <p style="color:#8B8B8B;font-size:12px;margin-top:8px">Enregistrement sur cet appareil uniquement. Pour la publier pour tous, il faut un stockage serveur.</p>
+      </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
         <div>
           <div style="margin-bottom:12px">
@@ -290,20 +299,70 @@ function renderAdminPilotes(){
   }).join('');
 }
 
+function getIndependentPosters(){
+  try { const data=JSON.parse(localStorage.getItem('fwr_independent_posters')||'[]'); return Array.isArray(data)?data:[]; }
+  catch(e){ console.warn(e); return []; }
+}
+function toggleNewPosterForm(){
+  const form=document.getElementById('admin-new-poster-form');
+  form.style.display=form.style.display==='none'?'block':'none';
+}
+function readPosterImage(file){
+  return new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(new Error('Lecture impossible'));reader.readAsDataURL(file);});
+}
+async function addIndependentPoster(){
+  const name=document.getElementById('admin-new-poster-name').value.trim();
+  const file=document.getElementById('admin-new-poster-file').files[0];
+  if(!name||!file){alert('Saisis un nom et choisis une image.');return;}
+  if(!['image/png','image/jpeg','image/webp'].includes(file.type)){alert('Choisis une image PNG, JPG ou WebP.');return;}
+  if(file.size>2*1024*1024){alert('Image trop volumineuse pour le stockage local (maximum 2 Mo).');return;}
+  const posters=getIndependentPosters();
+  if(posters.some(p=>p.name.toLocaleLowerCase()===name.toLocaleLowerCase())){alert('Ce nom existe déjà. Utilise le bouton Modifier sur son affiche.');return;}
+  try{
+    posters.push({id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),name,image:await readPosterImage(file)});
+    localStorage.setItem('fwr_independent_posters',JSON.stringify(posters));
+    document.getElementById('admin-new-poster-name').value='';
+    document.getElementById('admin-new-poster-file').value='';
+    document.getElementById('admin-new-poster-form').style.display='none';
+    renderAdminAffiches();renderGPs();
+    alert('Nouvelle affiche ajoutée sur cet appareil.');
+  }catch(e){console.error(e);alert('Enregistrement impossible : espace de stockage insuffisant. Essaie une image plus petite.');}
+}
+async function editIndependentPoster(id){
+  const posters=getIndependentPosters();const poster=posters.find(p=>p.id===id);if(!poster)return;
+  const name=prompt('Nom de l’affiche :',poster.name);if(name===null)return;
+  if(!name.trim()){alert('Le nom est obligatoire.');return;}
+  if(posters.some(p=>p.id!==id&&p.name.toLocaleLowerCase()===name.trim().toLocaleLowerCase())){alert('Ce nom existe déjà.');return;}
+  poster.name=name.trim();
+  try{localStorage.setItem('fwr_independent_posters',JSON.stringify(posters));renderAdminAffiches();renderGPs();}
+  catch(e){alert('Enregistrement impossible.');}
+}
+async function replaceIndependentPoster(id){
+  const input=document.createElement('input');input.type='file';input.accept='image/png,image/jpeg,image/webp';
+  input.onchange=async()=>{
+    const file=input.files[0];if(!file)return;
+    if(!['image/png','image/jpeg','image/webp'].includes(file.type)||file.size>2*1024*1024){alert('Image PNG, JPG ou WebP, maximum 2 Mo.');return;}
+    const posters=getIndependentPosters();const poster=posters.find(p=>p.id===id);if(!poster)return;
+    try{poster.image=await readPosterImage(file);localStorage.setItem('fwr_independent_posters',JSON.stringify(posters));renderAdminAffiches();renderGPs();}
+    catch(e){alert('Enregistrement impossible : stockage insuffisant.');}
+  };input.click();
+}
 function renderAdminAffiches(){
-  const list = document.getElementById('admin-affiches-list');
-  if(!list) return;
-  const gps = EMBEDDED_GPS.calendrier || [];
-  list.innerHTML = gps.map(gp=>{
-    const lsKey = 'fwr_poster_'+gp.gp;
-    const customPoster = localStorage.getItem(lsKey);
-    const imgSrc = customPoster || gp.affiche;
-    return `<div style="background:#0A0A0F;border:1px solid #1F1F2A;border-radius:8px;padding:8px;text-align:center">
-      <div style="font-size:10px;color:white;margin-bottom:4px">${gp.gp}</div>
-      ${imgSrc?`<img src="${imgSrc}" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px" onerror="this.style.display='none'">`:'<div style="height:80px;background:#1F1F2A;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#8B8B8B;font-size:10px">Pas d\'affiche</div>'}
-      <div style="font-size:8px;color:#8B8B8B;margin-top:4px">${customPoster?'Custom':'Officiel'}</div>
-    </div>`;
-  }).join('');
+  const list=document.getElementById('admin-affiches-list');if(!list)return;
+  list.replaceChildren();
+  const makeCard=(name,image,status,actions)=>{
+    const card=document.createElement('div');card.style.cssText='background:#0A0A0F;border:1px solid #1F1F2A;border-radius:8px;padding:8px;text-align:center';
+    const title=document.createElement('div');title.textContent=name;title.style.cssText='font-size:12px;color:white;margin-bottom:4px';card.appendChild(title);
+    if(image){const img=document.createElement('img');img.src=image;img.alt='Affiche '+name;img.style.cssText='width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px';card.appendChild(img);}
+    const label=document.createElement('div');label.textContent=status;label.style.cssText='font-size:10px;color:#8B8B8B;margin:5px';card.appendChild(label);
+    if(actions){const row=document.createElement('div');row.style.cssText='display:flex;flex-wrap:wrap;gap:5px;justify-content:center';for(const [text,fn] of actions){const b=document.createElement('button');b.type='button';b.textContent=text;b.onclick=fn;b.style.cssText='background:#1F1F2A;color:white;border:1px solid #2A2A35;border-radius:5px;padding:5px;cursor:pointer';row.appendChild(b);}card.appendChild(row);}
+    list.appendChild(card);
+  };
+  (EMBEDDED_GPS.calendrier||[]).forEach(gp=>{
+    const custom=localStorage.getItem('fwr_poster_'+gp.gp);
+    makeCard(gp.gp,custom||gp.affiche,custom?'Custom':'Officiel',[["Modifier",()=>{document.getElementById('admin-affiche-gp').value=gp.gp;document.getElementById('admin-affiche-file').focus();}]]);
+  });
+  getIndependentPosters().forEach(p=>makeCard(p.name,p.image,'Ajoutée sur cet appareil',[["Modifier le nom",()=>editIndependentPoster(p.id)],["Remplacer l’image",()=>replaceIndependentPoster(p.id)]]));
 }
 
 function addResultToGP(){
