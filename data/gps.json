@@ -98,6 +98,17 @@
       "status": "Terminé",
       "vainqueur": "Skyyy",
       "affiche": "assets/posters/barcelone-14-sept.png"
+    },
+    {
+      "date": "17 Sept 2026",
+      "gp": "Canada",
+      "flag": "🇪🇸",
+      "circuit": "Gille Villeneuve",
+      "heure": "19H00",
+      "distance": "35%",
+      "status": "A venir",
+      "vainqueur": "Skyyy",
+      "affiche": "assets/posters/Canada 17 sept 2026.png"
     }
   ],
   "saison": "S1 FWR 2026",
