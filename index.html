@@ -85,6 +85,28 @@
   <div data-i18n="footer_legal" style="margin-top:6px;font-size:10px;color:#666">F1 25® est une marque déposée • Site non affilié à Formula 1 • Données 100% Team FWR • Utilisation libre sous autorisation FWR</div>
 </footer>
 
+
+<!-- Éditeur complet d'une course : page intégrée à l'administration -->
+<section id="gp-editor" role="dialog" aria-modal="true" aria-labelledby="gp-editor-title" style="display:none;position:fixed;inset:0;z-index:250;background:#0b0b10;overflow:auto;padding:20px;color:white">
+  <div style="max-width:1250px;margin:auto">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:22px">
+      <h2 id="gp-editor-title" style="font-size:26px;font-weight:700">Modifier une course</h2>
+      <button type="button" id="gp-editor-close" style="background:#252530;color:white;padding:10px 18px;border-radius:8px">Fermer ✕</button>
+    </div>
+    <form id="gp-editor-form">
+      <div id="gp-editor-fields" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:25px"></div>
+      <h3 id="gp-editor-results-title" style="font-size:21px;font-weight:700;margin-bottom:12px">Résultats des pilotes</h3>
+      <div id="gp-editor-results" style="display:flex;flex-direction:column;gap:12px"></div>
+      <button type="button" id="gp-editor-add" style="margin-top:15px;background:#059669;color:white;padding:10px 16px;border-radius:8px">+ Ajouter un pilote</button>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;margin-bottom:30px">
+        <button type="submit" id="gp-editor-save" style="background:#e10600;color:white;padding:13px 24px;border-radius:8px;font-weight:700">Enregistrer toutes les modifications</button>
+        <button type="button" id="gp-editor-cancel" style="background:#252530;color:white;padding:13px 24px;border-radius:8px">Annuler</button>
+      </div>
+      <p id="gp-editor-note" style="color:#a1a1aa;font-size:12px">Enregistrement sur cet appareil. Pour publier pour tous, exportez les fichiers JSON et mettez-les à jour sur GitHub.</p>
+    </form>
+  </div>
+</section>
+
 <script src="js/app.js"></script>
 
 <!-- Admin Panel Discret -->
@@ -409,23 +431,82 @@ function persistAdmin(){
   i18n = adminData.i18n || i18n;
   renderAll(); loadAdminData();
 }
-function editGP(name){
-  const gp = adminData.gp_disputes.find(g=>g.gp===name);
-  if(!gp) return;
-  const circuit=prompt('Circuit de '+name, gp.circuit);
-  if(circuit===null) return;
-  const date=prompt('Date du GP', gp.date);
-  if(date===null) return;
-  const heure=prompt('Heure du GP', gp.heure);
-  if(heure===null) return;
-  const vainqueur=prompt('Vainqueur', gp.vainqueur || '-');
-  if(vainqueur===null) return;
-  gp.circuit=circuit.trim(); gp.date=date.trim(); gp.heure=heure.trim(); gp.vainqueur=vainqueur.trim();
-  const calendar=EMBEDDED_GPS.calendrier.find(g=>g.gp===name);
-  if(calendar) Object.assign(calendar,{circuit:gp.circuit,date:gp.date,heure:gp.heure,vainqueur:gp.vainqueur});
-  persistAdmin();
-  alert('GP modifié. Télécharge les JSON dans Export pour publier les modifications sur GitHub.');
+// Éditeur de course complet, sans fenêtres prompt successives.
+let editingGPName = null;
+const gpEditorText = {
+  fr: {title:'Modifier une course',results:'Résultats des pilotes',add:'+ Ajouter un pilote',save:'Enregistrer toutes les modifications',cancel:'Annuler',close:'Fermer ✕',remove:'Supprimer ce pilote',note:'Enregistrement sur cet appareil. Pour publier pour tous, exportez les fichiers JSON et mettez-les à jour sur GitHub.',required:'Le nom du Grand Prix est obligatoire.',duplicate:'Un Grand Prix porte déjà ce nom.',driver:'Chaque résultat doit contenir un nom de pilote.',position:'Les positions doivent être des nombres entiers positifs et différents.',points:'Les points et les arrêts doivent être des nombres positifs ou nuls.',saved:'Course enregistrée sur cet appareil. Exportez standings.json et gps.json pour publier les modifications sur GitHub.',labels:['Nom du Grand Prix','Circuit','Date','Heure','Distance','Vainqueur','Temps du vainqueur','Meilleur tour','Affiche (chemin ou URL)'],columns:['Position','Pilote','Écurie','Grille','Arrêts','Meilleur tour','Temps / Écart','Points']},
+  en: {title:'Edit race',results:'Driver results',add:'+ Add driver',save:'Save all changes',cancel:'Cancel',close:'Close ✕',remove:'Remove driver',note:'Saved on this device. To publish for everyone, export the JSON files and update them on GitHub.',required:'Grand Prix name is required.',duplicate:'Another Grand Prix already has this name.',driver:'Every result must have a driver name.',position:'Positions must be unique positive whole numbers.',points:'Points and stops must be non-negative numbers.',saved:'Race saved on this device. Export standings.json and gps.json to publish changes on GitHub.',labels:['Grand Prix name','Circuit','Date','Time','Distance','Winner','Winner time','Fastest lap','Poster (path or URL)'],columns:['Position','Driver','Team','Grid','Stops','Fastest lap','Time / Gap','Points']},
+  be: {title:'Modifier une course',results:'Résultats des pilotes',add:'+ Ajouter un pilote',save:'Enregistrer toutes les modifications',cancel:'Annuler',close:'Fermer ✕',remove:'Supprimer ce pilote',note:'Enregistré sur cet appareil. Pour publier pour tous, exportez les fichiers JSON et mettez-les à jour sur GitHub.',required:'Le nom du Grand Prix est obligatoire.',duplicate:'Un Grand Prix porte déjà ce nom.',driver:'Chaque résultat doit contenir un nom de pilote.',position:'Les positions doivent être des nombres entiers positifs et différents.',points:'Les points et les arrêts doivent être des nombres positifs ou nuls.',saved:'Course enregistrée sur cet appareil. Exportez standings.json et gps.json pour publier les modifications sur GitHub.',labels:['Nom du Grand Prix','Circuit','Date','Heure','Distance','Vainqueur','Temps du vainqueur','Meilleur tour','Affiche (chemin ou URL)'],columns:['Position','Pilote','Écurie','Grille','Arrêts','Meilleur tour','Temps / Écart','Points']}
+};
+const gpEditorFields = ['gp','circuit','date','heure','distance','vainqueur','temps','meilleur_tour','affiche'];
+const gpResultFields = ['pos','pilote','ecurie','grille','arrets','mt','temps','pts'];
+function gpEditorLanguage(){return gpEditorText[currentLang] || gpEditorText.fr;}
+function gpEditorInput(field,value,label,type='text'){
+  const wrapper=document.createElement('label');wrapper.style.cssText='display:flex;flex-direction:column;gap:6px;color:#d4d4d8;font-size:13px';
+  const caption=document.createElement('span');caption.textContent=label;wrapper.appendChild(caption);
+  const input=document.createElement('input');input.name=field;input.type=type;input.value=value??'';input.style.cssText='width:100%;box-sizing:border-box;background:#1f1f2a;border:1px solid #40404c;border-radius:7px;padding:10px;color:white';
+  if(field==='gp'||field==='pilote')input.required=true;
+  if(type==='number'){input.min=field==='pos'?'1':'0';input.step='1';}
+  wrapper.appendChild(input);return wrapper;
 }
+function gpEditorAddResult(result={}){
+  const labels=gpEditorLanguage(),container=document.getElementById('gp-editor-results');
+  const card=document.createElement('div');card.className='gp-editor-result';card.style.cssText='background:#15151d;border:1px solid #353540;border-radius:10px;padding:14px';
+  const fields=document.createElement('div');fields.style.cssText='display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px';
+  gpResultFields.forEach((field,i)=>fields.appendChild(gpEditorInput(field,result[field]??(field==='pos'?container.children.length+1:field==='pts'||field==='arrets'?0:'-'),labels.columns[i],['pos','pts','arrets'].includes(field)?'number':'text')));
+  card.appendChild(fields);
+  const remove=document.createElement('button');remove.type='button';remove.textContent=labels.remove;remove.style.cssText='margin-top:12px;background:#991b1b;color:white;padding:7px 12px;border-radius:7px';remove.addEventListener('click',()=>card.remove());card.appendChild(remove);
+  container.appendChild(card);
+}
+function editGP(name){
+  const gp=adminData?.gp_disputes.find(item=>item.gp===name);if(!gp)return;
+  editingGPName=name;
+  const labels=gpEditorLanguage();
+  document.getElementById('gp-editor-title').textContent=labels.title+' — '+name;
+  document.getElementById('gp-editor-results-title').textContent=labels.results;
+  document.getElementById('gp-editor-add').textContent=labels.add;
+  document.getElementById('gp-editor-save').textContent=labels.save;
+  document.getElementById('gp-editor-cancel').textContent=labels.cancel;
+  document.getElementById('gp-editor-close').textContent=labels.close;
+  document.getElementById('gp-editor-note').textContent=labels.note;
+  const fields=document.getElementById('gp-editor-fields');fields.replaceChildren();
+  gpEditorFields.forEach((field,i)=>fields.appendChild(gpEditorInput(field,gp[field],labels.labels[i])));
+  const results=document.getElementById('gp-editor-results');results.replaceChildren();
+  (gp.resultats_fwr||[]).forEach(result=>gpEditorAddResult(result));
+  document.getElementById('gp-editor').style.display='block';document.body.style.overflow='hidden';
+  document.getElementById('gp-editor-close').focus();
+}
+function closeGPEditor(){document.getElementById('gp-editor').style.display='none';document.body.style.overflow='';editingGPName=null;}
+function saveGPEditor(event){
+  event.preventDefault();const original=adminData?.gp_disputes.find(item=>item.gp===editingGPName);if(!original)return;
+  const labels=gpEditorLanguage(),form=document.getElementById('gp-editor-form');
+  const values={};gpEditorFields.forEach(field=>values[field]=form.querySelector('#gp-editor-fields [name="'+field+'"]').value.trim());
+  if(!values.gp)return alert(labels.required);
+  if(adminData.gp_disputes.some(item=>item!==original&&item.gp.toLocaleLowerCase()===values.gp.toLocaleLowerCase()))return alert(labels.duplicate);
+  const results=[];const positions=new Set();
+  for(const card of document.querySelectorAll('#gp-editor-results .gp-editor-result')){
+    const result={};gpResultFields.forEach(field=>result[field]=card.querySelector('[name="'+field+'"]').value.trim());
+    if(!result.pilote)return alert(labels.driver);
+    const pos=Number(result.pos),pts=Number(result.pts),arrets=Number(result.arrets);
+    if(!Number.isSafeInteger(pos)||pos<1||positions.has(pos))return alert(labels.position);
+    if(!Number.isSafeInteger(pts)||pts<0||!Number.isSafeInteger(arrets)||arrets<0)return alert(labels.points);
+    positions.add(pos);result.pos=pos;result.pts=pts;result.arrets=arrets;results.push(result);
+  }
+  results.sort((a,b)=>a.pos-b.pos);
+  const calendar=EMBEDDED_GPS.calendrier.find(item=>item.gp===editingGPName);
+  Object.assign(original,values,{resultats_fwr:results});
+  if(calendar)Object.assign(calendar,values);
+  gps=EMBEDDED_GPS.calendrier;
+  try{
+    localStorage.setItem('fwr_admin_standings',JSON.stringify(adminData));
+    localStorage.setItem('fwr_admin_gps',JSON.stringify(EMBEDDED_GPS));
+  }catch(error){console.error(error);return alert('Impossible de sauvegarder : stockage du navigateur indisponible.');}
+  closeGPEditor();persistAdmin();alert(labels.saved);
+}
+document.getElementById('gp-editor-form').addEventListener('submit',saveGPEditor);
+document.getElementById('gp-editor-add').addEventListener('click',()=>gpEditorAddResult());
+document.getElementById('gp-editor-close').addEventListener('click',closeGPEditor);
+document.getElementById('gp-editor-cancel').addEventListener('click',closeGPEditor);
 function editPilote(name){
   const p=adminData.classement_general.find(x=>x.pilote===name);
   if(!p) return;
