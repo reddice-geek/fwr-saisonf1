@@ -17,7 +17,7 @@ let standings = [];
 let gps = [];
 let selectedDrivers = [];
 let activeTab = "classement";
-let currentLang = "fr";
+let currentLang = (() => { try { const saved = localStorage.getItem("fwr_language"); return ["fr","en","be"].includes(saved) ? saved : "fr"; } catch { return "fr"; } })();
 let chartMain = null;
 let chartMini = null;
 let i18n = {};
@@ -74,7 +74,7 @@ function t(key) {
     i18n.fr ||
     {};
 
-  return translations[key] || key;
+  return translations[key] || i18n.fr?.[key] || key;
 }
 
 // -----------------------------------------
@@ -115,6 +115,7 @@ function applyStandings(data) {
   standings = data.classement_general.map(normalizeDriver);
 
   i18n = data.i18n || {};
+  if (window.FWR_LANG_EXTRA) { for (const lang of ["fr", "en", "be"]) i18n[lang] = { ...(i18n[lang] || {}), ...window.FWR_LANG_EXTRA[lang] }; }
 
   const available = standings.map(d => d.pilote);
 
@@ -199,6 +200,7 @@ function renderAll() {
   updateCharts();
   showTab(activeTab);
   updateLang();
+  if (window.FWR_translateInterface) window.FWR_translateInterface();
 }
 
 // -----------------------------------------
@@ -206,6 +208,7 @@ function renderAll() {
 // -----------------------------------------
 
 function updateLang() {
+  document.documentElement.lang = currentLang === "be" ? "fr-BE" : currentLang;
   document
     .querySelectorAll(".lang-switch button")
     .forEach(button => {
@@ -233,6 +236,8 @@ function switchLang(lang) {
   }
 
   currentLang = lang;
+  try { localStorage.setItem("fwr_language", lang); } catch {}
+  document.documentElement.lang = lang === "be" ? "fr-BE" : lang;
   renderAll();
 }
 
