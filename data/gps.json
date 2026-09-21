@@ -124,14 +124,14 @@
       "circuit": "Gilles Villeneuve",
       "heure": "19H00",
       "distance": "35%",
-      "status": "A venir",
+      "status": "Terminé",
       "vainqueur": "Skyyy",
       "affiche": "assets/posters/Canada 17 sept 2026.png",
       "temps": "1:13.139",
       "meilleur_tour": "En attente"
-    }
-     {
-      "date": "17 sept 2026",
+    },
+    {
+      "date": "22 septembre 2026",
       "gp": "Autriche",
       "flag": "🇦🇹",
       "circuit": "Red Bull Ring",
