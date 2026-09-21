@@ -130,6 +130,19 @@
       "temps": "1:13.139",
       "meilleur_tour": "En attente"
     }
+     {
+      "date": "17 sept 2026",
+      "gp": "Autriche",
+      "flag": "🇨🇦",
+      "circuit": "Red Bull Ring",
+      "heure": "19H00",
+      "distance": "35%",
+      "status": "A venir",
+      "vainqueur": "A determiné",
+      "affiche": "assets/posters/Autriche 22 sept 2026.png",
+      "temps": "N.C",
+      "meilleur_tour": "En attente"
+    }
   ],
   "saison": "S1 FWR 2026",
   "saison_label": {
