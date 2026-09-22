@@ -965,13 +965,13 @@
       "heure": "19H00",
       "distance": "35%",
       "affiche": "assets/posters/autriche-01-sept.png",
-      "vainqueur": "À venir",
-      "temps": "En attente",
-      "meilleur_tour": "En attente",
+      "vainqueur": "Skyyy",
+      "temps": "",
+      "meilleur_tour": "1:07.356",
       "resultats_fwr": [
         {
           "pos": 1,
-          "pilote": "Skyyy ",
+          "pilote": "Skyyy",
           "ecurie": "Alpine",
           "grille": "1",
           "arrets": 2,
@@ -981,7 +981,7 @@
         },
         {
           "pos": 2,
-          "pilote": "Pepit0mis ",
+          "pilote": "Pepit0mis",
           "ecurie": "Alpine",
           "grille": "2",
           "arrets": 1,

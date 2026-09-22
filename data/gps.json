@@ -134,14 +134,14 @@
       "date": "22 septembre 2026",
       "gp": "Autriche",
       "flag": "🇦🇹",
-      "circuit": "Red Bull Ring",
+      "circuit": "Red bull ring",
       "heure": "19H00",
       "distance": "35%",
       "status": "A venir",
-      "vainqueur": "A determiné",
-      "affiche": "assets/posters/Autriche 22 septembre 2026.png",
-      "temps": "N.C",
-      "meilleur_tour": "En attente"
+      "vainqueur": "Skyyy",
+      "affiche": "assets/posters/autriche-01-sept.png",
+      "temps": "",
+      "meilleur_tour": "1:07.356"
     }
   ],
   "saison": "S1 FWR 2026",
