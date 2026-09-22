@@ -1,23 +1,13 @@
 {
-  "saison": "S1 FWR 2026",
-  "saison_label": {
-    "fr": "Saison S1 2026",
-    "en": "Season S1 2026",
-    "be": "Saison S1 2026 une fois"
-  },
-  "derniere_maj": "22 Sept 2026 - Canada + Autriche - 11 GP - Courbes MAJ",
-  "logo": "assets/logo/s1-fwr-logo-transparent.png",
-  "twitch": "https://twitch.tv/upsilon7",
-  "champion": "Skyyy - 168 pts - 6 victoires - 11 GP",
   "classement_general": [
     {
       "pos": 1,
       "pilote": "Skyyy",
       "ecurie": "Alpine",
       "color": "#0090FF",
-      "pts": 168,
-      "victoires": 6,
-      "podiums": 6,
+      "pts": 193,
+      "victoires": 5,
+      "podiums": 5,
       "meilleur_tour": "1:12.865 Monaco RECORD",
       "forme": "↑↑↑",
       "label": {
@@ -35,9 +25,7 @@
         68,
         93,
         118,
-        143,
-        168,
-        168
+        143
       ]
     },
     {
@@ -45,7 +33,7 @@
       "pilote": "Gosset_25",
       "ecurie": "Red Bull",
       "color": "#0600EF",
-      "pts": 142,
+      "pts": 152,
       "victoires": 1,
       "podiums": 7,
       "meilleur_tour": "1:14.953 Monaco",
@@ -65,17 +53,43 @@
         82,
         100,
         118,
-        130,
-        142,
-        142
+        130
       ]
     },
     {
       "pos": 3,
+      "pilote": "Taatsu7TV",
+      "ecurie": "Scuderia Ferrari HP",
+      "color": "#DC0000",
+      "pts": 138,
+      "victoires": 1,
+      "podiums": 5,
+      "meilleur_tour": "1:17.625 Barcelone",
+      "forme": "↑",
+      "label": {
+        "fr": "EN FORME",
+        "en": "IN FORM",
+        "be": "EN FORME UNE FOIS"
+      },
+      "formeColor": "#10B981",
+      "trend": [
+        0,
+        12,
+        27,
+        42,
+        67,
+        85,
+        100,
+        100,
+        108
+      ]
+    },
+    {
+      "pos": 4,
       "pilote": "upsilon7",
       "ecurie": "Scuderia Ferrari HP",
       "color": "#DC0000",
-      "pts": 130,
+      "pts": 134,
       "victoires": 0,
       "podiums": 6,
       "meilleur_tour": "1:17.220 Barcelone",
@@ -95,39 +109,7 @@
         85,
         95,
         107,
-        122,
-        130,
-        130
-      ]
-    },
-    {
-      "pos": 4,
-      "pilote": "Taatsu7TV",
-      "ecurie": "Scuderia Ferrari HP",
-      "color": "#DC0000",
-      "pts": 123,
-      "victoires": 1,
-      "podiums": 6,
-      "meilleur_tour": "1:17.625 Barcelone",
-      "forme": "↑",
-      "label": {
-        "fr": "EN FORME",
-        "en": "IN FORM",
-        "be": "EN FORME UNE FOIS"
-      },
-      "formeColor": "#10B981",
-      "trend": [
-        0,
-        12,
-        27,
-        42,
-        67,
-        85,
-        100,
-        100,
-        108,
-        123,
-        123
+        122
       ]
     },
     {
@@ -150,8 +132,6 @@
         25,
         25,
         50,
-        68,
-        68,
         68,
         68,
         68,
@@ -185,13 +165,39 @@
         18,
         30,
         30,
-        30,
-        36,
-        36
+        30
       ]
     },
     {
       "pos": 7,
+      "pilote": "Pepit0mis",
+      "ecurie": "Alpine",
+      "color": "#0090FF",
+      "pts": 36,
+      "victoires": 0,
+      "podiums": 0,
+      "meilleur_tour": "-",
+      "forme": "→",
+      "label": {
+        "fr": "",
+        "en": "",
+        "be": ""
+      },
+      "formeColor": "#8B8B8B",
+      "trend": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "pos": 8,
       "pilote": "JoKeR-_-SkyZo",
       "ecurie": "Mercedes-AMG Petronas",
       "color": "#00D2BE",
@@ -215,13 +221,11 @@
         0,
         0,
         15,
-        25,
-        35,
-        35
+        25
       ]
     },
     {
-      "pos": 8,
+      "pos": 9,
       "pilote": "JotagrosFR",
       "ecurie": "Red Bull",
       "color": "#0600EF",
@@ -245,38 +249,6 @@
         0,
         0,
         0,
-        18,
-        18,
-        18
-      ]
-    },
-    {
-      "pos": 9,
-      "pilote": "Pepit0mis",
-      "ecurie": "Alpine",
-      "color": "#0090FF",
-      "pts": 18,
-      "victoires": 0,
-      "podiums": 0,
-      "meilleur_tour": "-",
-      "forme": "→",
-      "label": {
-        "fr": "",
-        "en": "",
-        "be": ""
-      },
-      "formeColor": "#8B8B8B",
-      "trend": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        18,
         18
       ]
     },
@@ -305,8 +277,6 @@
         16,
         16,
         16,
-        16,
-        16,
         16
       ]
     },
@@ -327,8 +297,6 @@
       },
       "formeColor": "#8B8B8B",
       "trend": [
-        6,
-        6,
         6,
         6,
         6,
@@ -365,54 +333,10 @@
         0,
         0,
         0,
-        0,
-        0,
         0
       ]
     }
   ],
-  "ecuries_config": {
-    "Scuderia Ferrari HP": {
-      "color": "#DC0000",
-      "label": "rouge"
-    },
-    "Aston Martin": {
-      "color": "#006F62",
-      "label": "vert foncé"
-    },
-    "Alpine": {
-      "color": "#0090FF",
-      "label": "bleu claire"
-    },
-    "Red Bull": {
-      "color": "#0600EF",
-      "label": "bleu foncé"
-    },
-    "Williams": {
-      "color": "#A8D5BA",
-      "label": "vert délavé"
-    },
-    "McLaren": {
-      "color": "#FF8700",
-      "label": "orange"
-    },
-    "KICK Sauber": {
-      "color": "#00E676",
-      "label": "vert neon"
-    },
-    "Mercedes-AMG Petronas": {
-      "color": "#00D2BE",
-      "label": "bleu délavé"
-    },
-    "Haas": {
-      "color": "#9E9E9E",
-      "label": "gris"
-    },
-    "Visa Cash App Racing Bulls": {
-      "color": "#6692FF",
-      "label": "bleu délavé"
-    }
-  },
   "gp_disputes": [
     {
       "date": "21 Août 2026",
@@ -670,7 +594,7 @@
         {
           "pos": 1,
           "pilote": "Taatsu7TV",
-          "ecurie": "Scuderia Ferrari HP",
+          "ecurie": "Ferrari HP",
           "grille": "-",
           "arrets": 1,
           "mt": "-",
@@ -690,7 +614,7 @@
         {
           "pos": 3,
           "pilote": "upsilon7",
-          "ecurie": "Scuderia Ferrari HP",
+          "ecurie": "Ferrari HP",
           "grille": "-",
           "arrets": 1,
           "mt": "-",
@@ -806,7 +730,7 @@
         {
           "pos": 4,
           "pilote": "cobra_kai_cx",
-          "ecurie": "Aston Martin",
+          "ecurie": "McLaren",
           "grille": "P4",
           "arrets": 1,
           "mt": "1:20.564",
@@ -1025,7 +949,7 @@
         {
           "pos": 7,
           "pilote": "cobra_kai_cx",
-          "ecurie": "Aston Martin",
+          "ecurie": "McLaren",
           "grille": "P7",
           "arrets": 1,
           "mt": "1:16.454",
@@ -1037,14 +961,65 @@
     {
       "date": "22 septembre 2026",
       "gp": "Autriche",
-      "circuit": "Red Bull Ring",
+      "circuit": "Red bull ring",
       "heure": "19H00",
       "distance": "35%",
-      "affiche": "assets/posters/Autriche 22 septembre 2026.png",
-      "vainqueur": "A determiné",
-      "temps": "N.C",
+      "affiche": "assets/posters/autriche-01-sept.png",
+      "vainqueur": "À venir",
+      "temps": "En attente",
       "meilleur_tour": "En attente",
-      "resultats_fwr": []
+      "resultats_fwr": [
+        {
+          "pos": 1,
+          "pilote": "Skyyy ",
+          "ecurie": "Alpine",
+          "grille": "1",
+          "arrets": 2,
+          "mt": "1:07.356",
+          "temps": "-",
+          "pts": 25
+        },
+        {
+          "pos": 2,
+          "pilote": "Pepit0mis ",
+          "ecurie": "Alpine",
+          "grille": "2",
+          "arrets": 1,
+          "mt": "1:08.419",
+          "temps": "-",
+          "pts": 18
+        },
+        {
+          "pos": 3,
+          "pilote": "Taatsu7TV",
+          "ecurie": "Scuderia Ferrari HP",
+          "grille": "3",
+          "arrets": 1,
+          "mt": "1:08.642",
+          "temps": "-",
+          "pts": 15
+        },
+        {
+          "pos": 4,
+          "pilote": "upsilon7",
+          "ecurie": "Scuderia Ferrari HP",
+          "grille": "4",
+          "arrets": 1,
+          "mt": "1:09.844",
+          "temps": "-",
+          "pts": 12
+        },
+        {
+          "pos": 5,
+          "pilote": "Gosset_25",
+          "ecurie": "Red Bull",
+          "grille": "5",
+          "arrets": 1,
+          "mt": "1:09.924",
+          "temps": "-",
+          "pts": 10
+        }
+      ]
     }
   ],
   "i18n": {
@@ -1068,10 +1043,7 @@
       "cote": "Cote parieur",
       "favori": "favori",
       "ecart": "+7 pts",
-      "maj": "MAJ 22 Sept • 11 GP • Courbes MAJ",
-      "footer_created": "Site web réalisé par le webmaster en 2026 sous autorisation FWR • Utilisation libre de droits • Données officielles Team FWR • S1 2026 • twitch.tv/upsilon7",
-      "footer_copy": "© 2026 FWR Racing League • Site officiel S1 2026 • twitch.tv/upsilon7 • Données officielles",
-      "footer_legal": "F1 25® est une marque déposée • Site non affilié à Formula 1 • Données 100% Team FWR • Utilisation libre sous autorisation FWR"
+      "maj": "MAJ 14 Sept • 9 GP"
     },
     "en": {
       "classement": "General Standings",
@@ -1093,10 +1065,7 @@
       "cote": "Bet odds",
       "favori": "favorite",
       "ecart": "+7 pts gap",
-      "maj": "Updated Sept 22 • 11 GP • Curves updated",
-      "footer_created": "Website developed by the webmaster in 2026 under FWR authorization • Free use - Free rights • Official Team FWR data • S1 2026 • twitch.tv/upsilon7",
-      "footer_copy": "© 2026 FWR Racing League • Official S1 2026 site • twitch.tv/upsilon7 • Official data",
-      "footer_legal": "F1 25® is a registered trademark • Not affiliated with Formula 1 • 100% Team FWR data • Free use under FWR authorization"
+      "maj": "Updated Sept 14 • 9 GP"
     },
     "be": {
       "classement": "Classement Général une fois",
@@ -1118,10 +1087,59 @@
       "cote": "Cote parieur une fois",
       "favori": "favori une fois - c'est du lourd!",
       "ecart": "+7 points septante-huit? Non +7 une fois",
-      "maj": "MAJ 22 Sept • 11 GP • Courbes MAJ une fois - Wanze!",
-      "footer_created": "Site web réalisé par le webmaster en 2026 sous autorisation FWR une fois • Utilisation libre de droits une fois - C'est du lourd! • Données officielles Team FWR une fois • S1 2026 • twitch.tv/upsilon7 - Ça va ou quoi?",
-      "footer_copy": "© 2026 FWR Racing League une fois • Site officiel S1 2026 une fois • twitch.tv/upsilon7 • Données officielles une fois - Wanze!",
-      "footer_legal": "F1 25® est une marque déposée une fois • Site non affilié à Formula 1 une fois • Données 100% Team FWR • Utilisation libre sous autorisation FWR une fois - Kot!"
+      "maj": "MAJ 14 Sept • 9 GP • septante? Non 9 une fois - Wanze!"
+    }
+  },
+  "saison": "S1 FWR 2026",
+  "saison_label": {
+    "fr": "Saison S1 2026",
+    "en": "Season S1 2026",
+    "be": "Saison S1 2026 une fois"
+  },
+  "derniere_maj": "14 Sept 2026 - Barcelone - Scores corrigés image GP1-GP9",
+  "logo": "assets/logo/s1-fwr-logo-transparent.png",
+  "twitch": "https://twitch.tv/upsilon7",
+  "champion": "Skyyy - 143 pts - 5 victoires - Scores corrigés GP1-GP9",
+  "ecuries_config": {
+    "Scuderia Ferrari HP": {
+      "color": "#DC0000",
+      "label": "rouge"
+    },
+    "Aston Martin": {
+      "color": "#006F62",
+      "label": "vert foncé"
+    },
+    "Alpine": {
+      "color": "#0090FF",
+      "label": "bleu claire"
+    },
+    "Red Bull": {
+      "color": "#0600EF",
+      "label": "bleu foncé"
+    },
+    "Williams": {
+      "color": "#A8D5BA",
+      "label": "vert délavé"
+    },
+    "McLaren": {
+      "color": "#FF8700",
+      "label": "orange"
+    },
+    "KICK Sauber": {
+      "color": "#00E676",
+      "label": "vert neon"
+    },
+    "Mercedes-AMG Petronas": {
+      "color": "#00D2BE",
+      "label": "bleu délavé"
+    },
+    "Haas": {
+      "color": "#9E9E9E",
+      "label": "gris"
+    },
+    "Visa Cash App Racing Bulls": {
+      "color": "#6692FF",
+      "label": "bleu délavé"
     }
   }
 }
