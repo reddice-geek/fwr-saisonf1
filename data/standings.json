@@ -5,7 +5,7 @@
       "pilote": "Skyyy",
       "ecurie": "Alpine",
       "color": "#0090FF",
-      "pts": 193,
+      "pts": 236,
       "victoires": 5,
       "podiums": 5,
       "meilleur_tour": "1:12.865 Monaco RECORD",
@@ -33,7 +33,7 @@
       "pilote": "Gosset_25",
       "ecurie": "Red Bull",
       "color": "#0600EF",
-      "pts": 152,
+      "pts": 175,
       "victoires": 1,
       "podiums": 7,
       "meilleur_tour": "1:14.953 Monaco",
@@ -61,7 +61,7 @@
       "pilote": "Taatsu7TV",
       "ecurie": "Scuderia Ferrari HP",
       "color": "#DC0000",
-      "pts": 138,
+      "pts": 171,
       "victoires": 1,
       "podiums": 5,
       "meilleur_tour": "1:17.625 Barcelone",
@@ -89,7 +89,7 @@
       "pilote": "upsilon7",
       "ecurie": "Scuderia Ferrari HP",
       "color": "#DC0000",
-      "pts": 134,
+      "pts": 146,
       "victoires": 0,
       "podiums": 6,
       "meilleur_tour": "1:17.220 Barcelone",
@@ -142,38 +142,10 @@
     },
     {
       "pos": 6,
-      "pilote": "cobra_kai_cx",
-      "ecurie": "Aston Martin",
-      "color": "#006F62",
-      "pts": 36,
-      "victoires": 0,
-      "podiums": 1,
-      "meilleur_tour": "1:20.564 Imola",
-      "forme": "↑",
-      "label": {
-        "fr": "",
-        "en": "",
-        "be": ""
-      },
-      "formeColor": "#10B981",
-      "trend": [
-        18,
-        18,
-        18,
-        18,
-        18,
-        18,
-        30,
-        30,
-        30
-      ]
-    },
-    {
-      "pos": 7,
       "pilote": "Pepit0mis",
       "ecurie": "Alpine",
       "color": "#0090FF",
-      "pts": 36,
+      "pts": 61,
       "victoires": 0,
       "podiums": 0,
       "meilleur_tour": "-",
@@ -194,6 +166,34 @@
         0,
         0,
         0
+      ]
+    },
+    {
+      "pos": 7,
+      "pilote": "cobra_kai_cx",
+      "ecurie": "Aston Martin",
+      "color": "#006F62",
+      "pts": 46,
+      "victoires": 0,
+      "podiums": 1,
+      "meilleur_tour": "1:20.564 Imola",
+      "forme": "↑",
+      "label": {
+        "fr": "",
+        "en": "",
+        "be": ""
+      },
+      "formeColor": "#10B981",
+      "trend": [
+        18,
+        18,
+        18,
+        18,
+        18,
+        18,
+        30,
+        30,
+        30
       ]
     },
     {
