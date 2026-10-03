@@ -9,7 +9,7 @@
       "distance": "50%",
       "status": "Terminé",
       "vainqueur": "Jesui_tou",
-      "affiche": "assets/posters/melbourne 21 aout 2026.png",
+      "affiche": "assets/posters/Australie 21 aout 2026.png",
       "temps": "28:14.241",
       "meilleur_tour": "1:21.309 Jesui_tou"
     },
@@ -18,11 +18,11 @@
       "gp": "Shanghai",
       "flag": "🇨🇳",
       "circuit": "Shanghai International Circuit",
-      "heure": "20H00",
+      "heure": "19H00",
       "distance": "50%",
       "status": "Terminé",
       "vainqueur": "Skyyy",
-      "affiche": "assets/posters/shanghai 22 aout 2026.png",
+      "affiche": "assets/posters/Chine 22 aout 2026.png",
       "temps": "33:58.631",
       "meilleur_tour": "1:37.682 Skyyy"
     },
@@ -35,7 +35,7 @@
       "distance": "50%",
       "status": "Terminé",
       "vainqueur": "Jesui_tou",
-      "affiche": "assets/posters/suzuka 24 aout 2026.png",
+      "affiche": "assets/posters/Japon 24 aout 2026.png",
       "temps": "30:36.255",
       "meilleur_tour": "1:33.567 Jesui_tou"
     },
@@ -61,7 +61,7 @@
       "distance": "35%",
       "status": "Terminé",
       "vainqueur": "Taatsu7TV",
-      "affiche": "assets/posters/jeddah 01 sept 2026.png",
+      "affiche": "assets/posters/Arabie saoudite 01 sept 2026.png",
       "temps": "En attente",
       "meilleur_tour": "En attente"
     },
@@ -70,11 +70,11 @@
       "gp": "Miami",
       "flag": "🇺🇸",
       "circuit": "Miami International Autodrome",
-      "heure": "21H00",
+      "heure": "19H00",
       "distance": "35%",
       "status": "Terminé",
       "vainqueur": "Skyyy",
-      "affiche": "assets/posters/miami 03 sept 2026.png",
+      "affiche": "assets/posters/Etats Unis 03 sept 2026.png",
       "temps": "31:36.318",
       "meilleur_tour": "1:30.300 Skyyy"
     },
@@ -87,7 +87,7 @@
       "distance": "35%",
       "status": "Terminé",
       "vainqueur": "Skyyy",
-      "affiche": "assets/posters/imola 06 sept 2026.png",
+      "affiche": "assets/posters/Italie 06 sept 2026.png",
       "temps": "-",
       "meilleur_tour": "1:19.181 Skyyy"
     },
@@ -113,7 +113,7 @@
       "distance": "35%",
       "status": "Terminé",
       "vainqueur": "Skyyy",
-      "affiche": "assets/posters/barcelone 14 sept 2026.png",
+      "affiche": "assets/posters/Espagne 14 sept 2026.png",
       "temps": "30:00.485",
       "meilleur_tour": "1:15.304 JotagrosFR"
     },
@@ -137,11 +137,50 @@
       "circuit": "Red Bull Ring",
       "heure": "19H00",
       "distance": "35%",
-      "status": "A venir",
-      "vainqueur": "A determiné",
-      "affiche": "assets/posters/Autriche 22 septembre 2026.png",
-      "temps": "N.C",
-      "meilleur_tour": "En attente"
+      "status": "Terminé",
+      "vainqueur": "Skyyy",
+      "affiche": "assets/posters/Autriche 22 Septembre 2026.png",
+      "temps": "-",
+      "meilleur_tour": "1:07.356 Skyyy"
+    },
+    {
+      "date": "22 Septembre 2026",
+      "gp": "Grande Bretagne",
+      "flag": "🇬🇧",
+      "circuit": "Silverstone Circuit",
+      "heure": "19H00",
+      "distance": "35%",
+      "status": "Terminé",
+      "vainqueur": "Skyyy",
+      "affiche": "assets/posters/Grande Bretagne 22 Septembre 2026.png",
+      "temps": "28:30.888",
+      "meilleur_tour": "1:30.285 Skyyy"
+    },
+    {
+      "date": "29 septembre 2026",
+      "gp": "Belgique",
+      "flag": "🇧🇪",
+      "circuit": "Circuit de Spa-Francorchamps",
+      "heure": "19H00",
+      "distance": "35%",
+      "status": "Terminé",
+      "vainqueur": "Pepit0mis",
+      "affiche": "assets/posters/Belgique 29 septembre 2026.png",
+      "temps": "27:26.420",
+      "meilleur_tour": "1:45.084 Skyyy"
+    },
+    {
+      "date": "1 Octobre 2026",
+      "gp": "Hongrie",
+      "flag": "🇭🇺",
+      "circuit": "Hungaroring",
+      "heure": "19H00",
+      "distance": "35%",
+      "status": "Terminé",
+      "vainqueur": "Skyyy",
+      "affiche": "assets/posters/Hongrie 1 Octobre 2026.png",
+      "temps": "x1 (+3 secs.)",
+      "meilleur_tour": "1:19.558 Skyyy"
     }
   ],
   "saison": "S1 FWR 2026",
@@ -151,5 +190,7 @@
     "be": "Saison S1 2026 une fois"
   },
   "twitch": "https://twitch.tv/upsilon7",
-  "logo_transparent": "assets/logo/s1-fwr-logo-transparent.png"
+  "logo_transparent": "assets/logo/FWR Racing Saison 1.png",
+  "logo_s1": "assets/logo/FWR Racing Saison 1.png",
+  "logo_s2": "assets/logo/FWR Racing Saison 2.png"
 }
