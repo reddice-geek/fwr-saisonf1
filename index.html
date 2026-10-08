@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FWR S1 2026 - 15 GP - Pays-Bas 19H</title>
+<title>FWR S1 2026 - 15 GP - Pays-Bas 19H - FR EN BE</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
     <div class="logo-saison">
       <div class="s1">FWR RACING LEAGUE</div>
       <div class="year">SAISON S1 • F1 2026 • Team FWR • twitch.tv/upsilon7</div>
-      <div style="font-size:10px;color:#E10600;margin-top:4px;font-weight:700">LIGUE OFFICIELLE • SAISON ACTUELLE S1 2026 • 15 GP • Pays-Bas 19H</div>
+      <div style="font-size:10px;color:#E10600;margin-top:4px;font-weight:700">LIGUE OFFICIELLE • SAISON ACTUELLE S1 2026 • 15 GP</div>
     </div>
   </div>
   <nav class="nav-unique">
@@ -47,18 +47,18 @@
     <div style="margin-top:40px"><h2 class="titillium" style="font-size:20px;font-weight:700;margin-bottom:16px">Évolution – Top 5 - 15 GP</h2><div class="chart-box"><canvas id="chart-mini" height="120"></canvas></div></div>
   </div>
   <div id="view-tableaux" class="hidden">
-    <h1 class="titillium" style="font-size:32px;font-weight:700;margin-bottom:24px" data-i18n="tableaux">Tableaux par Grand Prix - 15 GP - Pays-Bas 19H inclus</h1>
+    <h1 class="titillium" style="font-size:32px;font-weight:700;margin-bottom:24px" data-i18n="tableaux">Tableaux par Grand Prix - 15 GP - Pays-Bas 19H</h1>
     <div id="chronos-list" style="display:flex;flex-direction:column;gap:24px"></div>
   </div>
   <div id="view-evolution" class="hidden">
     <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;margin-bottom:24px;gap:16px">
-      <h1 class="titillium" style="font-size:32px;font-weight:700" data-i18n="stats">Stats & Courbes d'évolution - 15 GP - Pays-Bas</h1>
+      <h1 class="titillium" style="font-size:32px;font-weight:700" data-i18n="stats">Stats & Courbes d'évolution - Tous pilotes - 15 GP</h1>
       <div style="display:flex;gap:8px;font-size:12px;align-items:center"><span style="color:#8B8B8B">Pilotes:</span><div id="pills" style="display:flex;flex-wrap:wrap;gap:8px"></div></div>
     </div>
     <div class="chart-box"><canvas id="chart-main" height="380"></canvas></div>
     <div style="margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;font-size:12px">
       <div class="poster-card"><div style="color:#8B8B8B" data-i18n="cote">Cote parieur</div><div style="margin-top:4px"><b>Skyyy</b> <span style="color:#10B981">1.25</span> <span data-i18n="favori">favori</span> + LEADER 261pts</div></div>
-      <div class="poster-card"><div style="color:#8B8B8B">Pays-Bas 6 Oct 19H</div><div style="margin-top:4px"><b>Pepit0mis</b> <span style="color:#10B981">1:12.853</span> 31:40.833 25pts</div></div>
+      <div class="poster-card"><div style="color:#8B8B8B">Pays-Bas 6 Oct 19H</div><div style="margin-top:4px"><b>Pepit0mis</b> <span style="color:#10B981">1:12.853</span> 31:40.833 - 2V</div></div>
       <div class="poster-card"><div style="color:#8B8B8B">Écart</div><div style="margin-top:4px"><b>Skyyy vs Gosset_25</b> <span data-i18n="ecart">+56 pts</span></div></div>
     </div>
   </div>
@@ -74,11 +74,10 @@
   </div>
 </div>
 <footer style="margin-top:80px;border-top:1px solid #1F1F2A;padding:28px;text-align:center;color:#8B8B8B;font-size:12px;position:relative;z-index:1;line-height:1.6">
-  <div data-i18n="footer_created" style="font-weight:600;color:#CCCCCC">Site web réalisé par reddice_geek en 2026 sous autorisation FWR • 15 GP • Pays-Bas 19H • Données officielles Team FWR • S1 2026 • twitch.tv/upsilon7</div>
-  <div data-i18n="footer_copy" style="margin-top:8px;font-size:11px">© 2026 FWR Racing League • Site officiel S1 2026 • 15 GP • Pays-Bas 19H • twitch.tv/upsilon7 • Données officielles</div>
+  <div data-i18n="footer_created" style="font-weight:600;color:#CCCCCC">Site web réalisé par reddice_geek en 2026 sous autorisation FWR • Utilisation libre de droits • Données officielles Team FWR • S1 2026 • 15 GP • Pays-Bas 19H • twitch.tv/upsilon7</div>
+  <div data-i18n="footer_copy" style="margin-top:8px;font-size:11px">© 2026 FWR Racing League • Site officiel S1 2026 • 15 GP • twitch.tv/upsilon7 • Données officielles</div>
   <div data-i18n="footer_legal" style="margin-top:6px;font-size:10px;color:#666">F1 25® est une marque déposée • Site non affilié à Formula 1 • Données 100% Team FWR • Utilisation libre sous autorisation FWR</div>
 </footer>
-<!-- Admin + gp-editor identique V30 -->
 <section id="gp-editor" role="dialog" aria-modal="true" aria-labelledby="gp-editor-title" style="display:none;position:fixed;inset:0;z-index:250;background:#0b0b10;overflow:auto;padding:20px;color:white">
   <div style="max-width:1250px;margin:auto">
     <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:22px">
@@ -112,18 +111,98 @@
       <button id="admin-tab-affiches" class="admin-tab" onclick="showAdminTab('affiches')" style="background:#1F1F2A;color:#8B8B8B;padding:8px 16px;border-radius:8px;border:1px solid #2A2A35;cursor:pointer">Affiches</button>
       <button id="admin-tab-export" class="admin-tab" onclick="showAdminTab('export')" style="background:#1F1F2A;color:#8B8B8B;padding:8px 16px;border-radius:8px;border:1px solid #2A2A35;cursor:pointer">Export</button>
     </div>
-    <div id="admin-view-courses"><h3 style="color:white;font-weight:700;margin-bottom:12px">Gérer les courses - 15 GP - Pays-Bas 19H inclus</h3><div style="margin-bottom:16px;display:flex;gap:8px;flex-wrap:wrap"><button onclick="addNewGP()" style="background:#10B981;color:white;padding:8px 16px;border-radius:8px;border:none;cursor:pointer">+ Nouvelle Course</button></div><div id="admin-gp-list" style="display:flex;flex-direction:column;gap:12px"></div></div>
-    <div id="admin-view-pilotes" style="display:none"><h3 style="color:white;font-weight:700;margin-bottom:12px">Classement Général - 15 GP</h3><div id="admin-pilotes-list" style="display:flex;flex-direction:column;gap:8px"></div></div>
-    <div id="admin-view-affiches" style="display:none"><h3 style="color:white;font-weight:700;margin-bottom:12px">Affiches GP - 15 GP</h3><div id="admin-affiches-list" style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;max-height:400px;overflow:auto"></div></div>
-    <div id="admin-view-export" style="display:none"><h3 style="color:white;font-weight:700;margin-bottom:12px">Export - 15 GP - Pays-Bas</h3><div style="display:flex;flex-direction:column;gap:12px"><button onclick="downloadStandings()" style="background:#E10600;color:white;padding:12px;border-radius:8px;border:none;cursor:pointer;font-weight:600">⬇ Télécharger standings.json - 15 GP - Pepit0mis 104pts</button><button onclick="downloadGPS()" style="background:#0090FF;color:white;padding:12px;border-radius:8px;border:none;cursor:pointer;font-weight:600">⬇ Télécharger gps.json - 15 GP</button></div></div>
+    <div id="admin-view-courses">
+      <h3 style="color:white;font-weight:700;margin-bottom:12px">Gérer les courses - 15 GP - Pays-Bas 19H inclus</h3>
+      <div style="margin-bottom:16px;display:flex;gap:8px;flex-wrap:wrap">
+        <button onclick="addNewGP()" style="background:#10B981;color:white;padding:8px 16px;border-radius:8px;border:none;cursor:pointer">+ Nouvelle Course</button>
+      </div>
+      <div id="admin-gp-list" style="display:flex;flex-direction:column;gap:12px"></div>
+      <div style="margin-top:24px;background:#0A0A0F;border:1px solid #1F1F2A;border-radius:12px;padding:16px">
+        <h4 style="color:white;font-weight:600;margin-bottom:8px">Ajouter résultat pilote à une course</h4>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px">
+          <select id="admin-gp-select" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px"></select>
+          <input id="admin-pilote" placeholder="Pilote" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
+          <input id="admin-ecurie" placeholder="Ecurie" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
+          <input id="admin-grille" placeholder="Grille" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
+          <input id="admin-arrets" placeholder="Arrêts" type="number" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
+          <input id="admin-mt" placeholder="Meilleur tour" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
+          <input id="admin-temps" placeholder="Temps/Ecart" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
+          <input id="admin-pts" placeholder="Points" type="number" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
+        </div>
+        <button onclick="addResultToGP()" style="margin-top:12px;background:#E10600;color:white;padding:8px 16px;border-radius:8px;border:none;cursor:pointer">+ Ajouter résultat</button>
+      </div>
+    </div>
+    <div id="admin-view-pilotes" style="display:none">
+      <h3 style="color:white;font-weight:700;margin-bottom:12px">Classement Général - 15 GP</h3>
+      <div id="admin-pilotes-list" style="display:flex;flex-direction:column;gap:8px"></div>
+    </div>
+    <div id="admin-view-affiches" style="display:none">
+      <h3 style="color:white;font-weight:700;margin-bottom:12px">Affiches GP - 15 GP</h3>
+      <div id="admin-affiches-list" style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;max-height:400px;overflow:auto"></div>
+    </div>
+    <div id="admin-view-export" style="display:none">
+      <h3 style="color:white;font-weight:700;margin-bottom:12px">Export - 15 GP - Pays-Bas</h3>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <button onclick="downloadStandings()" style="background:#E10600;color:white;padding:12px;border-radius:8px;border:none;cursor:pointer;font-weight:600">⬇ Télécharger standings.json - 15 GP</button>
+        <button onclick="downloadGPS()" style="background:#0090FF;color:white;padding:12px;border-radius:8px;border:none;cursor:pointer;font-weight:600">⬇ Télécharger gps.json - 15 GP</button>
+        <button onclick="saveToLocalStorage()" style="background:#10B981;color:white;padding:12px;border-radius:8px;border:none;cursor:pointer;font-weight:600">💾 Sauvegarder</button>
+        <button onclick="loadFromLocalStorage()" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:12px;border-radius:8px;cursor:pointer">📂 Charger</button>
+        <button onclick="resetData()" style="background:#EF4444;color:white;padding:12px;border-radius:8px;border:none;cursor:pointer">🔄 Réinitialiser</button>
+        <textarea id="admin-json-raw" style="width:100%;height:200px;background:#0A0A0F;border:1px solid #1F1F2A;color:#CCCCCC;padding:12px;border-radius:8px;margin-top:4px;font-family:monospace;font-size:10px"></textarea>
+      </div>
+    </div>
   </div>
 </div>
 <script>
-// Admin Panel JS minimal
 let adminData = null;
-function openAdmin(){document.getElementById('admin-panel').style.display='block';}
+function openAdmin(){document.getElementById('admin-panel').style.display='block';loadAdminData();}
 function closeAdmin(){document.getElementById('admin-panel').style.display='none';}
-function showAdminTab(tab){document.querySelectorAll('[id^="admin-view-"]').forEach(el=>el.style.display='none');document.getElementById('admin-view-'+tab).style.display='block';document.querySelectorAll('.admin-tab').forEach(btn=>{btn.style.background='#1F1F2A';btn.style.color='#8B8B8B';});document.getElementById('admin-tab-'+tab).style.background='#E10600';document.getElementById('admin-tab-'+tab).style.color='white';}
+function showAdminTab(tab){
+  document.querySelectorAll('[id^="admin-view-"]').forEach(el=>el.style.display='none');
+  document.getElementById('admin-view-'+tab).style.display='block';
+  document.querySelectorAll('.admin-tab').forEach(btn=>{btn.style.background='#1F1F2A';btn.style.color='#8B8B8B';});
+  const activeBtn = document.getElementById('admin-tab-'+tab);
+  activeBtn.style.background='#E10600';activeBtn.style.color='white';
+}
+function loadAdminData(){
+  try{
+    const ls = localStorage.getItem('fwr_admin_standings');
+    if(ls){adminData = JSON.parse(ls);} else {adminData = structuredClone(EMBEDDED_STANDINGS);}
+    renderAdminGPList();renderAdminPilotes();renderAdminAffiches();
+    const raw = document.getElementById('admin-json-raw');
+    if(raw) raw.value = JSON.stringify(adminData, null, 2);
+    const gpSelect = document.getElementById('admin-gp-select');
+    const afficheGpSelect = document.getElementById('admin-affiche-gp');
+    if(gpSelect){gpSelect.innerHTML = '';adminData.gp_disputes.forEach(gp=>{const opt=document.createElement('option');opt.value=gp.gp;opt.textContent=gp.gp+' - '+gp.circuit;gpSelect.appendChild(opt);});}
+    if(afficheGpSelect){afficheGpSelect.innerHTML = '';adminData.gp_disputes.forEach(gp=>{const opt=document.createElement('option');opt.value=gp.gp;opt.textContent=gp.gp+' - '+gp.circuit;afficheGpSelect.appendChild(opt);});}
+  }catch(e){adminData = EMBEDDED_STANDINGS;}
+}
+function renderAdminGPList(){
+  const list = document.getElementById('admin-gp-list');
+  if(!list || !adminData) return;
+  list.innerHTML = adminData.gp_disputes.map(gp=>{
+    const results = gp.resultats_fwr.map(r=>`${r.pos}. ${r.pilote} ${r.pts}pts`).join('<br>');
+    return `<div style="background:#0A0A0F;border:1px solid #1F1F2A;border-radius:8px;padding:12px"><div style="display:flex;justify-content:space-between"><div><b style="color:white">${gp.gp} - ${gp.circuit}</b> <span style="color:#8B8B8B;font-size:11px">${gp.date} ${gp.heure}</span><br><span style="font-size:11px;color:#CCCCCC">Vainqueur: ${gp.vainqueur} ${gp.temps}</span><br><div style="font-size:10px;color:#8B8B8B;margin-top:4px">${results}</div></div><div style="display:flex;gap:4px"><button onclick="editGP('${gp.gp}')" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:4px 8px;border-radius:4px;cursor:pointer;font-size:11px">Editer</button><button onclick="deleteGP('${gp.gp}')" style="background:#EF4444;color:white;padding:4px 8px;border-radius:4px;border:none;cursor:pointer;font-size:11px">Suppr</button></div></div></div>`;
+  }).join('');
+}
+function renderAdminPilotes(){
+  const list = document.getElementById('admin-pilotes-list');
+  if(!list || !adminData) return;
+  list.innerHTML = adminData.classement_general.map(p=>`<div style="display:flex;justify-content:space-between;align-items:center;background:#0A0A0F;border:1px solid #1F1F2A;border-radius:6px;padding:8px"><div><span style="color:white;font-weight:600">${p.pos}. ${p.pilote}</span> <span style="font-size:11px;color:${p.color}">${p.ecurie}</span> <span style="color:#8B8B8B;font-size:11px">${p.pts}pts</span></div></div>`).join('');
+}
+function renderAdminAffiches(){
+  const list=document.getElementById('admin-affiches-list');if(!list)return;list.innerHTML='';
+  (EMBEDDED_GPS.calendrier||[]).forEach(gp=>{const div=document.createElement('div');div.style.cssText='background:#0A0A0F;border:1px solid #1F1F2A;border-radius:8px;padding:8px;text-align:center';div.innerHTML=`<div style="font-size:12px;color:white">${gp.gp}</div><div style="font-size:10px;color:#8B8B8B">${gp.date}</div>`;list.appendChild(div);});
+}
+function addResultToGP(){alert('Utilise Edit GP pour ajouter');}
+function addNewGP(){const name=prompt('Nom GP:');if(!name)return;alert('Ajout manuel - exporte JSON');}
+function editGP(name){alert('Edit '+name+' - utilise l éditeur complet');}
+function deleteGP(name){if(!confirm('Supprimer '+name+'?'))return;adminData.gp_disputes=adminData.gp_disputes.filter(g=>g.gp!==name);localStorage.setItem('fwr_admin_standings', JSON.stringify(adminData));loadAdminData();renderAll();}
+function downloadStandings(){const dataStr=JSON.stringify(adminData||EMBEDDED_STANDINGS,null,2);const blob=new Blob([dataStr],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='standings.json';a.click();}
+function downloadGPS(){const dataStr=JSON.stringify(EMBEDDED_GPS,null,2);const blob=new Blob([dataStr],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='gps.json';a.click();}
+function saveToLocalStorage(){localStorage.setItem('fwr_admin_standings', JSON.stringify(adminData||EMBEDDED_STANDINGS));alert('Sauvegardé');}
+function loadFromLocalStorage(){const ls=localStorage.getItem('fwr_admin_standings');if(ls){adminData=JSON.parse(ls);alert('Chargé');loadAdminData();renderAll();}}
+function resetData(){if(confirm('Réinitialiser?')){localStorage.removeItem('fwr_admin_standings');location.reload();}}
 </script>
 <script>
 (function () {
