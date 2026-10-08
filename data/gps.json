@@ -181,6 +181,19 @@
       "affiche": "assets/posters/Hongrie 1 Octobre 2026.png",
       "temps": "x1 (+3 secs.)",
       "meilleur_tour": "1:19.558 Skyyy"
+    },
+    {
+      "date": "6 Octobre 2026",
+      "gp": "Pays-Bas",
+      "flag": "🇳🇱",
+      "circuit": "Circuit de Zandvoort",
+      "heure": "19H00",
+      "distance": "35%",
+      "status": "Terminé",
+      "vainqueur": "Pepit0mis",
+      "affiche": "assets/posters/Pays Bas 6 octobre 2026.png",
+      "temps": "31:40.833",
+      "meilleur_tour": "1:12.853 Pepit0mis"
     }
   ],
   "saison": "S1 FWR 2026",
