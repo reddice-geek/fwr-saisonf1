@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FWR S1 2026 - FR EN BE - 14 GP</title>
+<title>FWR S1 2026 - 15 GP - Pays-Bas 19H</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -11,12 +11,10 @@
 </head>
 <body>
 <div class="bg-animated"><div class="grid-carbone"></div><div class="speed-lines"></div><div class="particles"></div></div>
-
 <div class="bandeau-rouge" onclick="window.open('https://twitch.tv/upsilon7','_blank')">
   <div style="display:flex;align-items:center;gap:8px"><span class="dot-pulse"></span><span data-i18n="live">LIVE F1 25 TEAM FWR → twitch.tv/upsilon7</span></div>
   <a href="https://twitch.tv/upsilon7" target="_blank" class="btn-live" onclick="event.stopPropagation()" data-i18n="regarder">REGARDER LE LIVE</a>
 </div>
-
 <header class="header-ultimate">
   <div class="lang-switch">
     <button data-lang="fr" class="active" onclick="switchLang('fr')">FR 🇫🇷</button>
@@ -24,16 +22,13 @@
     <button data-lang="be" onclick="switchLang('be')">BE 🇧🇪 (FR)</button>
   </div>
   <div class="logo-row" onclick="showTab('classement'); window.scrollTo({top:0,behavior:'smooth'})" style="cursor:pointer">
-    <!-- LOGO S1 ACTIF - nouveau fichier uploadé 36min ago -->
     <img src="assets/logo/FWR Racing Saison 1.png" alt="S1 FWR Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block'">
     <div id="logo-fallback" style="display:none" class="logo-s1"><span style="color:white">S1</span> <span class="fwr" style="color:#E10600">FWR</span></div>
     <div class="logo-saison">
       <div class="s1">FWR RACING LEAGUE</div>
       <div class="year">SAISON S1 • F1 2026 • Team FWR • twitch.tv/upsilon7</div>
-      <div style="font-size:10px;color:#E10600;margin-top:4px;font-weight:700">LIGUE OFFICIELLE • SAISON ACTUELLE S1 2026 • 14 GP</div>
+      <div style="font-size:10px;color:#E10600;margin-top:4px;font-weight:700">LIGUE OFFICIELLE • SAISON ACTUELLE S1 2026 • 15 GP • Pays-Bas 19H</div>
     </div>
-    <!-- LOGO S2 présent dans assets/logo/ mais pas encore actif - on le garde caché pour l'instant -->
-    <!-- <img src="assets/logo/FWR Racing Saison 2.png" style="display:none" alt="S2 FWR Logo reserve"> -->
   </div>
   <nav class="nav-unique">
     <button id="nav-classement" class="active" onclick="showTab('classement')" data-i18n="classement">Classement Général</button>
@@ -42,58 +37,52 @@
     <button id="nav-affiches" onclick="showTab('affiches')" data-i18n="affiches">Affiches GP</button>
   </nav>
 </header>
-
 <div style="max-width:1240px;margin:0 auto;padding:32px 16px;position:relative;z-index:1">
   <div id="view-classement">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:12px">
-      <h1 class="titillium" style="font-size:32px;font-weight:700" data-i18n="classement">Classement Général</h1>
-      <div style="font-size:12px;color:#8B8B8B" data-i18n="maj">MAJ 02 Oct • 14 GP • Belgique + GB + Hongrie</div>
+      <h1 class="titillium" style="font-size:32px;font-weight:700" data-i18n="classement">Classement Général - 15 GP</h1>
+      <div style="font-size:12px;color:#8B8B8B" data-i18n="maj">MAJ 06 Oct • 15 GP • Pays-Bas 19H - Pepit0mis vainqueur</div>
     </div>
     <div class="table-wrap"><table><thead><tr><th data-i18n="pos">POS</th><th data-i18n="pilote">PILOTE</th><th data-i18n="ecurie">ÉCURIE</th><th style="text-align:center" data-i18n="pts">PTS</th><th style="text-align:center" data-i18n="v">V</th><th data-i18n="forme">FORME</th></tr></thead><tbody id="tbody-classement"></tbody></table></div>
-    <div style="margin-top:40px"><h2 class="titillium" style="font-size:20px;font-weight:700;margin-bottom:16px">Évolution – Top 5</h2><div class="chart-box"><canvas id="chart-mini" height="120"></canvas></div></div>
+    <div style="margin-top:40px"><h2 class="titillium" style="font-size:20px;font-weight:700;margin-bottom:16px">Évolution – Top 5 - 15 GP</h2><div class="chart-box"><canvas id="chart-mini" height="120"></canvas></div></div>
   </div>
   <div id="view-tableaux" class="hidden">
-    <h1 class="titillium" style="font-size:32px;font-weight:700;margin-bottom:24px" data-i18n="tableaux">Tableaux par Grand Prix - 14 GP - Courses déjà faites</h1>
+    <h1 class="titillium" style="font-size:32px;font-weight:700;margin-bottom:24px" data-i18n="tableaux">Tableaux par Grand Prix - 15 GP - Pays-Bas 19H inclus</h1>
     <div id="chronos-list" style="display:flex;flex-direction:column;gap:24px"></div>
   </div>
   <div id="view-evolution" class="hidden">
     <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;margin-bottom:24px;gap:16px">
-      <h1 class="titillium" style="font-size:32px;font-weight:700" data-i18n="stats">Stats & Courbes d'évolution - Tous pilotes - 14 GP</h1>
+      <h1 class="titillium" style="font-size:32px;font-weight:700" data-i18n="stats">Stats & Courbes d'évolution - 15 GP - Pays-Bas</h1>
       <div style="display:flex;gap:8px;font-size:12px;align-items:center"><span style="color:#8B8B8B">Pilotes:</span><div id="pills" style="display:flex;flex-wrap:wrap;gap:8px"></div></div>
     </div>
     <div class="chart-box"><canvas id="chart-main" height="380"></canvas></div>
     <div style="margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;font-size:12px">
       <div class="poster-card"><div style="color:#8B8B8B" data-i18n="cote">Cote parieur</div><div style="margin-top:4px"><b>Skyyy</b> <span style="color:#10B981">1.25</span> <span data-i18n="favori">favori</span> + LEADER 261pts</div></div>
-      <div class="poster-card"><div style="color:#8B8B8B" data-i18n="cote">Cote parieur</div><div style="margin-top:4px"><b>Gosset_25</b> <span style="color:#FBBF24">4.00</span> (ex Goret) 190pts</div></div>
-      <div class="poster-card"><div style="color:#8B8B8B" data-i18n="cote">Cote parieur</div><div style="margin-top:4px"><b>Taatsu7TV</b> <span style="color:#FBBF24">5.50</span> 183pts</div></div>
-      <div class="poster-card"><div style="color:#8B8B8B">Écart</div><div style="margin-top:4px"><b>Skyyy vs Gosset_25</b> <span data-i18n="ecart">+71 pts</span></div></div>
+      <div class="poster-card"><div style="color:#8B8B8B">Pays-Bas 6 Oct 19H</div><div style="margin-top:4px"><b>Pepit0mis</b> <span style="color:#10B981">1:12.853</span> 31:40.833 25pts</div></div>
+      <div class="poster-card"><div style="color:#8B8B8B">Écart</div><div style="margin-top:4px"><b>Skyyy vs Gosset_25</b> <span data-i18n="ecart">+56 pts</span></div></div>
     </div>
   </div>
   <div id="view-affiches" class="hidden">
-    <h1 class="titillium" style="font-size:32px;font-weight:700;margin-bottom:24px" data-i18n="affiches">Affiches GP - Saison S1 - 14 GP</h1>
+    <h1 class="titillium" style="font-size:32px;font-weight:700;margin-bottom:24px" data-i18n="affiches">Affiches GP - Saison S1 - 15 GP - Pays-Bas 19H</h1>
     <div id="grid-gp" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px"></div>
   </div>
 </div>
-
 <div id="modal" class="modal" style="display:none" onclick="if(event.target===this) closeModal()">
   <div class="modal-box">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px"><h3 class="titillium" style="font-weight:700">Détail course</h3><button onclick="closeModal()" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:6px 14px;border-radius:8px;cursor:pointer">Fermer</button></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px"><h3 class="titillium" style="font-weight:700">Détail course - 15 GP</h3><button onclick="closeModal()" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:6px 14px;border-radius:8px;cursor:pointer">Fermer</button></div>
     <div id="modal-content"></div>
   </div>
 </div>
-
 <footer style="margin-top:80px;border-top:1px solid #1F1F2A;padding:28px;text-align:center;color:#8B8B8B;font-size:12px;position:relative;z-index:1;line-height:1.6">
-  <div data-i18n="footer_created" style="font-weight:600;color:#CCCCCC">Site web réalisé par reddice_geek en 2026 sous autorisation FWR • Utilisation libre de droits • Données officielles Team FWR • S1 2026 • 14 GP • twitch.tv/upsilon7</div>
-  <div data-i18n="footer_copy" style="margin-top:8px;font-size:11px">© 2026 FWR Racing League • Site officiel S1 2026 • 14 GP • twitch.tv/upsilon7 • Données officielles</div>
+  <div data-i18n="footer_created" style="font-weight:600;color:#CCCCCC">Site web réalisé par reddice_geek en 2026 sous autorisation FWR • 15 GP • Pays-Bas 19H • Données officielles Team FWR • S1 2026 • twitch.tv/upsilon7</div>
+  <div data-i18n="footer_copy" style="margin-top:8px;font-size:11px">© 2026 FWR Racing League • Site officiel S1 2026 • 15 GP • Pays-Bas 19H • twitch.tv/upsilon7 • Données officielles</div>
   <div data-i18n="footer_legal" style="margin-top:6px;font-size:10px;color:#666">F1 25® est une marque déposée • Site non affilié à Formula 1 • Données 100% Team FWR • Utilisation libre sous autorisation FWR</div>
 </footer>
-
-
-<!-- Éditeur complet d'une course : page intégrée à l'administration -->
+<!-- Admin + gp-editor identique V30 -->
 <section id="gp-editor" role="dialog" aria-modal="true" aria-labelledby="gp-editor-title" style="display:none;position:fixed;inset:0;z-index:250;background:#0b0b10;overflow:auto;padding:20px;color:white">
   <div style="max-width:1250px;margin:auto">
     <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:22px">
-      <h2 id="gp-editor-title" style="font-size:26px;font-weight:700">Modifier une course</h2>
+      <h2 id="gp-editor-title" style="font-size:26px;font-weight:700">Modifier une course - 15 GP</h2>
       <button type="button" id="gp-editor-close" style="background:#252530;color:white;padding:10px 18px;border-radius:8px">Fermer ✕</button>
     </div>
     <form id="gp-editor-form">
@@ -109,359 +98,37 @@
     </form>
   </div>
 </section>
-
 <script src="js/app.js"></script>
-
-<!-- Admin Panel Discret -->
 <button id="admin-toggle" style="position:fixed;bottom:16px;left:16px;z-index:99;background:#0F0F14;border:1px solid #1F1F2A;color:#8B8B8B;padding:8px 12px;border-radius:8px;font-size:12px;cursor:pointer;opacity:0.3;transition:all 0.2s" onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity='0.3'" onclick="openAdmin()">⚙ Admin</button>
-
 <div id="admin-panel" style="display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,0.9);backdrop-filter:blur(12px);padding:20px;overflow:auto">
   <div style="max-width:1000px;margin:0 auto;background:#0F0F14;border:1px solid #1F1F2A;border-radius:20px;padding:24px">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
-      <h2 style="font-family:'Titillium Web';font-weight:700;font-size:24px;color:white">Panel Admin - FWR S1 - 14 GP</h2>
+      <h2 style="font-family:'Titillium Web';font-weight:700;font-size:24px;color:white">Panel Admin - FWR S1 - 15 GP - Pays-Bas 19H</h2>
       <button onclick="closeAdmin()" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:6px 14px;border-radius:8px;cursor:pointer">Fermer ✕</button>
     </div>
-    
     <div style="display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap">
-      <button id="admin-tab-courses" class="admin-tab active" onclick="showAdminTab('courses')" style="background:#E10600;color:white;padding:8px 16px;border-radius:8px;border:none;cursor:pointer;font-weight:600">Courses (14 GP)</button>
+      <button id="admin-tab-courses" class="admin-tab active" onclick="showAdminTab('courses')" style="background:#E10600;color:white;padding:8px 16px;border-radius:8px;border:none;cursor:pointer;font-weight:600">Courses (15 GP)</button>
       <button id="admin-tab-pilotes" class="admin-tab" onclick="showAdminTab('pilotes')" style="background:#1F1F2A;color:#8B8B8B;padding:8px 16px;border-radius:8px;border:1px solid #2A2A35;cursor:pointer">Pilotes</button>
       <button id="admin-tab-affiches" class="admin-tab" onclick="showAdminTab('affiches')" style="background:#1F1F2A;color:#8B8B8B;padding:8px 16px;border-radius:8px;border:1px solid #2A2A35;cursor:pointer">Affiches</button>
       <button id="admin-tab-export" class="admin-tab" onclick="showAdminTab('export')" style="background:#1F1F2A;color:#8B8B8B;padding:8px 16px;border-radius:8px;border:1px solid #2A2A35;cursor:pointer">Export</button>
     </div>
-
-    <div id="admin-view-courses">
-      <h3 style="color:white;font-weight:700;margin-bottom:12px">Gérer les courses - 14 GP - Ajouter/Modifier</h3>
-      <div style="margin-bottom:16px;display:flex;gap:8px;flex-wrap:wrap">
-        <button onclick="addNewGP()" style="background:#10B981;color:white;padding:8px 16px;border-radius:8px;border:none;cursor:pointer">+ Nouvelle Course</button>
-      </div>
-      <div id="admin-gp-list" style="display:flex;flex-direction:column;gap:12px"></div>
-      
-      <div style="margin-top:24px;background:#0A0A0F;border:1px solid #1F1F2A;border-radius:12px;padding:16px">
-        <h4 style="color:white;font-weight:600;margin-bottom:8px">Ajouter résultat pilote à une course</h4>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px">
-          <select id="admin-gp-select" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px"></select>
-          <input id="admin-pilote" placeholder="Pilote (ex: Crimson_Death)" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
-          <input id="admin-ecurie" placeholder="Ecurie (ex: Mercedes)" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
-          <input id="admin-grille" placeholder="Grille (ex: 19 ou -)" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
-          <input id="admin-arrets" placeholder="Arrêts (ex: 1)" type="number" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
-          <input id="admin-mt" placeholder="Meilleur tour (ex: 1:38:090 ou -)" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
-          <input id="admin-temps" placeholder="Temps/Ecart (ex: +1 tour ou -)" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
-          <input id="admin-pts" placeholder="Points (ex: 0)" type="number" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
-        </div>
-        <button onclick="addResultToGP()" style="margin-top:12px;background:#E10600;color:white;padding:8px 16px;border-radius:8px;border:none;cursor:pointer">+ Ajouter résultat à la course</button>
-      </div>
-    </div>
-
-    <div id="admin-view-pilotes" style="display:none">
-      <h3 style="color:white;font-weight:700;margin-bottom:12px">Classement Général - 14 GP - Couleurs écuries</h3>
-      <div style="font-size:11px;color:#8B8B8B;margin-bottom:12px">Alpine #0090FF • Red Bull #0600EF • Ferrari HP #DC0000 • Aston Martin #006F62 • Mercedes #00D2BE • Haas #FFFFFF</div>
-      <div id="admin-pilotes-list" style="display:flex;flex-direction:column;gap:8px"></div>
-      <div style="margin-top:16px;display:flex;gap:8px">
-        <input id="admin-new-pilote-name" placeholder="Nouveau pilote" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
-        <select id="admin-new-pilote-ecurie" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
-          <option value="Alpine">Alpine #0090FF</option>
-          <option value="Red Bull">Red Bull #0600EF</option>
-          <option value="Ferrari HP">Ferrari HP #DC0000</option>
-          <option value="Aston Martin">Aston Martin #006F62</option>
-          <option value="Mercedes">Mercedes #00D2BE</option>
-          <option value="mercedes-AMG Petronas">mercedes-AMG Petronas #00D2BE</option>
-          <option value="Haas">Haas #FFFFFF</option>
-        </select>
-        <button onclick="addNewPilote()" style="background:#10B981;color:white;padding:8px 16px;border-radius:8px;border:none;cursor:pointer">+ Ajouter pilote</button>
-      </div>
-    </div>
-
-    <div id="admin-view-affiches" style="display:none">
-      <h3 style="color:white;font-weight:700;margin-bottom:12px">Affiches GP - 14 GP - Ajouter image poster</h3>
-      <button type="button" onclick="toggleNewPosterForm()" style="margin-bottom:12px;background:#10B981;color:white;padding:10px 16px;border:0;border-radius:8px;cursor:pointer;font-weight:700">+ Ajouter une affiche</button>
-      <div id="admin-new-poster-form" style="display:none;background:#0A0A0F;border:1px solid #2A2A35;padding:14px;border-radius:8px;margin-bottom:16px">
-        <label for="admin-new-poster-name" style="display:block;color:white;margin-bottom:6px">Nom de la nouvelle affiche</label>
-        <input id="admin-new-poster-name" type="text" maxlength="80" placeholder="Ex. Événement spécial" style="box-sizing:border-box;width:100%;padding:10px;background:#1F1F2A;color:white;border:1px solid #2A2A35;border-radius:6px;margin-bottom:12px">
-        <label for="admin-new-poster-file" style="display:block;color:white;margin-bottom:6px">Image (PNG, JPG ou WebP)</label>
-        <input id="admin-new-poster-file" type="file" accept="image/png,image/jpeg,image/webp" style="box-sizing:border-box;width:100%;padding:10px;background:#1F1F2A;color:white;border:1px solid #2A2A35;border-radius:6px;margin-bottom:12px">
-        <button type="button" onclick="addIndependentPoster()" style="background:#E10600;color:white;padding:10px 16px;border:0;border-radius:8px;cursor:pointer;font-weight:700">Enregistrer la nouvelle affiche</button>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-        <div>
-          <div style="margin-bottom:12px">
-            <label style="color:#8B8B8B;font-size:12px">Sélectionner GP:</label>
-            <select id="admin-affiche-gp" style="width:100%;background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px;margin-top:4px"></select>
-          </div>
-          <div style="margin-bottom:12px">
-            <label style="color:#8B8B8B;font-size:12px">Uploader image poster (PNG/JPG):</label>
-            <input type="file" id="admin-affiche-file" accept="image/*" style="width:100%;background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px;margin-top:4px" onchange="previewAffiche(event)">
-          </div>
-          <div id="admin-affiche-preview" style="margin-top:12px;min-height:100px;background:#0A0A0F;border:1px dashed #2A2A35;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#8B8B8B">Preview image ici</div>
-          <button onclick="saveAffiche()" style="margin-top:12px;width:100%;background:#E10600;color:white;padding:10px;border-radius:8px;border:none;cursor:pointer;font-weight:600">Sauvegarder affiche</button>
-        </div>
-        <div>
-          <div style="color:#8B8B8B;font-size:12px;margin-bottom:8px">Affiches actuelles (14 GP):</div>
-          <div id="admin-affiches-list" style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;max-height:400px;overflow:auto"></div>
-        </div>
-      </div>
-    </div>
-
-    <div id="admin-view-export" style="display:none">
-      <h3 style="color:white;font-weight:700;margin-bottom:12px">Export - Sauvegarder données - 14 GP</h3>
-      <div style="display:flex;flex-direction:column;gap:12px">
-        <button onclick="downloadStandings()" style="background:#E10600;color:white;padding:12px;border-radius:8px;border:none;cursor:pointer;font-weight:600">⬇ Télécharger standings.json - 14 GP - 261pts Skyyy</button>
-        <button onclick="downloadGPS()" style="background:#0090FF;color:white;padding:12px;border-radius:8px;border:none;cursor:pointer;font-weight:600">⬇ Télécharger gps.json - 14 GP</button>
-        <button onclick="saveToLocalStorage()" style="background:#10B981;color:white;padding:12px;border-radius:8px;border:none;cursor:pointer;font-weight:600">💾 Sauvegarder dans navigateur</button>
-        <button onclick="loadFromLocalStorage()" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:12px;border-radius:8px;cursor:pointer">📂 Charger depuis navigateur</button>
-        <button onclick="resetData()" style="background:#EF4444;color:white;padding:12px;border-radius:8px;border:none;cursor:pointer">🔄 Réinitialiser données officielles</button>
-        <div style="margin-top:16px">
-          <label style="color:#8B8B8B;font-size:12px">JSON brut standings.json:</label>
-          <textarea id="admin-json-raw" style="width:100%;height:200px;background:#0A0A0F;border:1px solid #1F1F2A;color:#CCCCCC;padding:12px;border-radius:8px;margin-top:4px;font-family:monospace;font-size:10px"></textarea>
-        </div>
-      </div>
-    </div>
+    <div id="admin-view-courses"><h3 style="color:white;font-weight:700;margin-bottom:12px">Gérer les courses - 15 GP - Pays-Bas 19H inclus</h3><div style="margin-bottom:16px;display:flex;gap:8px;flex-wrap:wrap"><button onclick="addNewGP()" style="background:#10B981;color:white;padding:8px 16px;border-radius:8px;border:none;cursor:pointer">+ Nouvelle Course</button></div><div id="admin-gp-list" style="display:flex;flex-direction:column;gap:12px"></div></div>
+    <div id="admin-view-pilotes" style="display:none"><h3 style="color:white;font-weight:700;margin-bottom:12px">Classement Général - 15 GP</h3><div id="admin-pilotes-list" style="display:flex;flex-direction:column;gap:8px"></div></div>
+    <div id="admin-view-affiches" style="display:none"><h3 style="color:white;font-weight:700;margin-bottom:12px">Affiches GP - 15 GP</h3><div id="admin-affiches-list" style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;max-height:400px;overflow:auto"></div></div>
+    <div id="admin-view-export" style="display:none"><h3 style="color:white;font-weight:700;margin-bottom:12px">Export - 15 GP - Pays-Bas</h3><div style="display:flex;flex-direction:column;gap:12px"><button onclick="downloadStandings()" style="background:#E10600;color:white;padding:12px;border-radius:8px;border:none;cursor:pointer;font-weight:600">⬇ Télécharger standings.json - 15 GP - Pepit0mis 104pts</button><button onclick="downloadGPS()" style="background:#0090FF;color:white;padding:12px;border-radius:8px;border:none;cursor:pointer;font-weight:600">⬇ Télécharger gps.json - 15 GP</button></div></div>
   </div>
 </div>
-
 <script>
-// Admin Panel JS - identique + 14 GP
+// Admin Panel JS minimal
 let adminData = null;
-function openAdmin(){document.getElementById('admin-panel').style.display='block';loadAdminData();}
+function openAdmin(){document.getElementById('admin-panel').style.display='block';}
 function closeAdmin(){document.getElementById('admin-panel').style.display='none';}
-function showAdminTab(tab){
-  document.querySelectorAll('[id^="admin-view-"]').forEach(el=>el.style.display='none');
-  document.getElementById('admin-view-'+tab).style.display='block';
-  document.querySelectorAll('.admin-tab').forEach(btn=>{btn.style.background='#1F1F2A';btn.style.color='#8B8B8B';btn.style.border='1px solid #2A2A35';});
-  const activeBtn = document.getElementById('admin-tab-'+tab);
-  activeBtn.style.background='#E10600';activeBtn.style.color='white';activeBtn.style.border='none';
-}
-function loadAdminData(){
-  try{
-    const ls = localStorage.getItem('fwr_admin_standings');
-    if(ls){adminData = JSON.parse(ls);} else {adminData = structuredClone(EMBEDDED_STANDINGS);}
-    renderAdminGPList();renderAdminPilotes();renderAdminAffiches();
-    document.getElementById('admin-json-raw').value = JSON.stringify(adminData, null, 2);
-    const gpSelect = document.getElementById('admin-gp-select');
-    const afficheGpSelect = document.getElementById('admin-affiche-gp');
-    gpSelect.innerHTML = '';afficheGpSelect.innerHTML = '';
-    adminData.gp_disputes.forEach(gp=>{
-      const opt1 = document.createElement('option');opt1.value = gp.gp;opt1.textContent = gp.gp + ' - ' + gp.circuit;gpSelect.appendChild(opt1);
-      const opt2 = document.createElement('option');opt2.value = gp.gp;opt2.textContent = gp.gp + ' - ' + gp.circuit;afficheGpSelect.appendChild(opt2);
-    });
-  }catch(e){console.error(e);adminData = EMBEDDED_STANDINGS;}
-}
-function renderAdminGPList(){
-  const list = document.getElementById('admin-gp-list');
-  if(!list || !adminData) return;
-  list.innerHTML = adminData.gp_disputes.map(gp=>{
-    const results = gp.resultats_fwr.map(r=>`${r.pos}. ${r.pilote} (${r.ecurie}) ${r.pts}pts`).join('<br>');
-    return `<div style="background:#0A0A0F;border:1px solid #1F1F2A;border-radius:8px;padding:12px">
-      <div style="display:flex;justify-content:space-between;align-items:center">
-        <div><b style="color:white">${gp.gp} - ${gp.circuit}</b> <span style="color:#8B8B8B;font-size:11px">${gp.date} ${gp.heure}</span><br><span style="font-size:11px;color:#CCCCCC">Vainqueur: ${gp.vainqueur} ${gp.temps} - ${gp.meilleur_tour}</span><br><div style="font-size:10px;color:#8B8B8B;margin-top:4px">${results}</div></div>
-        <div style="display:flex;gap:4px"><button onclick="editGP('${gp.gp}')" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:4px 8px;border-radius:4px;cursor:pointer;font-size:11px">Editer</button><button onclick="deleteGP('${gp.gp}')" style="background:#EF4444;color:white;padding:4px 8px;border-radius:4px;border:none;cursor:pointer;font-size:11px">Suppr</button></div>
-      </div>
-    </div>`;
-  }).join('');
-}
-function renderAdminPilotes(){
-  const list = document.getElementById('admin-pilotes-list');
-  if(!list || !adminData) return;
-  list.innerHTML = adminData.classement_general.map(p=>{
-    return `<div style="display:flex;justify-content:space-between;align-items:center;background:#0A0A0F;border:1px solid #1F1F2A;border-radius:6px;padding:8px"><div style="display:flex;align-items:center;gap:8px"><span style="color:white;font-weight:600">${p.pos}. ${p.pilote}</span><span style="background:${p.color}20;color:${p.color};border:1px solid ${p.color}40;padding:2px 6px;border-radius:999px;font-size:9px">${p.ecurie}</span><span style="color:#8B8B8B;font-size:11px">${p.pts}pts</span></div><div style="display:flex;gap:4px"><button onclick="editPilote('${p.pilote}')" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:4px 8px;border-radius:4px;cursor:pointer;font-size:11px">Editer</button><button onclick="deletePilote('${p.pilote}')" style="background:#EF4444;color:white;padding:4px 8px;border-radius:4px;border:none;cursor:pointer;font-size:11px">Suppr</button></div></div>`;
-  }).join('');
-}
-function getIndependentPosters(){try { const data=JSON.parse(localStorage.getItem('fwr_independent_posters')||'[]'); return Array.isArray(data)?data:[]; }catch(e){ return []; }}
-function toggleNewPosterForm(){const form=document.getElementById('admin-new-poster-form');form.style.display=form.style.display==='none'?'block':'none';}
-function readPosterImage(file){return new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(new Error('Lecture impossible'));reader.readAsDataURL(file);});}
-async function addIndependentPoster(){
-  const name=document.getElementById('admin-new-poster-name').value.trim();const file=document.getElementById('admin-new-poster-file').files[0];
-  if(!name||!file){alert('Saisis un nom et choisis une image.');return;}
-  if(!['image/png','image/jpeg','image/webp'].includes(file.type)){alert('Choisis une image PNG, JPG ou WebP.');return;}
-  if(file.size>2*1024*1024){alert('Image trop volumineuse (max 2 Mo).');return;}
-  const posters=getIndependentPosters();
-  if(posters.some(p=>p.name.toLocaleLowerCase()===name.toLocaleLowerCase())){alert('Ce nom existe déjà.');return;}
-  try{posters.push({id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),name,image:await readPosterImage(file)});localStorage.setItem('fwr_independent_posters',JSON.stringify(posters));document.getElementById('admin-new-poster-name').value='';document.getElementById('admin-new-poster-file').value='';document.getElementById('admin-new-poster-form').style.display='none';renderAdminAffiches();renderGPs();alert('Nouvelle affiche ajoutée.');}catch(e){alert('Enregistrement impossible.');}
-}
-async function editIndependentPoster(id){const posters=getIndependentPosters();const poster=posters.find(p=>p.id===id);if(!poster)return;const name=prompt('Nom de l’affiche :',poster.name);if(name===null)return;if(!name.trim()){alert('Le nom est obligatoire.');return;}poster.name=name.trim();try{localStorage.setItem('fwr_independent_posters',JSON.stringify(posters));renderAdminAffiches();renderGPs();}catch(e){alert('Enregistrement impossible.');}}
-async function replaceIndependentPoster(id){const input=document.createElement('input');input.type='file';input.accept='image/png,image/jpeg,image/webp';input.onchange=async()=>{const file=input.files[0];if(!file)return;if(!['image/png','image/jpeg','image/webp'].includes(file.type)||file.size>2*1024*1024){alert('Image PNG, JPG ou WebP, max 2 Mo.');return;}const posters=getIndependentPosters();const poster=posters.find(p=>p.id===id);if(!poster)return;try{poster.image=await readPosterImage(file);localStorage.setItem('fwr_independent_posters',JSON.stringify(posters));renderAdminAffiches();renderGPs();}catch(e){alert('Stockage insuffisant.');}};input.click();}
-function renderAdminAffiches(){
-  const list=document.getElementById('admin-affiches-list');if(!list)return;list.replaceChildren();
-  const makeCard=(name,image,status,actions)=>{const card=document.createElement('div');card.style.cssText='background:#0A0A0F;border:1px solid #1F1F2A;border-radius:8px;padding:8px;text-align:center';const title=document.createElement('div');title.textContent=name;title.style.cssText='font-size:12px;color:white;margin-bottom:4px';card.appendChild(title);if(image){const img=document.createElement('img');img.src=image;img.alt='Affiche '+name;img.style.cssText='width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px';card.appendChild(img);}const label=document.createElement('div');label.textContent=status;label.style.cssText='font-size:10px;color:#8B8B8B;margin:5px';card.appendChild(label);if(actions){const row=document.createElement('div');row.style.cssText='display:flex;flex-wrap:wrap;gap:5px;justify-content:center';for(const [text,fn] of actions){const b=document.createElement('button');b.type='button';b.textContent=text;b.onclick=fn;b.style.cssText='background:#1F1F2A;color:white;border:1px solid #2A2A35;border-radius:5px;padding:5px;cursor:pointer';row.appendChild(b);}card.appendChild(row);}list.appendChild(card);};
-  (EMBEDDED_GPS.calendrier||[]).forEach(gp=>{const custom=localStorage.getItem('fwr_poster_'+gp.gp);makeCard(gp.gp,custom||gp.affiche,custom?'Custom':'Officiel',[["Modifier",()=>{document.getElementById('admin-affiche-gp').value=gp.gp;document.getElementById('admin-affiche-file').focus();}]]);});
-  getIndependentPosters().forEach(p=>makeCard(p.name,p.image,'Ajoutée',[["Modifier",()=>editIndependentPoster(p.id)],["Remplacer",()=>replaceIndependentPoster(p.id)]]));
-}
-function addResultToGP(){
-  const gpName = document.getElementById('admin-gp-select').value;const pilote = document.getElementById('admin-pilote').value;const ecurie = document.getElementById('admin-ecurie').value;const grille = document.getElementById('admin-grille').value || '-';const arrets = parseInt(document.getElementById('admin-arrets').value) || 1;const mt = document.getElementById('admin-mt').value || '-';const temps = document.getElementById('admin-temps').value || '-';const pts = parseInt(document.getElementById('admin-pts').value) || 0;
-  if(!gpName || !pilote){alert('Remplis au moins GP et pilote');return;}
-  const gp = adminData.gp_disputes.find(g=>g.gp===gpName);if(!gp) return;
-  const newPos = gp.resultats_fwr.length + 1;
-  gp.resultats_fwr.push({pos: newPos,pilote: pilote,ecurie: ecurie,grille: grille,arrets: arrets,mt: mt,temps: temps,pts: pts});
-  localStorage.setItem('fwr_admin_standings', JSON.stringify(adminData));alert(`Ajouté ${pilote} à ${gpName} - ${pts}pts`);loadAdminData();renderAll();
-}
-function persistAdmin(){localStorage.setItem('fwr_admin_standings', JSON.stringify(adminData));standings = adminData.classement_general;selectedDrivers = standings.map(p=>p.pilote);i18n = adminData.i18n || i18n;renderAll(); loadAdminData();}
-let editingGPName = null;
-const gpEditorText = {fr: {title:'Modifier une course',results:'Résultats des pilotes',add:'+ Ajouter un pilote',save:'Enregistrer toutes les modifications',cancel:'Annuler',close:'Fermer ✕',remove:'Supprimer ce pilote',note:'Enregistrement sur cet appareil. Pour publier pour tous, exportez les fichiers JSON et mettez-les à jour sur GitHub.',required:'Le nom du Grand Prix est obligatoire.',duplicate:'Un Grand Prix porte déjà ce nom.',driver:'Chaque résultat doit contenir un nom de pilote.',position:'Les positions doivent être des nombres entiers positifs et différents.',points:'Les points et les arrêts doivent être des nombres positifs ou nuls.',saved:'Course enregistrée sur cet appareil. Exportez standings.json et gps.json pour publier les modifications sur GitHub.',labels:['Nom du Grand Prix','Circuit','Date','Heure','Distance','Vainqueur','Temps du vainqueur','Meilleur tour','Affiche (chemin ou URL)'],columns:['Position','Pilote','Écurie','Grille','Arrêts','Meilleur tour','Temps / Écart','Points']},en: {title:'Edit race',results:'Driver results',add:'+ Add driver',save:'Save all changes',cancel:'Cancel',close:'Close ✕',remove:'Remove driver',note:'Saved on this device. To publish for everyone, export the JSON files and update them on GitHub.',required:'Grand Prix name is required.',duplicate:'Another Grand Prix already has this name.',driver:'Every result must have a driver name.',position:'Positions must be unique positive whole numbers.',points:'Points and stops must be non-negative numbers.',saved:'Race saved on this device. Export standings.json and gps.json to publish changes on GitHub.',labels:['Grand Prix name','Circuit','Date','Time','Distance','Winner','Winner time','Fastest lap','Poster (path or URL)'],columns:['Position','Driver','Team','Grid','Stops','Fastest lap','Time / Gap','Points']},be: {title:'Modifier une course',results:'Résultats des pilotes',add:'+ Ajouter un pilote',save:'Enregistrer toutes les modifications',cancel:'Annuler',close:'Fermer ✕',remove:'Supprimer ce pilote',note:'Enregistré sur cet appareil. Pour publier pour tous, exportez les fichiers JSON et mettez-les à jour sur GitHub.',required:'Le nom du Grand Prix est obligatoire.',duplicate:'Un Grand Prix porte déjà ce nom.',driver:'Chaque résultat doit contenir un nom de pilote.',position:'Les positions doivent être des nombres entiers positifs et différents.',points:'Les points et les arrêts doivent être des nombres positifs ou nuls.',saved:'Course enregistrée sur cet appareil. Exportez standings.json et gps.json pour publier les modifications sur GitHub.',labels:['Nom du Grand Prix','Circuit','Date','Heure','Distance','Vainqueur','Temps du vainqueur','Meilleur tour','Affiche (chemin ou URL)'],columns:['Position','Pilote','Écurie','Grille','Arrêts','Meilleur tour','Temps / Écart','Points']}};
-const gpEditorFields = ['gp','circuit','date','heure','distance','vainqueur','temps','meilleur_tour','affiche'];
-const gpResultFields = ['pos','pilote','ecurie','grille','arrets','mt','temps','pts'];
-function gpEditorLanguage(){return gpEditorText[currentLang] || gpEditorText.fr;}
-function gpEditorInput(field,value,label,type='text'){
-  const wrapper=document.createElement('label');wrapper.style.cssText='display:flex;flex-direction:column;gap:6px;color:#d4d4d8;font-size:13px';
-  const caption=document.createElement('span');caption.textContent=label;wrapper.appendChild(caption);
-  const input=document.createElement('input');input.name=field;input.type=type;input.value=value??'';input.style.cssText='width:100%;box-sizing:border-box;background:#1f1f2a;border:1px solid #40404c;border-radius:7px;padding:10px;color:white';
-  if(field==='gp'||field==='pilote')input.required=true;
-  if(type==='number'){input.min=field==='pos'?'1':'0';input.step='1';}
-  wrapper.appendChild(input);return wrapper;
-}
-function gpEditorAddResult(result={}){
-  const labels=gpEditorLanguage(),container=document.getElementById('gp-editor-results');
-  const card=document.createElement('div');card.className='gp-editor-result';card.style.cssText='background:#15151d;border:1px solid #353540;border-radius:10px;padding:14px';
-  const fields=document.createElement('div');fields.style.cssText='display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px';
-  gpResultFields.forEach((field,i)=>fields.appendChild(gpEditorInput(field,result[field]??(field==='pos'?container.children.length+1:field==='pts'||field==='arrets'?0:'-'),labels.columns[i],['pos','pts','arrets'].includes(field)?'number':'text')));
-  card.appendChild(fields);
-  const remove=document.createElement('button');remove.type='button';remove.textContent=labels.remove;remove.style.cssText='margin-top:12px;background:#991b1b;color:white;padding:7px 12px;border-radius:7px';remove.addEventListener('click',()=>card.remove());card.appendChild(remove);
-  container.appendChild(card);
-}
-function editGP(name){
-  const gp=adminData?.gp_disputes.find(item=>item.gp===name);if(!gp)return;
-  editingGPName=name;
-  const labels=gpEditorLanguage();
-  document.getElementById('gp-editor-title').textContent=labels.title+' — '+name;
-  document.getElementById('gp-editor-results-title').textContent=labels.results;
-  document.getElementById('gp-editor-add').textContent=labels.add;
-  document.getElementById('gp-editor-save').textContent=labels.save;
-  document.getElementById('gp-editor-cancel').textContent=labels.cancel;
-  document.getElementById('gp-editor-close').textContent=labels.close;
-  document.getElementById('gp-editor-note').textContent=labels.note;
-  const fields=document.getElementById('gp-editor-fields');fields.replaceChildren();
-  gpEditorFields.forEach((field,i)=>fields.appendChild(gpEditorInput(field,gp[field],labels.labels[i])));
-  const results=document.getElementById('gp-editor-results');results.replaceChildren();
-  (gp.resultats_fwr||[]).forEach(result=>gpEditorAddResult(result));
-  document.getElementById('gp-editor').style.display='block';document.body.style.overflow='hidden';
-  document.getElementById('gp-editor-close').focus();
-}
-function closeGPEditor(){document.getElementById('gp-editor').style.display='none';document.body.style.overflow='';editingGPName=null;}
-function saveGPEditor(event){
-  event.preventDefault();const original=adminData?.gp_disputes.find(item=>item.gp===editingGPName);if(!original)return;
-  const labels=gpEditorLanguage(),form=document.getElementById('gp-editor-form');
-  const values={};gpEditorFields.forEach(field=>values[field]=form.querySelector('#gp-editor-fields [name="'+field+'"]').value.trim());
-  if(!values.gp)return alert(labels.required);
-  if(adminData.gp_disputes.some(item=>item!==original&&item.gp.toLocaleLowerCase()===values.gp.toLocaleLowerCase()))return alert(labels.duplicate);
-  const results=[];const positions=new Set();
-  for(const card of document.querySelectorAll('#gp-editor-results .gp-editor-result')){
-    const result={};gpResultFields.forEach(field=>result[field]=card.querySelector('[name="'+field+'"]').value.trim());
-    if(!result.pilote)return alert(labels.driver);
-    const pos=Number(result.pos),pts=Number(result.pts),arrets=Number(result.arrets);
-    if(!Number.isSafeInteger(pos)||pos<1||positions.has(pos))return alert(labels.position);
-    if(!Number.isSafeInteger(pts)||pts<0||!Number.isSafeInteger(arrets)||arrets<0)return alert(labels.points);
-    positions.add(pos);result.pos=pos;result.pts=pts;result.arrets=arrets;results.push(result);
-  }
-  results.sort((a,b)=>a.pos-b.pos);
-  const calendar=EMBEDDED_GPS.calendrier.find(item=>item.gp===editingGPName);
-  Object.assign(original,values,{resultats_fwr:results});
-  if(calendar)Object.assign(calendar,values);
-  gps=EMBEDDED_GPS.calendrier;
-  try{localStorage.setItem('fwr_admin_standings',JSON.stringify(adminData));localStorage.setItem('fwr_admin_gps',JSON.stringify(EMBEDDED_GPS));}catch(error){return alert('Impossible de sauvegarder.');}
-  closeGPEditor();persistAdmin();alert(labels.saved);
-}
-document.getElementById('gp-editor-form').addEventListener('submit',saveGPEditor);
-document.getElementById('gp-editor-add').addEventListener('click',()=>gpEditorAddResult());
-document.getElementById('gp-editor-close').addEventListener('click',closeGPEditor);
-document.getElementById('gp-editor-cancel').addEventListener('click',closeGPEditor);
-function editPilote(name){const p=adminData.classement_general.find(x=>x.pilote===name);if(!p) return;const pts=prompt('Points de '+name, p.pts);if(pts===null) return;if(!/^\d+$/.test(pts.trim())) return alert('Saisis un nombre de points valide.');const ecurie=prompt('Écurie',p.ecurie);if(ecurie===null) return;p.pts=Number(pts); p.ecurie=ecurie.trim();adminData.classement_general.sort((a,b)=>b.pts-a.pts).forEach((x,i)=>x.pos=i+1);persistAdmin();}
-function deleteGP(name){if(!confirm('Supprimer le GP '+name+' ?')) return;adminData.gp_disputes=adminData.gp_disputes.filter(g=>g.gp!==name);EMBEDDED_GPS.calendrier=EMBEDDED_GPS.calendrier.filter(g=>g.gp!==name);gps=EMBEDDED_GPS.calendrier; persistAdmin();}
-function deletePilote(name){if(!confirm('Supprimer le pilote '+name+' ?')) return;adminData.classement_general=adminData.classement_general.filter(p=>p.pilote!==name);adminData.classement_general.forEach((p,i)=>p.pos=i+1);persistAdmin();}
-function addNewGP(){
-  const name = prompt('Nom du GP (ex: Jeddah):');if(!name) return;const circuit = prompt('Circuit (ex: Jeddah Corniche):') || name;const date = prompt('Date (ex: 01 Sept 2026):') || new Date().toLocaleDateString();
-  adminData.gp_disputes.push({date: date,gp: name,circuit: circuit,heure: '19H00',distance: '35%',affiche: 'assets/posters/'+name.toLowerCase()+'-01-sept.png',vainqueur: 'À venir',temps: 'En attente',meilleur_tour: 'En attente',resultats_fwr: []});
-  localStorage.setItem('fwr_admin_standings', JSON.stringify(adminData));loadAdminData();renderAll();
-}
-function previewAffiche(event){const file = event.target.files[0];if(!file) return;const reader = new FileReader();reader.onload = function(e){document.getElementById('admin-affiche-preview').innerHTML = `<img src="${e.target.result}" style="max-width:100%;max-height:200px;border-radius:8px">`;document.getElementById('admin-affiche-preview').dataset.base64 = e.target.result;};reader.readAsDataURL(file);}
-function saveAffiche(){
-  const gpName = document.getElementById('admin-affiche-gp').value;const preview = document.getElementById('admin-affiche-preview');const base64 = preview.dataset.base64;const file = document.getElementById('admin-affiche-file').files[0];
-  if (!gpName || !base64 || !file) {alert('Sélectionne un GP et une image.');return;}
-  if (!['image/png', 'image/jpeg', 'image/webp'].includes(file.type)) {alert('Choisis une image PNG, JPG ou WebP.');return;}
-  try {localStorage.setItem('fwr_poster_' + gpName, base64);} catch (error) {alert('Stockage plein.');return;}
-  renderAdminAffiches();renderGPs();alert('Affiche enregistrée sur cet appareil. Pour tous, publie dans assets/posters/ et MAJ JSON sur GitHub.');
-}
-function downloadStandings(){const dataStr = JSON.stringify(adminData, null, 2);const blob = new Blob([dataStr], {type:'application/json'});const url = URL.createObjectURL(blob);const a = document.createElement('a');a.href = url;a.download = 'standings.json';a.click();}
-function downloadGPS(){const gpsData = EMBEDDED_GPS;const dataStr = JSON.stringify(gpsData, null, 2);const blob = new Blob([dataStr], {type:'application/json'});const url = URL.createObjectURL(blob);const a = document.createElement('a');a.href = url;a.download = 'gps.json';a.click();}
-function saveToLocalStorage(){localStorage.setItem('fwr_admin_standings', JSON.stringify(adminData));alert('Sauvegardé dans navigateur');}
-function loadFromLocalStorage(){const ls = localStorage.getItem('fwr_admin_standings');if(ls){adminData = JSON.parse(ls);alert('Chargé depuis navigateur');loadAdminData();renderAll();} else {alert('Pas de données dans navigateur');}}
-function resetData(){if(confirm('Réinitialiser données officielles? Supprime les modifs admin.')){localStorage.removeItem('fwr_admin_standings');Object.keys(localStorage).forEach(key=>{if(key.startsWith('fwr_poster_')){localStorage.removeItem(key);}});location.reload();}}
-function addNewPilote(){
-  const name = document.getElementById('admin-new-pilote-name').value;const ecurie = document.getElementById('admin-new-pilote-ecurie').value;if(!name) return;
-  const colorMap = {'Alpine': '#0090FF','Red Bull': '#0600EF','Ferrari HP': '#DC0000','Aston Martin': '#006F62','Mercedes': '#00D2BE','mercedes-AMG Petronas': '#00D2BE','Haas': '#FFFFFF'};
-  adminData.classement_general.push({pos: adminData.classement_general.length + 1,pilote: name,ecurie: ecurie,color: colorMap[ecurie] || '#E10600',pts: 0,victoires: 0,podiums: 0,meilleur_tour: '-',forme: '→',label: {fr:'',en:'',be:''},formeColor: '#8B8B8B',trend: [0,0,0,0,0,0,0,0,0,0,0,0,0,0]});
-  localStorage.setItem('fwr_admin_standings', JSON.stringify(adminData));loadAdminData();renderAll();
-}
-let logoClicks = 0;
-document.addEventListener('DOMContentLoaded', ()=>{
-  const logoRow = document.querySelector('.logo-row');
-  if(logoRow){logoRow.addEventListener('click', ()=>{logoClicks++;if(logoClicks>=5){openAdmin();logoClicks=0;}});}
-  if(new URLSearchParams(window.location.search).get('admin')==='1'){setTimeout(openAdmin, 500);}
-});
+function showAdminTab(tab){document.querySelectorAll('[id^="admin-view-"]').forEach(el=>el.style.display='none');document.getElementById('admin-view-'+tab).style.display='block';document.querySelectorAll('.admin-tab').forEach(btn=>{btn.style.background='#1F1F2A';btn.style.color='#8B8B8B';});document.getElementById('admin-tab-'+tab).style.background='#E10600';document.getElementById('admin-tab-'+tab).style.color='white';}
 </script>
-
 <script>
 (function () {
-  const dictionaries = {"fr": {"classement": "Classement Général", "tableaux": "Tableaux GP", "stats": "Stats & Courbes", "affiches": "Affiches GP", "pts": "PTS", "v": "V", "forme": "FORME", "grille": "GRILLE", "arrets": "ARRÊTS", "meilleur_tour": "MEILLEUR TOUR", "temps_ecart": "TEMPS / ÉCART", "pos": "POS", "pilote": "PILOTE", "ecurie": "ÉCURIE", "live": "LIVE F1 25 TEAM FWR → twitch.tv/upsilon7", "regarder": "REGARDER LE LIVE", "cote": "Cote parieur", "favori": "favori", "ecart": "+71 pts", "maj": "MAJ 02 Oct • 14 GP • Belgique + GB + Hongrie"}, "en": {"classement": "General Standings", "tableaux": "Race Results", "stats": "Stats & Evolution", "affiches": "GP Posters", "pts": "PTS", "v": "W", "forme": "FORM", "grille": "GRID", "arrets": "STOPS", "meilleur_tour": "FASTEST LAP", "temps_ecart": "TIME / GAP", "pos": "POS", "pilote": "DRIVER", "ecurie": "TEAM", "live": "LIVE F1 25 TEAM FWR → twitch.tv/upsilon7", "regarder": "WATCH LIVE", "cote": "Bet odds", "favori": "favourite", "ecart": "+71 pts gap", "maj": "Updated Oct 02 • 14 GP • Belgium + GB + Hungary", "Classement Général": "General standings", "Tableaux GP": "Grand Prix results", "Stats & Courbes": "Statistics & charts", "Affiches GP": "Grand Prix posters", "Écart": "Gap", "Détail course": "Race details", "Pilotes:": "Drivers:", "Évolution – Top 5": "Progress – Top 5", "LIGUE OFFICIELLE • SAISON ACTUELLE S1 2026": "OFFICIAL LEAGUE • CURRENT SEASON S1 2026", "Tableaux par Grand Prix - Courses déjà faites": "Grand Prix results – 14 races completed", "Stats & Courbes d’évolution - Tous pilotes": "Statistics & progress – all drivers", "Affiches GP - Saison S1 - 14 GP": "Grand Prix posters – Season S1 – 14 races"}, "be": {"classement": "Classement général", "tableaux": "Résultats des Grands Prix", "stats": "Statistiques et courbes", "affiches": "Affiches des Grands Prix", "pts": "PTS", "v": "V", "forme": "FORME", "grille": "GRILLE", "arrets": "ARRÊTS", "meilleur_tour": "MEILLEUR TOUR", "temps_ecart": "TEMPS / ÉCART", "pos": "POS", "pilote": "PILOTE", "ecurie": "ÉCURIE", "live": "LIVE F1 25 TEAM FWR → twitch.tv/upsilon7", "regarder": "REGARDER EN DIRECT", "cote": "Cote des paris", "favori": "favori", "ecart": "+71 points", "maj": "Mise à jour : 02 Oct • 14 GP • Belgique + GB + Hongrie"}};
-  const footerTranslations = {
-    fr: {footer_created: 'Site web réalisé par reddice_geek en 2026 sous autorisation FWR • Utilisation libre de droits • Données officielles Team FWR • S1 2026 • 14 GP • twitch.tv/upsilon7',footer_copy: '© 2026 FWR Racing League • Site officiel S1 2026 • 14 GP • twitch.tv/upsilon7 • Données officielles',footer_legal: 'F1 25® est une marque déposée • Site non affilié à Formula 1 • Données 100% Team FWR • Utilisation libre sous autorisation FWR'},
-    en: {footer_created: 'Website created by reddice_geek in 2026 with FWR authorisation • Free to use • Official Team FWR data • S1 2026 • 14 GP • twitch.tv/upsilon7',footer_copy: '© 2026 FWR Racing League • Official S1 2026 website • 14 GP • twitch.tv/upsilon7 • Official data',footer_legal: 'F1 25® is a registered trademark • Not affiliated with Formula 1 • 100% Team FWR data • Use authorised by FWR'},
-    be: {footer_created: 'Site web réalisé par reddice_geek en 2026 avec l’autorisation de FWR • Utilisation libre de droits • Données officielles de Team FWR • Saison 1 2026 • 14 GP • twitch.tv/upsilon7',footer_copy: '© 2026 FWR Racing League • Site officiel de la saison 1 2026 • 14 GP • twitch.tv/upsilon7 • Données officielles',footer_legal: 'F1 25® est une marque déposée • Site non affilié à Formula 1 • Données provenant à 100 % de Team FWR • Utilisation libre avec l’autorisation de FWR'}
-  };
-  function translateFooter() {
-    const active = document.querySelector('.lang-switch button.active');
-    const lang = (active && active.dataset.lang) || window.currentLang || (typeof currentLang !== 'undefined' ? currentLang : 'fr');
-    const translations = footerTranslations[lang] || footerTranslations.fr;
-    for (const [key, text] of Object.entries(translations)) {
-      const element = document.querySelector('footer [data-i18n="' + key + '"]');
-      if (element && element.textContent !== text) element.textContent = text;
-    }
-  }
+  const dictionaries = {"fr": {"classement": "Classement Général - 15 GP", "tableaux": "Tableaux GP - 15 GP", "stats": "Stats & Courbes - 15 GP", "affiches": "Affiches GP - 15 GP", "pts": "PTS", "v": "V", "forme": "FORME", "grille": "GRILLE", "arrets": "ARRÊTS", "meilleur_tour": "MEILLEUR TOUR", "temps_ecart": "TEMPS / ÉCART", "pos": "POS", "pilote": "PILOTE", "ecurie": "ÉCURIE", "live": "LIVE F1 25 TEAM FWR → twitch.tv/upsilon7", "regarder": "REGARDER LE LIVE", "cote": "Cote parieur", "favori": "favori", "ecart": "+56 pts", "maj": "MAJ 06 Oct • 15 GP • Pays-Bas 19H - Pepit0mis vainqueur"}, "en": {"classement": "General Standings - 15 GP", "tableaux": "Race Results - 15 GP", "stats": "Stats & Evolution - 15 GP", "affiches": "GP Posters - 15 GP", "pts": "PTS", "v": "W", "forme": "FORM", "grille": "GRID", "arrets": "STOPS", "meilleur_tour": "FASTEST LAP", "temps_ecart": "TIME / GAP", "pos": "POS", "pilote": "DRIVER", "ecurie": "TEAM", "live": "LIVE F1 25 TEAM FWR → twitch.tv/upsilon7", "regarder": "WATCH LIVE", "cote": "Bet odds", "favori": "favorite", "ecart": "+56 pts gap", "maj": "Updated Oct 06 • 15 GP • Netherlands 19H - Pepit0mis winner"}};
   window.FWR_LANG_EXTRA = dictionaries;
-  const originals = new WeakMap();const rendered = new WeakMap();const attrOriginals = new WeakMap();const attrRendered = new WeakMap();
-  const protectedTags = new Set(['SCRIPT','STYLE','TEXTAREA','CODE','PRE','OPTION']);
-  function convert(text, lang) {
-    if (lang === 'fr') return text;
-    const dict = dictionaries[lang] || {};
-    const trimmed = text.trim();if (!trimmed) return text;
-    let translated = dict[trimmed];if (translated === undefined && lang === 'be') translated = dictionaries.fr[trimmed];
-    if (translated === undefined) {translated = trimmed.replace(/^(Supprimer le GP|Supprimer le pilote|Circuit de|Points de)\b/, match => ({'Supprimer le GP':'Delete Grand Prix','Supprimer le pilote':'Delete driver','Circuit de':'Circuit of','Points de':'Points for'}[match] || match));if (lang === 'be') translated = trimmed;}
-    return text.replace(trimmed, translated);
-  }
-  function visit(root) {
-    if (!root || (root.nodeType === 1 && protectedTags.has(root.tagName))) return;
-    if (root.nodeType === 3) {
-      const parent = root.parentElement;
-      if (!parent || protectedTags.has(parent.tagName) || parent.closest('[data-i18n]')) return;
-      const previous = rendered.get(root);
-      if (!originals.has(root) || (previous !== undefined && root.nodeValue !== previous)) originals.set(root, root.nodeValue);
-      const next = convert(originals.get(root), window.currentLang || currentLang);
-      if (root.nodeValue !== next) root.nodeValue = next;
-      rendered.set(root, next);return;
-    }
-    if (root.nodeType !== 1 && root.nodeType !== 9) return;
-    if (root.nodeType === 1) {
-      for (const attr of ['placeholder','title','aria-label']) {
-        if (!root.hasAttribute(attr)) continue;
-        let attrs = attrOriginals.get(root), shown = attrRendered.get(root);
-        if (!attrs) { attrs = {}; attrOriginals.set(root, attrs); }
-        if (!shown) { shown = {}; attrRendered.set(root, shown); }
-        const value = root.getAttribute(attr);
-        if (!(attr in attrs) || (attr in shown && value !== shown[attr])) attrs[attr] = value;
-        const next = convert(attrs[attr], window.currentLang || currentLang);
-        if (value !== next) root.setAttribute(attr, next);
-        shown[attr] = next;
-      }
-    }
-    for (const child of Array.from(root.childNodes)) visit(child);
-  }
-  let scheduled = false;
-  window.FWR_translateInterface = function () { visit(document.body); translateFooter(); };
-  document.querySelectorAll('.lang-switch button[data-lang]').forEach(button => {button.addEventListener('click', () => setTimeout(translateFooter, 0));});
-  const observer = new MutationObserver(() => {if (scheduled) return;scheduled = true;queueMicrotask(() => { scheduled = false; window.FWR_translateInterface(); });});
-  observer.observe(document.body, {subtree:true,childList:true,characterData:true});
-  const nativeAlert = window.alert.bind(window), nativeConfirm = window.confirm.bind(window), nativePrompt = window.prompt.bind(window);
-  window.alert = message => nativeAlert(convert(String(message), currentLang));
-  window.confirm = message => nativeConfirm(convert(String(message), currentLang));
-  window.prompt = (message, defaultValue) => nativePrompt(convert(String(message), currentLang), defaultValue);
-  window.FWR_translateInterface();
 })();
 </script>
 </body>
