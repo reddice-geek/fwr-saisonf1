@@ -3,17 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FWR S1 2026 - 15 GP - Pays-Bas 19H - FR EN BE</title>
+<title>FWR S1 2026 - 15 GP - Pays-Bas 19H - FIXED</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600;700&display=swap');
+:root{--bg:#050507;--bg2:#0F0F14;--border:#1F1F2A;--red:#E10600;}
+body{background:var(--bg);color:white;font-family:Inter,sans-serif;overflow-x:hidden}
+.bg-animated{position:fixed;inset:0;z-index:0;pointer-events:none}
+.grid-carbone{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);background-size:32px 32px}
+.speed-lines{position:absolute;inset:0;background:repeating-linear-gradient(90deg, transparent 0 120px, rgba(225,6,0,0.04) 120px 122px)}
+.bandeau-rouge{height:56px;background:var(--red);position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 16px;cursor:pointer;box-shadow:0 2px 20px rgba(225,6,0,0.4)}
+.dot-pulse{width:10px;height:10px;background:white;border-radius:999px;animation:pulseDot 1.6s infinite}
+@keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(255,255,255,0.7)}70%{box-shadow:0 0 0 8px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+.btn-live{background:black;color:white;padding:8px 16px;border-radius:999px;font-size:11px;font-weight:900;letter-spacing:0.1em;text-decoration:none}
+.header-ultimate{position:sticky;top:56px;z-index:40;backdrop-filter:blur(16px);background:rgba(15,15,20,0.92);border-bottom:1px solid var(--border);padding:16px}
+.lang-switch{display:flex;gap:8px;margin-bottom:16px}
+.lang-switch button{background:#1F1F2A;border:1px solid #2A2A35;color:#8B8B8B;padding:6px 12px;border-radius:8px;cursor:pointer;font-size:12px}
+.lang-switch button.active{background:#E10600;color:white;border-color:#E10600}
+.logo-row{display:flex;align-items:center;gap:18px;cursor:pointer}
+.logo-img{width:90px;height:90px;object-fit:contain;filter:drop-shadow(0 0 18px rgba(225,6,0,0.7));border-radius:14px;background:#0F0F14;border:1px solid #1F1F2A}
+.logo-saison .s1{font-family:'Titillium Web';font-weight:700;font-size:22px;letter-spacing:0.05em}
+.logo-saison .year{font-size:11px;color:#8B8B8B;margin-top:2px}
+.nav-unique{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.nav-unique button{padding:10px 14px;font-family:'Titillium Web';font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#9CA3AF;border:1px solid transparent;background:transparent;cursor:pointer;transition:all .2s}
+.nav-unique button.active{color:white;background:#1A1A22;border-color:#2A2A36;box-shadow:inset 0 0 0 1px rgba(225,6,0,0.3)}
+.titillium{font-family:'Titillium Web'}
+.table-wrap{background:#0F0F14;border:1px solid #1F1F2A;border-radius:16px;overflow:hidden;overflow-x:auto}
+.table-wrap table{width:100%;border-collapse:collapse;font-size:13px}
+.table-wrap th{text-align:left;padding:12px;background:#1A1A22;color:#8B8B8B;font-size:11px;letter-spacing:0.05em}
+.table-wrap td{padding:12px;border-top:1px solid #1F1F2A}
+.chart-box{background:#0F0F14;border:1px solid #1F1F2A;border-radius:16px;padding:16px}
+.poster-card{background:linear-gradient(180deg,#16161F,#0F0F14);border:1px solid #1F1F2A;border-radius:16px;padding:16px;transition:all .2s}
+.poster-card:hover{border-color:rgba(225,6,0,0.5)}
+.badge-leader{background:linear-gradient(90deg,#FFD700,#FFA500);color:#000;font-weight:800;font-family:'Titillium Web';font-size:9px;padding:3px 8px;border-radius:999px;margin-left:8px}
+.pill{background:#1F1F2A;border:1px solid #2A2A35;color:#8B8B8B;padding:6px 12px;border-radius:999px;font-size:11px;cursor:pointer;margin:2px}
+.pill.active{background:#E10600;color:white;border-color:#E10600}
+.modal{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,0.8);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:20px}
+.modal-box{background:#0F0F14;border:1px solid #1F1F2A;border-radius:16px;padding:24px;max-width:800px;width:100%;max-height:90vh;overflow:auto}
+.hidden{display:none!important}
+</style>
 </head>
 <body>
-<div class="bg-animated"><div class="grid-carbone"></div><div class="speed-lines"></div><div class="particles"></div></div>
+<div class="bg-animated"><div class="grid-carbone"></div><div class="speed-lines"></div></div>
 <div class="bandeau-rouge" onclick="window.open('https://twitch.tv/upsilon7','_blank')">
-  <div style="display:flex;align-items:center;gap:8px"><span class="dot-pulse"></span><span data-i18n="live">LIVE F1 25 TEAM FWR → twitch.tv/upsilon7</span></div>
-  <a href="https://twitch.tv/upsilon7" target="_blank" class="btn-live" onclick="event.stopPropagation()" data-i18n="regarder">REGARDER LE LIVE</a>
+  <div style="display:flex;align-items:center;gap:8px"><span class="dot-pulse"></span><span>LIVE F1 25 TEAM FWR → twitch.tv/upsilon7 - 15 GP - Pays-Bas 19H</span></div>
+  <a href="https://twitch.tv/upsilon7" target="_blank" class="btn-live" onclick="event.stopPropagation()">REGARDER LE LIVE</a>
 </div>
 <header class="header-ultimate">
   <div class="lang-switch">
@@ -21,49 +57,43 @@
     <button data-lang="en" onclick="switchLang('en')">EN 🇬🇧</button>
     <button data-lang="be" onclick="switchLang('be')">BE 🇧🇪 (FR)</button>
   </div>
-  <div class="logo-row" onclick="showTab('classement'); window.scrollTo({top:0,behavior:'smooth'})" style="cursor:pointer">
-    <img src="assets/logo/FWR Racing Saison 1.png" alt="S1 FWR Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block'">
-    <div id="logo-fallback" style="display:none" class="logo-s1"><span style="color:white">S1</span> <span class="fwr" style="color:#E10600">FWR</span></div>
+  <div class="logo-row" onclick="showTab('classement'); window.scrollTo({top:0,behavior:'smooth'})">
+    <img src="assets/logo/FWR Racing Saison 1.png" alt="S1 FWR Logo" class="logo-img" onerror="this.src='assets/logo/FWR Racing Saison 1.png'">
     <div class="logo-saison">
       <div class="s1">FWR RACING LEAGUE</div>
-      <div class="year">SAISON S1 • F1 2026 • Team FWR • twitch.tv/upsilon7</div>
-      <div style="font-size:10px;color:#E10600;margin-top:4px;font-weight:700">LIGUE OFFICIELLE • SAISON ACTUELLE S1 2026 • 15 GP</div>
+      <div class="year">SAISON S1 • F1 2026 • Team FWR • twitch.tv/upsilon7 • 15 GP • Pays-Bas 19H</div>
+      <div style="font-size:10px;color:#E10600;margin-top:4px;font-weight:700">LIGUE OFFICIELLE • SAISON ACTUELLE S1 2026 • 15 GP - Skyyy LEADER 261pts</div>
     </div>
   </div>
   <nav class="nav-unique">
-    <button id="nav-classement" class="active" onclick="showTab('classement')" data-i18n="classement">Classement Général</button>
-    <button id="nav-tableaux" onclick="showTab('tableaux')" data-i18n="tableaux">Tableaux GP</button>
-    <button id="nav-evolution" onclick="showTab('evolution')" data-i18n="stats">Stats & Courbes</button>
-    <button id="nav-affiches" onclick="showTab('affiches')" data-i18n="affiches">Affiches GP</button>
+    <button id="nav-classement" class="active" onclick="showTab('classement')">Classement Général - 15 GP</button>
+    <button id="nav-tableaux" onclick="showTab('tableaux')">Tableaux GP - 15 GP</button>
+    <button id="nav-evolution" onclick="showTab('evolution')">Stats & Courbes - 15 GP</button>
+    <button id="nav-affiches" onclick="showTab('affiches')">Affiches GP - 15 GP</button>
   </nav>
 </header>
 <div style="max-width:1240px;margin:0 auto;padding:32px 16px;position:relative;z-index:1">
   <div id="view-classement">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:12px">
-      <h1 class="titillium" style="font-size:32px;font-weight:700" data-i18n="classement">Classement Général - 15 GP</h1>
-      <div style="font-size:12px;color:#8B8B8B" data-i18n="maj">MAJ 06 Oct • 15 GP • Pays-Bas 19H - Pepit0mis vainqueur</div>
+      <h1 class="titillium" style="font-size:32px;font-weight:700">Classement Général - 15 GP - Pays-Bas 19H</h1>
+      <div style="font-size:12px;color:#8B8B8B">MAJ 06 Oct • 15 GP • Pays-Bas 19H - Pepit0mis vainqueur (2V)</div>
     </div>
-    <div class="table-wrap"><table><thead><tr><th data-i18n="pos">POS</th><th data-i18n="pilote">PILOTE</th><th data-i18n="ecurie">ÉCURIE</th><th style="text-align:center" data-i18n="pts">PTS</th><th style="text-align:center" data-i18n="v">V</th><th data-i18n="forme">FORME</th></tr></thead><tbody id="tbody-classement"></tbody></table></div>
+    <div class="table-wrap"><table><thead><tr><th>POS</th><th>PILOTE</th><th>ÉCURIE</th><th style="text-align:center">PTS</th><th style="text-align:center">V</th><th>FORME</th></tr></thead><tbody id="tbody-classement"></tbody></table></div>
     <div style="margin-top:40px"><h2 class="titillium" style="font-size:20px;font-weight:700;margin-bottom:16px">Évolution – Top 5 - 15 GP</h2><div class="chart-box"><canvas id="chart-mini" height="120"></canvas></div></div>
   </div>
   <div id="view-tableaux" class="hidden">
-    <h1 class="titillium" style="font-size:32px;font-weight:700;margin-bottom:24px" data-i18n="tableaux">Tableaux par Grand Prix - 15 GP - Pays-Bas 19H</h1>
+    <h1 class="titillium" style="font-size:32px;font-weight:700;margin-bottom:24px">Tableaux par Grand Prix - 15 GP - Pays-Bas 19H inclus - Tous les temps</h1>
     <div id="chronos-list" style="display:flex;flex-direction:column;gap:24px"></div>
   </div>
   <div id="view-evolution" class="hidden">
     <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;margin-bottom:24px;gap:16px">
-      <h1 class="titillium" style="font-size:32px;font-weight:700" data-i18n="stats">Stats & Courbes d'évolution - Tous pilotes - 15 GP</h1>
+      <h1 class="titillium" style="font-size:32px;font-weight:700">Stats & Courbes d'évolution - Tous pilotes - 15 GP</h1>
       <div style="display:flex;gap:8px;font-size:12px;align-items:center"><span style="color:#8B8B8B">Pilotes:</span><div id="pills" style="display:flex;flex-wrap:wrap;gap:8px"></div></div>
     </div>
     <div class="chart-box"><canvas id="chart-main" height="380"></canvas></div>
-    <div style="margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;font-size:12px">
-      <div class="poster-card"><div style="color:#8B8B8B" data-i18n="cote">Cote parieur</div><div style="margin-top:4px"><b>Skyyy</b> <span style="color:#10B981">1.25</span> <span data-i18n="favori">favori</span> + LEADER 261pts</div></div>
-      <div class="poster-card"><div style="color:#8B8B8B">Pays-Bas 6 Oct 19H</div><div style="margin-top:4px"><b>Pepit0mis</b> <span style="color:#10B981">1:12.853</span> 31:40.833 - 2V</div></div>
-      <div class="poster-card"><div style="color:#8B8B8B">Écart</div><div style="margin-top:4px"><b>Skyyy vs Gosset_25</b> <span data-i18n="ecart">+56 pts</span></div></div>
-    </div>
   </div>
   <div id="view-affiches" class="hidden">
-    <h1 class="titillium" style="font-size:32px;font-weight:700;margin-bottom:24px" data-i18n="affiches">Affiches GP - Saison S1 - 15 GP - Pays-Bas 19H</h1>
+    <h1 class="titillium" style="font-size:32px;font-weight:700;margin-bottom:24px">Affiches GP - Saison S1 - 15 GP - Pays-Bas 19H</h1>
     <div id="grid-gp" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px"></div>
   </div>
 </div>
@@ -74,141 +104,116 @@
   </div>
 </div>
 <footer style="margin-top:80px;border-top:1px solid #1F1F2A;padding:28px;text-align:center;color:#8B8B8B;font-size:12px;position:relative;z-index:1;line-height:1.6">
-  <div data-i18n="footer_created" style="font-weight:600;color:#CCCCCC">Site web réalisé par reddice_geek en 2026 sous autorisation FWR • Utilisation libre de droits • Données officielles Team FWR • S1 2026 • 15 GP • Pays-Bas 19H • twitch.tv/upsilon7</div>
-  <div data-i18n="footer_copy" style="margin-top:8px;font-size:11px">© 2026 FWR Racing League • Site officiel S1 2026 • 15 GP • twitch.tv/upsilon7 • Données officielles</div>
-  <div data-i18n="footer_legal" style="margin-top:6px;font-size:10px;color:#666">F1 25® est une marque déposée • Site non affilié à Formula 1 • Données 100% Team FWR • Utilisation libre sous autorisation FWR</div>
+  <div style="font-weight:600;color:#CCCCCC">Site web réalisé par reddice_geek en 2026 sous autorisation FWR • 15 GP • Pays-Bas 19H 06 Oct 2026 • Données officielles Team FWR • S1 2026 • twitch.tv/upsilon7</div>
+  <div style="margin-top:8px;font-size:11px">© 2026 FWR Racing League • Site officiel S1 2026 • 15 GP • twitch.tv/upsilon7 • Données officielles • Pepit0mis 2 victoires</div>
 </footer>
-<section id="gp-editor" role="dialog" aria-modal="true" aria-labelledby="gp-editor-title" style="display:none;position:fixed;inset:0;z-index:250;background:#0b0b10;overflow:auto;padding:20px;color:white">
-  <div style="max-width:1250px;margin:auto">
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:22px">
-      <h2 id="gp-editor-title" style="font-size:26px;font-weight:700">Modifier une course - 15 GP</h2>
-      <button type="button" id="gp-editor-close" style="background:#252530;color:white;padding:10px 18px;border-radius:8px">Fermer ✕</button>
-    </div>
-    <form id="gp-editor-form">
-      <div id="gp-editor-fields" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:25px"></div>
-      <h3 id="gp-editor-results-title" style="font-size:21px;font-weight:700;margin-bottom:12px">Résultats des pilotes</h3>
-      <div id="gp-editor-results" style="display:flex;flex-direction:column;gap:12px"></div>
-      <button type="button" id="gp-editor-add" style="margin-top:15px;background:#059669;color:white;padding:10px 16px;border-radius:8px">+ Ajouter un pilote</button>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;margin-bottom:30px">
-        <button type="submit" id="gp-editor-save" style="background:#e10600;color:white;padding:13px 24px;border-radius:8px;font-weight:700">Enregistrer toutes les modifications</button>
-        <button type="button" id="gp-editor-cancel" style="background:#252530;color:white;padding:13px 24px;border-radius:8px">Annuler</button>
-      </div>
-      <p id="gp-editor-note" style="color:#a1a1aa;font-size:12px">Enregistrement sur cet appareil. Pour publier pour tous, exportez les fichiers JSON et mettez-les à jour sur GitHub.</p>
-    </form>
-  </div>
-</section>
-<script src="js/app.js"></script>
-<button id="admin-toggle" style="position:fixed;bottom:16px;left:16px;z-index:99;background:#0F0F14;border:1px solid #1F1F2A;color:#8B8B8B;padding:8px 12px;border-radius:8px;font-size:12px;cursor:pointer;opacity:0.3;transition:all 0.2s" onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity='0.3'" onclick="openAdmin()">⚙ Admin</button>
-<div id="admin-panel" style="display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,0.9);backdrop-filter:blur(12px);padding:20px;overflow:auto">
-  <div style="max-width:1000px;margin:0 auto;background:#0F0F14;border:1px solid #1F1F2A;border-radius:20px;padding:24px">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
-      <h2 style="font-family:'Titillium Web';font-weight:700;font-size:24px;color:white">Panel Admin - FWR S1 - 15 GP - Pays-Bas 19H</h2>
-      <button onclick="closeAdmin()" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:6px 14px;border-radius:8px;cursor:pointer">Fermer ✕</button>
-    </div>
-    <div style="display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap">
-      <button id="admin-tab-courses" class="admin-tab active" onclick="showAdminTab('courses')" style="background:#E10600;color:white;padding:8px 16px;border-radius:8px;border:none;cursor:pointer;font-weight:600">Courses (15 GP)</button>
-      <button id="admin-tab-pilotes" class="admin-tab" onclick="showAdminTab('pilotes')" style="background:#1F1F2A;color:#8B8B8B;padding:8px 16px;border-radius:8px;border:1px solid #2A2A35;cursor:pointer">Pilotes</button>
-      <button id="admin-tab-affiches" class="admin-tab" onclick="showAdminTab('affiches')" style="background:#1F1F2A;color:#8B8B8B;padding:8px 16px;border-radius:8px;border:1px solid #2A2A35;cursor:pointer">Affiches</button>
-      <button id="admin-tab-export" class="admin-tab" onclick="showAdminTab('export')" style="background:#1F1F2A;color:#8B8B8B;padding:8px 16px;border-radius:8px;border:1px solid #2A2A35;cursor:pointer">Export</button>
-    </div>
-    <div id="admin-view-courses">
-      <h3 style="color:white;font-weight:700;margin-bottom:12px">Gérer les courses - 15 GP - Pays-Bas 19H inclus</h3>
-      <div style="margin-bottom:16px;display:flex;gap:8px;flex-wrap:wrap">
-        <button onclick="addNewGP()" style="background:#10B981;color:white;padding:8px 16px;border-radius:8px;border:none;cursor:pointer">+ Nouvelle Course</button>
-      </div>
-      <div id="admin-gp-list" style="display:flex;flex-direction:column;gap:12px"></div>
-      <div style="margin-top:24px;background:#0A0A0F;border:1px solid #1F1F2A;border-radius:12px;padding:16px">
-        <h4 style="color:white;font-weight:600;margin-bottom:8px">Ajouter résultat pilote à une course</h4>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px">
-          <select id="admin-gp-select" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px"></select>
-          <input id="admin-pilote" placeholder="Pilote" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
-          <input id="admin-ecurie" placeholder="Ecurie" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
-          <input id="admin-grille" placeholder="Grille" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
-          <input id="admin-arrets" placeholder="Arrêts" type="number" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
-          <input id="admin-mt" placeholder="Meilleur tour" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
-          <input id="admin-temps" placeholder="Temps/Ecart" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
-          <input id="admin-pts" placeholder="Points" type="number" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:8px;border-radius:6px">
-        </div>
-        <button onclick="addResultToGP()" style="margin-top:12px;background:#E10600;color:white;padding:8px 16px;border-radius:8px;border:none;cursor:pointer">+ Ajouter résultat</button>
-      </div>
-    </div>
-    <div id="admin-view-pilotes" style="display:none">
-      <h3 style="color:white;font-weight:700;margin-bottom:12px">Classement Général - 15 GP</h3>
-      <div id="admin-pilotes-list" style="display:flex;flex-direction:column;gap:8px"></div>
-    </div>
-    <div id="admin-view-affiches" style="display:none">
-      <h3 style="color:white;font-weight:700;margin-bottom:12px">Affiches GP - 15 GP</h3>
-      <div id="admin-affiches-list" style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;max-height:400px;overflow:auto"></div>
-    </div>
-    <div id="admin-view-export" style="display:none">
-      <h3 style="color:white;font-weight:700;margin-bottom:12px">Export - 15 GP - Pays-Bas</h3>
-      <div style="display:flex;flex-direction:column;gap:12px">
-        <button onclick="downloadStandings()" style="background:#E10600;color:white;padding:12px;border-radius:8px;border:none;cursor:pointer;font-weight:600">⬇ Télécharger standings.json - 15 GP</button>
-        <button onclick="downloadGPS()" style="background:#0090FF;color:white;padding:12px;border-radius:8px;border:none;cursor:pointer;font-weight:600">⬇ Télécharger gps.json - 15 GP</button>
-        <button onclick="saveToLocalStorage()" style="background:#10B981;color:white;padding:12px;border-radius:8px;border:none;cursor:pointer;font-weight:600">💾 Sauvegarder</button>
-        <button onclick="loadFromLocalStorage()" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:12px;border-radius:8px;cursor:pointer">📂 Charger</button>
-        <button onclick="resetData()" style="background:#EF4444;color:white;padding:12px;border-radius:8px;border:none;cursor:pointer">🔄 Réinitialiser</button>
-        <textarea id="admin-json-raw" style="width:100%;height:200px;background:#0A0A0F;border:1px solid #1F1F2A;color:#CCCCCC;padding:12px;border-radius:8px;margin-top:4px;font-family:monospace;font-size:10px"></textarea>
-      </div>
-    </div>
-  </div>
-</div>
 <script>
-let adminData = null;
-function openAdmin(){document.getElementById('admin-panel').style.display='block';loadAdminData();}
-function closeAdmin(){document.getElementById('admin-panel').style.display='none';}
-function showAdminTab(tab){
-  document.querySelectorAll('[id^="admin-view-"]').forEach(el=>el.style.display='none');
-  document.getElementById('admin-view-'+tab).style.display='block';
-  document.querySelectorAll('.admin-tab').forEach(btn=>{btn.style.background='#1F1F2A';btn.style.color='#8B8B8B';});
-  const activeBtn = document.getElementById('admin-tab-'+tab);
-  activeBtn.style.background='#E10600';activeBtn.style.color='white';
+// DONNEES EMBARQUEES 15 GP - AUTONOME - PLUS BESOIN DE data/ ni js/app.js
+const EMBEDDED_GPS = {"calendrier": [{"date": "21 Août 2026", "gp": "Melbourne", "flag": "🇦🇺", "circuit": "Albert Park Circuit", "heure": "19H00", "distance": "50%", "status": "Terminé", "vainqueur": "Jesui_tou", "affiche": "assets/posters/Australie 21 aout 2026.png", "temps": "28:14.241", "meilleur_tour": "1:21.309 Jesui_tou"}, {"date": "22 Août 2026", "gp": "Shanghai", "flag": "🇨🇳", "circuit": "Shanghai International Circuit", "heure": "19H00", "distance": "50%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters/Chine 22 aout 2026.png", "temps": "33:58.631", "meilleur_tour": "1:37.682 Skyyy"}, {"date": "24 Août 2026", "gp": "Suzuka", "flag": "🇯🇵", "circuit": "Suzuka International Raçing Course", "heure": "19H00", "distance": "50%", "status": "Terminé", "vainqueur": "Jesui_tou", "affiche": "assets/posters/Japon 24 aout 2026.png", "temps": "30:36.255", "meilleur_tour": "1:33.567 Jesui_tou"}, {"date": "25 Août 2026", "gp": "Bahrain", "flag": "🇧🇭", "circuit": "Bahrain International Circuit", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Gosset_25", "affiche": "assets/posters/bahrain 25 aout 2026.png", "temps": "32:15.411", "meilleur_tour": "1:33.902 Taatsu7TV"}, {"date": "01 Sept 2026", "gp": "Jeddah", "flag": "🇸🇦", "circuit": "Jeddah Corniche Circuit", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Taatsu7TV", "affiche": "assets/posters/Arabie saoudite 01 sept 2026.png", "temps": "En attente", "meilleur_tour": "En attente"}, {"date": "03 Sept 2026", "gp": "Miami", "flag": "🇺🇸", "circuit": "Miami International Autodrome", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters/Etats Unis 03 sept 2026.png", "temps": "31:36.318", "meilleur_tour": "1:30.300 Skyyy"}, {"date": "06 Sept 2026", "gp": "Imola", "flag": "🇮🇹", "circuit": "Autodromo Internazionale Enzo E Dino Ferrari", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters/Italie 06 sept 2026.png", "temps": "-", "meilleur_tour": "1:19.181 Skyyy"}, {"date": "10 Sept 2026", "gp": "Monaco", "flag": "🇲🇨", "circuit": "Circuit de Monaco", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters/monaco 10 sept 2026.png", "temps": "34:51.962", "meilleur_tour": "1:12.865 Skyyy RECORD"}, {"date": "14 Sept 2026", "gp": "Barcelone", "flag": "🇪🇸", "circuit": "Barcelona-Catalunya", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters/Espagne 14 sept 2026.png", "temps": "30:00.485", "meilleur_tour": "1:15.304 JotagrosFR"}, {"date": "17 sept 2026", "gp": "Canada", "flag": "🇨🇦", "circuit": "Gilles Villeneuve", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters/Canada 17 sept 2026.png", "temps": "1:13.139", "meilleur_tour": "En attente"}, {"date": "22 septembre 2026", "gp": "Autriche", "flag": "🇦🇹", "circuit": "Red Bull Ring", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters/Autriche 22 Septembre 2026.png", "temps": "-", "meilleur_tour": "1:07.356 Skyyy"}, {"date": "22 Septembre 2026", "gp": "Grande Bretagne", "flag": "🇬🇧", "circuit": "Silverstone Circuit", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters/Grande Bretagne 22 Septembre 2026.png", "temps": "28:30.888", "meilleur_tour": "1:30.285 Skyyy"}, {"date": "29 septembre 2026", "gp": "Belgique", "flag": "🇧🇪", "circuit": "Circuit de Spa-Francorchamps", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Pepit0mis", "affiche": "assets/posters/Belgique 29 septembre 2026.png", "temps": "27:26.420", "meilleur_tour": "1:45.084 Skyyy"}, {"date": "1 Octobre 2026", "gp": "Hongrie", "flag": "🇭🇺", "circuit": "Hungaroring", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters/Hongrie 1 Octobre 2026.png", "temps": "x1 (+3 secs.)", "meilleur_tour": "1:19.558 Skyyy"}, {"date": "6 Octobre 2026", "gp": "Pays-Bas", "flag": "🇳🇱", "circuit": "Circuit de Zandvoort", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Pepit0mis", "affiche": "assets/posters/Pays Bas 6 octobre 2026.png", "temps": "31:40.833", "meilleur_tour": "1:12.853 Pepit0mis"}], "saison": "S1 FWR 2026", "saison_label": {"fr": "Saison S1 2026", "en": "Season S1 2026", "be": "Saison S1 2026 une fois"}, "twitch": "https://twitch.tv/upsilon7", "logo_transparent": "assets/logo/FWR Racing Saison 1.png", "logo_s1": "assets/logo/FWR Racing Saison 1.png", "logo_s2": "assets/logo/FWR Racing Saison 2.png"};
+const EMBEDDED_STANDINGS = {"saison": "S1 FWR 2026", "saison_label": {"fr": "Saison S1 2026", "en": "Season S1 2026", "be": "Saison S1 2026 une fois"}, "derniere_maj": "06 Oct 2026 - Pays-Bas 19H - 15 GP - Pepit0mis vainqueur", "logo": "assets/logo/FWR Racing Saison 1.png", "logo_s1": "assets/logo/FWR Racing Saison 1.png", "logo_s2": "assets/logo/FWR Racing Saison 2.png", "twitch": "https://twitch.tv/upsilon7", "champion": "Skyyy - 261 pts - 9 victoires - 15 GP", "classement_general": [{"pos": 1, "pilote": "Skyyy", "ecurie": "Alpine", "color": "#0090FF", "pts": 261, "victoires": 9, "podiums": 11, "meilleur_tour": "1:12.865 Monaco RECORD", "forme": "↑↑↑", "label": {"fr": "EN FEU", "en": "ON FIRE", "be": "EN FEU UNE FOIS"}, "formeColor": "#10B981", "trend": [0, 25, 25, 25, 43, 68, 93, 118, 143, 168, 193, 218, 236, 261, 261]}, {"pos": 2, "pilote": "Gosset_25", "ecurie": "Red Bull", "color": "#0600EF", "pts": 205, "victoires": 1, "podiums": 8, "meilleur_tour": "1:14.953 Monaco", "forme": "→", "label": {"fr": "STABLE", "en": "STABLE", "be": "STABLE UNE FOIS"}, "formeColor": "#8B8B8B", "trend": [12, 30, 30, 55, 67, 82, 100, 118, 130, 142, 152, 167, 175, 190, 205]}, {"pos": 3, "pilote": "Taatsu7TV", "ecurie": "Scuderia Ferrari HP", "color": "#DC0000", "pts": 201, "victoires": 1, "podiums": 10, "meilleur_tour": "1:17.625 Barcelone", "forme": "↑", "label": {"fr": "EN FORME", "en": "IN FORM", "be": "EN FORME UNE FOIS"}, "formeColor": "#10B981", "trend": [0, 12, 27, 42, 67, 85, 100, 100, 108, 123, 138, 156, 171, 183, 201]}, {"pos": 4, "pilote": "upsilon7", "ecurie": "Scuderia Ferrari HP", "color": "#DC0000", "pts": 164, "victoires": 0, "podiums": 5, "meilleur_tour": "1:17.220 Barcelone", "forme": "→", "label": {"fr": "RÉGULIER", "en": "CONSISTENT", "be": "RÉGULIER UNE FOIS"}, "formeColor": "#10B981", "trend": [15, 30, 48, 58, 73, 85, 95, 107, 122, 130, 142, 142, 154, 164, 164]}, {"pos": 5, "pilote": "Pepit0mis", "ecurie": "Alpine", "color": "#0090FF", "pts": 104, "victoires": 2, "podiums": 5, "meilleur_tour": "-", "forme": "→", "label": {"fr": "", "en": "", "be": ""}, "formeColor": "#8B8B8B", "trend": [0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 36, 36, 61, 79, 104]}, {"pos": 6, "pilote": "Jesui_tou", "ecurie": "Alpine", "color": "#0090FF", "pts": 68, "victoires": 2, "podiums": 3, "meilleur_tour": "1:21.309 Melbourne", "forme": "↓↓", "label": {"fr": "EN BAISSE", "en": "DROPPING", "be": "EN BAISSE UNE FOIS"}, "formeColor": "#EF4444", "trend": [25, 25, 50, 68, 68, 68, 68, 68, 68, 68, 68, 68, 68, 68, 68]}, {"pos": 7, "pilote": "cobra_kai_cx", "ecurie": "Aston Martin", "color": "#006F62", "pts": 58, "victoires": 0, "podiums": 1, "meilleur_tour": "1:20.564 Imola", "forme": "↑", "label": {"fr": "", "en": "", "be": ""}, "formeColor": "#10B981", "trend": [18, 18, 18, 18, 18, 18, 30, 30, 30, 36, 36, 36, 46, 46, 58]}, {"pos": 8, "pilote": "JoKeR-_-SkyZo", "ecurie": "Mercedes-AMG Petronas", "color": "#00D2BE", "pts": 35, "victoires": 0, "podiums": 1, "meilleur_tour": "1:16.050 Monaco", "forme": "↑↑", "label": {"fr": "", "en": "", "be": ""}, "formeColor": "#10B981", "trend": [0, 0, 0, 0, 0, 0, 0, 15, 25, 35, 35, 35, 35, 35, 35]}, {"pos": 9, "pilote": "JotagrosFR", "ecurie": "Red Bull", "color": "#0600EF", "pts": 18, "victoires": 0, "podiums": 1, "meilleur_tour": "1:15.304 Barcelone MEILLEUR TOUR", "forme": "↑↑", "label": {"fr": "", "en": "", "be": ""}, "formeColor": "#10B981", "trend": [0, 0, 0, 0, 0, 0, 0, 0, 18, 18, 18, 18, 18, 18, 18]}, {"pos": 10, "pilote": "mobilou69", "ecurie": "Red Bull", "color": "#0600EF", "pts": 16, "victoires": 0, "podiums": 0, "meilleur_tour": "1:35.145 Bahrain", "forme": "→", "label": {"fr": "", "en": "", "be": ""}, "formeColor": "#8B8B8B", "trend": [0, 0, 4, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16]}, {"pos": 11, "pilote": "sombre7675TTV", "ecurie": "Haas", "color": "#9E9E9E", "pts": 6, "victoires": 0, "podiums": 0, "meilleur_tour": "1:26.164 Melbourne", "forme": "→", "label": {"fr": "", "en": "", "be": ""}, "formeColor": "#8B8B8B", "trend": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]}, {"pos": 12, "pilote": "Crimson_Death", "ecurie": "Mercedes-AMG Petronas", "color": "#00D2BE", "pts": 0, "victoires": 0, "podiums": 0, "meilleur_tour": "1:38:090 Suzuka", "forme": "→", "label": {"fr": "", "en": "", "be": ""}, "formeColor": "#8B8B8B", "trend": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}], "gp_disputes": [{"date": "21 Août 2026", "gp": "Melbourne", "circuit": "Albert Park Circuit", "heure": "19H00", "distance": "50%", "affiche": "assets/posters/Australie 21 aout 2026.png", "vainqueur": "Jesui_tou", "temps": "28:14.241", "meilleur_tour": "1:21.309 Jesui_tou", "resultats_fwr": [{"pos": 1, "pilote": "Jesui_tou", "ecurie": "Alpine", "grille": "P1 POLE", "arrets": 1, "mt": "1:21.309", "temps": "28:14.241", "pts": 25}, {"pos": 2, "pilote": "cobra_kai_cx", "ecurie": "Aston Martin", "grille": "P4", "arrets": 1, "mt": "1:24.331", "temps": "+34.168", "pts": 18}, {"pos": 3, "pilote": "upsilon7", "ecurie": "Scuderia Ferrari HP", "grille": "P8", "arrets": 1, "mt": "1:23.767", "temps": "+35.495", "pts": 15}, {"pos": 4, "pilote": "Gosset_25", "ecurie": "Red Bull", "grille": "P2", "arrets": 1, "mt": "1:23.681", "temps": "+1:26.297", "pts": 12}, {"pos": 5, "pilote": "sombre7675TTV", "ecurie": "Haas", "grille": "P3", "arrets": 1, "mt": "1:26.164", "temps": "+1 tour", "pts": 6}]}, {"date": "22 Août 2026", "gp": "Shanghai", "circuit": "Shanghai International Circuit", "heure": "19H00", "distance": "50%", "affiche": "assets/posters/Chine 22 aout 2026.png", "vainqueur": "Skyyy", "temps": "33:58.631", "meilleur_tour": "1:37.682 Skyyy", "resultats_fwr": [{"pos": 1, "pilote": "Skyyy", "ecurie": "Alpine", "grille": "P1 POLE", "arrets": 1, "mt": "1:37.682", "temps": "33:58.631", "pts": 25}, {"pos": 2, "pilote": "Gosset_25", "ecurie": "Red Bull", "grille": "P2", "arrets": 1, "mt": "1:38.233", "temps": "+0.255", "pts": 18}, {"pos": 3, "pilote": "upsilon7", "ecurie": "Scuderia Ferrari HP", "grille": "P3", "arrets": 1, "mt": "1:39.679", "temps": "+9.840", "pts": 15}, {"pos": 4, "pilote": "Taatsu7TV", "ecurie": "Scuderia Ferrari HP", "grille": "P4", "arrets": 1, "mt": "1:41.106", "temps": "+1:37.468", "pts": 12}]}, {"date": "24 Août 2026", "gp": "Suzuka", "circuit": "Suzuka International Raçing Course", "heure": "19H00", "distance": "50%", "affiche": "assets/posters/Japon 24 aout 2026.png", "vainqueur": "Jesui_tou", "temps": "30:36.255", "meilleur_tour": "1:33.567 Jesui_tou", "resultats_fwr": [{"pos": 1, "pilote": "Jesui_tou", "ecurie": "Alpine", "grille": "P2", "arrets": 1, "mt": "1:33.567", "temps": "30:36.255", "pts": 25}, {"pos": 2, "pilote": "upsilon7", "ecurie": "Scuderia Ferrari HP", "grille": "P1 POLE", "arrets": 1, "mt": "1:34.516", "temps": "+15.820", "pts": 18}, {"pos": 3, "pilote": "Taatsu7TV", "ecurie": "Scuderia Ferrari HP", "grille": "P3", "arrets": 1, "mt": "1:34.418", "temps": "+20.666", "pts": 15}, {"pos": 4, "pilote": "mobilou69", "ecurie": "Red Bull", "grille": "P4", "arrets": 1, "mt": "1:36.232", "temps": "+1 tour", "pts": 4}]}, {"date": "25 Août 2026", "gp": "Bahrain", "circuit": "Bahrain International Circuit", "heure": "19H00", "distance": "35%", "affiche": "assets/posters/bahrain 25 aout 2026.png", "vainqueur": "Gosset_25", "temps": "32:15.411", "meilleur_tour": "1:33.902 Taatsu7TV", "resultats_fwr": [{"pos": 1, "pilote": "Gosset_25", "ecurie": "Red Bull", "grille": "P4", "arrets": 1, "mt": "1:34.522", "temps": "32:15.411", "pts": 25}, {"pos": 2, "pilote": "Jesui_tou", "ecurie": "Alpine", "grille": "P1 POLE", "arrets": 1, "mt": "1:34.342", "temps": "+10s pén.", "pts": 18}, {"pos": 3, "pilote": "Taatsu7TV", "ecurie": "Scuderia Ferrari HP", "grille": "P2", "arrets": 1, "mt": "1:33.902", "temps": "+3s meilleur tour", "pts": 15}, {"pos": 4, "pilote": "mobilou69", "ecurie": "Red Bull", "grille": "P5", "arrets": 1, "mt": "1:35.145", "temps": "+10s", "pts": 12}, {"pos": 5, "pilote": "upsilon7", "ecurie": "Scuderia Ferrari HP", "grille": "P3", "arrets": 1, "mt": "1:35.218", "temps": "+10s", "pts": 10}]}, {"date": "01 Sept 2026", "gp": "Jeddah", "circuit": "Jeddah Corniche Circuit", "heure": "19H00", "distance": "35%", "affiche": "assets/posters/Arabie saoudite 01 sept 2026.png", "vainqueur": "Taatsu7TV", "temps": "En attente", "meilleur_tour": "En attente", "resultats_fwr": [{"pos": 1, "pilote": "Taatsu7TV", "ecurie": "Scuderia Ferrari HP", "grille": "-", "arrets": 1, "mt": "-", "temps": "-", "pts": 25}, {"pos": 2, "pilote": "Skyyy", "ecurie": "Alpine", "grille": "-", "arrets": 1, "mt": "-", "temps": "-", "pts": 18}, {"pos": 3, "pilote": "upsilon7", "ecurie": "Scuderia Ferrari HP", "grille": "-", "arrets": 1, "mt": "-", "temps": "-", "pts": 15}, {"pos": 4, "pilote": "Gosset_25", "ecurie": "Red Bull", "grille": "-", "arrets": 1, "mt": "-", "temps": "-", "pts": 12}]}, {"date": "03 Sept 2026", "gp": "Miami", "circuit": "Miami International Autodrome", "heure": "19H00", "distance": "35%", "affiche": "assets/posters/Etats Unis 03 sept 2026.png", "vainqueur": "Skyyy", "temps": "31:36.318", "meilleur_tour": "1:30.300 Skyyy", "resultats_fwr": [{"pos": 1, "pilote": "Skyyy", "ecurie": "Alpine", "grille": "P2", "arrets": 2, "mt": "1:30.300", "temps": "31:36.318 +3s", "pts": 25}, {"pos": 2, "pilote": "Taatsu7TV", "ecurie": "Scuderia Ferrari HP", "grille": "P1 POLE", "arrets": 1, "mt": "1:32.790", "temps": "+0.634", "pts": 18}, {"pos": 3, "pilote": "Gosset_25", "ecurie": "Red Bull", "grille": "P8", "arrets": 2, "mt": "1:32.321", "temps": "+17.883 remontée", "pts": 15}, {"pos": 4, "pilote": "upsilon7", "ecurie": "Scuderia Ferrari HP", "grille": "P3", "arrets": 1, "mt": "1:33.175", "temps": "+3s", "pts": 12}]}, {"date": "06 Sept 2026", "gp": "Imola", "circuit": "Autodromo Internazionale Enzo E Dino Ferrari", "heure": "19H00", "distance": "35%", "affiche": "assets/posters/Italie 06 sept 2026.png", "vainqueur": "Skyyy", "temps": "-", "meilleur_tour": "1:19.181 Skyyy", "resultats_fwr": [{"pos": 1, "pilote": "Skyyy", "ecurie": "Alpine", "grille": "P1 POLE", "arrets": 1, "mt": "1:19.181", "temps": "+3s", "pts": 25}, {"pos": 2, "pilote": "Gosset_25", "ecurie": "Red Bull", "grille": "P3", "arrets": 1, "mt": "1:20.316", "temps": "+0.751", "pts": 18}, {"pos": 3, "pilote": "Taatsu7TV", "ecurie": "Scuderia Ferrari HP", "grille": "P2", "arrets": 1, "mt": "1:20.017", "temps": "+3s", "pts": 15}, {"pos": 4, "pilote": "cobra_kai_cx", "ecurie": "Aston Martin", "grille": "P4", "arrets": 1, "mt": "1:20.564", "temps": "+3s", "pts": 12}, {"pos": 5, "pilote": "upsilon7", "ecurie": "Scuderia Ferrari HP", "grille": "P5", "arrets": 1, "mt": "1:21.000", "temps": "+5s", "pts": 10}]}, {"date": "10 Sept 2026", "gp": "Monaco", "circuit": "Circuit de Monaco", "heure": "19H00", "distance": "35%", "affiche": "assets/posters/monaco 10 sept 2026.png", "vainqueur": "Skyyy", "temps": "34:51.962", "meilleur_tour": "1:12.865 Skyyy RECORD", "resultats_fwr": [{"pos": 1, "pilote": "Skyyy", "ecurie": "Alpine", "grille": "P1 POLE", "arrets": 2, "mt": "1:12.865 RECORD", "temps": "34:51.962", "pts": 25}, {"pos": 2, "pilote": "Gosset_25", "ecurie": "Red Bull", "grille": "P2", "arrets": 2, "mt": "1:14.953", "temps": "+6.391", "pts": 18}, {"pos": 3, "pilote": "JoKeR-_-SkyZo", "ecurie": "Mercedes-AMG Petronas", "grille": "P3", "arrets": 2, "mt": "1:16.050", "temps": "+54.664", "pts": 15}, {"pos": 4, "pilote": "upsilon7", "ecurie": "Scuderia Ferrari HP", "grille": "P4", "arrets": 2, "mt": "1:17.327", "temps": "+1 tour", "pts": 12}]}, {"date": "14 Sept 2026", "gp": "Barcelone", "circuit": "Barcelona-Catalunya", "heure": "19H00", "distance": "35%", "affiche": "assets/posters/Espagne 14 sept 2026.png", "vainqueur": "Skyyy", "temps": "30:00.485", "meilleur_tour": "1:15.304 JotagrosFR", "resultats_fwr": [{"pos": 1, "pilote": "Skyyy", "ecurie": "Alpine", "grille": "P1 POLE", "arrets": 1, "mt": "1:15.991", "temps": "30:00.485", "pts": 25}, {"pos": 2, "pilote": "JotagrosFR", "ecurie": "Red Bull", "grille": "P2", "arrets": 1, "mt": "1:15.304 MEILLEUR TOUR", "temps": "+5.165", "pts": 18}, {"pos": 3, "pilote": "upsilon7", "ecurie": "Scuderia Ferrari HP", "grille": "P3", "arrets": 1, "mt": "1:17.220", "temps": "+36.718", "pts": 15}, {"pos": 4, "pilote": "Gosset_25", "ecurie": "Red Bull", "grille": "P6", "arrets": 1, "mt": "1:18.496", "temps": "+54.861 remontée", "pts": 12}, {"pos": 5, "pilote": "JoKeR-_-SkyZo", "ecurie": "Mercedes-AMG Petronas", "grille": "P5", "arrets": 1, "mt": "1:18.229", "temps": "+1:04.529", "pts": 10}, {"pos": 6, "pilote": "Taatsu7TV", "ecurie": "Scuderia Ferrari HP", "grille": "P4", "arrets": 1, "mt": "1:17.625", "temps": "+1:17.100", "pts": 8}]}, {"date": "17 sept 2026", "gp": "Canada", "circuit": "Gilles Villeneuve", "heure": "19H00", "distance": "35%", "affiche": "assets/posters/Canada 17 sept 2026.png", "vainqueur": "Skyyy", "temps": "1:13.139", "meilleur_tour": "En attente", "resultats_fwr": [{"pos": 1, "pilote": "Skyyy", "ecurie": "Alpine", "grille": "P1 Pole", "arrets": 1, "mt": "1:13.139", "temps": "x1 +3sec", "pts": 25}, {"pos": 2, "pilote": "Pepit0mis", "ecurie": "Alpine", "grille": "P2", "arrets": 1, "mt": "1:13.484", "temps": "x6 +18sec", "pts": 18}, {"pos": 3, "pilote": "Taatsu7TV", "ecurie": "Scuderia Ferrari HP", "grille": "P4", "arrets": 1, "mt": "1:15.369", "temps": "X1 +3sec", "pts": 15}, {"pos": 4, "pilote": "Gosset_25", "ecurie": "Red Bull", "grille": "P5", "arrets": 1, "mt": "1:15.310", "temps": "x2 +6sec", "pts": 12}, {"pos": 5, "pilote": "JoKeR-_-SkyZo", "ecurie": "Mercedes-AMG Petronas", "grille": "P8", "arrets": 1, "mt": "1:15.062", "temps": "x3 +9sec", "pts": 10}, {"pos": 6, "pilote": "upsilon7", "ecurie": "Scuderia Ferrari HP", "grille": "P3", "arrets": 1, "mt": "1:15.645", "temps": "x1 +3sec", "pts": 8}, {"pos": 7, "pilote": "cobra_kai_cx", "ecurie": "Aston Martin", "grille": "P7", "arrets": 1, "mt": "1:16.454", "temps": "x2 +6sec", "pts": 6}]}, {"date": "22 septembre 2026", "gp": "Autriche", "circuit": "Red Bull Ring", "heure": "19H00", "distance": "35%", "affiche": "assets/posters/Autriche 22 Septembre 2026.png", "vainqueur": "Skyyy", "temps": "-", "meilleur_tour": "1:07.356 Skyyy", "resultats_fwr": [{"pos": 1, "pilote": "Skyyy", "ecurie": "Alpine", "grille": "1", "arrets": 2, "mt": "1:07.356", "temps": "-", "pts": 25}, {"pos": 2, "pilote": "Pepit0mis", "ecurie": "Alpine", "grille": "2", "arrets": 1, "mt": "1:08.419", "temps": "-", "pts": 18}, {"pos": 3, "pilote": "Taatsu7TV", "ecurie": "Scuderia Ferrari HP", "grille": "3", "arrets": 1, "mt": "1:08.642", "temps": "-", "pts": 15}, {"pos": 4, "pilote": "upsilon7", "ecurie": "Scuderia Ferrari HP", "grille": "4", "arrets": 1, "mt": "1:09.844", "temps": "-", "pts": 12}, {"pos": 5, "pilote": "Gosset_25", "ecurie": "Red Bull", "grille": "5", "arrets": 1, "mt": "1:09.924", "temps": "-", "pts": 10}]}, {"date": "22 Septembre 2026", "gp": "Grande Bretagne", "circuit": "Silverstone Circuit", "heure": "19H00", "distance": "35%", "affiche": "assets/posters/Grande Bretagne 22 Septembre 2026.png", "vainqueur": "Skyyy", "temps": "28:30.888", "meilleur_tour": "1:30.285 Skyyy", "resultats_fwr": [{"pos": 1, "pilote": "Skyyy", "ecurie": "Alpine", "grille": "2", "arrets": 1, "mt": "1:30.285", "temps": "28:30.888", "pts": 25}, {"pos": 2, "pilote": "Taatsu7TV", "ecurie": "Scuderia Ferrari HP", "grille": "3", "arrets": 1, "mt": "1:32.538", "temps": "x1 (+3 secs.)", "pts": 18}, {"pos": 3, "pilote": "Gosset_25", "ecurie": "Red Bull", "grille": "4", "arrets": 1, "mt": "1:32.708", "temps": "x1 (+3 secs.)", "pts": 15}]}, {"date": "29 septembre 2026", "gp": "Belgique", "circuit": "Circuit de Spa-Francorchamps", "heure": "19H00", "distance": "35%", "affiche": "assets/posters/Belgique 29 septembre 2026.png", "vainqueur": "Pepit0mis", "temps": "27:26.420", "meilleur_tour": "1:45.084 Skyyy", "resultats_fwr": [{"pos": 1, "pilote": "Pepit0mis", "ecurie": "Alpine", "grille": "1", "arrets": 1, "mt": "1:46.049", "temps": "27:26.420", "pts": 25}, {"pos": 2, "pilote": "Skyyy", "ecurie": "Alpine", "grille": "2", "arrets": 2, "mt": "1:45.084", "temps": "+24.160", "pts": 18}, {"pos": 3, "pilote": "Taatsu7TV", "ecurie": "Scuderia Ferrari HP", "grille": "7", "arrets": 1, "mt": "1:49.697", "temps": "x1 (+3 secs.)", "pts": 15}, {"pos": 4, "pilote": "upsilon7", "ecurie": "Scuderia Ferrari HP", "grille": "4", "arrets": 1, "mt": "1:49.275", "temps": "x1 (+3 secs.)", "pts": 12}, {"pos": 5, "pilote": "cobra_kai_cx", "ecurie": "McLaren", "grille": "5", "arrets": 1, "mt": "1:51.639", "temps": "+1:22.246", "pts": 10}, {"pos": 6, "pilote": "Gosset_25", "ecurie": "Red Bull", "grille": "3", "arrets": 2, "mt": "1:49.667", "temps": "x2 (+6 secs.)", "pts": 8}]}, {"date": "1 Octobre 2026", "gp": "Hongrie", "circuit": "Hungaroring", "heure": "19H00", "distance": "35%", "affiche": "assets/posters/Hongrie 1 Octobre 2026.png", "vainqueur": "Skyyy", "temps": "x1 (+3 secs.)", "meilleur_tour": "1:19.558 Skyyy", "resultats_fwr": [{"pos": 1, "pilote": "Skyyy", "ecurie": "Alpine", "grille": "1", "arrets": 1, "mt": "1:19.558", "temps": "x1 (+3 secs.)", "pts": 25}, {"pos": 2, "pilote": "Pepit0mis", "ecurie": "Alpine", "grille": "2", "arrets": 1, "mt": "1:19.735", "temps": "x1 (+3 secs.)", "pts": 18}, {"pos": 3, "pilote": "Gosset_25", "ecurie": "Red Bull", "grille": "4", "arrets": 1, "mt": "1:22.526", "temps": "+28.396", "pts": 15}, {"pos": 4, "pilote": "Taatsu7TV", "ecurie": "Scuderia Ferrari HP", "grille": "3", "arrets": 1, "mt": "1:22.181", "temps": "+34.938", "pts": 12}, {"pos": 5, "pilote": "upsilon7", "ecurie": "Scuderia Ferrari HP", "grille": "5", "arrets": 1, "mt": "1:23.575", "temps": "x1 (+3 secs.)", "pts": 10}]}, {"date": "6 Octobre 2026", "gp": "Pays-Bas", "circuit": "Circuit de Zandvoort", "heure": "19H00", "distance": "35%", "affiche": "assets/posters/Pays Bas 6 octobre 2026.png", "vainqueur": "Pepit0mis", "temps": "31:40.833", "meilleur_tour": "1:12.853 Pepit0mis MEILLEUR TOUR", "resultats_fwr": [{"pos": 1, "pilote": "Pepit0mis", "ecurie": "Alpine", "grille": "1", "arrets": 1, "mt": "1:12.853", "temps": "31:40.833", "pts": 25}, {"pos": 2, "pilote": "Taatsu7TV", "ecurie": "Scuderia Ferrari HP", "grille": "2", "arrets": 1, "mt": "1:13.775", "temps": "+10.296", "pts": 18}, {"pos": 3, "pilote": "Gosset_25", "ecurie": "Red Bull", "grille": "3", "arrets": 1, "mt": "1:15.138", "temps": "+26.234", "pts": 15}, {"pos": 4, "pilote": "cobra_kai_cx", "ecurie": "Aston Martin", "grille": "4", "arrets": 1, "mt": "1:16.436", "temps": "+1 tour", "pts": 12}]}], "i18n": {"fr": {"classement": "Classement Général", "tableaux": "Tableaux GP", "stats": "Stats & Courbes", "affiches": "Affiches GP", "pts": "PTS", "v": "V", "forme": "FORME", "grille": "GRILLE", "arrets": "ARRÊTS", "meilleur_tour": "MEILLEUR TOUR", "temps_ecart": "TEMPS / ÉCART", "pos": "POS", "pilote": "PILOTE", "ecurie": "ÉCURIE", "live": "LIVE F1 25 TEAM FWR → twitch.tv/upsilon7", "regarder": "REGARDER LE LIVE", "cote": "Cote parieur", "favori": "favori", "ecart": "+56 pts", "maj": "MAJ 06 Oct • 15 GP • Pays-Bas 19H - Pepit0mis vainqueur"}, "en": {"classement": "General Standings", "tableaux": "Race Results", "stats": "Stats & Evolution", "affiches": "GP Posters", "pts": "PTS", "v": "W", "forme": "FORM", "grille": "GRID", "arrets": "STOPS", "meilleur_tour": "FASTEST LAP", "temps_ecart": "TIME / GAP", "pos": "POS", "pilote": "DRIVER", "ecurie": "TEAM", "live": "LIVE F1 25 TEAM FWR → twitch.tv/upsilon7", "regarder": "WATCH LIVE", "cote": "Bet odds", "favori": "favorite", "ecart": "+71 pts gap", "maj": "Updated Oct 06 • 15 GP • Netherlands 19H - Pepit0mis winner"}, "be": {"classement": "Classement Général une fois", "tableaux": "Tableaux GP une fois", "stats": "Stats & Courbes une fois", "affiches": "Affiches GP une fois", "pts": "PTS une fois", "v": "V une fois", "forme": "FORME une fois", "grille": "GRILLE une fois", "arrets": "ARRÊTS une fois", "meilleur_tour": "MEILLEUR TOUR une fois", "temps_ecart": "TEMPS / ÉCART une fois", "pos": "POS une fois", "pilote": "PILOTE une fois", "ecurie": "ÉCURIE une fois", "live": "LIVE F1 25 TEAM FWR → twitch.tv/upsilon7 une fois - Ça va ou quoi?", "regarder": "REGARDER LE LIVE UNE FOIS", "cote": "Cote parieur une fois", "favori": "favori une fois - c'est du lourd!", "ecart": "+71 une fois", "maj": "MAJ 06 Oct • 15 GP • Pays-Bas 19H une fois"}}, "ecuries_config": {"Scuderia Ferrari HP": {"color": "#DC0000", "label": "rouge"}, "Aston Martin": {"color": "#006F62", "label": "vert foncé"}, "Alpine": {"color": "#0090FF", "label": "bleu claire"}, "Red Bull": {"color": "#0600EF", "label": "bleu foncé"}, "Williams": {"color": "#A8D5BA", "label": "vert délavé"}, "McLaren": {"color": "#FF8700", "label": "orange"}, "KICK Sauber": {"color": "#00E676", "label": "vert neon"}, "Mercedes-AMG Petronas": {"color": "#00D2BE", "label": "bleu délavé"}, "Haas": {"color": "#9E9E9E", "label": "gris"}, "Visa Cash App Racing Bulls": {"color": "#6692FF", "label": "bleu délavé"}}};
+let standings = EMBEDDED_STANDINGS.classement_general || [];
+let gps = EMBEDDED_GPS.calendrier || [];
+let selectedDrivers = standings.map(s=>s.pilote);
+let activeTab = 'classement';
+let currentLang = 'fr';
+let chartMain = null;
+let chartMini = null;
+function renderClassement(){
+  const tbody = document.getElementById('tbody-classement');
+  if(!tbody) return;
+  tbody.innerHTML = standings.map((s,i)=>{
+    const medal = s.pos===1?'🥇':s.pos===2?'🥈':s.pos===3?'🥉':String(s.pos);
+    const bg = i%2===0?'background:#0A0A0F':'background:#111117';
+    const leader = s.pos===1?'<span class="badge-leader">👑 LEADER 261pts</span>':'';
+    const color = s.color||'#E10600';
+    const label = typeof s.label==='object'? (s.label[currentLang]||s.label['fr']||'') : (s.label||'');
+    return `<tr style="${bg};border-left:4px solid ${color}"><td><b>${medal} ${s.pos}</b></td><td><b>${s.pilote}</b> ${leader}</td><td><span style="padding:2px 8px;border-radius:999px;font-size:10px;background:${color}20;color:${color};border:1px solid ${color}40">${s.ecurie}</span></td><td style="text-align:center;font-weight:700;font-size:18px">${s.pts}</td><td style="text-align:center;color:#FFD700">${s.victoires||0}</td><td style="color:${s.formeColor||'#8B8B8B'}"><b>${s.forme||''}</b> <span style="font-size:10px;margin-left:4px">${label}</span></td></tr>`;
+  }).join('');
+  console.log('Classement rendu:', standings.length, 'pilotes');
 }
-function loadAdminData(){
-  try{
-    const ls = localStorage.getItem('fwr_admin_standings');
-    if(ls){adminData = JSON.parse(ls);} else {adminData = structuredClone(EMBEDDED_STANDINGS);}
-    renderAdminGPList();renderAdminPilotes();renderAdminAffiches();
-    const raw = document.getElementById('admin-json-raw');
-    if(raw) raw.value = JSON.stringify(adminData, null, 2);
-    const gpSelect = document.getElementById('admin-gp-select');
-    const afficheGpSelect = document.getElementById('admin-affiche-gp');
-    if(gpSelect){gpSelect.innerHTML = '';adminData.gp_disputes.forEach(gp=>{const opt=document.createElement('option');opt.value=gp.gp;opt.textContent=gp.gp+' - '+gp.circuit;gpSelect.appendChild(opt);});}
-    if(afficheGpSelect){afficheGpSelect.innerHTML = '';adminData.gp_disputes.forEach(gp=>{const opt=document.createElement('option');opt.value=gp.gp;opt.textContent=gp.gp+' - '+gp.circuit;afficheGpSelect.appendChild(opt);});}
-  }catch(e){adminData = EMBEDDED_STANDINGS;}
+function renderChronos(){
+  const list = document.getElementById('chronos-list');
+  if(!list) return;
+  const races = EMBEDDED_STANDINGS.gp_disputes || [];
+  list.innerHTML = races.map(r=>{
+    const rows = (r.resultats_fwr||[]).map(res=>{
+      return `<tr><td><b>${res.pilote}</b></td><td><span style="font-size:11px">${res.ecurie||''}</span></td><td>${res.grille||''}</td><td>${res.arrets||''}</td><td style="color:#8B5CF6;font-weight:700">${res.mt||''}</td><td>${res.temps||''}</td><td style="font-weight:700;color:#10B981">${res.pts||''}</td></tr>`;
+    }).join('');
+    return `<div class="poster-card"><div style="display:flex;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px"><div><div style="font-size:11px;color:#8B8B8B">${r.date} • ${r.heure} • ${r.distance} • Vainqueur: ${r.vainqueur} • ${r.temps}</div><div class="titillium" style="font-weight:700;font-size:18px">${r.gp} - ${r.circuit}</div><div style="font-size:11px;color:#10B981">Meilleur tour: ${r.meilleur_tour}</div></div><div style="font-size:11px;color:#8B8B8B">15 GP - Affiche: ${r.affiche||''}</div></div><div style="overflow:auto"><table style="width:100%;font-size:12px;border-collapse:collapse"><thead><tr><th style="text-align:left;padding:8px;background:#1A1A22">PILOTE</th><th style="padding:8px;background:#1A1A22">ÉCURIE</th><th style="padding:8px;background:#1A1A22">GRILLE</th><th style="padding:8px;background:#1A1A22">ARRÊTS</th><th style="padding:8px;background:#1A1A22">MEILLEUR TOUR</th><th style="padding:8px;background:#1A1A22">TEMPS / ÉCART</th><th style="padding:8px;background:#1A1A22">PTS</th></tr></thead><tbody>${rows}</tbody></table></div></div>`;
+  }).join('');
+  console.log('Tableaux rendus:', races.length, 'courses');
 }
-function renderAdminGPList(){
-  const list = document.getElementById('admin-gp-list');
-  if(!list || !adminData) return;
-  list.innerHTML = adminData.gp_disputes.map(gp=>{
-    const results = gp.resultats_fwr.map(r=>`${r.pos}. ${r.pilote} ${r.pts}pts`).join('<br>');
-    return `<div style="background:#0A0A0F;border:1px solid #1F1F2A;border-radius:8px;padding:12px"><div style="display:flex;justify-content:space-between"><div><b style="color:white">${gp.gp} - ${gp.circuit}</b> <span style="color:#8B8B8B;font-size:11px">${gp.date} ${gp.heure}</span><br><span style="font-size:11px;color:#CCCCCC">Vainqueur: ${gp.vainqueur} ${gp.temps}</span><br><div style="font-size:10px;color:#8B8B8B;margin-top:4px">${results}</div></div><div style="display:flex;gap:4px"><button onclick="editGP('${gp.gp}')" style="background:#1F1F2A;border:1px solid #2A2A35;color:white;padding:4px 8px;border-radius:4px;cursor:pointer;font-size:11px">Editer</button><button onclick="deleteGP('${gp.gp}')" style="background:#EF4444;color:white;padding:4px 8px;border-radius:4px;border:none;cursor:pointer;font-size:11px">Suppr</button></div></div></div>`;
+function renderGPs(){
+  const grid = document.getElementById('grid-gp');
+  if(!grid) return;
+  grid.innerHTML = gps.map(r=>{
+    return `<div class="poster-card" onclick="openModal('${r.gp}')"><div style="background:#0A0A0F;border:1px dashed #2A2A35;border-radius:12px;height:180px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;color:#8B8B8B;font-size:11px;text-align:center;padding:8px">Affiche<br>${r.affiche||''}<br><br>${r.gp}<br>${r.date}</div><div style="font-size:11px;color:#8B8B8B">${r.date} • ${r.heure}</div><div class="titillium" style="font-weight:700;font-size:18px;margin-top:4px">${r.flag||''} ${r.gp}</div><div style="font-size:11px;color:#8B8B8B;margin-top:4px">${r.circuit||''}</div><div style="font-size:12px;color:#10B981;margin-top:8px">Vainqueur: ${r.vainqueur||''} - ${r.temps||''}</div><div style="font-size:11px;color:#8B8B8B;margin-top:4px">MT: ${r.meilleur_tour||''}</div></div>`;
+  }).join('');
+  console.log('Affiches rendues:', gps.length);
+}
+function renderPills(){
+  const pills = document.getElementById('pills');
+  if(!pills) return;
+  pills.innerHTML = standings.map(s=>{
+    const active = selectedDrivers.includes(s.pilote);
+    return `<button class="pill ${active?'active':''}" onclick="toggleDriver('${s.pilote}')">${s.pilote} (${s.pts}pts)</button>`;
   }).join('');
 }
-function renderAdminPilotes(){
-  const list = document.getElementById('admin-pilotes-list');
-  if(!list || !adminData) return;
-  list.innerHTML = adminData.classement_general.map(p=>`<div style="display:flex;justify-content:space-between;align-items:center;background:#0A0A0F;border:1px solid #1F1F2A;border-radius:6px;padding:8px"><div><span style="color:white;font-weight:600">${p.pos}. ${p.pilote}</span> <span style="font-size:11px;color:${p.color}">${p.ecurie}</span> <span style="color:#8B8B8B;font-size:11px">${p.pts}pts</span></div></div>`).join('');
+function toggleDriver(name){
+  if(selectedDrivers.includes(name)){ if(selectedDrivers.length>1) selectedDrivers = selectedDrivers.filter(n=>n!==name); }else{ if(selectedDrivers.length<10) selectedDrivers.push(name); }
+  renderPills(); updateCharts();
 }
-function renderAdminAffiches(){
-  const list=document.getElementById('admin-affiches-list');if(!list)return;list.innerHTML='';
-  (EMBEDDED_GPS.calendrier||[]).forEach(gp=>{const div=document.createElement('div');div.style.cssText='background:#0A0A0F;border:1px solid #1F1F2A;border-radius:8px;padding:8px;text-align:center';div.innerHTML=`<div style="font-size:12px;color:white">${gp.gp}</div><div style="font-size:10px;color:#8B8B8B">${gp.date}</div>`;list.appendChild(div);});
+function updateCharts(){
+  const labels = ['Mel','Sha','Suz','Bah','Jed','Mia','Imo','Mon','Bar','Can','Aut','GBR','Bel','Hon','PB'];
+  const fallbackTrend = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+  const makeDataset = (s) => ({
+    label: s.pilote,
+    data: Array.isArray(s.trend) ? s.trend : fallbackTrend,
+    borderColor: s.color || '#E10600',
+    backgroundColor: s.color || '#E10600',
+    tension: 0.28,
+    borderWidth: 2,
+    pointRadius: 3,
+    fill: false
+  });
+  const datasets = standings.filter(s=>selectedDrivers.includes(s.pilote)).map(makeDataset);
+  const datasetsMini = standings.slice(0,5).map(makeDataset);
+  const ctxMain = document.getElementById('chart-main');
+  const ctxMini = document.getElementById('chart-mini');
+  if(chartMain){ chartMain.destroy(); chartMain = null; }
+  if(chartMini){ chartMini.destroy(); chartMini = null; }
+  if(typeof Chart === 'undefined') return;
+  const opts = {responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{labels:{color:'#CCCCCC',boxWidth:12}}},scales:{x:{ticks:{color:'#8B8B8B'},grid:{color:'rgba(255,255,255,.05)'}},y:{beginAtZero:true,ticks:{color:'#8B8B8B'},grid:{color:'rgba(255,255,255,.06)'}}}};
+  if(ctxMain) chartMain = new Chart(ctxMain,{type:'line',data:{labels:labels,datasets:datasets},options:opts});
+  if(ctxMini) chartMini = new Chart(ctxMini,{type:'line',data:{labels:labels,datasets:datasetsMini},options:opts});
 }
-function addResultToGP(){alert('Utilise Edit GP pour ajouter');}
-function addNewGP(){const name=prompt('Nom GP:');if(!name)return;alert('Ajout manuel - exporte JSON');}
-function editGP(name){alert('Edit '+name+' - utilise l éditeur complet');}
-function deleteGP(name){if(!confirm('Supprimer '+name+'?'))return;adminData.gp_disputes=adminData.gp_disputes.filter(g=>g.gp!==name);localStorage.setItem('fwr_admin_standings', JSON.stringify(adminData));loadAdminData();renderAll();}
-function downloadStandings(){const dataStr=JSON.stringify(adminData||EMBEDDED_STANDINGS,null,2);const blob=new Blob([dataStr],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='standings.json';a.click();}
-function downloadGPS(){const dataStr=JSON.stringify(EMBEDDED_GPS,null,2);const blob=new Blob([dataStr],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='gps.json';a.click();}
-function saveToLocalStorage(){localStorage.setItem('fwr_admin_standings', JSON.stringify(adminData||EMBEDDED_STANDINGS));alert('Sauvegardé');}
-function loadFromLocalStorage(){const ls=localStorage.getItem('fwr_admin_standings');if(ls){adminData=JSON.parse(ls);alert('Chargé');loadAdminData();renderAll();}}
-function resetData(){if(confirm('Réinitialiser?')){localStorage.removeItem('fwr_admin_standings');location.reload();}}
-</script>
-<script>
-(function () {
-  const dictionaries = {"fr": {"classement": "Classement Général - 15 GP", "tableaux": "Tableaux GP - 15 GP", "stats": "Stats & Courbes - 15 GP", "affiches": "Affiches GP - 15 GP", "pts": "PTS", "v": "V", "forme": "FORME", "grille": "GRILLE", "arrets": "ARRÊTS", "meilleur_tour": "MEILLEUR TOUR", "temps_ecart": "TEMPS / ÉCART", "pos": "POS", "pilote": "PILOTE", "ecurie": "ÉCURIE", "live": "LIVE F1 25 TEAM FWR → twitch.tv/upsilon7", "regarder": "REGARDER LE LIVE", "cote": "Cote parieur", "favori": "favori", "ecart": "+56 pts", "maj": "MAJ 06 Oct • 15 GP • Pays-Bas 19H - Pepit0mis vainqueur"}, "en": {"classement": "General Standings - 15 GP", "tableaux": "Race Results - 15 GP", "stats": "Stats & Evolution - 15 GP", "affiches": "GP Posters - 15 GP", "pts": "PTS", "v": "W", "forme": "FORM", "grille": "GRID", "arrets": "STOPS", "meilleur_tour": "FASTEST LAP", "temps_ecart": "TIME / GAP", "pos": "POS", "pilote": "DRIVER", "ecurie": "TEAM", "live": "LIVE F1 25 TEAM FWR → twitch.tv/upsilon7", "regarder": "WATCH LIVE", "cote": "Bet odds", "favori": "favorite", "ecart": "+56 pts gap", "maj": "Updated Oct 06 • 15 GP • Netherlands 19H - Pepit0mis winner"}};
-  window.FWR_LANG_EXTRA = dictionaries;
-})();
+function showTab(name){
+  activeTab=name;
+  document.getElementById('view-classement')?.classList.toggle('hidden',name!=='classement');
+  document.getElementById('view-tableaux')?.classList.toggle('hidden',name!=='tableaux');
+  document.getElementById('view-evolution')?.classList.toggle('hidden',name!=='evolution');
+  document.getElementById('view-affiches')?.classList.toggle('hidden',name!=='affiches');
+  document.querySelectorAll('.nav-unique button').forEach(b=>b.classList.remove('active'));
+  document.getElementById('nav-'+name)?.classList.add('active');
+}
+function openModal(gpName){
+  const race = (EMBEDDED_STANDINGS.gp_disputes||[]).find(r=>r.gp===gpName);
+  if(!race) return;
+  document.getElementById('modal-content').innerHTML = `<h2>${race.gp} - ${race.circuit}</h2><p>${race.date} • ${race.heure} • Vainqueur: ${race.vainqueur}</p><pre style="font-size:11px;overflow:auto">${JSON.stringify(race.resultats_fwr,null,2)}</pre>`;
+  document.getElementById('modal').style.display='flex';
+}
+function closeModal(){document.getElementById('modal').style.display='none';}
+function switchLang(lang){currentLang=lang;document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));renderClassement();}
+function init(){
+  console.log('Init FWR 15 GP - Pays-Bas 19H');
+  renderClassement();
+  renderChronos();
+  renderGPs();
+  renderPills();
+  updateCharts();
+  showTab('classement');
+}
+document.addEventListener('DOMContentLoaded', init);
 </script>
 </body>
 </html>
