@@ -5,12 +5,12 @@
     "en": "Season S1 2026",
     "be": "Saison S1 2026 une fois"
   },
-  "derniere_maj": "02 Oct 2026 - Belgique + GB + Hongrie - 14 GP - MAJ complète",
+  "derniere_maj": "06 Oct 2026 - Pays-Bas 19H - 15 GP - Pepit0mis vainqueur",
   "logo": "assets/logo/FWR Racing Saison 1.png",
   "logo_s1": "assets/logo/FWR Racing Saison 1.png",
   "logo_s2": "assets/logo/FWR Racing Saison 2.png",
   "twitch": "https://twitch.tv/upsilon7",
-  "champion": "Skyyy - 261 pts - 9 victoires - 14 GP",
+  "champion": "Skyyy - 261 pts - 9 victoires - 15 GP",
   "classement_general": [
     {
       "pos": 1,
@@ -42,6 +42,7 @@
         193,
         218,
         236,
+        261,
         261
       ]
     },
@@ -50,9 +51,9 @@
       "pilote": "Gosset_25",
       "ecurie": "Red Bull",
       "color": "#0600EF",
-      "pts": 190,
+      "pts": 205,
       "victoires": 1,
-      "podiums": 7,
+      "podiums": 8,
       "meilleur_tour": "1:14.953 Monaco",
       "forme": "→",
       "label": {
@@ -75,7 +76,8 @@
         152,
         167,
         175,
-        190
+        190,
+        205
       ]
     },
     {
@@ -83,9 +85,9 @@
       "pilote": "Taatsu7TV",
       "ecurie": "Scuderia Ferrari HP",
       "color": "#DC0000",
-      "pts": 183,
+      "pts": 201,
       "victoires": 1,
-      "podiums": 9,
+      "podiums": 10,
       "meilleur_tour": "1:17.625 Barcelone",
       "forme": "↑",
       "label": {
@@ -108,7 +110,8 @@
         138,
         156,
         171,
-        183
+        183,
+        201
       ]
     },
     {
@@ -141,6 +144,7 @@
         142,
         142,
         154,
+        164,
         164
       ]
     },
@@ -149,9 +153,9 @@
       "pilote": "Pepit0mis",
       "ecurie": "Alpine",
       "color": "#0090FF",
-      "pts": 79,
-      "victoires": 1,
-      "podiums": 4,
+      "pts": 104,
+      "victoires": 2,
+      "podiums": 5,
       "meilleur_tour": "-",
       "forme": "→",
       "label": {
@@ -174,7 +178,8 @@
         36,
         36,
         61,
-        79
+        79,
+        104
       ]
     },
     {
@@ -207,6 +212,7 @@
         68,
         68,
         68,
+        68,
         68
       ]
     },
@@ -215,7 +221,7 @@
       "pilote": "cobra_kai_cx",
       "ecurie": "Aston Martin",
       "color": "#006F62",
-      "pts": 46,
+      "pts": 58,
       "victoires": 0,
       "podiums": 1,
       "meilleur_tour": "1:20.564 Imola",
@@ -240,7 +246,8 @@
         36,
         36,
         46,
-        46
+        46,
+        58
       ]
     },
     {
@@ -269,6 +276,7 @@
         0,
         15,
         25,
+        35,
         35,
         35,
         35,
@@ -306,6 +314,7 @@
         18,
         18,
         18,
+        18,
         18
       ]
     },
@@ -329,6 +338,7 @@
         0,
         0,
         4,
+        16,
         16,
         16,
         16,
@@ -372,6 +382,7 @@
         6,
         6,
         6,
+        6,
         6
       ]
     },
@@ -392,6 +403,7 @@
       },
       "formeColor": "#8B8B8B",
       "trend": [
+        0,
         0,
         0,
         0,
@@ -1261,6 +1273,59 @@
           "pts": 10
         }
       ]
+    },
+    {
+      "date": "6 Octobre 2026",
+      "gp": "Pays-Bas",
+      "circuit": "Circuit de Zandvoort",
+      "heure": "19H00",
+      "distance": "35%",
+      "affiche": "assets/posters/Pays Bas 6 octobre 2026.png",
+      "vainqueur": "Pepit0mis",
+      "temps": "31:40.833",
+      "meilleur_tour": "1:12.853 Pepit0mis MEILLEUR TOUR",
+      "resultats_fwr": [
+        {
+          "pos": 1,
+          "pilote": "Pepit0mis",
+          "ecurie": "Alpine",
+          "grille": "1",
+          "arrets": 1,
+          "mt": "1:12.853",
+          "temps": "31:40.833",
+          "pts": 25
+        },
+        {
+          "pos": 2,
+          "pilote": "Taatsu7TV",
+          "ecurie": "Scuderia Ferrari HP",
+          "grille": "2",
+          "arrets": 1,
+          "mt": "1:13.775",
+          "temps": "+10.296",
+          "pts": 18
+        },
+        {
+          "pos": 3,
+          "pilote": "Gosset_25",
+          "ecurie": "Red Bull",
+          "grille": "3",
+          "arrets": 1,
+          "mt": "1:15.138",
+          "temps": "+26.234",
+          "pts": 15
+        },
+        {
+          "pos": 4,
+          "pilote": "cobra_kai_cx",
+          "ecurie": "Aston Martin",
+          "grille": "4",
+          "arrets": 1,
+          "mt": "1:16.436",
+          "temps": "+1 tour",
+          "pts": 12
+        }
+      ]
     }
   ],
   "i18n": {
@@ -1283,8 +1348,8 @@
       "regarder": "REGARDER LE LIVE",
       "cote": "Cote parieur",
       "favori": "favori",
-      "ecart": "+71 pts",
-      "maj": "MAJ 02 Oct • 14 GP • Belgique + GB + Hongrie"
+      "ecart": "+56 pts",
+      "maj": "MAJ 06 Oct • 15 GP • Pays-Bas 19H - Pepit0mis vainqueur"
     },
     "en": {
       "classement": "General Standings",
@@ -1306,7 +1371,7 @@
       "cote": "Bet odds",
       "favori": "favorite",
       "ecart": "+71 pts gap",
-      "maj": "Updated Oct 02 • 14 GP • Belgium + GB + Hungary"
+      "maj": "Updated Oct 06 • 15 GP • Netherlands 19H - Pepit0mis winner"
     },
     "be": {
       "classement": "Classement Général une fois",
@@ -1328,7 +1393,7 @@
       "cote": "Cote parieur une fois",
       "favori": "favori une fois - c'est du lourd!",
       "ecart": "+71 une fois",
-      "maj": "MAJ 02 Oct • 14 GP • Belgique + GB + Hongrie une fois - Wanze!"
+      "maj": "MAJ 06 Oct • 15 GP • Pays-Bas 19H une fois"
     }
   },
   "ecuries_config": {
