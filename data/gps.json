@@ -194,6 +194,19 @@
       "affiche": "assets/posters/Pays Bas 6 octobre 2026.png",
       "temps": "31:40.833",
       "meilleur_tour": "1:12.853 Pepit0mis"
+    },
+    {
+      "date": "8 Octobre 2026",
+      "gp": "Monza",
+      "flag": "🇮🇹",
+      "circuit": "Autodromo Nazionale Monza",
+      "heure": "19H00",
+      "distance": "35%",
+      "status": "Terminé",
+      "vainqueur": "Skyyy",
+      "affiche": "assets/posters/Italie 8 Octobre 2026.png",
+      "temps": "26:54.261",
+      "meilleur_tour": "1:21.945 Skyyy"
     }
   ],
   "saison": "S1 FWR 2026",
