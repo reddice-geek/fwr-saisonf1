@@ -5,21 +5,21 @@
     "en": "Season S1 2026",
     "be": "Saison S1 2026 une fois"
   },
-  "derniere_maj": "06 Oct 2026 - Pays-Bas 19H - 15 GP - Pepit0mis vainqueur",
+  "derniere_maj": "08 Oct 2026 - Monza Italie 19H - 16 GP - Skyyy vainqueur - 10V",
   "logo": "assets/logo/FWR Racing Saison 1.png",
   "logo_s1": "assets/logo/FWR Racing Saison 1.png",
   "logo_s2": "assets/logo/FWR Racing Saison 2.png",
   "twitch": "https://twitch.tv/upsilon7",
-  "champion": "Skyyy - 261 pts - 9 victoires - 15 GP",
+  "champion": "Skyyy - 286 pts - 10 victoires - 16 GP",
   "classement_general": [
     {
       "pos": 1,
       "pilote": "Skyyy",
       "ecurie": "Alpine",
       "color": "#0090FF",
-      "pts": 261,
-      "victoires": 9,
-      "podiums": 11,
+      "pts": 286,
+      "victoires": 10,
+      "podiums": 12,
       "meilleur_tour": "1:12.865 Monaco RECORD",
       "forme": "↑↑↑",
       "label": {
@@ -43,15 +43,51 @@
         218,
         236,
         261,
-        261
+        261,
+        286
       ]
     },
     {
       "pos": 2,
+      "pilote": "Taatsu7TV",
+      "ecurie": "Scuderia Ferrari HP",
+      "color": "#DC0000",
+      "pts": 216,
+      "victoires": 1,
+      "podiums": 11,
+      "meilleur_tour": "1:17.625 Barcelone",
+      "forme": "↑",
+      "label": {
+        "fr": "EN FORME",
+        "en": "IN FORM",
+        "be": "EN FORME UNE FOIS"
+      },
+      "formeColor": "#10B981",
+      "trend": [
+        0,
+        12,
+        27,
+        42,
+        67,
+        85,
+        100,
+        100,
+        108,
+        123,
+        138,
+        156,
+        171,
+        183,
+        201,
+        216
+      ]
+    },
+    {
+      "pos": 3,
       "pilote": "Gosset_25",
       "ecurie": "Red Bull",
       "color": "#0600EF",
-      "pts": 205,
+      "pts": 213,
       "victoires": 1,
       "podiums": 8,
       "meilleur_tour": "1:14.953 Monaco",
@@ -77,41 +113,8 @@
         167,
         175,
         190,
-        205
-      ]
-    },
-    {
-      "pos": 3,
-      "pilote": "Taatsu7TV",
-      "ecurie": "Scuderia Ferrari HP",
-      "color": "#DC0000",
-      "pts": 201,
-      "victoires": 1,
-      "podiums": 10,
-      "meilleur_tour": "1:17.625 Barcelone",
-      "forme": "↑",
-      "label": {
-        "fr": "EN FORME",
-        "en": "IN FORM",
-        "be": "EN FORME UNE FOIS"
-      },
-      "formeColor": "#10B981",
-      "trend": [
-        0,
-        12,
-        27,
-        42,
-        67,
-        85,
-        100,
-        100,
-        108,
-        123,
-        138,
-        156,
-        171,
-        183,
-        201
+        205,
+        213
       ]
     },
     {
@@ -119,7 +122,7 @@
       "pilote": "upsilon7",
       "ecurie": "Scuderia Ferrari HP",
       "color": "#DC0000",
-      "pts": 164,
+      "pts": 176,
       "victoires": 0,
       "podiums": 5,
       "meilleur_tour": "1:17.220 Barcelone",
@@ -145,7 +148,8 @@
         142,
         154,
         164,
-        164
+        164,
+        176
       ]
     },
     {
@@ -153,9 +157,9 @@
       "pilote": "Pepit0mis",
       "ecurie": "Alpine",
       "color": "#0090FF",
-      "pts": 104,
+      "pts": 122,
       "victoires": 2,
-      "podiums": 5,
+      "podiums": 6,
       "meilleur_tour": "-",
       "forme": "→",
       "label": {
@@ -179,7 +183,8 @@
         36,
         61,
         79,
-        104
+        104,
+        122
       ]
     },
     {
@@ -202,6 +207,7 @@
         25,
         25,
         50,
+        68,
         68,
         68,
         68,
@@ -247,6 +253,7 @@
         36,
         46,
         46,
+        58,
         58
       ]
     },
@@ -281,6 +288,7 @@
         35,
         35,
         35,
+        35,
         35
       ]
     },
@@ -309,6 +317,7 @@
         0,
         0,
         0,
+        18,
         18,
         18,
         18,
@@ -349,11 +358,47 @@
         16,
         16,
         16,
+        16,
         16
       ]
     },
     {
       "pos": 11,
+      "pilote": "FloryxUSO",
+      "ecurie": "Mercedes-AMG Petronas",
+      "color": "#00D2BE",
+      "pts": 10,
+      "victoires": 0,
+      "podiums": 0,
+      "meilleur_tour": "1:23.561 Monza",
+      "forme": "↑",
+      "label": {
+        "fr": "",
+        "en": "",
+        "be": ""
+      },
+      "formeColor": "#10B981",
+      "trend": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10
+      ]
+    },
+    {
+      "pos": 12,
       "pilote": "sombre7675TTV",
       "ecurie": "Haas",
       "color": "#9E9E9E",
@@ -383,11 +428,12 @@
         6,
         6,
         6,
+        6,
         6
       ]
     },
     {
-      "pos": 12,
+      "pos": 13,
       "pilote": "Crimson_Death",
       "ecurie": "Mercedes-AMG Petronas",
       "color": "#00D2BE",
@@ -403,6 +449,7 @@
       },
       "formeColor": "#8B8B8B",
       "trend": [
+        0,
         0,
         0,
         0,
@@ -1326,6 +1373,79 @@
           "pts": 12
         }
       ]
+    },
+    {
+      "date": "8 Octobre 2026",
+      "gp": "Monza",
+      "circuit": "Autodromo Nazionale Monza",
+      "heure": "19H00",
+      "distance": "35%",
+      "affiche": "assets/posters/Italie 8 Octobre 2026.png",
+      "vainqueur": "Skyyy",
+      "temps": "26:54.261",
+      "meilleur_tour": "1:21.945 Skyyy MEILLEUR TOUR",
+      "resultats_fwr": [
+        {
+          "pos": 1,
+          "pilote": "Skyyy",
+          "ecurie": "Alpine",
+          "grille": "20",
+          "arrets": 1,
+          "mt": "1:21.945",
+          "temps": "26:54.261",
+          "pts": 25
+        },
+        {
+          "pos": 2,
+          "pilote": "Pepit0mis",
+          "ecurie": "Alpine",
+          "grille": "1",
+          "arrets": 1,
+          "mt": "1:22.530",
+          "temps": "x3 (+9 secs.)",
+          "pts": 18
+        },
+        {
+          "pos": 3,
+          "pilote": "Taatsu7TV",
+          "ecurie": "Scuderia Ferrari HP",
+          "grille": "2",
+          "arrets": 1,
+          "mt": "1:24.410",
+          "temps": "+47.615",
+          "pts": 15
+        },
+        {
+          "pos": 4,
+          "pilote": "upsilon7",
+          "ecurie": "McLaren",
+          "grille": "4",
+          "arrets": 1,
+          "mt": "1:24.314",
+          "temps": "+56.861",
+          "pts": 12
+        },
+        {
+          "pos": 5,
+          "pilote": "FloryxUSO",
+          "ecurie": "Mercedes-AMG Petronas",
+          "grille": "8",
+          "arrets": 1,
+          "mt": "1:23.561",
+          "temps": "x2 (+6 secs.)",
+          "pts": 10
+        },
+        {
+          "pos": 6,
+          "pilote": "Gosset_25",
+          "ecurie": "Red Bull",
+          "grille": "3",
+          "arrets": 1,
+          "mt": "1:23.772",
+          "temps": "x1 (+3 secs.)",
+          "pts": 8
+        }
+      ]
     }
   ],
   "i18n": {
@@ -1348,8 +1468,8 @@
       "regarder": "REGARDER LE LIVE",
       "cote": "Cote parieur",
       "favori": "favori",
-      "ecart": "+56 pts",
-      "maj": "MAJ 06 Oct • 15 GP • Pays-Bas 19H - Pepit0mis vainqueur"
+      "ecart": "+70 pts",
+      "maj": "MAJ 08 Oct • 16 GP • Monza 19H - Skyyy vainqueur 10V"
     },
     "en": {
       "classement": "General Standings",
@@ -1371,7 +1491,7 @@
       "cote": "Bet odds",
       "favori": "favorite",
       "ecart": "+71 pts gap",
-      "maj": "Updated Oct 06 • 15 GP • Netherlands 19H - Pepit0mis winner"
+      "maj": "Updated Oct 08 • 16 GP • Monza 19H - Skyyy winner 10W"
     },
     "be": {
       "classement": "Classement Général une fois",
