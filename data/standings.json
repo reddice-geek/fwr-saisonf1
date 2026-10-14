@@ -5,21 +5,21 @@
     "en": "Season S1 2026",
     "be": "Saison S1 2026 une fois"
   },
-  "derniere_maj": "08 Oct 2026 - Monza Italie 19H - 16 GP - Skyyy vainqueur - 10V",
+  "derniere_maj": "13 Oct 2026 - Azerbaïdjan 19H 35% - 17 GP - Skyyy vainqueur 11V",
   "logo": "assets/logo/FWR Racing Saison 1.png",
   "logo_s1": "assets/logo/FWR Racing Saison 1.png",
   "logo_s2": "assets/logo/FWR Racing Saison 2.png",
   "twitch": "https://twitch.tv/upsilon7",
-  "champion": "Skyyy - 286 pts - 10 victoires - 16 GP",
+  "champion": "Skyyy - 311 pts - 11 victoires - 17 GP",
   "classement_general": [
     {
       "pos": 1,
       "pilote": "Skyyy",
       "ecurie": "Alpine",
       "color": "#0090FF",
-      "pts": 286,
-      "victoires": 10,
-      "podiums": 12,
+      "pts": 311,
+      "victoires": 11,
+      "podiums": 13,
       "meilleur_tour": "1:12.865 Monaco RECORD",
       "forme": "↑↑↑",
       "label": {
@@ -44,7 +44,8 @@
         236,
         261,
         261,
-        286
+        286,
+        311
       ]
     },
     {
@@ -52,7 +53,7 @@
       "pilote": "Taatsu7TV",
       "ecurie": "Scuderia Ferrari HP",
       "color": "#DC0000",
-      "pts": 216,
+      "pts": 234,
       "victoires": 1,
       "podiums": 11,
       "meilleur_tour": "1:17.625 Barcelone",
@@ -79,7 +80,8 @@
         171,
         183,
         201,
-        216
+        216,
+        234
       ]
     },
     {
@@ -87,7 +89,7 @@
       "pilote": "Gosset_25",
       "ecurie": "Red Bull",
       "color": "#0600EF",
-      "pts": 213,
+      "pts": 223,
       "victoires": 1,
       "podiums": 8,
       "meilleur_tour": "1:14.953 Monaco",
@@ -114,7 +116,8 @@
         175,
         190,
         205,
-        213
+        213,
+        223
       ]
     },
     {
@@ -122,7 +125,7 @@
       "pilote": "upsilon7",
       "ecurie": "Scuderia Ferrari HP",
       "color": "#DC0000",
-      "pts": 176,
+      "pts": 188,
       "victoires": 0,
       "podiums": 5,
       "meilleur_tour": "1:17.220 Barcelone",
@@ -149,7 +152,8 @@
         154,
         164,
         164,
-        176
+        176,
+        188
       ]
     },
     {
@@ -184,6 +188,7 @@
         61,
         79,
         104,
+        122,
         122
       ]
     },
@@ -207,6 +212,7 @@
         25,
         25,
         50,
+        68,
         68,
         68,
         68,
@@ -254,6 +260,7 @@
         46,
         46,
         58,
+        58,
         58
       ]
     },
@@ -289,11 +296,48 @@
         35,
         35,
         35,
+        35,
         35
       ]
     },
     {
       "pos": 9,
+      "pilote": "FloryxUSO",
+      "ecurie": "Mercedes-AMG Petronas",
+      "color": "#00D2BE",
+      "pts": 25,
+      "victoires": 0,
+      "podiums": 1,
+      "meilleur_tour": "1:23.561 Monza",
+      "forme": "↑",
+      "label": {
+        "fr": "",
+        "en": "",
+        "be": ""
+      },
+      "formeColor": "#10B981",
+      "trend": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10,
+        25
+      ]
+    },
+    {
+      "pos": 10,
       "pilote": "JotagrosFR",
       "ecurie": "Red Bull",
       "color": "#0600EF",
@@ -324,11 +368,12 @@
         18,
         18,
         18,
+        18,
         18
       ]
     },
     {
-      "pos": 10,
+      "pos": 11,
       "pilote": "mobilou69",
       "ecurie": "Red Bull",
       "color": "#0600EF",
@@ -359,42 +404,8 @@
         16,
         16,
         16,
+        16,
         16
-      ]
-    },
-    {
-      "pos": 11,
-      "pilote": "FloryxUSO",
-      "ecurie": "Mercedes-AMG Petronas",
-      "color": "#00D2BE",
-      "pts": 10,
-      "victoires": 0,
-      "podiums": 0,
-      "meilleur_tour": "1:23.561 Monza",
-      "forme": "↑",
-      "label": {
-        "fr": "",
-        "en": "",
-        "be": ""
-      },
-      "formeColor": "#10B981",
-      "trend": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        10
       ]
     },
     {
@@ -414,6 +425,7 @@
       },
       "formeColor": "#8B8B8B",
       "trend": [
+        6,
         6,
         6,
         6,
@@ -449,6 +461,7 @@
       },
       "formeColor": "#8B8B8B",
       "trend": [
+        0,
         0,
         0,
         0,
@@ -1446,6 +1459,69 @@
           "pts": 8
         }
       ]
+    },
+    {
+      "date": "13 Octobre 2026",
+      "gp": "Azerbaïdjan",
+      "circuit": "Baku City Circuit",
+      "heure": "19H00",
+      "distance": "35%",
+      "affiche": "assets/posters/Azerbaïdjan 13 octobre 2026.png",
+      "vainqueur": "Skyyy",
+      "temps": "32:21.019",
+      "meilleur_tour": "1:42.353 Skyyy MEILLEUR TOUR",
+      "resultats_fwr": [
+        {
+          "pos": 1,
+          "pilote": "Skyyy",
+          "ecurie": "Alpine",
+          "grille": "1",
+          "arrets": 2,
+          "mt": "1:42.353",
+          "temps": "32:21.019",
+          "pts": 25
+        },
+        {
+          "pos": 2,
+          "pilote": "Taatsu7TV",
+          "ecurie": "Scuderia Ferrari HP",
+          "grille": "2",
+          "arrets": 1,
+          "mt": "1:45.348",
+          "temps": "+4.445",
+          "pts": 18
+        },
+        {
+          "pos": 3,
+          "pilote": "FloryxUSO",
+          "ecurie": "Mercedes-AMG Petronas",
+          "grille": "5",
+          "arrets": 1,
+          "mt": "1:44.630",
+          "temps": "+7.395",
+          "pts": 15
+        },
+        {
+          "pos": 4,
+          "pilote": "upsilon7",
+          "ecurie": "McLaren",
+          "grille": "3",
+          "arrets": 1,
+          "mt": "1:47.088",
+          "temps": "+48.512",
+          "pts": 12
+        },
+        {
+          "pos": 5,
+          "pilote": "Gosset_25",
+          "ecurie": "Red Bull",
+          "grille": "8",
+          "arrets": 2,
+          "mt": "1:45.139",
+          "temps": "+1:23.378",
+          "pts": 10
+        }
+      ]
     }
   ],
   "i18n": {
@@ -1468,8 +1544,8 @@
       "regarder": "REGARDER LE LIVE",
       "cote": "Cote parieur",
       "favori": "favori",
-      "ecart": "+70 pts",
-      "maj": "MAJ 08 Oct • 16 GP • Monza 19H - Skyyy vainqueur 10V"
+      "ecart": "+77 pts",
+      "maj": "MAJ 13 Oct • 17 GP • Azerbaïdjan 19H 35% - Skyyy 11V"
     },
     "en": {
       "classement": "General Standings",
@@ -1491,7 +1567,7 @@
       "cote": "Bet odds",
       "favori": "favorite",
       "ecart": "+71 pts gap",
-      "maj": "Updated Oct 08 • 16 GP • Monza 19H - Skyyy winner 10W"
+      "maj": "Updated Oct 13 • 17 GP • Azerbaijan 19H 35% - Skyyy 11W"
     },
     "be": {
       "classement": "Classement Général une fois",
