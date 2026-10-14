@@ -207,6 +207,19 @@
       "affiche": "assets/posters/Italie 8 Octobre 2026.png",
       "temps": "26:54.261",
       "meilleur_tour": "1:21.945 Skyyy"
+    },
+    {
+      "date": "13 Octobre 2026",
+      "gp": "Azerbaïdjan",
+      "flag": "🇦🇿",
+      "circuit": "Baku City Circuit",
+      "heure": "19H00",
+      "distance": "35%",
+      "status": "Terminé",
+      "vainqueur": "Skyyy",
+      "affiche": "assets/posters/Azerbaïdjan 13 octobre 2026.png",
+      "temps": "32:21.019",
+      "meilleur_tour": "1:42.353 Skyyy"
     }
   ],
   "saison": "S1 FWR 2026",
