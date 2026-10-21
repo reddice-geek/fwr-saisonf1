@@ -217,9 +217,22 @@
       "distance": "35%",
       "status": "Terminé",
       "vainqueur": "Skyyy",
-      "affiche": "assets/posters/Azerbaïdjan 13 octobre 2026.png",
+      "affiche": "assets/posters/Azerbaidjan 13 octobre 2026.png",
       "temps": "32:21.019",
       "meilleur_tour": "1:42.353 Skyyy"
+    },
+    {
+      "date": "20 Octobre 2026",
+      "gp": "Texas",
+      "flag": "🇺🇸",
+      "circuit": "Circuit of the Americas",
+      "heure": "19H00",
+      "distance": "35%",
+      "status": "Terminé",
+      "vainqueur": "Taatsu7TV",
+      "affiche": "assets/posters/Texas 20 octobre 2026.png",
+      "temps": "33:53.932",
+      "meilleur_tour": "1:37.757 Skyyy"
     }
   ],
   "saison": "S1 FWR 2026",
