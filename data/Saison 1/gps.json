@@ -222,6 +222,19 @@
       "meilleur_tour": "1:42.353 Skyyy"
     },
     {
+      "date": "17 Octobre 2026",
+      "gp": "Brésil",
+      "flag": "🇧🇷",
+      "circuit": "Autódromo José Carlos Pace",
+      "heure": "19H00",
+      "distance": "35%",
+      "status": "Terminé",
+      "vainqueur": "Pepit0mis",
+      "affiche": "assets/posters saison 1/Brésil 17 octobre 2026.png",
+      "temps": "30:34.465",
+      "meilleur_tour": "1:09.718 Skyyy"
+    },
+    {
       "date": "20 Octobre 2026",
       "gp": "Texas",
       "flag": "🇺🇸",
@@ -233,6 +246,19 @@
       "affiche": "assets/posters saison 1/Texas 20 Octobre 2026.png",
       "temps": "33:53.932",
       "meilleur_tour": "1:37.757 Skyyy"
+    },
+    {
+      "date": "22 Octobre 2026",
+      "gp": "Mexique",
+      "flag": "🇲🇽",
+      "circuit": "Autódromo Hermanos Rodríguez",
+      "heure": "19H00",
+      "distance": "35%",
+      "status": "Terminé",
+      "vainqueur": "Skyyy",
+      "affiche": "assets/posters saison 1/Mexique 22 octobre 2026.png",
+      "temps": "x1 (+3 secs.)",
+      "meilleur_tour": "1:17.704 Skyyy"
     }
   ],
   "saison": "S1 FWR 2026",
