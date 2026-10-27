@@ -131,7 +131,7 @@
       "meilleur_tour": "En attente"
     },
     {
-      "date": "22 septembre 2026",
+      "date": "22 Septembre 2026",
       "gp": "Autriche",
       "flag": "🇦🇹",
       "circuit": "Red Bull Ring",
@@ -140,19 +140,6 @@
       "status": "Terminé",
       "vainqueur": "Skyyy",
       "affiche": "assets/posters saison 1/Autriche 22 Septembre 2026.png",
-      "temps": "-",
-      "meilleur_tour": "1:07.356 Skyyy"
-    },
-    {
-      "date": "22 Septembre 2026",
-      "gp": "Grande Bretagne",
-      "flag": "🇬🇧",
-      "circuit": "Silverstone Circuit",
-      "heure": "19H00",
-      "distance": "35%",
-      "status": "Terminé",
-      "vainqueur": "Skyyy",
-      "affiche": "assets/posters saison 1/Grande Bretagne 22 Septembre 2026.png",
       "temps": "28:30.888",
       "meilleur_tour": "1:30.285 Skyyy"
     },
