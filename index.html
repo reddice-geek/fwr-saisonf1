@@ -49,7 +49,6 @@
   .hub-card { background: linear-gradient(145deg, #121222, #0A0A14); border: 2px solid var(--border-color); border-radius: 20px; padding: 32px; transition: all 0.3s; cursor: pointer; position: relative; overflow: hidden; }
   .hub-card:hover { border-color: var(--accent-blue); transform: translateY(-6px); box-shadow: 0 12px 30px rgba(59, 130, 246, 0.2); }
   .hub-card.active-season { border-color: var(--accent-violet); box-shadow: 0 0 25px rgba(139, 92, 246, 0.25); }
-
   /* Modals */
   .modal { position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; padding: 20px; }
   .modal-box { background: #0F0F1A; border: 1px solid var(--accent-violet); border-radius: 20px; padding: 28px; max-width: 800px; width: 100%; max-height: 90vh; overflow: auto; }
@@ -62,7 +61,6 @@
 </style>
 </head>
 <body>
-
 <!-- BANDEAU TOP -->
 <div class="bandeau-rouge bandeau-live">
   <div class="flex items-center gap-3">
@@ -71,7 +69,6 @@
   </div>
   <a href="https://twitch.tv/upsilon7" target="_blank" class="btn-live">🔴 REGARDER LE LIVE TWITCH</a>
 </div>
-
 <!-- HEADER NAVIGATION -->
 <header class="header-main">
   <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
@@ -90,21 +87,18 @@
       <button id="nav-classement" class="nav-btn hidden" onclick="showTab('classement')">🏆 Classement</button>
       <button id="nav-tableaux" class="nav-btn hidden" onclick="showTab('tableaux')">📊 Tableaux GP</button>
       <button id="nav-evolution" class="nav-btn hidden" onclick="showTab('evolution')">📈 Évolution</button>
-      <button id="nav-affiches" class="nav-btn hidden" onclick="showTab('affiches')">🖼️ Affiches GP</button>
+      <button id="nav-affiches" class="nav-btn hidden" onclick="showTab('affiches')">🖼 Affiches GP</button>
     </nav>
   </div>
 </header>
-
 <!-- MAIN CONTENT WRAPPER -->
 <main class="max-w-7xl mx-auto px-4 py-8">
-
   <!-- VIEW 1: HUB SELECTION SAISON (Affiché par défaut à l'arrivée) -->
   <div id="view-hub">
     <div class="text-center mb-12">
       <h1 class="titillium text-4xl font-black text-white mb-3">SÉLECTIONNEZ VOTRE SAISON</h1>
       <p class="text-gray-400 text-sm max-w-xl mx-auto">Consultez les résultats en direct et le classement officiel de la Saison 1 ou découvrez la Saison 2.</p>
     </div>
-
     <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
       <!-- Hub Card S1 -->
       <div class="hub-card active-season" onclick="switchSeason('s1')">
@@ -120,7 +114,6 @@
           <span class="text-gray-500">20 GP Inclus</span>
         </div>
       </div>
-
       <!-- Hub Card S2 -->
       <div class="hub-card" onclick="switchSeason('s2')">
         <div class="flex justify-between items-start mb-6">
@@ -137,7 +130,6 @@
       </div>
     </div>
   </div>
-
   <!-- VIEW 2: SAISON DETAILS HUB (Masqué par défaut jusqu'au choix de la saison) -->
   <div id="view-season-detail" class="hidden">
     
@@ -149,7 +141,6 @@
           <p id="sub-classement" class="text-xs text-gray-400">Chargement...</p>
         </div>
       </div>
-
       <div class="table-wrap mb-8">
         <table>
           <thead>
@@ -166,19 +157,16 @@
           <tbody id="tbody-classement"></tbody>
         </table>
       </div>
-
       <div class="card-box">
         <h3 class="titillium text-xl font-bold mb-4 text-violet-400">Évolution Top 5 du Championnat</h3>
         <div style="height: 250px;"><canvas id="chart-mini"></canvas></div>
       </div>
     </div>
-
     <!-- TAB: TABLEAUX GP -->
     <div id="tab-tableaux" class="hidden">
       <h1 class="titillium text-3xl font-bold mb-6">Résultats Détail par Grand Prix</h1>
       <div id="chronos-list" class="flex flex-col gap-6"></div>
     </div>
-
     <!-- TAB: EVOLUTION -->
     <div id="tab-evolution" class="hidden">
       <h1 class="titillium text-3xl font-bold mb-4">Statistiques & Courbes d'Évolution</h1>
@@ -188,29 +176,24 @@
         <canvas id="chart-main"></canvas>
       </div>
     </div>
-
     <!-- TAB: AFFICHES GP -->
     <div id="tab-affiches" class="hidden">
       <h1 class="titillium text-3xl font-bold mb-6">Affiches Officielles des Grands Prix</h1>
       <div id="grid-gp" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
     </div>
-
   </div>
-
   <!-- CONTACT & DISCORD SECTION (Yellow Accent) -->
   <section class="mt-16 contact-section flex flex-col md:flex-row items-center justify-between gap-6">
     <div>
       <h3 class="titillium text-2xl font-black mb-1">REJOINDRE LA COMMUNAUTÉ FWR</h3>
       <p class="text-xs text-yellow-200/80">Rejoignez le serveur Discord officiel pour suivre les annonces, déposer des réclamations ou vous inscrire !</p>
     </div>
-    <a href="https://discord.gg/vY8WJQcwPN" target="_blank" class="btn-discord">
+    <a href="https://discord.gg/qpkYfGmEzt" target="_blank" class="btn-discord">
       <svg class="w-5 h-5 fill-current" viewBox="0 0 127.14 96.36"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0,3.36,6.83A97.68,97.68,0,0,0,42.29,6.83,72.37,72.37,0,0,0,45.65,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.68,1.76,1.36,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1,105.25,105.25,0,0,0,32.19-16.14c2.64-27.38-4.51-51.11-18.91-72.15ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,45.92,53.87,53,48.8,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,45.92,96.1,53,91.08,65.69,84.69,65.69Z"/></svg>
       REJOINDRE LE DISCORD FWR
     </a>
   </section>
-
 </main>
-
 <!-- MODAL RACE DETAILS -->
 <div id="modal" class="modal hidden" onclick="if(event.target===this) closeModal()">
   <div class="modal-box">
@@ -221,313 +204,8 @@
     <div id="modal-content"></div>
   </div>
 </div>
-
 <!-- FOOTER -->
 <footer class="mt-20 border-t border-gray-800 py-8 text-center text-xs text-gray-500">
   <p>FWR Racing League • Twitch: <a href="https://twitch.tv/upsilon7" target="_blank" class="text-violet-400">upsilon7</a></p>
-  <p class="mt-2 text-gray-600">Discord Officiel: <a href="https://discord.gg/vY8WJQcwPN" target="_blank" class="text-yellow-500">discord.gg/vY8WJQcwPN</a></p>
+  <p class="mt-2 text-gray-600">Discord Officiel: <a href="https://discord.gg/qpkYfGmEzt" target="_blank" class="text-yellow-500">discord.gg/qpkYfGmEzt</a></p>
 </footer>
-
-<script>
-let currentSeason = 's1';
-let gpsData = [];
-let standingsData = [];
-let gpDisputes = [];
-let selectedDrivers = [];
-let chartMain = null, chartMini = null;
-
-// Normalisation des chemins vers les dossiers de saison
-function fixPosterPath(path, season) {
-  if (!path) return '';
-  const folder = season === 's1' ? 'assets/posters saison 1/' : 'assets/posters saison 2/';
-  const fileName = path.split('/').pop();
-  return folder + fileName;
-}
-
-// Chargement à partir des fichiers JSON de la saison sélectionnée
-async function loadSeasonData(season) {
-  currentSeason = season;
-  const folder = season === 's1' ? 'Saison 1' : 'Saison 2';
-
-  try {
-    const [resGps, resStandings] = await Promise.all([
-      fetch(`data/${folder}/gps.json`),
-      fetch(`data/${folder}/standings.json`)
-    ]);
-
-    if (!resGps.ok || !resStandings.ok) {
-      throw new Error("Erreur de chargement des fichiers JSON");
-    }
-
-    const gJson = await resGps.json();
-    const sJson = await resStandings.json();
-
-    gpsData = (gJson.calendrier || []).map(item => ({
-      ...item,
-      affiche: fixPosterPath(item.affiche, season)
-    }));
-
-    standingsData = sJson.classement_general || [];
-    gpDisputes = (sJson.gp_disputes || []).map(item => ({
-      ...item,
-      affiche: fixPosterPath(item.affiche, season)
-    }));
-
-    document.getElementById('header-subtitle').textContent = sJson.derniere_maj || `${gpsData.length} GP au programme`;
-    document.getElementById('sub-classement').textContent = sJson.derniere_maj || '';
-    document.getElementById('title-classement').textContent = `Classement Général - ${sJson.saison || season.toUpperCase()}`;
-
-  } catch (err) {
-    console.error("Impossible de charger les fichiers JSON:", err);
-  }
-
-  selectedDrivers = standingsData.slice(0, 8).map(s => s.pilote);
-  updateUI();
-}
-
-function updateUI() {
-  const isS1 = currentSeason === 's1';
-  document.getElementById('season-badge').textContent = isS1 ? 'SAISON 1 🟢' : 'SAISON 2 ⏳';
-  document.getElementById('header-logo').src = `assets/logo/FWR Racing Saison ${isS1 ? '1' : '2'}.png`;
-
-  renderClassement();
-  renderChronos();
-  renderGPs();
-  renderPills();
-  updateCharts();
-}
-
-function renderClassement() {
-  const tbody = document.getElementById('tbody-classement');
-  if (!tbody) return;
-
-  if (standingsData.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="7" class="text-center py-8 text-gray-500">Aucune donnée trouvée.</td></tr>';
-    return;
-  }
-
-  tbody.innerHTML = standingsData.map((s, i) => {
-    const medal = s.pos === 1 ? '🥇' : s.pos === 2 ? '🥈' : s.pos === 3 ? '🥉' : s.pos;
-    const bg = i % 2 === 0 ? 'background: #0A0A14' : 'background: #0F0F1A';
-    const color = s.color || '#8B5CF6';
-
-    return `
-      <tr style="${bg}; border-left: 4px solid ${color}">
-        <td class="font-bold">${medal}</td>
-        <td><b class="text-white">${s.pilote}</b></td>
-        <td><span class="px-2.5 py-1 rounded-full text-xs font-semibold" style="background:${color}20; color:${color}; border:1px solid ${color}40">${s.ecurie}</span></td>
-        <td style="text-align:center" class="font-black text-lg text-white">${s.pts}</td>
-        <td style="text-align:center" class="text-yellow-400 font-bold">${s.victoires || 0}</td>
-        <td class="text-xs text-violet-300 font-mono">${s.meilleur_tour || '-'}</td>
-        <td style="text-align:center; color:${s.formeColor || '#8B8B8B'}"><b>${s.forme || '→'}</b></td>
-      </tr>
-    `;
-  }).join('');
-}
-
-// AFFICHAGE DE TOUS LES GP DANS L'ONGLET TABLEAUX GP
-function renderChronos() {
-  const container = document.getElementById('chronos-list');
-  if (!container) return;
-
-  container.innerHTML = gpsData.map(gp => {
-    // Vérification des détails de course dans gpDisputes
-    const dispute = gpDisputes.find(r => r.gp === gp.gp);
-    
-    const rows = (dispute && dispute.resultats_fwr && dispute.resultats_fwr.length > 0) 
-      ? dispute.resultats_fwr.map(res => `
-          <tr>
-            <td><b>${res.pilote}</b></td>
-            <td>${res.ecurie}</td>
-            <td>${res.grille}</td>
-            <td>${res.arrets}</td>
-            <td style="color:#8B5CF6;font-weight:700">${res.mt}</td>
-            <td>${res.temps}</td>
-            <td style="font-weight:700;color:#10B981">${res.pts}</td>
-          </tr>
-        `).join('')
-      : `<tr><td colspan="7" class="text-center text-gray-500 py-4">Résultats détaillés non saisis pour ce GP</td></tr>`;
-
-    return `
-      <div class="card-box">
-        <div class="flex flex-col md:flex-row gap-6 items-center mb-4">
-          <img src="${gp.affiche}" alt="${gp.gp}" class="w-28 h-36 object-cover rounded-xl bg-black/50 border border-white/10 shrink-0" onerror="this.style.display='none';">
-          <div class="flex-1 w-full">
-            <div class="flex flex-wrap items-center justify-between gap-2 mb-3 pb-3 border-b border-gray-800">
-              <div>
-                <span class="text-xs text-violet-400 font-bold">${gp.date} • ${gp.heure || '19H00'} • ${gp.distance || '35%'}</span>
-                <h3 class="titillium text-xl font-bold text-white">${gp.flag || ''} ${gp.gp} - <span class="text-gray-400 text-sm">${gp.circuit}</span></h3>
-              </div>
-              <div class="text-right">
-                <div class="text-xs text-gray-400">Vainqueur: <b class="text-green-400">${gp.vainqueur || 'À venir'}</b></div>
-                <div class="text-xs text-gray-500 font-mono">${gp.temps || ''}</div>
-              </div>
-            </div>
-            <div class="text-xs text-gray-400">Meilleur Tour: <span class="text-violet-300 font-bold">${gp.meilleur_tour || '-'}</span></div>
-          </div>
-        </div>
-        <div class="overflow-x-auto">
-          <table class="w-full text-left border-collapse">
-            <thead>
-              <tr class="bg-[#141424] text-gray-400 text-xs uppercase">
-                <th class="p-2">PILOTE</th>
-                <th class="p-2">ÉCURIE</th>
-                <th class="p-2">GRILLE</th>
-                <th class="p-2">ARRÊTS</th>
-                <th class="p-2">MT</th>
-                <th class="p-2">TEMPS</th>
-                <th class="p-2">PTS</th>
-              </tr>
-            </thead>
-            <tbody class="text-xs divide-y divide-gray-800">${rows}</tbody>
-          </table>
-        </div>
-      </div>
-    `;
-  }).join('');
-}
-
-function renderGPs() {
-  const grid = document.getElementById('grid-gp');
-  if (!grid) return;
-
-  grid.innerHTML = gpsData.map(r => `
-    <div class="poster-card" onclick="openModal('${r.gp}')">
-      <img src="${r.affiche}" alt="${r.gp}" class="w-full aspect-[4/5] object-cover rounded-xl mb-3 bg-black/50 border border-white/5" onerror="this.onerror=null; this.style.display='none';">
-      <div class="text-xs text-violet-400 font-semibold">${r.date}</div>
-      <div class="titillium text-lg font-bold text-white mb-1">${r.flag || ''} ${r.gp}</div>
-      <div class="text-xs text-gray-400 truncate mb-2">${r.circuit}</div>
-      <div class="text-xs text-green-400 font-bold">Vainqueur: ${r.vainqueur || 'À venir'}</div>
-    </div>
-  `).join('');
-}
-
-function renderPills() {
-  const container = document.getElementById('pills');
-  if (!container) return;
-
-  container.innerHTML = standingsData.map(s => `
-    <button class="pill ${selectedDrivers.includes(s.pilote) ? 'active' : ''}" onclick="toggleDriver('${s.pilote}')">
-      ${s.pilote} (${s.pts} pts)
-    </button>
-  `).join('');
-}
-
-function toggleDriver(name) {
-  if (selectedDrivers.includes(name)) {
-    if (selectedDrivers.length > 1) selectedDrivers = selectedDrivers.filter(x => x !== name);
-  } else {
-    selectedDrivers.push(name);
-  }
-  renderPills();
-  updateCharts();
-}
-
-function updateCharts() {
-  if (typeof Chart === 'undefined') return;
-
-  const labels = gpsData.map(g => g.gp.substring(0, 4));
-  const datasets = standingsData.filter(s => selectedDrivers.includes(s.pilote)).map(s => ({
-    label: s.pilote,
-    data: s.trend || [],
-    borderColor: s.color || '#8B5CF6',
-    backgroundColor: s.color || '#8B5CF6',
-    tension: 0.3,
-    borderWidth: 2,
-    pointRadius: 3
-  }));
-
-  const chartOptions = {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: { legend: { labels: { color: '#9CA3AF', font: { family: 'Inter' } } } },
-    scales: {
-      x: { ticks: { color: '#6B7280' }, grid: { color: '#1F2937' } },
-      y: { ticks: { color: '#6B7280' }, grid: { color: '#1F2937' }, beginAtZero: true }
-    }
-  };
-
-  const cM = document.getElementById('chart-main');
-  const cMi = document.getElementById('chart-mini');
-
-  if (chartMain) chartMain.destroy();
-  if (chartMini) chartMini.destroy();
-
-  if (cM) chartMain = new Chart(cM, { type: 'line', data: { labels, datasets }, options: chartOptions });
-  if (cMi) chartMini = new Chart(cMi, { 
-    type: 'line', 
-    data: { labels, datasets: datasets.slice(0, 5) }, 
-    options: { ...chartOptions, plugins: { legend: { display: false } } } 
-  });
-}
-
-function showView(view) {
-  if (view === 'hub') {
-    document.getElementById('view-hub').classList.remove('hidden');
-    document.getElementById('view-season-detail').classList.add('hidden');
-    
-    // Masquer les onglets de navigation interne sur le hub
-    ['classement', 'tableaux', 'evolution', 'affiches'].forEach(id => {
-      document.getElementById('nav-' + id).classList.add('hidden');
-    });
-    document.querySelector('button[onclick="showView(\'hub\')"]').classList.add('active');
-  } else {
-    document.getElementById('view-hub').classList.add('hidden');
-    document.getElementById('view-season-detail').classList.remove('hidden');
-    
-    // Afficher les onglets de navigation interne
-    ['classement', 'tableaux', 'evolution', 'affiches'].forEach(id => {
-      document.getElementById('nav-' + id).classList.remove('hidden');
-    });
-    document.querySelector('button[onclick="showView(\'hub\')"]').classList.remove('active');
-  }
-}
-
-function showTab(tabName) {
-  showView('detail');
-  ['classement', 'tableaux', 'evolution', 'affiches'].forEach(id => {
-    const el = document.getElementById('tab-' + id);
-    if (el) el.classList.toggle('hidden', id !== tabName);
-  });
-
-  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('nav-' + tabName)?.classList.add('active');
-}
-
-function switchSeason(season) {
-  loadSeasonData(season);
-  showTab('classement');
-}
-
-function openModal(gpName) {
-  const gp = gpsData.find(x => x.gp === gpName);
-  if (!gp) return;
-
-  document.getElementById('modal-title').textContent = `${gp.flag || ''} ${gp.gp} - ${gp.circuit}`;
-  document.getElementById('modal-content').innerHTML = `
-    <div class="flex flex-col md:flex-row gap-6">
-      <img src="${gp.affiche}" alt="${gp.gp}" class="w-full md:w-1/2 rounded-xl object-cover border border-white/10" onerror="this.style.display='none'">
-      <div class="space-y-3 text-sm text-gray-300">
-        <p><b>Date:</b> ${gp.date}</p>
-        <p><b>Heure:</b> ${gp.heure}</p>
-        <p><b>Distance:</b> ${gp.distance}</p>
-        <p><b>Vainqueur:</b> <span class="text-green-400 font-bold">${gp.vainqueur}</span></p>
-        <p><b>Meilleur Tour:</b> ${gp.meilleur_tour}</p>
-        <p><b>Temps Total:</b> ${gp.temps}</p>
-      </div>
-    </div>
-  `;
-  document.getElementById('modal').classList.remove('hidden');
-}
-
-function closeModal() {
-  document.getElementById('modal').classList.add('hidden');
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  // Afficher le Hub des Saisons au lancement
-  showView('hub');
-});
-</script>
-</body>
-</html>
