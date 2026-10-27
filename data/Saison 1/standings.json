@@ -197,6 +197,95 @@
   ],
   "gp_disputes": [
     {
+      "date": "22 Septembre 2026",
+      "gp": "Grande Bretagne",
+      "circuit": "Silverstone Circuit",
+      "heure": "19H00",
+      "distance": "35%",
+      "affiche": "assets/posters saison 1/Grande Bretagne 22 Septembre 2026.png",
+      "vainqueur": "Skyyy",
+      "temps": "28:30.888",
+      "meilleur_tour": "1:30.285 Skyyy MEILLEUR TOUR",
+      "resultats_fwr": [
+        { "pos": 1, "pilote": "Skyyy", "ecurie": "Alpine", "grille": "P2", "arrets": 1, "mt": "1:30.285", "temps": "28:30.888", "pts": 25 },
+        { "pos": 2, "pilote": "Taatsu7TV", "ecurie": "Scuderia Ferrari HP", "grille": "P3", "arrets": 1, "mt": "1:32.538", "temps": "x1 (+3 secs.)", "pts": 18 },
+        { "pos": 3, "pilote": "Gosset_25", "ecurie": "Red Bull", "grille": "P4", "arrets": 1, "mt": "1:32.708", "temps": "x1 (+3 secs.)", "pts": 15 }
+      ]
+    },
+    {
+      "date": "29 Septembre 2026",
+      "gp": "Belgique",
+      "circuit": "Circuit de Spa-Francorchamps",
+      "heure": "19H00",
+      "distance": "35%",
+      "affiche": "assets/posters saison 1/Belgique 29 septembre 2026.png",
+      "vainqueur": "Pepit0mis",
+      "temps": "27:26.420",
+      "meilleur_tour": "1:45.084 Skyyy MEILLEUR TOUR",
+      "resultats_fwr": [
+        { "pos": 1, "pilote": "Pepit0mis", "ecurie": "Alpine", "grille": "P1", "arrets": 1, "mt": "1:46.049", "temps": "27:26.420", "pts": 25 },
+        { "pos": 2, "pilote": "Skyyy", "ecurie": "Alpine", "grille": "P2", "arrets": 2, "mt": "1:45.084", "temps": "+24.160", "pts": 18 },
+        { "pos": 3, "pilote": "Taatsu7TV", "ecurie": "Scuderia Ferrari HP", "grille": "P7", "arrets": 1, "mt": "1:49.697", "temps": "x1 (+3 secs.)", "pts": 15 },
+        { "pos": 4, "pilote": "upsilon7", "ecurie": "Scuderia Ferrari HP", "grille": "P4", "arrets": 1, "mt": "1:49.275", "temps": "x1 (+3 secs.)", "pts": 12 },
+        { "pos": 5, "pilote": "cobra_kai_cx", "ecurie": "McLaren", "grille": "P5", "arrets": 1, "mt": "1:51.639", "temps": "+1:22.246", "pts": 10 },
+        { "pos": 6, "pilote": "Gosset_25", "ecurie": "Red Bull", "grille": "P3", "arrets": 2, "mt": "1:49.667", "temps": "x2 (+6 secs.)", "pts": 8 }
+      ]
+    },
+    {
+      "date": "1 Octobre 2026",
+      "gp": "Hongrie",
+      "circuit": "Hungaroring",
+      "heure": "19H00",
+      "distance": "35%",
+      "affiche": "assets/posters saison 1/Hongrie 1 Octobre 2026.png",
+      "vainqueur": "Skyyy",
+      "temps": "x1 (+3 secs.)",
+      "meilleur_tour": "1:19.558 Skyyy MEILLEUR TOUR",
+      "resultats_fwr": [
+        { "pos": 1, "pilote": "Skyyy", "ecurie": "Alpine", "grille": "P1 POLE", "arrets": 1, "mt": "1:19.558", "temps": "x1 (+3 secs.)", "pts": 25 },
+        { "pos": 2, "pilote": "Pepit0mis", "ecurie": "Alpine", "grille": "P2", "arrets": 1, "mt": "1:19.735", "temps": "x1 (+3 secs.)", "pts": 18 },
+        { "pos": 3, "pilote": "Gosset_25", "ecurie": "Red Bull", "grille": "P4", "arrets": 1, "mt": "1:22.526", "temps": "+28.396", "pts": 15 },
+        { "pos": 4, "pilote": "Taatsu7TV", "ecurie": "Scuderia Ferrari HP", "grille": "P3", "arrets": 1, "mt": "1:22.181", "temps": "+34.938", "pts": 12 },
+        { "pos": 5, "pilote": "upsilon7", "ecurie": "McLaren", "grille": "P5", "arrets": 1, "mt": "1:23.575", "temps": "x1 (+3 secs.)", "pts": 10 }
+      ]
+    },
+    {
+      "date": "6 Octobre 2026",
+      "gp": "Pays-Bas",
+      "circuit": "Circuit de Zandvoort",
+      "heure": "19H00",
+      "distance": "35%",
+      "affiche": "assets/posters saison 1/Pays Bas 6 octobre 2026.png",
+      "vainqueur": "Pepit0mis",
+      "temps": "31:40.833",
+      "meilleur_tour": "1:12.853 Pepit0mis MEILLEUR TOUR",
+      "resultats_fwr": [
+        { "pos": 1, "pilote": "Pepit0mis", "ecurie": "Alpine", "grille": "P1", "arrets": 1, "mt": "1:12.853", "temps": "31:40.833", "pts": 25 },
+        { "pos": 2, "pilote": "Taatsu7TV", "ecurie": "Scuderia Ferrari HP", "grille": "P2", "arrets": 1, "mt": "1:13.775", "temps": "+10.296", "pts": 18 },
+        { "pos": 3, "pilote": "Gosset_25", "ecurie": "Red Bull", "grille": "P3", "arrets": 1, "mt": "1:15.138", "temps": "+26.234", "pts": 15 },
+        { "pos": 4, "pilote": "cobra_kai_cx", "ecurie": "Scuderia Ferrari HP", "grille": "P4", "arrets": 1, "mt": "1:16.436", "temps": "+1 tour", "pts": 12 }
+      ]
+    },
+    {
+      "date": "8 Octobre 2026",
+      "gp": "Monza",
+      "circuit": "Autodromo Nazionale Monza",
+      "heure": "19H00",
+      "distance": "35%",
+      "affiche": "assets/posters saison 1/Italie 8 Octobre 2026.png",
+      "vainqueur": "Skyyy",
+      "temps": "26:54.261",
+      "meilleur_tour": "1:21.945 Skyyy MEILLEUR TOUR",
+      "resultats_fwr": [
+        { "pos": 1, "pilote": "Skyyy", "ecurie": "Alpine", "grille": "P20", "arrets": 1, "mt": "1:21.945", "temps": "26:54.261", "pts": 25 },
+        { "pos": 2, "pilote": "Pepit0mis", "ecurie": "Alpine", "grille": "P1", "arrets": 1, "mt": "1:22.530", "temps": "x3 (+9 secs.)", "pts": 18 },
+        { "pos": 3, "pilote": "Taatsu7TV", "ecurie": "Scuderia Ferrari HP", "grille": "P2", "arrets": 1, "mt": "1:24.410", "temps": "+47.615", "pts": 15 },
+        { "pos": 4, "pilote": "upsilon7", "ecurie": "McLaren", "grille": "P4", "arrets": 1, "mt": "1:24.314", "temps": "+56.861", "pts": 12 },
+        { "pos": 5, "pilote": "FloryxUSO", "ecurie": "Mercedes-AMG Petronas", "grille": "P8", "arrets": 1, "mt": "1:23.561", "temps": "x2 (+6 secs.)", "pts": 10 },
+        { "pos": 6, "pilote": "Gosset_25", "ecurie": "Red Bull", "grille": "P3", "arrets": 1, "mt": "1:23.772", "temps": "x1 (+3 secs.)", "pts": 8 }
+      ]
+    },
+    {
       "date": "13 Octobre 2026",
       "gp": "Azerbaïdjan",
       "circuit": "Baku City Circuit",
