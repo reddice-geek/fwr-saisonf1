@@ -3,782 +3,424 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FWR Racing League - Championnats S1 & S2</title>
-<!-- Tailwind CSS -->
+<title>FWR Racing League - Plateforme Officielle</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<!-- Font Awesome Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600;700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --fwr-purple: #8B5CF6;
-    --fwr-blue: #3B82F6;
-    --fwr-green: #10B981;
-    --fwr-yellow: #F59E0B;
+    --bg-dark: #07070D;
+    --card-bg: #0F0F1A;
+    --border-color: #1A1A2E;
+    --accent-violet: #8B5CF6;
+    --accent-blue: #3B82F6;
+    --accent-green: #10B981;
+    --accent-yellow: #EAB308;
   }
-  body {
-    background: #050508;
-    color: #F3F4F6;
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
+  body { background: var(--bg-dark); color: white; font-family: 'Inter', sans-serif; margin: 0; padding: 0; min-height: 100vh; }
   .titillium { font-family: 'Titillium Web', sans-serif; }
   
-  /* Bandeau Live Twitch */
-  .bandeau-live {
-    background: linear-gradient(90deg, #7C3AED 0%, #3B82F6 50%, #10B981 100%);
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-  }
-  .dot-pulse {
-    width: 10px;
-    height: 10px;
-    background: #FFFFFF;
-    border-radius: 999px;
-    display: inline-block;
-    animation: pulse 1.6s infinite;
-  }
-  @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.8); }
-    70% { box-shadow: 0 0 0 10px rgba(255,255,255,0); }
-    100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
-  }
+  /* Banner & Header */
+  .bandeau-live { height: 50px; background: linear-gradient(90deg, #8B5CF6, #3B82F6); position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+  .dot-pulse { width: 10px; height: 10px; background: #10B981; border-radius: 999px; animation: pulse 1.5s infinite; }
+  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(16,185,129,0.8); } 70% { box-shadow: 0 0 0 8px rgba(16,185,129,0); } 100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); } }
+  .btn-live { background: #000; color: white; padding: 6px 14px; border-radius: 999px; font-size: 11px; font-weight: 800; text-decoration: none; border: 1px solid rgba(255,255,255,0.2); transition: all 0.2s; }
+  .btn-live:hover { background: #10B981; color: black; }
   
-  /* Header Navigation */
-  .header-nav {
-    position: sticky;
-    top: 44px;
-    z-index: 40;
-    background: rgba(15, 15, 22, 0.95);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid #1F1F2E;
-  }
-  .nav-btn {
-    padding: 12px 18px;
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #9CA3AF;
-    border-bottom: 3px solid transparent;
-    transition: all 0.2s ease;
-  }
-  .nav-btn:hover {
-    color: #FFFFFF;
-    background: rgba(255,255,255,0.03);
-  }
-  .nav-btn.active {
-    color: #FFFFFF;
-    border-bottom-color: var(--fwr-purple);
-    background: rgba(139, 92, 246, 0.1);
-  }
+  .header-main { position: sticky; top: 50px; z-index: 40; background: rgba(15, 15, 26, 0.95); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-color); padding: 16px 24px; }
+  .nav-btn { padding: 10px 18px; font-family: 'Titillium Web'; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #9CA3AF; border: 1px solid transparent; background: transparent; border-radius: 8px; cursor: pointer; transition: all 0.2s; }
+  .nav-btn:hover { color: white; background: rgba(139, 92, 246, 0.1); }
+  .nav-btn.active { color: white; background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(59, 130, 246, 0.3)); border-color: var(--accent-violet); }
+  
+  /* Tables & Cards */
+  .table-wrap { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; overflow: auto; box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+  .table-wrap table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .table-wrap th { text-align: left; padding: 14px 16px; background: #141424; color: #9CA3AF; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .table-wrap td { padding: 14px 16px; border-top: 1px solid var(--border-color); }
+  
+  .card-box { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 20px; }
+  .poster-card { background: linear-gradient(180deg, #141424, #0F0F1A); border: 1px solid var(--border-color); border-radius: 16px; padding: 16px; transition: transform 0.2s, border-color 0.2s; cursor: pointer; }
+  .poster-card:hover { transform: translateY(-4px); border-color: var(--accent-violet); }
+  
+  .pill { background: #1A1A2E; border: 1px solid #2A2A48; color: #9CA3AF; padding: 6px 14px; border-radius: 999px; font-size: 11px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+  .pill.active { background: var(--accent-violet); color: white; border-color: var(--accent-violet); }
+  
+  /* Hub Cards */
+  .hub-card { background: linear-gradient(145deg, #121222, #0A0A14); border: 2px solid var(--border-color); border-radius: 20px; padding: 32px; transition: all 0.3s; cursor: pointer; position: relative; overflow: hidden; }
+  .hub-card:hover { border-color: var(--accent-blue); transform: translateY(-6px); box-shadow: 0 12px 30px rgba(59, 130, 246, 0.2); }
+  .hub-card.active-season { border-color: var(--accent-violet); box-shadow: 0 0 25px rgba(139, 92, 246, 0.25); }
 
-  /* Cartes & Tables */
-  .card-fwr {
-    background: #0F0F18;
-    border: 1px solid #1F1F2E;
-    border-radius: 16px;
-    transition: transform 0.2s ease, border-color 0.2s ease;
-  }
-  .card-fwr:hover {
-    border-color: #2E2E45;
-  }
-  .table-fwr {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-  }
-  .table-fwr th {
-    padding: 14px;
-    background: #151522;
-    color: #9CA3AF;
-    font-family: 'Titillium Web';
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border-bottom: 1px solid #1F1F2E;
-  }
-  .table-fwr td {
-    padding: 14px;
-    border-bottom: 1px solid #1A1A28;
-    font-size: 13px;
-  }
-
-  /* Status Pills */
-  .badge-status {
-    padding: 4px 10px;
-    border-radius: 999px;
-    font-size: 11px;
-    font-weight: 700;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .badge-s1 { background: rgba(59, 130, 246, 0.2); color: #60A5FA; border: 1px solid rgba(59, 130, 246, 0.4); }
-  .badge-s2 { background: rgba(139, 92, 246, 0.2); color: #A78BFA; border: 1px solid rgba(139, 92, 246, 0.4); }
-  .badge-live-tag { background: rgba(16, 185, 129, 0.2); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.4); }
-
-  /* Pill filtre pour graphiques */
-  .pill-filter {
-    background: #181824;
-    border: 1px solid #28283D;
-    color: #9CA3AF;
-    padding: 6px 14px;
-    border-radius: 999px;
-    font-size: 12px;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .pill-filter.active {
-    background: #8B5CF6;
-    color: #FFFFFF;
-    border-color: #A78BFA;
-    font-weight: 600;
-  }
-
-  /* Section Discord Special Yellow Highlight */
-  .discord-box {
-    background: linear-gradient(135deg, #181824 0%, #11111B 100%);
-    border: 2px solid var(--fwr-yellow);
-    box-shadow: 0 0 25px rgba(245, 158, 11, 0.15);
-  }
-  .btn-discord {
-    background: var(--fwr-yellow);
-    color: #000000;
-    font-weight: 800;
-    padding: 12px 24px;
-    border-radius: 999px;
-    transition: all 0.2s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .btn-discord:hover {
-    background: #FBBF24;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
-  }
-
-  /* Modale */
-  .modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.85);
-    backdrop-filter: blur(8px);
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  }
-  .modal-box {
-    background: #0F0F18;
-    border: 1px solid #28283D;
-    border-radius: 20px;
-    max-width: 850px;
-    width: 100%;
-    max-height: 90vh;
-    overflow-y: auto;
-  }
-
-  /* Custom Scrollbar */
-  ::-webkit-scrollbar { width: 8px; height: 8px; }
-  ::-webkit-scrollbar-track { background: #050508; }
-  ::-webkit-scrollbar-thumb { background: #1F1F2E; border-radius: 4px; }
-  ::-webkit-scrollbar-thumb:hover { background: #3B82F6; }
+  /* Modals */
+  .modal { position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; padding: 20px; }
+  .modal-box { background: #0F0F1A; border: 1px solid var(--accent-violet); border-radius: 20px; padding: 28px; max-width: 800px; width: 100%; max-height: 90vh; overflow: auto; }
+  .hidden { display: none !important; }
+  
+  /* Yellow Contact & Discord */
+  .contact-section { background: linear-gradient(135deg, rgba(234, 179, 8, 0.1), rgba(15, 15, 26, 0.95)); border: 1px solid var(--accent-yellow); border-radius: 16px; padding: 24px; color: var(--accent-yellow); }
+  .btn-discord { background: var(--accent-yellow); color: #000; font-weight: 800; padding: 10px 20px; border-radius: 999px; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
+  .btn-discord:hover { background: #fde047; transform: scale(1.03); }
 </style>
 </head>
 <body>
 
-<!-- BANDEAU EN DIRECT TWITCH -->
-<div class="bandeau-live">
-  <div class="flex items-center gap-3 text-sm font-semibold">
+<!-- BANDEAU TOP -->
+<div class="bandeau-rouge bandeau-live">
+  <div class="flex items-center gap-3">
     <span class="dot-pulse"></span>
-    <span>LIVE F1 25 TEAM FWR • Twitch : <span class="underline">upsilon7</span></span>
-    <span class="hidden md:inline-block bg-black/30 text-white px-2 py-0.5 rounded text-xs">Saison 1 En Cours 🔥</span>
+    <span class="text-xs font-semibold tracking-wide uppercase">FWR RACING LEAGUE • <span id="banner-status">SAISON 1 EN COURS</span></span>
   </div>
-  <a href="https://twitch.tv/upsilon7" target="_blank" class="bg-white text-black px-4 py-1.5 rounded-full text-xs font-black hover:bg-gray-200 transition flex items-center gap-2">
-    <i class="fa-brands fa-twitch text-purple-600"></i> REGARDER LE LIVE
-  </a>
+  <a href="https://twitch.tv/upsilon7" target="_blank" class="btn-live">🔴 REGARDER LE LIVE TWITCH</a>
 </div>
 
-<!-- HEADER PRINCIPAL -->
-<header class="header-nav px-4 lg:px-8 py-3">
-  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-    
-    <!-- Logo & Titre League -->
-    <div class="flex items-center gap-4 cursor-pointer" onclick="switchSeason('s1'); showTab('classement');">
-      <img id="league-logo" src="assets/logo/FWR Racing Saison 1.png" alt="FWR Logo" class="w-14 h-14 object-contain rounded-xl bg-gray-900 border border-gray-800 p-1" onerror="this.src='https://placehold.co/100x100/181824/8B5CF6?text=FWR'">
+<!-- HEADER NAVIGATION -->
+<header class="header-main">
+  <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
+    <div class="flex items-center gap-4 cursor-pointer" onclick="showView('hub')">
+      <img id="header-logo" src="assets/logo/FWR Racing Saison 1.png" alt="Logo" class="w-14 h-14 object-contain rounded-xl bg-black/40 p-1 border border-white/10" onerror="this.src='assets/logo/FWR Racing Saison 1.png'">
       <div>
-        <div class="flex items-center gap-2">
-          <h1 class="titillium font-black text-2xl tracking-wider text-white">FWR RACING LEAGUE</h1>
-          <span id="current-season-badge" class="badge-status badge-s1">Saison 1 - EN COURS</span>
+        <div class="titillium text-2xl font-black tracking-wider text-white flex items-center gap-2">
+          FWR RACING LEAGUE <span id="season-badge" class="text-xs px-2 py-0.5 rounded-full bg-violet-600/30 text-violet-400 border border-violet-500/40">S1 2026</span>
         </div>
-        <p class="text-xs text-gray-400 font-medium">Championnat Officiel F1 • Serveur Communautaire & Competitive Racing</p>
+        <div id="header-subtitle" class="text-xs text-gray-400">18 GP • Texas 20 Oct • Skyyy Leader (329 pts) • Saison En Cours 🟢</div>
       </div>
     </div>
-
-    <!-- Sélecteur de Saison & Action Discord -->
-    <div class="flex items-center gap-3">
-      <!-- Selecteur S1 / S2 -->
-      <div class="bg-gray-900/80 p-1 rounded-xl border border-gray-800 flex items-center gap-1">
-        <button id="btn-season-s1" onclick="switchSeason('s1')" class="px-4 py-2 rounded-lg text-xs font-bold transition-all bg-blue-600 text-white shadow-lg shadow-blue-500/30">
-          <i class="fa-solid fa-flag-checkered mr-1"></i> Saison 1 (En Cours)
-        </button>
-        <button id="btn-season-s2" onclick="switchSeason('s2')" class="px-4 py-2 rounded-lg text-xs font-bold transition-all text-gray-400 hover:text-white">
-          <i class="fa-solid fa-bolt mr-1"></i> Saison 2 (À Venir)
-        </button>
-      </div>
-
-      <!-- Bouton Discord Jaune Rapide -->
-      <a href="https://discord.gg/vY8WJQcwPN" target="_blank" class="bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs px-3 py-2 rounded-xl flex items-center gap-1.5 transition">
-        <i class="fa-brands fa-discord text-base"></i>
-        <span class="hidden sm:inline">Discord</span>
-      </a>
-    </div>
-
-  </div>
-
-  <!-- Navigation par Onglets -->
-  <div class="max-w-7xl mx-auto flex items-center gap-2 mt-3 overflow-x-auto border-t border-gray-800/60 pt-2">
-    <button id="nav-classement" class="nav-btn active" onclick="showTab('classement')"><i class="fa-solid fa-trophy mr-2"></i>Classement Général</button>
-    <button id="nav-tableaux" class="nav-btn" onclick="showTab('tableaux')"><i class="fa-solid fa-list-ol mr-2"></i>Résultats par GP</button>
-    <button id="nav-evolution" class="nav-btn" onclick="showTab('evolution')"><i class="fa-solid fa-chart-line mr-2"></i>Stats & Graphiques</button>
-    <button id="nav-affiches" class="nav-btn" onclick="showTab('affiches')"><i class="fa-solid fa-image mr-2"></i>Affiches Officielles</button>
-    <button id="nav-discord" class="nav-btn text-amber-400" onclick="showTab('discord')"><i class="fa-brands fa-discord mr-2"></i>Rejoindre la Ligue</button>
+    
+    <nav class="flex items-center gap-2 flex-wrap">
+      <button class="nav-btn" onclick="showView('hub')">🏠 Hub Saisons</button>
+      <button id="nav-classement" class="nav-btn active" onclick="showTab('classement')">🏆 Classement</button>
+      <button id="nav-tableaux" class="nav-btn" onclick="showTab('tableaux')">📊 Tableaux GP</button>
+      <button id="nav-evolution" class="nav-btn" onclick="showTab('evolution')">📈 Évolution</button>
+      <button id="nav-affiches" class="nav-btn" onclick="showTab('affiches')">🖼️ Affiches GP</button>
+    </nav>
   </div>
 </header>
 
-<!-- CONTENU PRINCIPAL -->
-<main class="max-w-7xl mx-auto px-4 lg:px-8 py-8">
+<!-- MAIN CONTENT WRAPPER -->
+<main class="max-w-7xl mx-auto px-4 py-8">
 
-  <!-- EN-TÊTE STATUT SAISON DYNAMIQUE -->
-  <div class="card-fwr p-6 mb-8 bg-gradient-to-r from-gray-900 via-gray-900 to-purple-950/40 border-purple-900/30">
-    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-      <div>
-        <span id="season-banner-tag" class="text-xs font-bold text-blue-400 uppercase tracking-widest">Saison Active</span>
-        <h2 id="season-title" class="titillium text-3xl font-black text-white mt-1">Saison 1 - FWR Racing League (En Cours)</h2>
-        <p id="season-subtitle" class="text-sm text-gray-400 mt-1">Données synchronisées depuis <code class="text-purple-400">./data/saison 1/</code></p>
+  <!-- VIEW 1: HUB SELECTION SAISON -->
+  <div id="view-hub" class="hidden">
+    <div class="text-center mb-12">
+      <h1 class="titillium text-4xl font-black text-white mb-3">SÉLECTIONNEZ VOTRE SAISON</h1>
+      <p class="text-gray-400 text-sm max-w-xl mx-auto">Consultez les résultats en direct et le classement officiel de la Saison 1 ou découvrez les avant-premières de la Saison 2.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <!-- Hub Card S1 -->
+      <div class="hub-card active-season" onclick="switchSeason('s1')">
+        <div class="flex justify-between items-start mb-6">
+          <span class="px-3 py-1 bg-green-500/20 text-green-400 border border-green-500/40 text-xs font-bold rounded-full">EN COURS 🟢</span>
+          <span class="text-xs text-gray-500 font-mono">2026</span>
+        </div>
+        <img src="assets/logo/FWR Racing Saison 1.png" alt="Saison 1" class="w-24 h-24 object-contain mb-4" onerror="this.style.display='none'">
+        <h2 class="titillium text-3xl font-bold mb-2">SAISON 1</h2>
+        <p class="text-gray-400 text-xs mb-6 leading-relaxed">18 Grands Prix disputés. Skyyy en tête du classement général devant Taatsu7TV et Gosset_25.</p>
+        <div class="flex items-center justify-between text-xs text-violet-400 font-bold">
+          <span>Accéder au Hub S1 →</span>
+          <span class="text-gray-500">18 GP Inclus</span>
+        </div>
       </div>
-      <div class="flex items-center gap-4 bg-black/40 p-3 rounded-xl border border-gray-800">
-        <div class="text-center px-3 border-r border-gray-800">
-          <div id="stat-gp-count" class="titillium text-2xl font-black text-blue-400">18</div>
-          <div class="text-[10px] text-gray-400 uppercase font-semibold">Grands Prix</div>
+
+      <!-- Hub Card S2 -->
+      <div class="hub-card" onclick="switchSeason('s2')">
+        <div class="flex justify-between items-start mb-6">
+          <span class="px-3 py-1 bg-blue-500/20 text-blue-400 border border-blue-500/40 text-xs font-bold rounded-full">À VENIR ⏳</span>
+          <span class="text-xs text-gray-500 font-mono">2026-2027</span>
         </div>
-        <div class="text-center px-3 border-r border-gray-800">
-          <div id="stat-leader" class="titillium text-2xl font-black text-amber-400">Skyyy</div>
-          <div class="text-[10px] text-gray-400 uppercase font-semibold">Leader Actuel</div>
-        </div>
-        <div class="text-center px-3">
-          <div id="stat-status" class="titillium text-2xl font-black text-emerald-400">EN COURS</div>
-          <div class="text-[10px] text-gray-400 uppercase font-semibold">Statut Saison</div>
+        <img src="assets/logo/FWR Racing Saison 2.png" alt="Saison 2" class="w-24 h-24 object-contain mb-4" onerror="this.style.display='none'">
+        <h2 class="titillium text-3xl font-bold mb-2">SAISON 2</h2>
+        <p class="text-gray-400 text-xs mb-6 leading-relaxed">Prochaine saison en préparation. Découvrez le calendrier prévisionnel, la nouvelle réglementation et les inscriptions.</p>
+        <div class="flex items-center justify-between text-xs text-blue-400 font-bold">
+          <span>Découvrir la S2 →</span>
+          <span class="text-gray-500">Teasers & Info</span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- VUE 1 : CLASSEMENT GÉNÉRAL -->
-  <section id="view-classement" class="space-y-8">
-    <div class="card-fwr overflow-hidden">
-      <div class="p-5 border-b border-gray-800 flex items-center justify-between">
-        <h3 class="titillium text-xl font-bold text-white flex items-center gap-2">
-          <i class="fa-solid fa-ranking-star text-amber-400"></i> Classement Pilotes Saison
-        </h3>
-        <span id="last-update-tag" class="text-xs text-gray-400">MAJ Automatique</span>
+  <!-- VIEW 2: SAISON DETAILS HUB (Tabs Container) -->
+  <div id="view-season-detail">
+    
+    <!-- TAB: CLASSEMENT -->
+    <div id="tab-classement">
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+        <div>
+          <h1 id="title-classement" class="titillium text-3xl font-bold">Classement Général - Saison 1</h1>
+          <p id="sub-classement" class="text-xs text-gray-400">MAJ après Texas (20 Oct) • 18 GP disputés • Championnat officiel</p>
+        </div>
       </div>
-      <div class="overflow-x-auto">
-        <table class="table-fwr">
+
+      <div class="table-wrap mb-8">
+        <table>
           <thead>
             <tr>
-              <th class="text-center w-16">POS</th>
+              <th>POS</th>
               <th>PILOTE</th>
               <th>ÉCURIE</th>
-              <th class="text-center">PTS</th>
-              <th class="text-center">VICTOIRES</th>
-              <th class="text-center">PODIUMS</th>
+              <th style="text-align:center">PTS</th>
+              <th style="text-align:center">VICTOIRES</th>
               <th>MEILLEUR TOUR</th>
-              <th class="text-center">FORME</th>
+              <th style="text-align:center">FORME</th>
             </tr>
           </thead>
-          <tbody id="tbody-classement">
-            <!-- Injecté par JS -->
-          </tbody>
+          <tbody id="tbody-classement"></tbody>
         </table>
       </div>
-    </div>
 
-    <!-- Mini aperçu graphique top 5 -->
-    <div class="card-fwr p-6">
-      <h3 class="titillium text-lg font-bold text-white mb-4 flex items-center gap-2">
-        <i class="fa-solid fa-chart-simple text-blue-400"></i> Trajectoire du Top 5
-      </h3>
-      <div class="h-64">
-        <canvas id="chart-mini"></canvas>
+      <div class="card-box">
+        <h3 class="titillium text-xl font-bold mb-4 text-violet-400">Évolution Top 5 du Championnat</h3>
+        <div style="height: 250px;"><canvas id="chart-mini"></canvas></div>
       </div>
     </div>
-  </section>
 
-  <!-- VUE 2 : TABLEAUX ET RÉSULTATS GP -->
-  <section id="view-tableaux" class="hidden space-y-6">
-    <div class="flex items-center justify-between">
-      <h3 class="titillium text-2xl font-bold text-white">Résultats Détaillés par Grand Prix</h3>
-      <span class="text-xs text-gray-400">Chronos & Grilles de départ</span>
+    <!-- TAB: TABLEAUX GP -->
+    <div id="tab-tableaux" class="hidden">
+      <h1 class="titillium text-3xl font-bold mb-6">Résultats Détail par Grand Prix</h1>
+      <div id="chronos-list" class="flex flex-col gap-6"></div>
     </div>
-    <div id="chronos-list" class="space-y-6">
-      <!-- Injecté par JS -->
-    </div>
-  </section>
 
-  <!-- VUE 3 : STATS & EVOLUTION (GRAPH) -->
-  <section id="view-evolution" class="hidden space-y-6">
-    <div class="card-fwr p-6 space-y-4">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div>
-          <h3 class="titillium text-xl font-bold text-white">Évolution des Points au fil des GP</h3>
-          <p class="text-xs text-gray-400">Sélectionnez les pilotes à comparer sur le graphique</p>
-        </div>
-        <!-- Pills filtres pilotes -->
-        <div id="pills-pilotes" class="flex flex-wrap gap-2">
-          <!-- Injecté par JS -->
-        </div>
-      </div>
-      <div class="h-[420px] pt-4">
+    <!-- TAB: EVOLUTION -->
+    <div id="tab-evolution" class="hidden">
+      <h1 class="titillium text-3xl font-bold mb-4">Statistiques & Courbes d'Évolution</h1>
+      <p class="text-xs text-gray-400 mb-6">Sélectionnez les pilotes pour comparer leurs trajectoires de points au fil des courses :</p>
+      <div id="pills" class="flex flex-wrap gap-2 mb-6"></div>
+      <div class="card-box" style="height: 480px;">
         <canvas id="chart-main"></canvas>
       </div>
     </div>
-  </section>
 
-  <!-- VUE 4 : AFFICHES DES GP -->
-  <section id="view-affiches" class="hidden space-y-6">
-    <div class="flex items-center justify-between">
-      <h3 class="titillium text-2xl font-bold text-white">Affiches Officielles des Grands Prix</h3>
-      <span class="text-xs text-gray-400">Cliquez sur un GP pour ouvrir la modale</span>
+    <!-- TAB: AFFICHES GP -->
+    <div id="tab-affiches" class="hidden">
+      <h1 class="titillium text-3xl font-bold mb-6">Affiches Officielles des Grands Prix</h1>
+      <div id="grid-gp" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
     </div>
-    <div id="grid-gp" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      <!-- Injecté par JS -->
+
+  </div>
+
+  <!-- CONTACT & DISCORD SECTION (Yellow Accent) -->
+  <section class="mt-16 contact-section flex flex-col md:flex-row items-center justify-between gap-6">
+    <div>
+      <h3 class="titillium text-2xl font-black mb-1">REJOINDRAGE & COMMUNAUTÉ FWR</h3>
+      <p class="text-xs text-yellow-200/80">Rejoignez le serveur Discord officiel pour suivre les annonces, déposer des réclamations ou vous inscrire pour la Saison 2 !</p>
     </div>
-  </section>
-
-  <!-- VUE 5 : DISCORD & REJOINDRE LA LIGUE (JAUNE MISE EN AVANT) -->
-  <section id="view-discord" class="hidden space-y-8">
-    <div class="card-fwr discord-box p-8 text-center rounded-2xl max-w-4xl mx-auto space-y-6">
-      <div class="inline-flex items-center justify-center w-20 h-20 bg-amber-500/20 text-amber-400 rounded-full text-4xl border border-amber-500/40">
-        <i class="fa-brands fa-discord"></i>
-      </div>
-      <div>
-        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">Communauté Officielle FWR</span>
-        <h2 class="titillium text-4xl font-black text-white mt-1">Rejoins la FWR Racing League sur Discord !</h2>
-        <p class="text-gray-300 max-w-2xl mx-auto mt-3 text-sm leading-relaxed">
-          Que ce soit pour suivre les sessions de la <b class="text-white">Saison 1 en cours</b>, vous inscrire aux futurs événements de la <b class="text-white">Saison 2</b>, échanger les télémétries et setups, ou participer aux streams Twitch : rejoignez notre serveur Discord dès maintenant !
-        </p>
-      </div>
-
-      <div class="pt-2">
-        <a href="https://discord.gg/vY8WJQcwPN" target="_blank" class="btn-discord text-lg">
-          <i class="fa-brands fa-discord text-2xl"></i> ACCÉDER AU DISCORD OFFICIEL
-        </a>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-left pt-6 border-t border-amber-500/20">
-        <div class="bg-black/40 p-4 rounded-xl border border-gray-800">
-          <div class="text-amber-400 font-bold mb-1"><i class="fa-solid fa-headset mr-2"></i>Live Stream</div>
-          <p class="text-xs text-gray-400">Briefings de course et diffusions en direct sur la chaîne Twitch upsilon7.</p>
-        </div>
-        <div class="bg-black/40 p-4 rounded-xl border border-gray-800">
-          <div class="text-amber-400 font-bold mb-1"><i class="fa-solid fa-trophy mr-2"></i>Inscriptions S2</div>
-          <p class="text-xs text-gray-400">Annonces exclusives pour les places disponibles de la Saison 2.</p>
-        </div>
-        <div class="bg-black/40 p-4 rounded-xl border border-gray-800">
-          <div class="text-amber-400 font-bold mb-1"><i class="fa-solid fa-users mr-2"></i>Fair-play & Fair-use</div>
-          <p class="text-xs text-gray-400">Règlement de course rigoureux et commissaires bienveillants.</p>
-        </div>
-      </div>
-    </div>
+    <a href="https://discord.gg/vY8WJQcwPN" target="_blank" class="btn-discord">
+      <svg class="w-5 h-5 fill-current" viewBox="0 0 127.14 96.36"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0,3.36,6.83A97.68,97.68,0,0,0,42.29,6.83,72.37,72.37,0,0,0,45.65,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.68,1.76,1.36,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1,105.25,105.25,0,0,0,32.19-16.14c2.64-27.38-4.51-51.11-18.91-72.15ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,45.92,53.87,53,48.8,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,45.92,96.1,53,91.08,65.69,84.69,65.69Z"/></svg>
+      REJOINDRE LE DISCORD FWR
+    </a>
   </section>
 
 </main>
 
-<!-- MODALE DÉTAIL COURSE -->
-<div id="modal" class="modal-overlay hidden" onclick="if(event.target===this) closeModal()">
-  <div class="modal-box p-6 space-y-6">
-    <div class="flex items-center justify-between border-b border-gray-800 pb-4">
-      <div>
-        <span id="modal-flag" class="text-2xl mr-2">🏁</span>
-        <h3 id="modal-title" class="titillium text-2xl font-bold text-white inline">Détails Grand Prix</h3>
-      </div>
-      <button onclick="closeModal()" class="bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-xl text-xs font-bold">
-        Fermer
-      </button>
+<!-- MODAL RACE DETAILS -->
+<div id="modal" class="modal hidden" onclick="if(event.target===this) closeModal()">
+  <div class="modal-box">
+    <div class="flex justify-between items-center mb-4">
+      <h3 id="modal-title" class="titillium text-2xl font-bold">Détail du Grand Prix</h3>
+      <button onclick="closeModal()" class="px-3 py-1 bg-gray-800 hover:bg-gray-700 text-xs rounded-lg">Fermer</button>
     </div>
-    <div id="modal-content" class="space-y-4">
-      <!-- Injecté par JS -->
-    </div>
+    <div id="modal-content"></div>
   </div>
 </div>
 
-<!-- FOOTER PAGE -->
-<footer class="border-t border-gray-800/80 bg-gray-950 py-10 mt-16 text-center text-xs text-gray-500">
-  <div class="max-w-7xl mx-auto px-4 space-y-4">
-    <div class="flex items-center justify-center gap-3">
-      <img src="assets/logo/FWR Racing Saison 1.png" alt="FWR" class="w-8 h-8 object-contain" onerror="this.style.display='none'">
-      <span class="titillium text-lg font-bold text-white">FWR RACING LEAGUE</span>
-    </div>
-    <p class="max-w-md mx-auto text-gray-400">
-      Championnat eSport F1 2026 • Saison 1 toujours en cours • Saison 2 en préparation
-    </p>
-    <div class="flex justify-center gap-6 text-amber-400 font-bold">
-      <a href="https://discord.gg/vY8WJQcwPN" target="_blank" class="hover:underline flex items-center gap-1">
-        <i class="fa-brands fa-discord"></i> Discord FWR
-      </a>
-      <a href="https://twitch.tv/upsilon7" target="_blank" class="hover:underline flex items-center gap-1 text-purple-400">
-        <i class="fa-brands fa-twitch"></i> Twitch upsilon7
-      </a>
-    </div>
-    <p class="text-[10px] text-gray-600">
-      Données FWR issues de <code>./data/saison 1/</code> et <code>./data/saison 2/</code>
-    </p>
-  </div>
+<!-- FOOTER -->
+<footer class="mt-20 border-t border-gray-800 py-8 text-center text-xs text-gray-500">
+  <p>FWR Racing League • Saison 1 en cours • Twitch: <a href="https://twitch.tv/upsilon7" target="_blank" class="text-violet-400">upsilon7</a></p>
+  <p class="mt-2 text-gray-600">Discord Officiel: <a href="https://discord.gg/vY8WJQcwPN" target="_blank" class="text-yellow-500">discord.gg/vY8WJQcwPN</a></p>
 </footer>
 
 <script>
-/* ==========================================================================
-   DONNÉES DE SECOURS / FALLBACK (Au cas où fetch local échoue ou environnement autonome)
-   ========================================================================== */
-const FALLBACK_S1_STANDINGS = {
-  "saison": "S1 FWR 2026",
-  "derniere_maj": "Mise à jour en cours • Saison 1 Active",
-  "classement_general": [
-    { "pos": 1, "pilote": "Skyyy", "ecurie": "Alpine", "color": "#0090FF", "pts": 329, "victoires": 11, "podiums": 14, "meilleur_tour": "1:12.865 Monaco RECORD", "forme": "↑↑↑", "formeColor": "#10B981", "trend": [0, 25, 25, 25, 43, 68, 93, 118, 143, 168, 193, 218, 236, 261, 261, 286, 311, 329] },
-    { "pos": 2, "pilote": "Taatsu7TV", "ecurie": "Scuderia Ferrari HP", "color": "#DC0000", "pts": 259, "victoires": 2, "podiums": 13, "meilleur_tour": "1:17.625 Barcelone", "forme": "↑", "formeColor": "#10B981", "trend": [0, 12, 27, 42, 67, 85, 100, 100, 108, 123, 138, 156, 171, 183, 201, 216, 234, 259] },
-    { "pos": 3, "pilote": "Gosset_25", "ecurie": "Red Bull", "color": "#0600EF", "pts": 235, "victoires": 1, "podiums": 9, "meilleur_tour": "1:14.953 Monaco", "forme": "→", "formeColor": "#8B8B8B", "trend": [12, 30, 30, 55, 67, 82, 100, 118, 130, 142, 152, 167, 175, 190, 205, 213, 223, 235] },
-    { "pos": 4, "pilote": "upsilon7", "ecurie": "Scuderia Ferrari HP", "color": "#DC0000", "pts": 203, "victoires": 0, "podiums": 7, "meilleur_tour": "1:17.220 Barcelone", "forme": "→", "formeColor": "#10B981", "trend": [15, 30, 48, 58, 73, 85, 95, 107, 122, 130, 142, 142, 154, 164, 164, 176, 188, 203] },
-    { "pos": 5, "pilote": "Pepit0mis", "ecurie": "Alpine", "color": "#0090FF", "pts": 122, "victoires": 2, "podiums": 6, "meilleur_tour": "1:12.853 Zandvoort", "forme": "→", "formeColor": "#8B8B8B", "trend": [0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 36, 36, 61, 79, 104, 122, 122, 122] },
-    { "pos": 6, "pilote": "Jesui_tou", "ecurie": "Alpine", "color": "#0090FF", "pts": 68, "victoires": 2, "podiums": 3, "meilleur_tour": "1:21.309 Melbourne", "forme": "↓↓", "formeColor": "#EF4444", "trend": [25, 25, 50, 68, 68, 68, 68, 68, 68, 68, 68, 68, 68, 68, 68, 68, 68, 68] },
-    { "pos": 7, "pilote": "cobra_kai_cx", "ecurie": "Aston Martin", "color": "#006F62", "pts": 58, "victoires": 0, "podiums": 1, "meilleur_tour": "1:20.564 Imola", "forme": "↑", "formeColor": "#10B981", "trend": [18, 18, 18, 18, 18, 18, 30, 30, 30, 36, 36, 36, 46, 46, 58, 58, 58, 58] },
-    { "pos": 8, "pilote": "JoKeR-_-SkyZo", "ecurie": "Mercedes-AMG Petronas", "color": "#00D2BE", "pts": 35, "victoires": 0, "podiums": 1, "meilleur_tour": "1:16.050 Monaco", "forme": "↑", "formeColor": "#10B981", "trend": [0, 0, 0, 0, 0, 0, 0, 15, 25, 35, 35, 35, 35, 35, 35, 35, 35, 35] },
-    { "pos": 9, "pilote": "FloryxUSO", "ecurie": "Mercedes-AMG Petronas", "color": "#00D2BE", "pts": 25, "victoires": 0, "podiums": 1, "meilleur_tour": "1:23.561 Monza", "forme": "↑", "formeColor": "#10B981", "trend": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 25, 25] },
-    { "pos": 10, "pilote": "JotagrosFR", "ecurie": "Red Bull", "color": "#0600EF", "pts": 18, "victoires": 0, "podiums": 1, "meilleur_tour": "1:15.304 Barcelone", "forme": "→", "formeColor": "#8B8B8B", "trend": [0, 0, 0, 0, 0, 0, 0, 0, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18] }
-  ],
-  "gp_disputes": [
-    {
-      "gp": "Texas", "circuit": "Circuit of the Americas", "date": "20 Octobre 2026", "heure": "19H00", "distance": "35%", "vainqueur": "Taatsu7TV", "temps": "33:53.932", "meilleur_tour": "1:37.757 Skyyy",
-      "resultats_fwr": [
-        { "pos": 1, "pilote": "Taatsu7TV", "ecurie": "Scuderia Ferrari HP", "grille": "P1", "arrets": 1, "mt": "1:37.875", "temps": "33:53.932", "pts": 25 },
-        { "pos": 2, "pilote": "Skyyy", "ecurie": "Alpine", "grille": "P2", "arrets": 1, "mt": "1:37.757", "temps": "+6.000", "pts": 18 },
-        { "pos": 3, "pilote": "upsilon7", "ecurie": "McLaren", "grille": "P3", "arrets": 1, "mt": "1:38.532", "temps": "+3.000", "pts": 15 },
-        { "pos": 4, "pilote": "Gosset_25", "ecurie": "Red Bull", "grille": "P4", "arrets": 2, "mt": "1:38.911", "temps": "+6.000", "pts": 12 }
-      ]
-    }
-  ]
-};
-
+// DONNÉES DE SECOURS (Saison 1 intégrée direct au cas où le fetch local échoue)
 const FALLBACK_S1_GPS = {
   "calendrier": [
-    { "gp": "Melbourne", "flag": "🇦🇺", "circuit": "Albert Park Circuit", "date": "21 Août 2026", "heure": "19H00", "status": "Terminé", "vainqueur": "Jesui_tou", "affiche": "assets/posters/Australie 21 aout 2026.png", "temps": "28:14.241" },
-    { "gp": "Shanghai", "flag": "🇨🇳", "circuit": "Shanghai International Circuit", "date": "22 Août 2026", "heure": "19H00", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters/Chine 22 aout 2026.png", "temps": "33:58.631" },
-    { "gp": "Suzuka", "flag": "🇯🇵", "circuit": "Suzuka International Racing Course", "date": "24 Août 2026", "heure": "19H00", "status": "Terminé", "vainqueur": "Jesui_tou", "affiche": "assets/posters/Japon 24 aout 2026.png", "temps": "30:36.255" },
-    { "gp": "Texas", "flag": "🇺🇸", "circuit": "Circuit of the Americas", "date": "20 Octobre 2026", "heure": "19H00", "status": "Terminé", "vainqueur": "Taatsu7TV", "affiche": "assets/posters/Texas 20 octobre 2026.png", "temps": "33:53.932" }
+    {"date": "21 Août 2026", "gp": "Melbourne", "flag": "🇦🇺", "circuit": "Albert Park Circuit", "heure": "19H00", "distance": "50%", "status": "Terminé", "vainqueur": "Jesui_tou", "affiche": "assets/posters/Australie 21 aout 2026.png", "temps": "28:14.241", "meilleur_tour": "1:21.309 Jesui_tou"},
+    {"date": "22 Août 2026", "gp": "Shanghai", "flag": "🇨🇳", "circuit": "Shanghai International Circuit", "heure": "19H00", "distance": "50%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters/Chine 22 aout 2026.png", "temps": "33:58.631", "meilleur_tour": "1:37.682 Skyyy"},
+    {"date": "24 Août 2026", "gp": "Suzuka", "flag": "🇯🇵", "circuit": "Suzuka International Raçing Course", "heure": "19H00", "distance": "50%", "status": "Terminé", "vainqueur": "Jesui_tou", "affiche": "assets/posters/Japon 24 aout 2026.png", "temps": "30:36.255", "meilleur_tour": "1:33.567 Jesui_tou"},
+    {"date": "25 Août 2026", "gp": "Bahrain", "flag": "🇧🇭", "circuit": "Bahrain International Circuit", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Gosset_25", "affiche": "assets/posters/bahrain 25 aout 2026.png", "temps": "32:15.411", "meilleur_tour": "1:33.902 Taatsu7TV"},
+    {"date": "01 Sept 2026", "gp": "Jeddah", "flag": "🇸🇦", "circuit": "Jeddah Corniche Circuit", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Taatsu7TV", "affiche": "assets/posters/Arabie saoudite 01 sept 2026.png", "temps": "En attente", "meilleur_tour": "En attente"},
+    {"date": "03 Sept 2026", "gp": "Miami", "flag": "🇺🇸", "circuit": "Miami International Autodrome", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters/Etats Unis 03 sept 2026.png", "temps": "31:36.318", "meilleur_tour": "1:30.300 Skyyy"},
+    {"date": "06 Sept 2026", "gp": "Imola", "flag": "🇮🇹", "circuit": "Autodromo Internazionale Enzo E Dino Ferrari", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters/Italie 06 sept 2026.png", "temps": "-", "meilleur_tour": "1:19.181 Skyyy"},
+    {"date": "10 Sept 2026", "gp": "Monaco", "flag": "🇲🇨", "circuit": "Circuit de Monaco", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters/monaco 10 sept 2026.png", "temps": "34:51.962", "meilleur_tour": "1:12.865 Skyyy RECORD"},
+    {"date": "14 Sept 2026", "gp": "Barcelone", "flag": "🇪🇸", "circuit": "Barcelona-Catalunya", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters/Espagne 14 sept 2026.png", "temps": "30:00.485", "meilleur_tour": "1:15.304 JotagrosFR"},
+    {"date": "17 sept 2026", "gp": "Canada", "flag": "🇨🇦", "circuit": "Gilles Villeneuve", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters/Canada 17 sept 2026.png", "temps": "1:13.139", "meilleur_tour": "En attente"},
+    {"date": "22 septembre 2026", "gp": "Autriche", "flag": "🇦🇹", "circuit": "Red Bull Ring", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters/Autriche 22 Septembre 2026.png", "temps": "-", "meilleur_tour": "1:07.356 Skyyy"},
+    {"date": "22 Septembre 2026", "gp": "Grande Bretagne", "flag": "🇬🇧", "circuit": "Silverstone Circuit", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters/Grande Bretagne 22 Septembre 2026.png", "temps": "28:30.888", "meilleur_tour": "1:30.285 Skyyy"},
+    {"date": "29 septembre 2026", "gp": "Belgique", "flag": "🇧🇪", "circuit": "Circuit de Spa-Francorchamps", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Pepit0mis", "affiche": "assets/posters/Belgique 29 septembre 2026.png", "temps": "27:26.420", "meilleur_tour": "1:45.084 Skyyy"},
+    {"date": "1 Octobre 2026", "gp": "Hongrie", "flag": "🇭🇺", "circuit": "Hungaroring", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters/Hongrie 1 Octobre 2026.png", "temps": "x1 (+3 secs.)", "meilleur_tour": "1:19.558 Skyyy"},
+    {"date": "6 Octobre 2026", "gp": "Pays-Bas", "flag": "🇳🇱", "circuit": "Circuit de Zandvoort", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Pepit0mis", "affiche": "assets/posters/Pays Bas 6 octobre 2026.png", "temps": "31:40.833", "meilleur_tour": "1:12.853 Pepit0mis"},
+    {"date": "8 Octobre 2026", "gp": "Monza", "flag": "🇮🇹", "circuit": "Autodromo Nazionale Monza", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters/Italie 8 Octobre 2026.png", "temps": "26:54.261", "meilleur_tour": "1:21.945 Skyyy"},
+    {"date": "13 Octobre 2026", "gp": "Azerbaïdjan", "flag": "🇦🇿", "circuit": "Baku City Circuit", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters/Azerbaidjan 13 octobre 2026.png", "temps": "32:21.019", "meilleur_tour": "1:42.353 Skyyy"},
+    {"date": "20 Octobre 2026", "gp": "Texas", "flag": "🇺🇸", "circuit": "Circuit of the Americas", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Taatsu7TV", "affiche": "assets/posters/Texas 20 octobre 2026.png", "temps": "33:53.932", "meilleur_tour": "1:37.757 Skyyy"}
   ]
 };
 
-const FALLBACK_S2_STANDINGS = {
-  "saison": "S2 FWR 2027",
-  "derniere_maj": "Saison 2 • À Venir (Inscriptions ouvertes sur Discord)",
+const FALLBACK_S1_STANDINGS = {
+  "saison": "S1 FWR 2026",
+  "derniere_maj": "20 Oct 2026 - Texas 19H 35% - 18 GP - Taatsu7TV vainqueur",
   "classement_general": [
-    { "pos": 1, "pilote": "Pilote A (À définir)", "ecurie": "À venir", "color": "#8B5CF6", "pts": 0, "victoires": 0, "podiums": 0, "meilleur_tour": "-", "forme": "NEW", "formeColor": "#F59E0B", "trend": [0] },
-    { "pos": 2, "pilote": "Pilote B (À définir)", "ecurie": "À venir", "color": "#3B82F6", "pts": 0, "victoires": 0, "podiums": 0, "meilleur_tour": "-", "forme": "NEW", "formeColor": "#F59E0B", "trend": [0] }
+    {"pos": 1, "pilote": "Skyyy", "ecurie": "Alpine", "color": "#0090FF", "pts": 329, "victoires": 11, "podiums": 14, "meilleur_tour": "1:12.865 Monaco RECORD", "forme": "↑↑↑", "formeColor": "#10B981", "trend": [0, 25, 25, 25, 43, 68, 93, 118, 143, 168, 193, 218, 236, 261, 261, 286, 311, 329]},
+    {"pos": 2, "pilote": "Taatsu7TV", "ecurie": "Scuderia Ferrari HP", "color": "#DC0000", "pts": 259, "victoires": 2, "podiums": 13, "meilleur_tour": "1:17.625 Barcelone", "forme": "↑", "formeColor": "#10B981", "trend": [0, 12, 27, 42, 67, 85, 100, 100, 108, 123, 138, 156, 171, 183, 201, 216, 234, 259]},
+    {"pos": 3, "pilote": "Gosset_25", "ecurie": "Red Bull", "color": "#0600EF", "pts": 235, "victoires": 1, "podiums": 9, "meilleur_tour": "1:14.953 Monaco", "forme": "→", "formeColor": "#8B8B8B", "trend": [12, 30, 30, 55, 67, 82, 100, 118, 130, 142, 152, 167, 175, 190, 205, 213, 223, 235]},
+    {"pos": 4, "pilote": "upsilon7", "ecurie": "Scuderia Ferrari HP", "color": "#DC0000", "pts": 203, "victoires": 0, "podiums": 7, "meilleur_tour": "1:17.220 Barcelone", "forme": "→", "formeColor": "#10B981", "trend": [15, 30, 48, 58, 73, 85, 95, 107, 122, 130, 142, 142, 154, 164, 164, 176, 188, 203]},
+    {"pos": 5, "pilote": "Pepit0mis", "ecurie": "Alpine", "color": "#0090FF", "pts": 122, "victoires": 2, "podiums": 6, "meilleur_tour": "-", "forme": "→", "formeColor": "#8B8B8B", "trend": [0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 36, 36, 61, 79, 104, 122, 122, 122]},
+    {"pos": 6, "pilote": "Jesui_tou", "ecurie": "Alpine", "color": "#0090FF", "pts": 68, "victoires": 2, "podiums": 3, "meilleur_tour": "1:21.309 Melbourne", "forme": "↓↓", "formeColor": "#EF4444", "trend": [25, 25, 50, 68, 68, 68, 68, 68, 68, 68, 68, 68, 68, 68, 68, 68, 68, 68]},
+    {"pos": 7, "pilote": "cobra_kai_cx", "ecurie": "Aston Martin", "color": "#006F62", "pts": 58, "victoires": 0, "podiums": 1, "meilleur_tour": "1:20.564 Imola", "forme": "↑", "formeColor": "#10B981", "trend": [18, 18, 18, 18, 18, 18, 30, 30, 30, 36, 36, 36, 46, 46, 58, 58, 58, 58]},
+    {"pos": 8, "pilote": "JoKeR-_-SkyZo", "ecurie": "Mercedes-AMG Petronas", "color": "#00D2BE", "pts": 35, "victoires": 0, "podiums": 1, "meilleur_tour": "1:16.050 Monaco", "forme": "↑↑", "formeColor": "#10B981", "trend": [0, 0, 0, 0, 0, 0, 0, 15, 25, 35, 35, 35, 35, 35, 35, 35, 35, 35]},
+    {"pos": 9, "pilote": "FloryxUSO", "ecurie": "Mercedes-AMG Petronas", "color": "#00D2BE", "pts": 25, "victoires": 0, "podiums": 1, "meilleur_tour": "1:23.561 Monza", "forme": "↑", "formeColor": "#10B981", "trend": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 25, 25]},
+    {"pos": 10, "pilote": "JotagrosFR", "ecurie": "Red Bull", "color": "#0600EF", "pts": 18, "victoires": 0, "podiums": 1, "meilleur_tour": "1:15.304 Barcelone", "forme": "↑↑", "formeColor": "#10B981", "trend": [0, 0, 0, 0, 0, 0, 0, 0, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18]},
+    {"pos": 11, "pilote": "mobilou69", "ecurie": "Red Bull", "color": "#0600EF", "pts": 16, "victoires": 0, "podiums": 0, "meilleur_tour": "1:35.145 Bahrain", "forme": "→", "formeColor": "#8B8B8B", "trend": [0, 0, 4, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16]},
+    {"pos": 12, "pilote": "sombre7675TTV", "ecurie": "Haas", "color": "#9E9E9E", "pts": 6, "victoires": 0, "podiums": 0, "meilleur_tour": "1:26.164 Melbourne", "forme": "→", "formeColor": "#8B8B8B", "trend": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]},
+    {"pos": 13, "pilote": "Crimson_Death", "ecurie": "Mercedes-AMG Petronas", "color": "#00D2BE", "pts": 0, "victoires": 0, "podiums": 0, "meilleur_tour": "1:38:090 Suzuka", "forme": "→", "formeColor": "#8B8B8B", "trend": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
   ],
-  "gp_disputes": []
+  "gp_disputes": [] // Utilisera le calendrier
 };
 
-const FALLBACK_S2_GPS = {
-  "calendrier": [
-    { "gp": "Bahreïn (S2)", "flag": "🇧🇭", "circuit": "Bahrain International Circuit", "date": "Prochainement", "heure": "19H00", "status": "À venir", "vainqueur": "En attente", "affiche": "assets/posters/bahrain.png", "temps": "-" }
-  ]
-};
-
-/* ==========================================================================
-   ÉTATS & VARIABLES GLOBALES
-   ========================================================================== */
-let currentSeason = 's1'; // 's1' ou 's2'
-let currentStandingsData = null;
-let currentGpsData = null;
+let currentSeason = 's1';
+let gpsData = [];
+let standingsData = [];
 let selectedDrivers = [];
-let chartMain = null;
-let chartMini = null;
+let chartMain = null, chartMini = null;
 
-/* ==========================================================================
-   CHARGEMENT DYNAMIQUE DES FICHIERS JSON
-   ========================================================================== */
-async function loadSeasonData(seasonKey) {
-  const folderName = seasonKey === 's1' ? 'saison 1' : 'saison 2';
-  const standingsPath = `./data/${folderName}/standings.json`;
-  const gpsPath = `./data/${folderName}/gps.json`;
-
-  try {
-    const [resStandings, resGps] = await Promise.all([
-      fetch(standingsPath),
-      fetch(gpsPath)
-    ]);
-
-    if (!resStandings.ok || !resGps.ok) {
-      throw new Error("HTTP error local files");
-    }
-
-    currentStandingsData = await resStandings.json();
-    currentGpsData = await resGps.json();
-  } catch (err) {
-    console.warn(`[FWR] Utilisation des données de secours pour ${folderName}:`, err);
-    if (seasonKey === 's1') {
-      currentStandingsData = FALLBACK_S1_STANDINGS;
-      currentGpsData = FALLBACK_S1_GPS;
-    } else {
-      currentStandingsData = FALLBACK_S2_STANDINGS;
-      currentGpsData = FALLBACK_S2_GPS;
-    }
+// CORRECTION AUTOMATIQUE DES CHEMINS D'AFFICHES DES POSTERS
+function fixPosterPath(path, season) {
+  if (!path) return '';
+  const folder = season === 's1' ? 'saison 1' : 'saison 2';
+  // Remplace assets/posters/ unifié vers assets/posters/saison X/
+  if (path.includes('assets/posters/') && !path.includes('assets/posters/saison')) {
+    return path.replace('assets/posters/', `assets/posters/${folder}/`);
   }
-
-  // Nettoyage / Harmonisation des noms si besoin (ex: Gosset_25)
-  if (currentStandingsData.classement_general) {
-    currentStandingsData.classement_general.forEach(s => {
-      if (s.pilote === "Goret_25") s.pilote = "Gosset_25";
-    });
-  }
-
-  // MàJ Liste sélectionnée pour les filtres graphiques
-  selectedDrivers = (currentStandingsData.classement_general || []).map(s => s.pilote);
-
-  renderAllViews();
+  return path;
 }
 
-/* ==========================================================================
-   AFFICHAGE ET RENDU
-   ========================================================================== */
-function renderAllViews() {
-  updateHeaderInfo();
+// CHARGEMENT DES DONNÉES
+async function loadSeasonData(season) {
+  currentSeason = season;
+  const folder = season === 's1' ? 'saison 1' : 'saison 2';
+
+  try {
+    const [resGps, resStandings] = await Promise.all([
+      fetch(`data/${folder}/gps.json`),
+      fetch(`data/${folder}/standings.json`)
+    ]);
+
+    if (resGps.ok && resStandings.ok) {
+      const gJson = await resGps.json();
+      const sJson = await resStandings.json();
+      gpsData = gJson.calendrier || [];
+      standingsData = sJson.classement_general || [];
+    } else {
+      throw new Error('Fallback requis');
+    }
+  } catch (err) {
+    console.warn(`Mode local sans serveur HTTP ou fichiers introuvables : Chargement secours ${season}`);
+    gpsData = (season === 's1' ? FALLBACK_S1_GPS.calendrier : []);
+    standingsData = (season === 's1' ? FALLBACK_S1_STANDINGS.classement_general : []);
+  }
+
+  // Correction systématique des posters
+  gpsData = gpsData.map(item => ({
+    ...item,
+    affiche: fixPosterPath(item.affiche, season)
+  }));
+
+  selectedDrivers = standingsData.slice(0, 8).map(s => s.pilote);
+  updateUI();
+}
+
+function updateUI() {
+  // Update Header Badges
+  const isS1 = currentSeason === 's1';
+  document.getElementById('season-badge').textContent = isS1 ? 'SAISON 1 EN COURS 🟢' : 'SAISON 2 À VENIR ⏳';
+  document.getElementById('season-badge').className = isS1 
+    ? 'text-xs px-2.5 py-0.5 rounded-full bg-green-500/20 text-green-400 border border-green-500/30'
+    : 'text-xs px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30';
+
+  document.getElementById('header-logo').src = `assets/logo/FWR Racing Saison ${isS1 ? '1' : '2'}.png`;
+
   renderClassement();
   renderChronos();
-  renderAffiches();
+  renderGPs();
   renderPills();
   updateCharts();
 }
 
-function updateHeaderInfo() {
-  const isS1 = currentSeason === 's1';
-  const badge = document.getElementById('current-season-badge');
-  const btnS1 = document.getElementById('btn-season-s1');
-  const btnS2 = document.getElementById('btn-season-s2');
-
-  const title = document.getElementById('season-title');
-  const subtitle = document.getElementById('season-subtitle');
-  const bannerTag = document.getElementById('season-banner-tag');
-
-  const statGp = document.getElementById('stat-gp-count');
-  const statLeader = document.getElementById('stat-leader');
-  const statStatus = document.getElementById('stat-status');
-  const logo = document.getElementById('league-logo');
-
-  if (isS1) {
-    badge.className = "badge-status badge-s1";
-    badge.innerHTML = "Saison 1 - EN COURS 🔥";
-    
-    btnS1.className = "px-4 py-2 rounded-lg text-xs font-bold transition-all bg-blue-600 text-white shadow-lg shadow-blue-500/30";
-    btnS2.className = "px-4 py-2 rounded-lg text-xs font-bold transition-all text-gray-400 hover:text-white";
-
-    title.innerText = "Saison 1 - FWR Racing League (En Cours)";
-    subtitle.innerHTML = "Données chargées dynamiquement depuis <code class='text-blue-400'>./data/saison 1/</code>";
-    bannerTag.innerText = "Championnat Actif";
-    bannerTag.className = "text-xs font-bold text-blue-400 uppercase tracking-widest";
-
-    statGp.innerText = currentGpsData.calendrier ? currentGpsData.calendrier.length : "18";
-    statLeader.innerText = currentStandingsData.classement_general?.[0]?.pilote || "Skyyy";
-    statStatus.innerText = "EN COURS";
-    statStatus.className = "titillium text-2xl font-black text-emerald-400";
-
-    logo.src = "assets/logo/FWR Racing Saison 1.png";
-  } else {
-    badge.className = "badge-status badge-s2";
-    badge.innerHTML = "Saison 2 - À VENIR ⚡";
-
-    btnS2.className = "px-4 py-2 rounded-lg text-xs font-bold transition-all bg-purple-600 text-white shadow-lg shadow-purple-500/30";
-    btnS1.className = "px-4 py-2 rounded-lg text-xs font-bold transition-all text-gray-400 hover:text-white";
-
-    title.innerText = "Saison 2 - FWR Racing League (À Venir)";
-    subtitle.innerHTML = "Données prévisibles ou configurées dans <code class='text-purple-400'>./data/saison 2/</code>";
-    bannerTag.innerText = "Prochaine Saison";
-    bannerTag.className = "text-xs font-bold text-purple-400 uppercase tracking-widest";
-
-    statGp.innerText = currentGpsData.calendrier ? currentGpsData.calendrier.length : "0";
-    statLeader.innerText = "À Définir";
-    statStatus.innerText = "PREPARATION";
-    statStatus.className = "titillium text-2xl font-black text-amber-400";
-
-    logo.src = "assets/logo/FWR Racing Saison 2.png";
-  }
-
-  document.getElementById('last-update-tag').innerText = currentStandingsData.derniere_maj || "MAJ En direct";
-}
-
 function renderClassement() {
   const tbody = document.getElementById('tbody-classement');
-  const standings = currentStandingsData.classement_general || [];
-
   if (!tbody) return;
 
-  if (standings.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="8" class="text-center text-gray-500 py-8">Aucun pilote enregistré pour le moment dans cette saison.</td></tr>`;
+  if (standingsData.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="7" class="text-center py-8 text-gray-500">Aucune donnée disponible pour cette saison.</td></tr>';
     return;
   }
 
-  tbody.innerHTML = standings.map((s, idx) => {
-    const medal = s.pos === 1 ? '🥇' : s.pos === 2 ? '🥈' : s.pos === 3 ? '🥉' : `${s.pos}.`;
-    const leaderTag = (s.pos === 1 && currentSeason === 's1') ? `<span class="ml-2 bg-amber-500/20 text-amber-300 text-[10px] px-2 py-0.5 rounded-full border border-amber-500/30 font-bold">👑 LEADER</span>` : '';
+  tbody.innerHTML = standingsData.map((s, i) => {
+    const medal = s.pos === 1 ? '🥇' : s.pos === 2 ? '🥈' : s.pos === 3 ? '🥉' : s.pos;
+    const bg = i % 2 === 0 ? 'background: #0A0A14' : 'background: #0F0F1A';
     const color = s.color || '#8B5CF6';
 
     return `
-      <tr class="hover:bg-gray-900/40 transition">
-        <td class="text-center font-bold text-base text-gray-300">${medal}</td>
-        <td>
-          <div class="font-bold text-white flex items-center">
-            ${s.pilote} ${leaderTag}
-          </div>
-        </td>
-        <td>
-          <span class="inline-block px-2.5 py-1 rounded-full text-xs font-semibold" style="background:${color}20; color:${color}; border:1px solid ${color}40">
-            ${s.ecurie}
-          </span>
-        </td>
-        <td class="text-center font-black text-lg text-white">${s.pts}</td>
-        <td class="text-center text-amber-400 font-bold">${s.victoires || 0}</td>
-        <td class="text-center text-blue-400 font-bold">${s.podiums || 0}</td>
-        <td class="text-xs font-mono text-purple-300">${s.meilleur_tour || '-'}</td>
-        <td class="text-center font-bold" style="color:${s.formeColor || '#10B981'}">${s.forme || '→'}</td>
+      <tr style="${bg}; border-left: 4px solid ${color}">
+        <td class="font-bold">${medal}</td>
+        <td><b class="text-white">${s.pilote}</b></td>
+        <td><span class="px-2.5 py-1 rounded-full text-xs font-semibold" style="background:${color}20; color:${color}; border:1px solid ${color}40">${s.ecurie}</span></td>
+        <td style="text-align:center" class="font-black text-lg text-white">${s.pts}</td>
+        <td style="text-align:center" class="text-yellow-400 font-bold">${s.victoires || 0}</td>
+        <td class="text-xs text-violet-300 font-mono">${s.meilleur_tour || '-'}</td>
+        <td style="text-align:center; color:${s.formeColor || '#8B8B8B'}"><b>${s.forme || '→'}</b></td>
       </tr>
     `;
   }).join('');
 }
 
 function renderChronos() {
-  const list = document.getElementById('chronos-list');
-  const gpList = currentStandingsData.gp_disputes || [];
+  const container = document.getElementById('chronos-list');
+  if (!container) return;
 
-  if (!list) return;
-
-  if (gpList.length === 0) {
-    list.innerHTML = `
-      <div class="card-fwr p-8 text-center text-gray-400">
-        <i class="fa-solid fa-calendar-xmark text-3xl text-gray-600 mb-2"></i>
-        <p>Aucun résultat de Grand Prix disputé pour le moment dans cette saison.</p>
-      </div>
-    `;
-    return;
-  }
-
-  list.innerHTML = gpList.map(gp => {
-    const results = (gp.resultats_fwr || []).map(r => `
-      <tr class="hover:bg-gray-900/30">
-        <td class="font-bold text-white py-2">${r.pilote}</td>
-        <td class="text-gray-400">${r.ecurie}</td>
-        <td class="text-center">${r.grille}</td>
-        <td class="text-center">${r.arrets}</td>
-        <td class="text-purple-400 font-mono font-bold">${r.mt}</td>
-        <td class="text-gray-300 font-mono">${r.temps}</td>
-        <td class="text-center font-bold text-emerald-400">+${r.pts}</td>
-      </tr>
-    `).join('');
-
-    return `
-      <div class="card-fwr p-6 space-y-4">
-        <div class="flex flex-col md:flex-row md:items-center justify-between border-b border-gray-800 pb-3 gap-2">
-          <div>
-            <span class="text-xs text-blue-400 font-semibold">${gp.date} • ${gp.heure} • ${gp.distance}</span>
-            <h4 class="titillium text-xl font-bold text-white mt-0.5">${gp.gp} - ${gp.circuit}</h4>
-          </div>
-          <div class="text-right">
-            <span class="text-xs text-gray-400">Vainqueur : <b class="text-amber-400">${gp.vainqueur}</b></span>
-            <div class="text-xs text-purple-300 font-mono">MT : ${gp.meilleur_tour || '-'}</div>
-          </div>
+  container.innerHTML = gpsData.map(r => `
+    <div class="card-box">
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-3 pb-3 border-b border-gray-800">
+        <div>
+          <span class="text-xs text-violet-400 font-bold">${r.date} • ${r.heure} • ${r.distance}</span>
+          <h3 class="titillium text-xl font-bold text-white">${r.flag || ''} ${r.gp} - <span class="text-gray-400 text-sm">${r.circuit}</span></h3>
         </div>
-        <div class="overflow-x-auto">
-          <table class="table-fwr text-xs">
-            <thead>
-              <tr>
-                <th>PILOTE</th>
-                <th>ÉCURIE</th>
-                <th class="text-center">GRILLE</th>
-                <th class="text-center">ARRÊTS</th>
-                <th>MEILLEUR TOUR</th>
-                <th>TEMPS / ÉCART</th>
-                <th class="text-center">PTS</th>
-              </tr>
-            </thead>
-            <tbody>${results}</tbody>
-          </table>
+        <div class="text-right">
+          <div class="text-xs text-gray-400">Vainqueur: <b class="text-green-400">${r.vainqueur || 'À venir'}</b></div>
+          <div class="text-xs text-gray-500 font-mono">${r.temps || ''}</div>
         </div>
       </div>
-    `;
-  }).join('');
+      <div class="text-xs text-gray-400">Meilleur Tour en Course: <span class="text-violet-300 font-bold">${r.meilleur_tour || '-'}</span></div>
+    </div>
+  `).join('');
 }
 
-function renderAffiches() {
+function renderGPs() {
   const grid = document.getElementById('grid-gp');
-  const gps = currentGpsData.calendrier || [];
-
   if (!grid) return;
 
-  if (gps.length === 0) {
-    grid.innerHTML = `<p class="col-span-full text-center text-gray-500 py-8">Aucun Grand Prix au calendrier.</p>`;
-    return;
-  }
-
-  grid.innerHTML = gps.map(g => `
-    <div class="card-fwr p-4 cursor-pointer hover:border-purple-500/50 group" onclick="openModal('${g.gp}')">
-      <div class="relative overflow-hidden rounded-xl mb-3 aspect-[4/5] bg-gray-900 border border-gray-800">
-        <img src="${g.affiche}" alt="${g.gp}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://placehold.co/400x500/181824/8B5CF6?text=${encodeURIComponent(g.gp)}'">
-        <span class="absolute top-2 right-2 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold text-white border border-gray-700">
-          ${g.status || 'Programmé'}
-        </span>
-      </div>
-      <div class="text-xs text-gray-400">${g.date}</div>
-      <h4 class="titillium font-bold text-lg text-white group-hover:text-purple-400 transition">${g.flag || '🏁'} ${g.gp}</h4>
-      <p class="text-xs text-gray-500 truncate">${g.circuit}</p>
-      <div class="mt-3 pt-2 border-t border-gray-800/60 flex items-center justify-between text-xs">
-        <span class="text-gray-400">Vainqueur</span>
-        <span class="font-bold text-emerald-400">${g.vainqueur || '-'}</span>
-      </div>
+  grid.innerHTML = gpsData.map(r => `
+    <div class="poster-card" onclick="openModal('${r.gp}')">
+      <img src="${r.affiche}" alt="${r.gp}" class="w-full aspect-[4/5] object-cover rounded-xl mb-3 bg-black/50" onerror="this.onerror=null; this.src='assets/posters/saison 1/Texas 20 octobre 2026.png';">
+      <div class="text-xs text-violet-400 font-semibold">${r.date}</div>
+      <div class="titillium text-lg font-bold text-white mb-1">${r.flag || ''} ${r.gp}</div>
+      <div class="text-xs text-gray-400 truncate mb-2">${r.circuit}</div>
+      <div class="text-xs text-green-400 font-bold">Vainqueur: ${r.vainqueur || 'À venir'}</div>
     </div>
   `).join('');
 }
 
 function renderPills() {
-  const container = document.getElementById('pills-pilotes');
-  const standings = currentStandingsData.classement_general || [];
-
+  const container = document.getElementById('pills');
   if (!container) return;
 
-  container.innerHTML = standings.map(s => {
-    const active = selectedDrivers.includes(s.pilote) ? 'active' : '';
-    return `<button class="pill-filter ${active}" onclick="toggleDriver('${s.pilote}')">${s.pilote}</button>`;
-  }).join('');
+  container.innerHTML = standingsData.map(s => `
+    <button class="pill ${selectedDrivers.includes(s.pilote) ? 'active' : ''}" onclick="toggleDriver('${s.pilote}')">
+      ${s.pilote} (${s.pts} pts)
+    </button>
+  `).join('');
 }
 
 function toggleDriver(name) {
   if (selectedDrivers.includes(name)) {
-    if (selectedDrivers.length > 1) {
-      selectedDrivers = selectedDrivers.filter(n => n !== name);
-    }
+    if (selectedDrivers.length > 1) selectedDrivers = selectedDrivers.filter(x => x !== name);
   } else {
     selectedDrivers.push(name);
   }
@@ -786,155 +428,96 @@ function toggleDriver(name) {
   updateCharts();
 }
 
-/* ==========================================================================
-   CHARTS (CHART.JS)
-   ========================================================================== */
 function updateCharts() {
-  const standings = currentStandingsData.classement_general || [];
-  const gps = currentGpsData.calendrier || [];
-  const labels = gps.length > 0 ? gps.map(g => g.gp.substring(0, 4)) : ['GP1', 'GP2', 'GP3'];
+  if (typeof Chart === 'undefined') return;
 
-  const datasets = standings
-    .filter(s => selectedDrivers.includes(s.pilote))
-    .map(s => ({
-      label: s.pilote,
-      data: s.trend || [0],
-      borderColor: s.color || '#8B5CF6',
-      backgroundColor: s.color || '#8B5CF6',
-      tension: 0.3,
-      borderWidth: 2,
-      pointRadius: 3
-    }));
-
-  const datasetsTop5 = standings.slice(0, 5).map(s => ({
+  const labels = gpsData.map(g => g.gp.substring(0, 4));
+  const datasets = standingsData.filter(s => selectedDrivers.includes(s.pilote)).map(s => ({
     label: s.pilote,
-    data: s.trend || [0],
-    borderColor: s.color || '#3B82F6',
-    backgroundColor: s.color || '#3B82F6',
+    data: s.trend || [],
+    borderColor: s.color || '#8B5CF6',
+    backgroundColor: s.color || '#8B5CF6',
     tension: 0.3,
     borderWidth: 2,
-    pointRadius: 2
+    pointRadius: 3
   }));
 
   const chartOptions = {
     responsive: true,
     maintainAspectRatio: false,
-    plugins: {
-      legend: { labels: { color: '#9CA3AF', font: { family: 'Inter', size: 11 } } }
-    },
+    plugins: { legend: { labels: { color: '#9CA3AF', font: { family: 'Inter' } } } },
     scales: {
-      x: { ticks: { color: '#6B7280' }, grid: { color: '#1F1F2E' } },
-      y: { ticks: { color: '#6B7280' }, grid: { color: '#1F1F2E' }, beginAtZero: true }
+      x: { ticks: { color: '#6B7280' }, grid: { color: '#1F2937' } },
+      y: { ticks: { color: '#6B7280' }, grid: { color: '#1F2937' }, beginAtZero: true }
     }
   };
 
-  // Canvas Main
-  const cMain = document.getElementById('chart-main');
-  if (cMain) {
-    if (chartMain) chartMain.destroy();
-    chartMain = new Chart(cMain, { type: 'line', data: { labels, datasets }, options: chartOptions });
-  }
+  const cM = document.getElementById('chart-main');
+  const cMi = document.getElementById('chart-mini');
 
-  // Canvas Mini
-  const cMini = document.getElementById('chart-mini');
-  if (cMini) {
-    if (chartMini) chartMini.destroy();
-    chartMini = new Chart(cMini, { type: 'line', data: { labels, datasets: datasetsTop5 }, options: chartOptions });
-  }
-}
+  if (chartMain) chartMain.destroy();
+  if (chartMini) chartMini.destroy();
 
-/* ==========================================================================
-   INTERACTIONS & NAVIGATION
-   ========================================================================== */
-function switchSeason(seasonKey) {
-  if (currentSeason === seasonKey) return;
-  currentSeason = seasonKey;
-  loadSeasonData(seasonKey);
-}
-
-function showTab(tabName) {
-  ['classement', 'tableaux', 'evolution', 'affiches', 'discord'].forEach(id => {
-    const view = document.getElementById('view-' + id);
-    const navBtn = document.getElementById('nav-' + id);
-    if (view) {
-      if (id === tabName) {
-        view.classList.remove('hidden');
-      } else {
-        view.classList.add('hidden');
-      }
-    }
-    if (navBtn) {
-      if (id === tabName) {
-        navBtn.classList.add('active');
-      } else {
-        navBtn.classList.remove('active');
-      }
-    }
+  if (cM) chartMain = new Chart(cM, { type: 'line', data: { labels, datasets }, options: chartOptions });
+  if (cMi) chartMini = new Chart(cMi, { 
+    type: 'line', 
+    data: { labels, datasets: datasets.slice(0, 5) }, 
+    options: { ...chartOptions, plugins: { legend: { display: false } } } 
   });
 }
 
-function openModal(gpName) {
-  const gpDisput = (currentStandingsData.gp_disputes || []).find(x => x.gp === gpName);
-  const gpCal = (currentGpsData.calendrier || []).find(x => x.gp === gpName);
-
-  const titleEl = document.getElementById('modal-title');
-  const flagEl = document.getElementById('modal-flag');
-  const contentEl = document.getElementById('modal-content');
-  const modal = document.getElementById('modal');
-
-  if (!modal) return;
-
-  titleEl.innerText = gpName + (gpCal ? ` - ${gpCal.circuit}` : '');
-  flagEl.innerText = gpCal?.flag || '🏎️';
-
-  if (gpDisput) {
-    const rows = (gpDisput.resultats_fwr || []).map(r => `
-      <tr class="border-b border-gray-800">
-        <td class="font-bold py-2">${r.pilote}</td>
-        <td class="text-gray-400">${r.ecurie}</td>
-        <td class="text-purple-400 font-mono">${r.mt}</td>
-        <td class="font-bold text-emerald-400">+${r.pts}</td>
-      </tr>
-    `).join('');
-
-    contentEl.innerHTML = `
-      <div class="bg-gray-900/60 p-4 rounded-xl border border-gray-800 text-xs space-y-1">
-        <div><b>Date :</b> ${gpDisput.date} (${gpDisput.heure})</div>
-        <div><b>Vainqueur :</b> <span class="text-amber-400 font-bold">${gpDisput.vainqueur}</span></div>
-        <div><b>Meilleur Tour :</b> ${gpDisput.meilleur_tour || '-'}</div>
-      </div>
-      <h5 class="titillium font-bold text-white mt-4">Tableau de course :</h5>
-      <table class="w-full text-xs text-left">
-        <thead>
-          <tr class="text-gray-400 border-b border-gray-800">
-            <th class="py-2">Pilote</th>
-            <th>Écurie</th>
-            <th>MT</th>
-            <th>Pts</th>
-          </tr>
-        </thead>
-        <tbody>${rows}</tbody>
-      </table>
-    `;
+function showView(view) {
+  if (view === 'hub') {
+    document.getElementById('view-hub').classList.remove('hidden');
+    document.getElementById('view-season-detail').classList.add('hidden');
   } else {
-    contentEl.innerHTML = `
-      <div class="text-center py-8 text-gray-400 space-y-2">
-        <i class="fa-solid fa-hourglass-half text-3xl text-purple-400"></i>
-        <p>Grand Prix non encore disputé ou résultats en attente de validation.</p>
-        <p class="text-xs text-gray-500">Consultez les annonces sur Discord pour la date exacte.</p>
-      </div>
-    `;
+    document.getElementById('view-hub').classList.add('hidden');
+    document.getElementById('view-season-detail').classList.remove('hidden');
   }
+}
 
-  modal.classList.remove('hidden');
+function showTab(tabName) {
+  showView('detail');
+  ['classement', 'tableaux', 'evolution', 'affiches'].forEach(id => {
+    const el = document.getElementById('tab-' + id);
+    if (el) el.classList.toggle('hidden', id !== tabName);
+  });
+
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('nav-' + tabName)?.classList.add('active');
+}
+
+function switchSeason(season) {
+  loadSeasonData(season);
+  showTab('classement');
+}
+
+function openModal(gpName) {
+  const gp = gpsData.find(x => x.gp === gpName);
+  if (!gp) return;
+
+  document.getElementById('modal-title').textContent = `${gp.flag || ''} ${gp.gp} - ${gp.circuit}`;
+  document.getElementById('modal-content').innerHTML = `
+    <div class="flex flex-col md:flex-row gap-6">
+      <img src="${gp.affiche}" alt="${gp.gp}" class="w-full md:w-1/2 rounded-xl object-cover" onerror="this.style.display='none'">
+      <div class="space-y-3 text-sm text-gray-300">
+        <p><b>Date:</b> ${gp.date}</p>
+        <p><b>Heure:</b> ${gp.heure}</p>
+        <p><b>Distance:</b> ${gp.distance}</p>
+        <p><b>Vainqueur:</b> <span class="text-green-400 font-bold">${gp.vainqueur}</span></p>
+        <p><b>Meilleur Tour:</b> ${gp.meilleur_tour}</p>
+        <p><b>Temps Total:</b> ${gp.temps}</p>
+      </div>
+    </div>
+  `;
+  document.getElementById('modal').classList.remove('hidden');
 }
 
 function closeModal() {
-  const modal = document.getElementById('modal');
-  if (modal) modal.classList.add('hidden');
+  document.getElementById('modal').classList.add('hidden');
 }
 
-/* Initialisation au chargement de la page */
+// INITIALISATION
 document.addEventListener('DOMContentLoaded', () => {
   loadSeasonData('s1');
 });
