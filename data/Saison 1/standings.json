@@ -197,6 +197,24 @@
   ],
   "gp_disputes": [
     {
+      "date": "13 Octobre 2026",
+      "gp": "Azerbaïdjan",
+      "circuit": "Baku City Circuit",
+      "heure": "19H00",
+      "distance": "35%",
+      "affiche": "assets/posters saison 1/Azerbaïdjan 13 octobre 2026.png",
+      "vainqueur": "Skyyy",
+      "temps": "32:21.019",
+      "meilleur_tour": "1:42.353 Skyyy MEILLEUR TOUR",
+      "resultats_fwr": [
+        { "pos": 1, "pilote": "Skyyy", "ecurie": "Alpine", "grille": "P1", "arrets": 2, "mt": "1:42.353", "temps": "32:21.019", "pts": 25 },
+        { "pos": 2, "pilote": "Taatsu7TV", "ecurie": "Scuderia Ferrari HP", "grille": "P2", "arrets": 1, "mt": "1:45.348", "temps": "+4.445", "pts": 18 },
+        { "pos": 3, "pilote": "FloryxUSO", "ecurie": "Mercedes-AMG Petronas", "grille": "P5", "arrets": 1, "mt": "1:44.630", "temps": "+7.395", "pts": 15 },
+        { "pos": 4, "pilote": "upsilon7", "ecurie": "McLaren", "grille": "P3", "arrets": 1, "mt": "1:47.088", "temps": "+48.512", "pts": 12 },
+        { "pos": 5, "pilote": "Gosset_25", "ecurie": "Red Bull", "grille": "P8", "arrets": 2, "mt": "1:45.139", "temps": "+1:23.378", "pts": 10 }
+      ]
+    },
+    {
       "date": "20 Octobre 2026",
       "gp": "Texas",
       "circuit": "Circuit of the Americas",
