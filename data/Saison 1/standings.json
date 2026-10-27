@@ -198,11 +198,11 @@
   "gp_disputes": [
     {
       "date": "22 Septembre 2026",
-      "gp": "Grande Bretagne",
-      "circuit": "Silverstone Circuit",
+      "gp": "Autriche",
+      "circuit": "Red Bull Ring",
       "heure": "19H00",
       "distance": "35%",
-      "affiche": "assets/posters saison 1/Grande Bretagne 22 Septembre 2026.png",
+      "affiche": "assets/posters saison 1/Autriche 22 Septembre 2026.png",
       "vainqueur": "Skyyy",
       "temps": "28:30.888",
       "meilleur_tour": "1:30.285 Skyyy MEILLEUR TOUR",
