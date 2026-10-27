@@ -5,7 +5,7 @@
     "en": "Season S1 2026",
     "be": "Saison S1 2026 une fois"
   },
-  "derniere_maj": "22 Oct 2026 - Mexique 19H 35% - 20 GP - Skyyy vainqueur - 12V",
+  "derniere_maj": "27 Oct 2026 - Brésil 19H 35% - 20 GP - Skyyy vainqueur - 12V",
   "logo": "assets/logo/FWR Racing Saison 1.png",
   "logo_s1": "assets/logo/FWR Racing Saison 1.png",
   "logo_s2": "assets/logo/FWR Racing Saison 2.png",
@@ -197,24 +197,6 @@
   ],
   "gp_disputes": [
     {
-      "date": "17 Octobre 2026",
-      "gp": "Brésil",
-      "circuit": "Autódromo José Carlos Pace",
-      "heure": "19H00",
-      "distance": "35%",
-      "affiche": "assets/posters saison 1/Brésil 17 octobre 2026.png",
-      "vainqueur": "Pepit0mis",
-      "temps": "30:34.465",
-      "meilleur_tour": "1:09.718 Skyyy",
-      "resultats_fwr": [
-        { "pos": 1, "pilote": "Pepit0mis", "ecurie": "Alpine", "grille": "P2", "arrets": 1, "mt": "1:11.182", "temps": "30:34.465", "pts": 25 },
-        { "pos": 2, "pilote": "Skyyy", "ecurie": "Alpine", "grille": "P1 POLE", "arrets": 2, "mt": "1:09.718", "temps": "x3 (+16 secs.)", "pts": 18 },
-        { "pos": 3, "pilote": "Gosset_25", "ecurie": "Red Bull", "grille": "P5", "arrets": 1, "mt": "1:13.232", "temps": "x1 (+3 secs.)", "pts": 15 },
-        { "pos": 4, "pilote": "upsilon7", "ecurie": "McLaren", "grille": "P4", "arrets": 1, "mt": "1:12.884", "temps": "x1 (+3 secs.)", "pts": 12 },
-        { "pos": 5, "pilote": "Taatsu7TV", "ecurie": "Scuderia Ferrari HP", "grille": "P3", "arrets": 2, "mt": "1:12.194", "temps": "+1 tour", "pts": 10 }
-      ]
-    },
-    {
       "date": "20 Octobre 2026",
       "gp": "Texas",
       "circuit": "Circuit of the Americas",
@@ -246,6 +228,24 @@
         { "pos": 2, "pilote": "Gosset_25", "ecurie": "Red Bull", "grille": "P3", "arrets": 2, "mt": "1:19.973", "temps": "x1 (+3 secs.)", "pts": 18 },
         { "pos": 3, "pilote": "Taatsu7TV", "ecurie": "Scuderia Ferrari HP", "grille": "P2", "arrets": 2, "mt": "1:20.588", "temps": "x1 (+3 secs.)", "pts": 15 },
         { "pos": 5, "pilote": "upsilon7", "ecurie": "McLaren", "grille": "P4", "arrets": 1, "mt": "1:22.153", "temps": "x4 (+12 secs.)", "pts": 10 }
+      ]
+    },
+    {
+      "date": "27 Octobre 2026",
+      "gp": "Brésil",
+      "circuit": "Autódromo José Carlos Pace",
+      "heure": "19H00",
+      "distance": "35%",
+      "affiche": "assets/posters saison 1/Brésil 27 octobre 2026.png",
+      "vainqueur": "Pepit0mis",
+      "temps": "30:34.465",
+      "meilleur_tour": "1:09.718 Skyyy",
+      "resultats_fwr": [
+        { "pos": 1, "pilote": "Pepit0mis", "ecurie": "Alpine", "grille": "P2", "arrets": 1, "mt": "1:11.182", "temps": "30:34.465", "pts": 25 },
+        { "pos": 2, "pilote": "Skyyy", "ecurie": "Alpine", "grille": "P1 POLE", "arrets": 2, "mt": "1:09.718", "temps": "x3 (+16 secs.)", "pts": 18 },
+        { "pos": 3, "pilote": "Gosset_25", "ecurie": "Red Bull", "grille": "P5", "arrets": 1, "mt": "1:13.232", "temps": "x1 (+3 secs.)", "pts": 15 },
+        { "pos": 4, "pilote": "upsilon7", "ecurie": "McLaren", "grille": "P4", "arrets": 1, "mt": "1:12.884", "temps": "x1 (+3 secs.)", "pts": 12 },
+        { "pos": 5, "pilote": "Taatsu7TV", "ecurie": "Scuderia Ferrari HP", "grille": "P3", "arrets": 2, "mt": "1:12.194", "temps": "+1 tour", "pts": 10 }
       ]
     }
   ]
