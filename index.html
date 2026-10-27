@@ -81,7 +81,7 @@
         <div class="titillium text-2xl font-black tracking-wider text-white flex items-center gap-2">
           FWR RACING LEAGUE <span id="season-badge" class="text-xs px-2 py-0.5 rounded-full bg-violet-600/30 text-violet-400 border border-violet-500/40">S1 2026</span>
         </div>
-        <div id="header-subtitle" class="text-xs text-gray-400">18 GP • Texas 20 Oct • Skyyy Leader (329 pts) • Saison En Cours 🟢</div>
+        <div id="header-subtitle" class="text-xs text-gray-400">Chargement des données...</div>
       </div>
     </div>
     
@@ -145,8 +145,8 @@
     <div id="tab-classement">
       <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
         <div>
-          <h1 id="title-classement" class="titillium text-3xl font-bold">Classement Général - Saison 1</h1>
-          <p id="sub-classement" class="text-xs text-gray-400">MAJ après Texas (20 Oct) • 18 GP disputés • Championnat officiel</p>
+          <h1 id="title-classement" class="titillium text-3xl font-bold">Classement Général</h1>
+          <p id="sub-classement" class="text-xs text-gray-400">Chargement...</p>
         </div>
       </div>
 
@@ -224,79 +224,27 @@
 
 <!-- FOOTER -->
 <footer class="mt-20 border-t border-gray-800 py-8 text-center text-xs text-gray-500">
-  <p>FWR Racing League • Saison 1 en cours • Twitch: <a href="https://twitch.tv/upsilon7" target="_blank" class="text-violet-400">upsilon7</a></p>
+  <p>FWR Racing League • Twitch: <a href="https://twitch.tv/upsilon7" target="_blank" class="text-violet-400">upsilon7</a></p>
   <p class="mt-2 text-gray-600">Discord Officiel: <a href="https://discord.gg/vY8WJQcwPN" target="_blank" class="text-yellow-500">discord.gg/vY8WJQcwPN</a></p>
 </footer>
 
 <script>
-// DONNÉES DE SECOURS (Saison 1 intégrée avec noms d'affiches exacts du dossier "assets/posters saison 1/")
-const FALLBACK_S1_GPS = {
-  "calendrier": [
-    {"date": "21 Août 2026", "gp": "Melbourne", "flag": "🇦🇺", "circuit": "Albert Park Circuit", "heure": "19H00", "distance": "50%", "status": "Terminé", "vainqueur": "Jesui_tou", "affiche": "assets/posters saison 1/Australie 21 aout 2026.png", "temps": "28:14.241", "meilleur_tour": "1:21.309 Jesui_tou"},
-    {"date": "22 Août 2026", "gp": "Shanghai", "flag": "🇨🇳", "circuit": "Shanghai International Circuit", "heure": "19H00", "distance": "50%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters saison 1/Chine 22 aout 2026.png", "temps": "33:58.631", "meilleur_tour": "1:37.682 Skyyy"},
-    {"date": "24 Août 2026", "gp": "Suzuka", "flag": "🇯🇵", "circuit": "Suzuka International Raçing Course", "heure": "19H00", "distance": "50%", "status": "Terminé", "vainqueur": "Jesui_tou", "affiche": "assets/posters saison 1/Japon 24 aout 2026.png", "temps": "30:36.255", "meilleur_tour": "1:33.567 Jesui_tou"},
-    {"date": "25 Août 2026", "gp": "Bahrain", "flag": "🇧🇭", "circuit": "Bahrain International Circuit", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Gosset_25", "affiche": "assets/posters saison 1/bahrain 25 aout 2026.png", "temps": "32:15.411", "meilleur_tour": "1:33.902 Taatsu7TV"},
-    {"date": "01 Sept 2026", "gp": "Jeddah", "flag": "🇸🇦", "circuit": "Jeddah Corniche Circuit", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Taatsu7TV", "affiche": "assets/posters saison 1/Arabie saoudite 01 sept 2026.png", "temps": "En attente", "meilleur_tour": "En attente"},
-    {"date": "03 Sept 2026", "gp": "Miami", "flag": "🇺🇸", "circuit": "Miami International Autodrome", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters saison 1/Etats Unis 03 sept 2026.png", "temps": "31:36.318", "meilleur_tour": "1:30.300 Skyyy"},
-    {"date": "06 Sept 2026", "gp": "Imola", "flag": "🇮🇹", "circuit": "Autodromo Internazionale Enzo E Dino Ferrari", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters saison 1/Italie 06 sept 2026.png", "temps": "-", "meilleur_tour": "1:19.181 Skyyy"},
-    {"date": "10 Sept 2026", "gp": "Monaco", "flag": "🇲🇨", "circuit": "Circuit de Monaco", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters saison 1/monaco 10 sept 2026.png", "temps": "34:51.962", "meilleur_tour": "1:12.865 Skyyy RECORD"},
-    {"date": "14 Sept 2026", "gp": "Barcelone", "flag": "🇪🇸", "circuit": "Barcelona-Catalunya", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters saison 1/Espagne 14 sept 2026.png", "temps": "30:00.485", "meilleur_tour": "1:15.304 JotagrosFR"},
-    {"date": "17 sept 2026", "gp": "Canada", "flag": "🇨🇦", "circuit": "Gilles Villeneuve", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters saison 1/Canada 17 sept 2026.png", "temps": "1:13.139", "meilleur_tour": "En attente"},
-    {"date": "22 septembre 2026", "gp": "Autriche", "flag": "🇦🇹", "circuit": "Red Bull Ring", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters saison 1/Autriche 22 Septembre 2026.png", "temps": "-", "meilleur_tour": "1:07.356 Skyyy"},
-    {"date": "22 Septembre 2026", "gp": "Grande Bretagne", "flag": "🇬🇧", "circuit": "Silverstone Circuit", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters saison 1/Grande Bretagne 22 Septembre 2026.png", "temps": "28:30.888", "meilleur_tour": "1:30.285 Skyyy"},
-    {"date": "29 septembre 2026", "gp": "Belgique", "flag": "🇧🇪", "circuit": "Circuit de Spa-Francorchamps", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Pepit0mis", "affiche": "assets/posters saison 1/Belgique 29 septembre 2026.png", "temps": "27:26.420", "meilleur_tour": "1:45.084 Skyyy"},
-    {"date": "1 Octobre 2026", "gp": "Hongrie", "flag": "🇭🇺", "circuit": "Hungaroring", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters saison 1/Hongrie 1 Octobre 2026.png", "temps": "x1 (+3 secs.)", "meilleur_tour": "1:19.558 Skyyy"},
-    {"date": "6 Octobre 2026", "gp": "Pays-Bas", "flag": "🇳🇱", "circuit": "Circuit de Zandvoort", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Pepit0mis", "affiche": "assets/posters saison 1/Pays Bas 6 octobre 2026.png", "temps": "31:40.833", "meilleur_tour": "1:12.853 Pepit0mis"},
-    {"date": "8 Octobre 2026", "gp": "Monza", "flag": "🇮🇹", "circuit": "Autodromo Nazionale Monza", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters saison 1/Italie 8 Octobre 2026.png", "temps": "26:54.261", "meilleur_tour": "1:21.945 Skyyy"},
-    {"date": "13 Octobre 2026", "gp": "Azerbaïdjan", "flag": "🇦🇿", "circuit": "Baku City Circuit", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Skyyy", "affiche": "assets/posters saison 1/Azerbaïdjan 13 octobre 2026.png", "temps": "32:21.019", "meilleur_tour": "1:42.353 Skyyy"},
-    {"date": "20 Octobre 2026", "gp": "Texas", "flag": "🇺🇸", "circuit": "Circuit of the Americas", "heure": "19H00", "distance": "35%", "status": "Terminé", "vainqueur": "Taatsu7TV", "affiche": "assets/posters saison 1/Texas 20 Octobre 2026.png", "temps": "33:53.932", "meilleur_tour": "1:37.757 Skyyy"}
-  ]
-};
-
-const FALLBACK_S1_STANDINGS = {
-  "saison": "S1 FWR 2026",
-  "derniere_maj": "20 Oct 2026 - Texas 19H 35% - 18 GP - Taatsu7TV vainqueur",
-  "classement_general": [
-    {"pos": 1, "pilote": "Skyyy", "ecurie": "Alpine", "color": "#0090FF", "pts": 329, "victoires": 11, "podiums": 14, "meilleur_tour": "1:12.865 Monaco RECORD", "forme": "↑↑↑", "formeColor": "#10B981", "trend": [0, 25, 25, 25, 43, 68, 93, 118, 143, 168, 193, 218, 236, 261, 261, 286, 311, 329]},
-    {"pos": 2, "pilote": "Taatsu7TV", "ecurie": "Scuderia Ferrari HP", "color": "#DC0000", "pts": 259, "victoires": 2, "podiums": 13, "meilleur_tour": "1:17.625 Barcelone", "forme": "↑", "formeColor": "#10B981", "trend": [0, 12, 27, 42, 67, 85, 100, 100, 108, 123, 138, 156, 171, 183, 201, 216, 234, 259]},
-    {"pos": 3, "pilote": "Gosset_25", "ecurie": "Red Bull", "color": "#0600EF", "pts": 235, "victoires": 1, "podiums": 9, "meilleur_tour": "1:14.953 Monaco", "forme": "→", "formeColor": "#8B8B8B", "trend": [12, 30, 30, 55, 67, 82, 100, 118, 130, 142, 152, 167, 175, 190, 205, 213, 223, 235]},
-    {"pos": 4, "pilote": "upsilon7", "ecurie": "Scuderia Ferrari HP", "color": "#DC0000", "pts": 203, "victoires": 0, "podiums": 7, "meilleur_tour": "1:17.220 Barcelone", "forme": "→", "formeColor": "#10B981", "trend": [15, 30, 48, 58, 73, 85, 95, 107, 122, 130, 142, 142, 154, 164, 164, 176, 188, 203]},
-    {"pos": 5, "pilote": "Pepit0mis", "ecurie": "Alpine", "color": "#0090FF", "pts": 122, "victoires": 2, "podiums": 6, "meilleur_tour": "-", "forme": "→", "formeColor": "#8B8B8B", "trend": [0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 36, 36, 61, 79, 104, 122, 122, 122]},
-    {"pos": 6, "pilote": "Jesui_tou", "ecurie": "Alpine", "color": "#0090FF", "pts": 68, "victoires": 2, "podiums": 3, "meilleur_tour": "1:21.309 Melbourne", "forme": "↓↓", "formeColor": "#EF4444", "trend": [25, 25, 50, 68, 68, 68, 68, 68, 68, 68, 68, 68, 68, 68, 68, 68, 68, 68]},
-    {"pos": 7, "pilote": "cobra_kai_cx", "ecurie": "Aston Martin", "color": "#006F62", "pts": 58, "victoires": 0, "podiums": 1, "meilleur_tour": "1:20.564 Imola", "forme": "↑", "formeColor": "#10B981", "trend": [18, 18, 18, 18, 18, 18, 30, 30, 30, 36, 36, 36, 46, 46, 58, 58, 58, 58]},
-    {"pos": 8, "pilote": "JoKeR-_-SkyZo", "ecurie": "Mercedes-AMG Petronas", "color": "#00D2BE", "pts": 35, "victoires": 0, "podiums": 1, "meilleur_tour": "1:16.050 Monaco", "forme": "↑↑", "formeColor": "#10B981", "trend": [0, 0, 0, 0, 0, 0, 0, 15, 25, 35, 35, 35, 35, 35, 35, 35, 35, 35]},
-    {"pos": 9, "pilote": "FloryxUSO", "ecurie": "Mercedes-AMG Petronas", "color": "#00D2BE", "pts": 25, "victoires": 0, "podiums": 1, "meilleur_tour": "1:23.561 Monza", "forme": "↑", "formeColor": "#10B981", "trend": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 25, 25]},
-    {"pos": 10, "pilote": "JotagrosFR", "ecurie": "Red Bull", "color": "#0600EF", "pts": 18, "victoires": 0, "podiums": 1, "meilleur_tour": "1:15.304 Barcelone", "forme": "↑↑", "formeColor": "#10B981", "trend": [0, 0, 0, 0, 0, 0, 0, 0, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18]},
-    {"pos": 11, "pilote": "mobilou69", "ecurie": "Red Bull", "color": "#0600EF", "pts": 16, "victoires": 0, "podiums": 0, "meilleur_tour": "1:35.145 Bahrain", "forme": "→", "formeColor": "#8B8B8B", "trend": [0, 0, 4, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16]},
-    {"pos": 12, "pilote": "sombre7675TTV", "ecurie": "Haas", "color": "#9E9E9E", "pts": 6, "victoires": 0, "podiums": 0, "meilleur_tour": "1:26.164 Melbourne", "forme": "→", "formeColor": "#8B8B8B", "trend": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]},
-    {"pos": 13, "pilote": "Crimson_Death", "ecurie": "Mercedes-AMG Petronas", "color": "#00D2BE", "pts": 0, "victoires": 0, "podiums": 0, "meilleur_tour": "1:38:090 Suzuka", "forme": "→", "formeColor": "#8B8B8B", "trend": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-  ]
-};
-
 let currentSeason = 's1';
 let gpsData = [];
 let standingsData = [];
+let gpDisputes = [];
 let selectedDrivers = [];
 let chartMain = null, chartMini = null;
 
-// CORRECTION AUTOMATIQUE DES CHEMINS D'AFFICHES DES POSTERS
+// Normalisation des chemins vers le dossier réel "assets/posters saison 1/"
 function fixPosterPath(path, season) {
   if (!path) return '';
   const folder = season === 's1' ? 'assets/posters saison 1/' : 'assets/posters saison 2/';
-  
-  // Extraction uniquement du nom de fichier .png
   const fileName = path.split('/').pop();
-  
-  // Correction spécifique de la casse si nécessaire
-  let cleanName = fileName;
-  if (cleanName.toLowerCase() === 'texas 20 octobre 2026.png') {
-    cleanName = 'Texas 20 Octobre 2026.png';
-  }
-  
-  return folder + cleanName;
+  return folder + fileName;
 }
 
-// CHARGEMENT DES DONNÉES
+// Chargement pur à partir des fichiers JSON
 async function loadSeasonData(season) {
   currentSeason = season;
   const folder = season === 's1' ? 'Saison 1' : 'Saison 2';
@@ -307,25 +255,32 @@ async function loadSeasonData(season) {
       fetch(`data/${folder}/standings.json`)
     ]);
 
-    if (resGps.ok && resStandings.ok) {
-      const gJson = await resGps.json();
-      const sJson = await resStandings.json();
-      gpsData = gJson.calendrier || [];
-      standingsData = sJson.classement_general || [];
-    } else {
-      throw new Error('Fallback requis');
+    if (!resGps.ok || !resStandings.ok) {
+      throw new Error("Erreur de chargement des JSON");
     }
-  } catch (err) {
-    console.warn(`Mode local sans serveur HTTP ou fichiers introuvables : Chargement secours ${season}`);
-    gpsData = (season === 's1' ? FALLBACK_S1_GPS.calendrier : []);
-    standingsData = (season === 's1' ? FALLBACK_S1_STANDINGS.classement_general : []);
-  }
 
-  // Correction systématique des chemins d'affiches vers "assets/posters saison 1/"
-  gpsData = gpsData.map(item => ({
-    ...item,
-    affiche: fixPosterPath(item.affiche, season)
-  }));
+    const gJson = await resGps.json();
+    const sJson = await resStandings.json();
+
+    gpsData = (gJson.calendrier || []).map(item => ({
+      ...item,
+      affiche: fixPosterPath(item.affiche, season)
+    }));
+
+    standingsData = sJson.classement_general || [];
+    gpDisputes = (sJson.gp_disputes || []).map(item => ({
+      ...item,
+      affiche: fixPosterPath(item.affiche, season)
+    }));
+
+    // Mettre à jour l'en-tête
+    document.getElementById('header-subtitle').textContent = sJson.derniere_maj || `${gpsData.length} GP au programme`;
+    document.getElementById('sub-classement').textContent = sJson.derniere_maj || '';
+    document.getElementById('title-classement').textContent = `Classement Général - ${sJson.saison || season.toUpperCase()}`;
+
+  } catch (err) {
+    console.error("Impossible de charger les fichiers JSON:", err);
+  }
 
   selectedDrivers = standingsData.slice(0, 8).map(s => s.pilote);
   updateUI();
@@ -334,10 +289,6 @@ async function loadSeasonData(season) {
 function updateUI() {
   const isS1 = currentSeason === 's1';
   document.getElementById('season-badge').textContent = isS1 ? 'SAISON 1 EN COURS 🟢' : 'SAISON 2 À VENIR ⏳';
-  document.getElementById('season-badge').className = isS1 
-    ? 'text-xs px-2.5 py-0.5 rounded-full bg-green-500/20 text-green-400 border border-green-500/30'
-    : 'text-xs px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30';
-
   document.getElementById('header-logo').src = `assets/logo/FWR Racing Saison ${isS1 ? '1' : '2'}.png`;
 
   renderClassement();
@@ -352,7 +303,7 @@ function renderClassement() {
   if (!tbody) return;
 
   if (standingsData.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="7" class="text-center py-8 text-gray-500">Aucune donnée disponible pour cette saison.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="7" class="text-center py-8 text-gray-500">Aucune donnée trouvée.</td></tr>';
     return;
   }
 
@@ -379,13 +330,15 @@ function renderChronos() {
   const container = document.getElementById('chronos-list');
   if (!container) return;
 
-  container.innerHTML = gpsData.map(r => `
+  const dataToRender = gpDisputes.length > 0 ? gpDisputes : gpsData;
+
+  container.innerHTML = dataToRender.map(r => `
     <div class="card-box flex flex-col md:flex-row gap-6 items-center">
       <img src="${r.affiche}" alt="${r.gp}" class="w-28 h-36 object-cover rounded-xl bg-black/50 border border-white/10 shrink-0" onerror="this.style.display='none';">
       <div class="flex-1 w-full">
         <div class="flex flex-wrap items-center justify-between gap-2 mb-3 pb-3 border-b border-gray-800">
           <div>
-            <span class="text-xs text-violet-400 font-bold">${r.date} • ${r.heure} • ${r.distance}</span>
+            <span class="text-xs text-violet-400 font-bold">${r.date} • ${r.heure || '19H00'} • ${r.distance || '35%'}</span>
             <h3 class="titillium text-xl font-bold text-white">${r.flag || ''} ${r.gp} - <span class="text-gray-400 text-sm">${r.circuit}</span></h3>
           </div>
           <div class="text-right">
@@ -393,7 +346,7 @@ function renderChronos() {
             <div class="text-xs text-gray-500 font-mono">${r.temps || ''}</div>
           </div>
         </div>
-        <div class="text-xs text-gray-400">Meilleur Tour en Course: <span class="text-violet-300 font-bold">${r.meilleur_tour || '-'}</span></div>
+        <div class="text-xs text-gray-400">Meilleur Tour: <span class="text-violet-300 font-bold">${r.meilleur_tour || '-'}</span></div>
       </div>
     </div>
   `).join('');
@@ -524,7 +477,6 @@ function closeModal() {
   document.getElementById('modal').classList.add('hidden');
 }
 
-// INITIALISATION
 document.addEventListener('DOMContentLoaded', () => {
   loadSeasonData('s1');
 });
