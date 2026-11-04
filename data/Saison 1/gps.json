@@ -170,19 +170,6 @@
       "meilleur_tour": "1:19.558 Skyyy"
     },
     {
-      "date": "03 Octobre 2026",
-      "gp": "Qatar",
-      "flag": "🇶🇦",
-      "circuit": "Lusail International Circuit",
-      "heure": "Non renseignée",
-      "distance": "Non renseignée",
-      "status": "Terminé",
-      "vainqueur": "Pepit0mis",
-      "affiche": "assets/posters saison 1/Qatar 3 Octobre 2026.png",
-      "temps": "Non communiqué",
-      "meilleur_tour": "1:24.879 Pepit0mis"
-    },
-    {
       "date": "6 Octobre 2026",
       "gp": "Pays-Bas",
       "flag": "🇳🇱",
@@ -259,6 +246,21 @@
       "affiche": "assets/posters saison 1/Brésil 27 octobre 2026.png",
       "temps": "30:34.465",
       "meilleur_tour": "1:09.718 Skyyy"
+    },
+    {
+      "date": "03 Novembre 2026",
+      "gp": "Qatar",
+      "flag": "🇶🇦",
+      "circuit": "Lusail International Circuit",
+      "heure": "19H00",
+      "distance": "35%",
+      "tours": 57,
+      "longueur": "5.419 km",
+      "status": "Terminé",
+      "vainqueur": "Pepit0mis",
+      "affiche": "assets/posters saison 1/Qatar 3 Novembre 2026.png",
+      "temps": "Non communiqué",
+      "meilleur_tour": "1:24.879 Pepit0mis"
     }
   ],
   "saison": "S1 FWR 2026",

@@ -5,21 +5,21 @@
     "en": "Season S1 2026",
     "be": "Saison S1 2026 une fois"
   },
-  "derniere_maj": "MAJ 04 Nov 2026 • GP du Qatar (03 Oct) intégré • 20 GP",
+  "derniere_maj": "MAJ 04 Nov 2026 • GP du Qatar (03 Nov) intégré • 20 GP",
   "logo": "assets/logo/FWR Racing Saison 1.png",
   "logo_s1": "assets/logo/FWR Racing Saison 1.png",
   "logo_s2": "assets/logo/FWR Racing Saison 2.png",
   "twitch": "https://twitch.tv/upsilon7",
-  "champion": "Skyyy - 347 pts - 11 victoires - 20 GP - LEADER",
+  "champion": "Skyyy - 372 pts - 12 victoires - 20 GP - LEADER",
   "classement_general": [
     {
       "pos": 1,
       "pilote": "Skyyy",
       "ecurie": "Alpine",
       "color": "#0090FF",
-      "pts": 347,
-      "victoires": 11,
-      "podiums": 15,
+      "pts": 372,
+      "victoires": 12,
+      "podiums": 16,
       "meilleur_tour": "1:09.718 Brésil",
       "forme": "↑↑↑",
       "label": {
@@ -48,7 +48,8 @@
         311,
         329,
         347,
-        347
+        372,
+        372
       ]
     },
     {
@@ -56,9 +57,9 @@
       "pilote": "Taatsu7TV",
       "ecurie": "Scuderia Ferrari HP",
       "color": "#DC0000",
-      "pts": 287,
+      "pts": 302,
       "victoires": 2,
-      "podiums": 14,
+      "podiums": 15,
       "meilleur_tour": "1:17.625 Barcelone",
       "forme": "↑",
       "label": {
@@ -87,7 +88,8 @@
         234,
         259,
         269,
-        287
+        284,
+        302
       ]
     },
     {
@@ -95,9 +97,9 @@
       "pilote": "Gosset_25",
       "ecurie": "Red Bull",
       "color": "#0600EF",
-      "pts": 250,
+      "pts": 268,
       "victoires": 1,
-      "podiums": 10,
+      "podiums": 11,
       "meilleur_tour": "1:14.953 Monaco",
       "forme": "→",
       "label": {
@@ -126,15 +128,16 @@
         223,
         235,
         250,
-        250
+        268,
+        268
       ]
     },
     {
       "pos": 4,
       "pilote": "upsilon7",
-      "ecurie": "Mercedes-AMG Petronas",
-      "color": "#00D2BE",
-      "pts": 230,
+      "ecurie": "McLaren",
+      "color": "#FF8700",
+      "pts": 240,
       "victoires": 0,
       "podiums": 8,
       "meilleur_tour": "1:17.220 Barcelone",
@@ -165,7 +168,8 @@
         188,
         203,
         215,
-        230
+        225,
+        240
       ]
     },
     {
@@ -204,6 +208,7 @@
         122,
         122,
         147,
+        147,
         172
       ]
     },
@@ -227,6 +232,7 @@
         25,
         25,
         50,
+        68,
         68,
         68,
         68,
@@ -282,6 +288,7 @@
         58,
         58,
         58,
+        58,
         58
       ]
     },
@@ -311,6 +318,7 @@
         0,
         15,
         25,
+        35,
         35,
         35,
         35,
@@ -360,6 +368,7 @@
         25,
         25,
         25,
+        25,
         25
       ]
     },
@@ -399,6 +408,7 @@
         18,
         18,
         18,
+        18,
         18
       ]
     },
@@ -422,6 +432,7 @@
         0,
         0,
         4,
+        16,
         16,
         16,
         16,
@@ -477,6 +488,7 @@
         6,
         6,
         6,
+        6,
         6
       ]
     },
@@ -496,6 +508,7 @@
       },
       "formeColor": "#10B981",
       "trend": [
+        0,
         0,
         0,
         0,
@@ -555,6 +568,7 @@
         0,
         0,
         0,
+        0,
         0
       ]
     },
@@ -568,12 +582,13 @@
       "meilleur_tour": "1:31.057 Qatar",
       "forme": "→",
       "label": {
-        "fr": "",
-        "en": "",
-        "be": ""
+        "fr": "STABLE",
+        "en": "STABLE",
+        "be": "STABLE UNE FOIS"
       },
       "formeColor": "#8B8B8B",
       "trend": [
+        0,
         0,
         0,
         0,
@@ -1389,168 +1404,6 @@
       ]
     },
     {
-      "date": "03 Octobre 2026",
-      "gp": "Qatar",
-      "circuit": "Lusail International Circuit",
-      "heure": "Non renseignée",
-      "distance": "Non renseignée",
-      "affiche": "assets/posters saison 1/Qatar 3 Octobre 2026.png",
-      "vainqueur": "Pepit0mis",
-      "temps": "Non communiqué",
-      "meilleur_tour": "1:24.879 Pepit0mis",
-      "resultats_fwr": [
-        {
-          "pos": 1,
-          "pilote": "Pepit0mis",
-          "ecurie": "Alpine",
-          "grille": "1",
-          "arrets": 1,
-          "mt": "1:24.879",
-          "temps": "x1 (+3 secs.)",
-          "pts": 25
-        },
-        {
-          "pos": 2,
-          "pilote": "Taatsu7TV",
-          "ecurie": "Scuderia Ferrari HP",
-          "grille": "2",
-          "arrets": 1,
-          "mt": "1:27.309",
-          "temps": "x2 (+6 secs.)",
-          "pts": 18
-        },
-        {
-          "pos": 3,
-          "pilote": "upsilon7",
-          "ecurie": "Mercedes-AMG Petronas",
-          "grille": "3",
-          "arrets": 1,
-          "mt": "1:27.994",
-          "temps": "x1 (+3 secs.)",
-          "pts": 15
-        },
-        {
-          "pos": 4,
-          "pilote": "Max VERSTAPPEN",
-          "ia": true,
-          "ecurie": "Red Bull",
-          "grille": "4",
-          "arrets": 1,
-          "mt": "1:30.979",
-          "temps": "+1 tour",
-          "pts": 12
-        },
-        {
-          "pos": 5,
-          "pilote": "Fernando ALONSO",
-          "ia": true,
-          "ecurie": "Aston Martin",
-          "grille": "5",
-          "arrets": 1,
-          "mt": "1:30.797",
-          "temps": "+1 tour",
-          "pts": 10
-        },
-        {
-          "pos": 6,
-          "pilote": "Lando NORRIS",
-          "ia": true,
-          "ecurie": "McLaren",
-          "grille": "6",
-          "arrets": 1,
-          "mt": "1:30.769",
-          "temps": "+1 tour",
-          "pts": 8
-        },
-        {
-          "pos": 7,
-          "pilote": "Alexander ALBON",
-          "ia": true,
-          "ecurie": "Williams",
-          "grille": "9",
-          "arrets": 1,
-          "mt": "1:30.811",
-          "temps": "+1 tour",
-          "pts": 6
-        },
-        {
-          "pos": 8,
-          "pilote": "Liam LAWSON",
-          "ia": true,
-          "ecurie": "Visa Cash App Racing Bulls",
-          "grille": "7",
-          "arrets": 1,
-          "mt": "1:31.355",
-          "temps": "+1 tour",
-          "pts": 4
-        },
-        {
-          "pos": 9,
-          "pilote": "Yuki TSUNODA",
-          "ia": true,
-          "ecurie": "Red Bull",
-          "grille": "12",
-          "arrets": 1,
-          "mt": "1:31.861",
-          "temps": "+1 tour",
-          "pts": 2
-        },
-        {
-          "pos": 10,
-          "pilote": "ringreaperlegacy",
-          "ecurie": "Scuderia Ferrari HP",
-          "grille": "13",
-          "arrets": 1,
-          "mt": "1:30.704",
-          "temps": "+1 tour",
-          "pts": 1
-        },
-        {
-          "pos": 11,
-          "pilote": "Nico_FoxyCloud",
-          "ecurie": "Mercedes-AMG Petronas",
-          "grille": "19",
-          "arrets": 1,
-          "mt": "1:31.057",
-          "temps": "+1 tour",
-          "pts": 0
-        },
-        {
-          "pos": 12,
-          "pilote": "Carlos SAINZ",
-          "ia": true,
-          "ecurie": "Williams",
-          "grille": "14",
-          "arrets": 1,
-          "mt": "1:31.667",
-          "temps": "+1 tour",
-          "pts": 0
-        },
-        {
-          "pos": 13,
-          "pilote": "Oscar PIASTRI",
-          "ia": true,
-          "ecurie": "McLaren",
-          "grille": "16",
-          "arrets": 1,
-          "mt": "1:31.528",
-          "temps": "+1 tour",
-          "pts": 0
-        },
-        {
-          "pos": 14,
-          "pilote": "Esteban OCON",
-          "ia": true,
-          "ecurie": "Haas",
-          "grille": "10",
-          "arrets": 1,
-          "mt": "1:32.032",
-          "temps": "+1 tour",
-          "pts": 0
-        }
-      ]
-    },
-    {
       "date": "6 Octobre 2026",
       "gp": "Pays-Bas",
       "circuit": "Circuit de Zandvoort",
@@ -1907,6 +1760,71 @@
           "pts": 10
         }
       ]
+    },
+    {
+      "date": "03 Novembre 2026",
+      "gp": "Qatar",
+      "circuit": "Lusail International Circuit",
+      "heure": "19H00",
+      "distance": "35%",
+      "tours": 57,
+      "longueur": "5.419 km",
+      "affiche": "assets/posters saison 1/Qatar 3 Novembre 2026.png",
+      "vainqueur": "Pepit0mis",
+      "temps": "Non communiqué",
+      "meilleur_tour": "1:24.879 Pepit0mis",
+      "resultats_fwr": [
+        {
+          "pos": 1,
+          "pilote": "Pepit0mis",
+          "ecurie": "Alpine",
+          "grille": "1",
+          "arrets": 1,
+          "mt": "1:24.879",
+          "temps": "x1 (+3 secs.)",
+          "pts": 25
+        },
+        {
+          "pos": 2,
+          "pilote": "Taatsu7TV",
+          "ecurie": "Scuderia Ferrari HP",
+          "grille": "2",
+          "arrets": 1,
+          "mt": "1:27.309",
+          "temps": "x2 (+6 secs.)",
+          "pts": 18
+        },
+        {
+          "pos": 3,
+          "pilote": "upsilon7",
+          "ecurie": "Mercedes-AMG Petronas",
+          "grille": "3",
+          "arrets": 1,
+          "mt": "1:27.994",
+          "temps": "x1 (+3 secs.)",
+          "pts": 15
+        },
+        {
+          "pos": 10,
+          "pilote": "ringreaperlegacy",
+          "ecurie": "Scuderia Ferrari HP",
+          "grille": "13",
+          "arrets": 1,
+          "mt": "1:30.704",
+          "temps": "+1 tour",
+          "pts": 1
+        },
+        {
+          "pos": 11,
+          "pilote": "Nico_FoxyCloud",
+          "ecurie": "Mercedes-AMG Petronas",
+          "grille": "19",
+          "arrets": 1,
+          "mt": "1:31.057",
+          "temps": "+1 tour",
+          "pts": 0
+        }
+      ]
     }
   ],
   "i18n": {
@@ -1930,7 +1848,7 @@
       "cote": "Cote parieur",
       "favori": "favori",
       "ecart": "+70 pts",
-      "maj": "MAJ 04 Nov • Qatar (03 Oct) ajouté • 20 GP • Pepit0mis vainqueur - 4V"
+      "maj": "MAJ 04 Nov • Qatar (03 Nov) ajouté • 20 GP • Pepit0mis vainqueur - 4V"
     },
     "en": {
       "classement": "General Standings",
@@ -1952,7 +1870,7 @@
       "cote": "Bet odds",
       "favori": "favorite",
       "ecart": "+71 pts gap",
-      "maj": "Updated Nov 04 • Qatar (Oct 03) added • 20 GP • Pepit0mis winner - 4W"
+      "maj": "Updated Nov 04 • Qatar (Nov 03) added • 20 GP • Pepit0mis winner - 4W"
     },
     "be": {
       "classement": "Classement Général une fois",
@@ -1974,7 +1892,7 @@
       "cote": "Cote parieur une fois",
       "favori": "favori une fois - c'est du lourd!",
       "ecart": "+71 une fois",
-      "maj": "MAJ 04 Nov • Qatar (03 Oct) ajouté • 20 GP"
+      "maj": "MAJ 04 Nov • Qatar (03 Nov) ajouté • 20 GP"
     }
   },
   "ecuries_config": {
